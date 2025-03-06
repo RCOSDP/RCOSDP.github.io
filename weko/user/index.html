@@ -6,7 +6,7 @@
         <title>Introduction · ユーザ操作マニュアル V1.0.7</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 5.1.5">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -152,7 +152,7 @@
                                 
                                 <h1 id="ユーザ操作マニュアル">ユーザ操作マニュアル</h1>
 <p>一般閲覧者・登録ユーザ・管理者</p>
-<p>V1.0.7</p>
+<p>v1.0.7b</p>
 <h2 id="はじめに">はじめに</h2>
 <p>このマニュアルは、WEKO3システム（以下、システムと称す）の操作方法を説明したものです。データの登録、参照などを行うユーザが参照してください。</p>
 <ul>
@@ -965,7 +965,11 @@
 <p>また、登録されているコンテンツファイルが多い場合は、アイテムリストに「・・・」と表示されます。「・・・」をクリックすると、アイテム詳細画面が表示されます。</p>
 <p><img src="media/media/image42.png" alt="グラフィカル ユーザー インターフェイス, テキスト, アプリケーション, メール 自動的に生成された説明"></p>
 <p>アイテムタイプのサムネイルプロパティのオプションで「Show List」が&quot;ON&quot;になっているときに、アイテムリストへアップロードされたサムネイルファイルを表示します。</p>
+<p>アイテムタイプのファイルプロパティののオプションで「Show List」が&quot;ON&quot;になっているときに、ファイルのタイプをボックスで表示されます。</p>
 <p>アイテムに複数のサムネイルファイルがアップロードされている場合、アイテム詳細画面の１つ目のサムネイルファイルを表示します。</p>
+<p>アイテムタイプの作成者プロパティののオプションで「Show List」が&quot;ON&quot;になっているときに、著者IDはアイコンで表示されます。</p>
+<p>アイテムタイプのファイルプロパティののオプションで「Show List」が&quot;ON&quot;になっているときに、ファイルのタイプをボックスで表示されます。</p>
+<p>アイテムタイプの作成者プロパティののオプションで「Show List」が&quot;ON&quot;になっているときに、著者IDはアイコンで表示されます。</p>
 <p>表示順や表示件数の説明については「3.3.1簡易検索」を参照してください。</p>
 <ol>
 <li><p>アイテムタイトルをクリックします。</p>
@@ -4380,6 +4384,16 @@
 <p>画面中央左部の[クリア]を押下すると、ダウンロード後にすべてのアクティビティが削除されます。</p>
 <p>それぞれのアクティビティごとの[クリア]を押下すると、それぞれのダウンロード後に対応する行のアクティビティが削除されます。</p>
 </blockquote>
+<h3 id="アクティビティロックv107">アクティビティロック(v1.0.7)</h3>
+<p>複数のアクティビティを同時実行することはできません。
+既に実行済みのアクティビティがある状態でアクティビティを実行しようとすると以下画面が表示されます。</p>
+<p><img src="media/media/image302.png" alt="image302"></p>
+<p>実行中のアクティビティを完了させるか、中止してください。</p>
+<p>また、同一アクティビティを複数タブで開こうとすると、下記画面が表示されます。</p>
+<p><img src="media/media/image301.png" alt="image301"></p>
+<p>他に実行しているタブがないかを確認し、実行中のタブを終了してからアクティビティ再開してください。</p>
+<p>※ウェブブラウザの状態によっては、同時実行判定に失敗する場合があります。
+そのような場合は「force unlock」ボタンをクリックし、アクティビティを開始してください。</p>
 <h2 id="アイテムを編集・削除する">アイテムを編集・削除する</h2>
 <p>この章では、登録済みのアイテムを編集および削除するための操作手順を説明します。</p>
 <h3 id="アイテムを編集する">アイテムを編集する</h3>
@@ -5123,7 +5137,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"back-to-top-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ユーザ操作マニュアル V1.0.7","language":"ja","gitbook":"*","description":"一般閲覧者・登録ユーザ・管理者"},"file":{"path":"README.md","mtime":"2024-11-14T23:20:44.127Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-11-18T01:16:27.621Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"back-to-top-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ユーザ操作マニュアル V1.0.7","language":"ja","gitbook":"*","description":"一般閲覧者・登録ユーザ・管理者"},"file":{"path":"README.md","mtime":"2025-03-06T15:54:53.424Z","type":"markdown"},"gitbook":{"version":"5.1.5","time":"2025-03-06T16:03:13.460Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

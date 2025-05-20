@@ -6,7 +6,7 @@
         <title>Introduction · システム管理マニュアル</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 5.1.4">
+        <meta name="generator" content="HonKit 5.1.5">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -152,7 +152,21 @@
                                 
                                 <h1 id="システム管理マニュアル">システム管理マニュアル</h1>
 <p>（コミュニティ管理者、リポジトリ管理者、およびシステム管理者）</p>
-<p>V1.0.7</p>
+<p>v1.0.8</p>
+<table>
+<thead>
+<tr>
+<th>バージョン</th>
+<th>改定内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0.8</td>
+<td>「詳細検索をカスタマイズする」にjson pathについて追記</td>
+</tr>
+</tbody>
+</table>
 <h2 id="はじめに">はじめに</h2>
 <p>このマニュアルは、WEKO3システム（以下、システムと称す）の操作方法を説明したものです。データの登録、参照などを行う管理者が参照してください。</p>
 <ul>
@@ -1845,7 +1859,7 @@
 </tr>
 <tr>
 <td>Show List</td>
-<td>アイテム一覧画面にメタデータをカンマ区切りで一覧に表示されます。</td>
+<td>アイテム一覧画面にメタデータをカンマ区切りで一覧に表示されます。例外的に著者識別子はアイコン、ファイルについてはファイルのタイプ別の独立リンクとして表示されます。</td>
 </tr>
 <tr>
 <td>Specify Newline</td>
@@ -2465,7 +2479,7 @@
 </tr>
 <tr class="even">
 <td>チェック結果</td>
-<td><p>読み込んだファイルの各アイテムについて、インポートが可能かどうかをチェックした結果が表示されます。</p>
+<td><p>読み込んだファイルの各アイテムについて、インポートが可能かどうかをチェックした結果が表示されます。200文字を超過する場合は以降の文字が省略表示されます。</p>
 <ul>
 <li><p>エラー(ERROR): XXXXX：バリデーションエラーがあります。</p></li>
 <li><p>警告(Warning): XXXXX：バリデーション警告があります。</p></li>
@@ -9062,11 +9076,24 @@
 <ol>
 <li><p>［アイテムタイプリスト］から検索対象とするアイテムタイプを選択します。</p>
 </li>
-<li><p>［検索項目］を選び（「テキスト１」など）、当該検索項目として検索したいメタデータ要素をjson path または xml path を利用して指定します。<br>（json pathの設定例：$.item_1592405734122.attribute_value_mlt[*].subitem_1592369405220）  </p>
-<p>※ 本機能はアイテム登録、更新時に有効となります。設定する前のアイテムに対して遡及的な処理は実施されません。</p>
+<li><p>［検索項目］を選び（「テキスト１」など）、当該検索項目として検索したいメタデータ要素をjson path または xml path を利用して指定します。<br>（json pathの設定例：$.item_1592405734122.attribute_value_mlt[*].subitem_1592369405220）<br>※ 本機能はアイテム登録、更新時に有効となります。設定する前のアイテムに対して遡及的な処理は実施されません。
+※ 本機能は原則アイテムタイプタイプ別の詳細検索となります。同じjson path構造を持たない限り、アイテムタイプを超えた詳細検索は利用できません。</p>
 </li>
 </ol>
 <p><img src="media/media/image398.png" alt="グラフィカル ユーザー インターフェイス, テキスト, アプリケーション 自動的に生成された説明"></p>
+<h5 id="chrome拡張「jsonvue」を利用したjson-path-の取得">Chrome拡張「JSONVue」を利用したjson path の取得</h5>
+<p>json path は Chrome拡張の「JSONVue」を導入すると、取得しやすくなります。</p>
+<p>JSONVue を導入後、　<a href="https://FQDN/records/アイテムID/export/json" target="_blank">https://FQDN/records/アイテムID/export/json</a> にアクセスし、
+アイテムのJSONデータをブラウザで表示します。</p>
+<p>検索対象が入ったJSONキーを右クリック。</p>
+<p>(media/media/image440.png)</p>
+<p>表示されるメニューから「JSONVue」&gt;「Copy path」を選択すると、当該JSONキーのJSON pathが取得できます。</p>
+<p>例えば、タイトルを検索項目とする場合は、subitem_titleのところでCopy pathを実行すると、
+以下のJSON pathが取得できます。</p>
+<pre><code>metadata.item_30002_title0.attribute_value_mlt[0].subitem_title
+</code></pre><p>[0] を [*] に置換します。metadata を $. に置換します。</p>
+<pre><code>$.item_30002_title0.attribute_value_mlt[*].subitem_title
+</code></pre><p>上記json pathを設定すると、タイトルに対する詳細検索を実現することができます。</p>
 <h4 id="インデックスツリーファセットの表示を設定する">インデックスツリー/ファセットの表示を設定する</h4>
 <p>インデックスツリー/ファセットの表示を設定する方法を説明します。</p>
 <ol>
@@ -10059,7 +10086,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"back-to-top-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"システム管理マニュアル","language":"ja","gitbook":"*","description":""},"file":{"path":"README.md","mtime":"2024-11-14T23:20:44.095Z","type":"markdown"},"gitbook":{"version":"5.1.4","time":"2024-11-18T01:15:45.427Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"back-to-top-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"システム管理マニュアル","language":"ja","gitbook":"*","description":""},"file":{"path":"README.md","mtime":"2025-05-20T04:32:15.444Z","type":"markdown"},"gitbook":{"version":"5.1.5","time":"2025-05-20T04:32:20.645Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

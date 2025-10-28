@@ -1,0 +1,4391 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>API-6: SWORD API 9 · 機能仕様書</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.4">
+        <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="API_07_item_search.html" />
+    
+    
+    <link rel="prev" href="API_05_index_op.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">ユーザ機能</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">アイテム検索</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../user/USER_1_1.html">
+            
+                <a href="../user/USER_1_1.html">
+            
+                    
+                    USER-1-1: 簡易検索（全文検索・キーワード検索） 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../user/USER_1_2.html">
+            
+                <a href="../user/USER_1_2.html">
+            
+                    
+                    USER-1-2: 詳細検索 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../user/USER_1_3.html">
+            
+                <a href="../user/USER_1_3.html">
+            
+                    
+                    USER-1-3: インデックス検索 11
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../user/USER_1_4.html">
+            
+                <a href="../user/USER_1_4.html">
+            
+                    
+                    USER-1-4: ファセット検索 16
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../user/USER_1_5.html">
+            
+                <a href="../user/USER_1_5.html">
+            
+                    
+                    USER-1-5: RSS 19
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../user/USER_2_1.html">
+            
+                <a href="../user/USER_2_1.html">
+            
+                    
+                    USER-2-1: 一覧形式表示 23
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../user/USER_2_2.html">
+            
+                <a href="../user/USER_2_2.html">
+            
+                    
+                    USER-2-2: 目次形式表示 28
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../user/USER_2_3.html">
+            
+                <a href="../user/USER_2_3.html">
+            
+                    
+                    USER-2-3: 雑誌情報 32
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../user/USER_2_4.html">
+            
+                <a href="../user/USER_2_4.html">
+            
+                    
+                    USER-2-4: アイテム一括出力 38
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="../user/USER_3_1.html">
+            
+                <a href="../user/USER_3_1.html">
+            
+                    
+                    USER-3-1: メタデータ表示 44
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../user/USER_3_2.html">
+            
+                <a href="../user/USER_3_2.html">
+            
+                    
+                    USER-3-2: コンテンツファイル管理 51
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.12" data-path="../user/USER_3_3.html">
+            
+                <a href="../user/USER_3_3.html">
+            
+                    
+                    USER-3-3: アイテムバージョン管理 63
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.13" data-path="../user/USER_3_4.html">
+            
+                <a href="../user/USER_3_4.html">
+            
+                    
+                    USER-3-4: 引用情報表示 66
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.14" data-path="../user/USER_3_5.html">
+            
+                <a href="../user/USER_3_5.html">
+            
+                    
+                    USER-3-5: 統計情報表示 69
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.15" data-path="../user/USER_3_6.html">
+            
+                <a href="../user/USER_3_6.html">
+            
+                    
+                    USER-3-6: 共有 72
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.16" data-path="../user/USER_3_7.html">
+            
+                <a href="../user/USER_3_7.html">
+            
+                    
+                    USER-3-7: エクスポート 73
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.17" data-path="../user/USER_3_8.html">
+            
+                <a href="../user/USER_3_8.html">
+            
+                    
+                    USER-3-8: Google Scholar メタデータ出力 81
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.18" data-path="../user/USER_3_9.html">
+            
+                <a href="../user/USER_3_9.html">
+            
+                    
+                    USER-3-9: Google Dataset メタデータ出力 83
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.19" data-path="../user/USER_3_10.html">
+            
+                <a href="../user/USER_3_10.html">
+            
+                    
+                    USER-3-10: 所属コミュニティ情報表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.20" data-path="../user/USER_3_11.html">
+            
+                <a href="../user/USER_3_11.html">
+            
+                    
+                    USER-3-11: リクエスト機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.21" data-path="../user/USER_3_12.html">
+            
+                <a href="../user/USER_3_12.html">
+            
+                    
+                    USER-3-12: メールアドレス入力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.22" data-path="../user/USER_3_13.html">
+            
+                <a href="../user/USER_3_13.html">
+            
+                    
+                    USER-3-13: アイテム利用申請機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.23" data-path="../user/USER_4_1.html">
+            
+                <a href="../user/USER_4_1.html">
+            
+                    
+                    USER-4-1: アクティビティ一覧表示 85
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.24" data-path="../user/USER_4_2.html">
+            
+                <a href="../user/USER_4_2.html">
+            
+                    
+                    USER-4-2: ワークフロー一覧表示 95
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.25" data-path="../user/USER_4_3.html">
+            
+                <a href="../user/USER_4_3.html">
+            
+                    
+                    USER-4-3: ワークフロー 4
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.26" data-path="../user/USER_4_4.html">
+            
+                <a href="../user/USER_4_4.html">
+            
+                    
+                    USER-4-4: Item Registration 7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.27" data-path="../user/USER_4_5.html">
+            
+                <a href="../user/USER_4_5.html">
+            
+                    
+                    USER-4-5: Item Registration：ファイルアップロード 8
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.28" data-path="../user/USER_4_6.html">
+            
+                <a href="../user/USER_4_6.html">
+            
+                    
+                    USER-4-6: Item Registration：メタデータ入力 23
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.29" data-path="../user/USER_4_7.html">
+            
+                <a href="../user/USER_4_7.html">
+            
+                    
+                    USER-4-7: Item Registration：代理投稿 28
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.30" data-path="../user/USER_4_8.html">
+            
+                <a href="../user/USER_4_8.html">
+            
+                    
+                    USER-4-8: Item Registration：フィードバックメール機能 30
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.31" data-path="../user/USER_4_9.html">
+            
+                <a href="../user/USER_4_9.html">
+            
+                    
+                    USER-4-9: Item Registration：インデックス指定 34
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.32" data-path="../user/USER_4_14.html">
+            
+                <a href="../user/USER_4_14.html">
+            
+                    
+                    USER-4-14: Item Registration：リクエストメール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.33" data-path="../user/USER_4_16.html">
+            
+                <a href="../user/USER_4_16.html">
+            
+                    
+                    USER-4-16: Item Registration：アイテム未登録時の制限公開機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.34" data-path="../user/USER_4_10.html">
+            
+                <a href="../user/USER_4_10.html">
+            
+                    
+                    USER-4-10: Identifier Grant 36
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.35" data-path="../user/USER_4_11.html">
+            
+                <a href="../user/USER_4_11.html">
+            
+                    
+                    USER-4-11: Item Link 45
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.36" data-path="../user/USER_4_12.html">
+            
+                <a href="../user/USER_4_12.html">
+            
+                    
+                    USER-4-12: OA Policy Confirmation（現在非対応） 49
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.37" data-path="../user/USER_4_13.html">
+            
+                <a href="../user/USER_4_13.html">
+            
+                    
+                    USER-4-13: Approval 51
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.38" data-path="../user/USER_4_15.html">
+            
+                <a href="../user/USER_4_15.html">
+            
+                    
+                    USER-4-15: End
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.39" data-path="../user/USER_5_1.html">
+            
+                <a href="../user/USER_5_1.html">
+            
+                    
+                    USER-5-1: コミュニティ 53
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.40" data-path="../user/USER_5_2.html">
+            
+                <a href="../user/USER_5_2.html">
+            
+                    
+                    USER-5-2: コンテンツポリシー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.41" data-path="../user/USER_6_1.html">
+            
+                <a href="../user/USER_6_1.html">
+            
+                    
+                    USER-6-1: ランキング 55
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.42" data-path="../user/USER_7_1.html">
+            
+                <a href="../user/USER_7_1.html">
+            
+                    
+                    USER-7-1: ファイルアップロード 61
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.43" data-path="../user/USER_7_2.html">
+            
+                <a href="../user/USER_7_2.html">
+            
+                    
+                    USER-7-2: 言語切替 62
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.44" data-path="../user/USER_8_1.html">
+            
+                <a href="../user/USER_8_1.html">
+            
+                    
+                    USER-8-1: サインアップ 63
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.45" data-path="../user/USER_8_2.html">
+            
+                <a href="../user/USER_8_2.html">
+            
+                    
+                    USER-8-2: ログイン 65
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.46" data-path="../user/USER_8_3.html">
+            
+                <a href="../user/USER_8_3.html">
+            
+                    
+                    USER-8-3: パスワードリセット 67
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.47" data-path="../user/USER_8_4.html">
+            
+                <a href="../user/USER_8_4.html">
+            
+                    
+                    USER-8-4: ユーザープロファイル設定 69
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.48" data-path="../user/USER_8_5.html">
+            
+                <a href="../user/USER_8_5.html">
+            
+                    
+                    USER-8-5: API設定 71
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.49" data-path="../user/USER_9_1.html">
+            
+                <a href="../user/USER_9_1.html">
+            
+                    
+                    USER-9-1: Cookie使用確認画面表示 75
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.50" data-path="../user/USER_10_1.html">
+            
+                <a href="../user/USER_10_1.html">
+            
+                    
+                    USER-10-1: アイテム一覧情報取得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.51" data-path="../user/USER_10_2.html">
+            
+                <a href="../user/USER_10_2.html">
+            
+                    
+                    USER-10-2: 簡易アイテム登録機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.52" data-path="../user/USER_10_3.html">
+            
+                <a href="../user/USER_10_3.html">
+            
+                    
+                    USER-10-3: メタデータ自動補完機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.53" data-path="../admin/ADMIN_1_1.html">
+            
+                <a href="../admin/ADMIN_1_1.html">
+            
+                    
+                    ADMIN-1-1: メタデータ 76
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.54" data-path="../admin/ADMIN_1_2.html">
+            
+                <a href="../admin/ADMIN_1_2.html">
+            
+                    
+                    ADMIN-1-2: マッピング 84
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.55" data-path="../admin/ADMIN_1_3.html">
+            
+                <a href="../admin/ADMIN_1_3.html">
+            
+                    
+                    ADMIN-1-3: OAIスキーマ 88
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.56" data-path="../admin/ADMIN_1_4.html">
+            
+                <a href="../admin/ADMIN_1_4.html">
+            
+                    
+                    ADMIN-1-4: プロパティ 90
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.57" data-path="../admin/ADMIN_2_1.html">
+            
+                <a href="../admin/ADMIN_2_1.html">
+            
+                    
+                    ADMIN-2-1: 一括更新 104
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.58" data-path="../admin/ADMIN_2_2.html">
+            
+                <a href="../admin/ADMIN_2_2.html">
+            
+                    
+                    ADMIN-2-2: 一括削除 108
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.59" data-path="../admin/ADMIN_2_3.html">
+            
+                <a href="../admin/ADMIN_2_3.html">
+            
+                    
+                    ADMIN-2-3: 一括エクスポート 110
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.60" data-path="../admin/ADMIN_2_4.html">
+            
+                <a href="../admin/ADMIN_2_4.html">
+            
+                    
+                    ADMIN-2-4: インポート 113
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.61" data-path="../admin/ADMIN_2_5.html">
+            
+                <a href="../admin/ADMIN_2_5.html">
+            
+                    
+                    ADMIN-2-5: RO-Crateインポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.62" data-path="../admin/ADMIN_3_1.html">
+            
+                <a href="../admin/ADMIN_3_1.html">
+            
+                    
+                    ADMIN-3-1: ツリー編集 155
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.63" data-path="../admin/ADMIN_3_2.html">
+            
+                <a href="../admin/ADMIN_3_2.html">
+            
+                    
+                    ADMIN-3-2: 雑誌情報 162
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.64" data-path="../admin/ADMIN_3_3.html">
+            
+                <a href="../admin/ADMIN_3_3.html">
+            
+                    
+                    ADMIN-3-3: カスタムソート 165
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.65" data-path="../admin/ADMIN_4_1.html">
+            
+                <a href="../admin/ADMIN_4_1.html">
+            
+                    
+                    ADMIN-4-1: ウィジェット 167
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.66" data-path="../admin/ADMIN_4_2.html">
+            
+                <a href="../admin/ADMIN_4_2.html">
+            
+                    
+                    ADMIN-4-2: ページレイアウト 180
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.67" data-path="../admin/ADMIN_5_1.html">
+            
+                <a href="../admin/ADMIN_5_1.html">
+            
+                    
+                    ADMIN-5-1: 編集 185
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.67.1" data-path="../admin/ADMIN_5_1_3.html">
+            
+                <a href="../admin/ADMIN_5_1_3.html">
+            
+                    
+                    Affiliation ID
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.68" data-path="../admin/ADMIN_5_2.html">
+            
+                <a href="../admin/ADMIN_5_2.html">
+            
+                    
+                    ADMIN-5-2: 一括出力 198
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.69" data-path="../admin/ADMIN_5_3.html">
+            
+                <a href="../admin/ADMIN_5_3.html">
+            
+                    
+                    ADMIN-5-3: 一括登録 204
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.70" data-path="../admin/ADMIN_5_4.html">
+            
+                <a href="../admin/ADMIN_5_4.html">
+            
+                    
+                    ADMIN-5-4: 外部著者ID Prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.71" data-path="../admin/ADMIN_6_1.html">
+            
+                <a href="../admin/ADMIN_6_1.html">
+            
+                    
+                    ADMIN-6-1: 運用レポート 217
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.72" data-path="../admin/ADMIN_6_2.html">
+            
+                <a href="../admin/ADMIN_6_2.html">
+            
+                    
+                    ADMIN-6-2: フィードバックメール 233
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.73" data-path="../admin/ADMIN_6_3.html">
+            
+                <a href="../admin/ADMIN_6_3.html">
+            
+                    
+                    ADMIN-6-3: サイトライセンス 238
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.74" data-path="../admin/ADMIN_7_1.html">
+            
+                <a href="../admin/ADMIN_7_1.html">
+            
+                    
+                    ADMIN-7-1: フロー 242
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.75" data-path="../admin/ADMIN_7_2.html">
+            
+                <a href="../admin/ADMIN_7_2.html">
+            
+                    
+                    ADMIN-7-2: ワークフロー 253
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.76" data-path="../admin/ADMIN_7_3.html">
+            
+                <a href="../admin/ADMIN_7_3.html">
+            
+                    
+                    ADMIN-7-3: ワークスペース設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.77" data-path="../admin/ADMIN_8_1.html">
+            
+                <a href="../admin/ADMIN_8_1.html">
+            
+                    
+                    ADMIN-8-1: コミュニティ 256
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.78" data-path="../admin/ADMIN_8_2.html">
+            
+                <a href="../admin/ADMIN_8_2.html">
+            
+                    
+                    ADMIN-8-2: 注目のコミュニティ 261
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.79" data-path="../admin/ADMIN_8_3.html">
+            
+                <a href="../admin/ADMIN_8_3.html">
+            
+                    
+                    ADMIN-8-3: 参加リクエスト 264
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.80" data-path="../admin/ADMIN_9_1.html">
+            
+                <a href="../admin/ADMIN_9_1.html">
+            
+                    
+                    ADMIN-9-1: ハーベスト 265
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.81" data-path="../admin/ADMIN_9_2.html">
+            
+                <a href="../admin/ADMIN_9_2.html">
+            
+                    
+                    ADMIN-9-2: Identify 273
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.82" data-path="../admin/ADMIN_9_3.html">
+            
+                <a href="../admin/ADMIN_9_3.html">
+            
+                    
+                    ADMIN-9-3: Sets 275
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.83" data-path="../admin/ADMIN_10_1.html">
+            
+                <a href="../admin/ADMIN_10_1.html">
+            
+                    
+                    ADMIN-10-1: Resource List 277
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.84" data-path="../admin/ADMIN_10_2.html">
+            
+                <a href="../admin/ADMIN_10_2.html">
+            
+                    
+                    ADMIN-10-2: Change List 283
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.85" data-path="../admin/ADMIN_10_3.html">
+            
+                <a href="../admin/ADMIN_10_3.html">
+            
+                    
+                    ADMIN-10-3: Resync 291
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.86" data-path="../admin/ADMIN_16_1.html">
+            
+                <a href="../admin/ADMIN_16_1.html">
+            
+                    
+                    ADMIN-16-1: TSV/XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.87" data-path="../admin/ADMIN_16_2.html">
+            
+                <a href="../admin/ADMIN_16_2.html">
+            
+                    
+                    ADMIN-16-2: JSON-LD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.88" data-path="../admin/ADMIN_11_1.html">
+            
+                <a href="../admin/ADMIN_11_1.html">
+            
+                    
+                    ADMIN-11-1: 永続識別子 296
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.89" data-path="../admin/ADMIN_11_2.html">
+            
+                <a href="../admin/ADMIN_11_2.html">
+            
+                    
+                    ADMIN-11-2: レコードメタデータ 299
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.90" data-path="../admin/ADMIN_12_1.html">
+            
+                <a href="../admin/ADMIN_12_1.html">
+            
+                    
+                    ADMIN-12-1: バケット 302
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.91" data-path="../admin/ADMIN_12_2.html">
+            
+                <a href="../admin/ADMIN_12_2.html">
+            
+                    
+                    ADMIN-12-2: ファイルインスタンス 306
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.92" data-path="../admin/ADMIN_12_3.html">
+            
+                <a href="../admin/ADMIN_12_3.html">
+            
+                    
+                    ADMIN-12-3: ロケーション 311
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.93" data-path="../admin/ADMIN_12_4.html">
+            
+                <a href="../admin/ADMIN_12_4.html">
+            
+                    
+                    ADMIN-12-4: マルチパートオブジェクト 317
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.94" data-path="../admin/ADMIN_12_5.html">
+            
+                <a href="../admin/ADMIN_12_5.html">
+            
+                    
+                    ADMIN-12-5: オブジェクトバージョン 320
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.95" data-path="../admin/ADMIN_13_1.html">
+            
+                <a href="../admin/ADMIN_13_1.html">
+            
+                    
+                    ADMIN-13-1: アクセス_ロール 324
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.96" data-path="../admin/ADMIN_13_2.html">
+            
+                <a href="../admin/ADMIN_13_2.html">
+            
+                    
+                    ADMIN-13-2: アクセス_システムロール 328
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.97" data-path="../admin/ADMIN_13_3.html">
+            
+                <a href="../admin/ADMIN_13_3.html">
+            
+                    
+                    ADMIN-13-3: アクセス_ユーザー 329
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.98" data-path="../admin/ADMIN_13_4.html">
+            
+                <a href="../admin/ADMIN_13_4.html">
+            
+                    
+                    ADMIN-13-4: 連結アカウント識別子 330
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.99" data-path="../admin/ADMIN_13_5.html">
+            
+                <a href="../admin/ADMIN_13_5.html">
+            
+                    
+                    ADMIN-13-5: 連結アカウントトークン 331
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.100" data-path="../admin/ADMIN_13_6.html">
+            
+                <a href="../admin/ADMIN_13_6.html">
+            
+                    
+                    ADMIN-13-6: 連結アカウント 332
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.101" data-path="../admin/ADMIN_13_7.html">
+            
+                <a href="../admin/ADMIN_13_7.html">
+            
+                    
+                    ADMIN-13-7: OAuthアプリケーショントークン 333
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.102" data-path="../admin/ADMIN_13_8.html">
+            
+                <a href="../admin/ADMIN_13_8.html">
+            
+                    
+                    ADMIN-13-8: OAuthアプリケーション 336
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.103" data-path="../admin/ADMIN_13_9.html">
+            
+                <a href="../admin/ADMIN_13_9.html">
+            
+                    
+                    ADMIN-13-9: ロール 339
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.104" data-path="../admin/ADMIN_13_10.html">
+            
+                <a href="../admin/ADMIN_13_10.html">
+            
+                    
+                    ADMIN-13-10: セッションアクティビティ 343
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.105" data-path="../admin/ADMIN_13_11.html">
+            
+                <a href="../admin/ADMIN_13_11.html">
+            
+                    
+                    ADMIN-13-11: ユーザー 345
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.106" data-path="../admin/ADMIN_13_12.html">
+            
+                <a href="../admin/ADMIN_13_12.html">
+            
+                    
+                    ADMIN-13-12: ユーザープロファイル 350
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.107" data-path="../admin/ADMIN_14_1.html">
+            
+                <a href="../admin/ADMIN_14_1.html">
+            
+                    
+                    ADMIN-14-1: アイテム表示 354
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.108" data-path="../admin/ADMIN_14_2.html">
+            
+                <a href="../admin/ADMIN_14_2.html">
+            
+                    
+                    ADMIN-14-2: インデックスリンク表示 356
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.109" data-path="../admin/ADMIN_14_3.html">
+            
+                <a href="../admin/ADMIN_14_3.html">
+            
+                    
+                    ADMIN-14-3: 言語表示 357
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.110" data-path="../admin/ADMIN_14_4.html">
+            
+                <a href="../admin/ADMIN_14_4.html">
+            
+                    
+                    ADMIN-14-4: PDFカバーページ表示 361
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.111" data-path="../admin/ADMIN_14_5.html">
+            
+                <a href="../admin/ADMIN_14_5.html">
+            
+                    
+                    ADMIN-14-5: ランキング表示 364
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.112" data-path="../admin/ADMIN_14_6.html">
+            
+                <a href="../admin/ADMIN_14_6.html">
+            
+                    
+                    ADMIN-14-6: 統計情報表示 367
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.113" data-path="../admin/ADMIN_14_7.html">
+            
+                <a href="../admin/ADMIN_14_7.html">
+            
+                    
+                    ADMIN-14-7: 画面背景色 369
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.114" data-path="../admin/ADMIN_14_8.html">
+            
+                <a href="../admin/ADMIN_14_8.html">
+            
+                    
+                    ADMIN-14-8: 識別子 370
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.115" data-path="../admin/ADMIN_14_9.html">
+            
+                <a href="../admin/ADMIN_14_9.html">
+            
+                    
+                    ADMIN-14-9: アイテム一括出力 374
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.116" data-path="../admin/ADMIN_14_10.html">
+            
+                <a href="../admin/ADMIN_14_10.html">
+            
+                    
+                    ADMIN-14-10: ログ解析 375
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.117" data-path="../admin/ADMIN_14_11.html">
+            
+                <a href="../admin/ADMIN_14_11.html">
+            
+                    
+                    ADMIN-14-11: 検索設定 380
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.118" data-path="../admin/ADMIN_14_12.html">
+            
+                <a href="../admin/ADMIN_14_12.html">
+            
+                    
+                    ADMIN-14-12: ファセット検索 385
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.119" data-path="../admin/ADMIN_14_13.html">
+            
+                <a href="../admin/ADMIN_14_13.html">
+            
+                    
+                    ADMIN-14-13: サイト情報 395
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.120" data-path="../admin/ADMIN_14_14.html">
+            
+                <a href="../admin/ADMIN_14_14.html">
+            
+                    
+                    ADMIN-14-14: サイトライセンス 398
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.121" data-path="../admin/ADMIN_14_15.html">
+            
+                <a href="../admin/ADMIN_14_15.html">
+            
+                    
+                    ADMIN-14-15: サイトマップ 399
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.122" data-path="../admin/ADMIN_14_16.html">
+            
+                <a href="../admin/ADMIN_14_16.html">
+            
+                    
+                    ADMIN-14-16: メール送信 404
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.123" data-path="../admin/ADMIN_14_17.html">
+            
+                <a href="../admin/ADMIN_14_17.html">
+            
+                    
+                    ADMIN-14-17: WebAPIアカウント 406
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.124" data-path="../admin/ADMIN_14_18.html">
+            
+                <a href="../admin/ADMIN_14_18.html">
+            
+                    
+                    ADMIN-14-18: ファイルプレビュー 408
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.125" data-path="../admin/ADMIN_14_19.html">
+            
+                <a href="../admin/ADMIN_14_19.html">
+            
+                    
+                    ADMIN-14-19: Shibboleth 410
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.126" data-path="../admin/ADMIN_14_20.html">
+            
+                <a href="../admin/ADMIN_14_20.html">
+            
+                    
+                    ADMIN-14-20: 制限公開 412
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.127" data-path="../admin/ADMIN_14_21.html">
+            
+                <a href="../admin/ADMIN_14_21.html">
+            
+                    
+                    ADMIN-14-21: その他 422
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.128" data-path="../admin/ADMIN_14_22.html">
+            
+                <a href="../admin/ADMIN_14_22.html">
+            
+                    
+                    ADMIN-14-22: メールテンプレート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.129" data-path="../admin/ADMIN_17_1.html">
+            
+                <a href="../admin/ADMIN_17_1.html">
+            
+                    
+                    ADMIN-17-1: エクスポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.130" data-path="../admin/ADMIN_15_1.html">
+            
+                <a href="../admin/ADMIN_15_1.html">
+            
+                    
+                    ADMIN-15-1: Elasticsearchインデックス 423
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.131" data-path="API_01_Oauth2.html">
+            
+                <a href="API_01_Oauth2.html">
+            
+                    
+                    API-1: OAuth2 425
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.132" data-path="API_02_OAIPMH.html">
+            
+                <a href="API_02_OAIPMH.html">
+            
+                    
+                    API-2: OAI-PMH 429
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.133" data-path="API_03_OpenSearch.html">
+            
+                <a href="API_03_OpenSearch.html">
+            
+                    
+                    API-3: OpenSearch 436
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.134" data-path="API_04_workflow.html">
+            
+                <a href="API_04_workflow.html">
+            
+                    
+                    API-4: Workflow API 5
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.135" data-path="API_05_index_op.html">
+            
+                <a href="API_05_index_op.html">
+            
+                    
+                    API-5: Index操作API 7
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.136" data-path="API_06_sword_api.html">
+            
+                <a href="API_06_sword_api.html">
+            
+                    
+                    API-6: SWORD API 9
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.137" data-path="API_07_item_search.html">
+            
+                <a href="API_07_item_search.html">
+            
+                    
+                    API-7: アイテム検索用API 20
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.138" data-path="API_08_index_search.html">
+            
+                <a href="API_08_index_search.html">
+            
+                    
+                    API-8: インデックス検索用API 43
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.139" data-path="API_09_render.html">
+            
+                <a href="API_09_render.html">
+            
+                    
+                    API-9: Render 81
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.140" data-path="API_10_JSON_Schema.html">
+            
+                <a href="API_10_JSON_Schema.html">
+            
+                    
+                    API-10: JSON Schema 165
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.141" data-path="API_11_JSON_Form.html">
+            
+                <a href="API_11_JSON_Form.html">
+            
+                    
+                    API-11: JSON Form 187
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.142" data-path="../other/SCHEMA_1_1.html">
+            
+                <a href="../other/SCHEMA_1_1.html">
+            
+                    
+                    SCHEMA-1-1: Render 328
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.143" data-path="../other/SCHEMA_1_2.html">
+            
+                <a href="../other/SCHEMA_1_2.html">
+            
+                    
+                    SCHEMA-1-2: Schema 329
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.144" data-path="../other/SCHEMA_1_3.html">
+            
+                <a href="../other/SCHEMA_1_3.html">
+            
+                    
+                    SCHEMA-1-3: Form 329
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.145" data-path="../other/MODULE_01.html">
+            
+                <a href="../other/MODULE_01.html">
+            
+                    
+                    モジュール、ライブラリ 330
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.146" data-path="../other/CONFIG_01.html">
+            
+                <a href="../other/CONFIG_01.html">
+            
+                    
+                    コンフィグ 331
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.147" data-path="../other/DB_01.html">
+            
+                <a href="../other/DB_01.html">
+            
+                    
+                    DB 336
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.148" data-path="../other/OTHER_elasticsearch.html">
+            
+                <a href="../other/OTHER_elasticsearch.html">
+            
+                    
+                    elasticsearch 337
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.149" data-path="../other/CELERY_01.html">
+            
+                <a href="../other/CELERY_01.html">
+            
+                    
+                    celery タスク 342
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.150" data-path="../other/LOG.html">
+            
+                <a href="../other/LOG.html">
+            
+                    
+                    ログ 345
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.151" data-path="../other/USAGE_LOG.html">
+            
+                <a href="../other/USAGE_LOG.html">
+            
+                    
+                    利用統計ログ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.152" data-path="../other/USER_ACTIVITY_LOG.html">
+            
+                <a href="../other/USER_ACTIVITY_LOG.html">
+            
+                    
+                    基本監査ログ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.153" data-path="../other/SESSION_01.html">
+            
+                <a href="../other/SESSION_01.html">
+            
+                    
+                    セッション管理 357
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.154" data-path="API_ENDPOINT_01.html">
+            
+                <a href="API_ENDPOINT_01.html">
+            
+                    
+                    API Endpoint 358
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.155" data-path="../other/SHIBBOLETH_01.html">
+            
+                <a href="../other/SHIBBOLETH_01.html">
+            
+                    
+                    Shibboleth対応 359
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.156" data-path="../other/WORKFLOW_01.html">
+            
+                <a href="../other/WORKFLOW_01.html">
+            
+                    
+                    GakuNinRDM連携 362
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.157" data-path="../other/ID_01.html">
+            
+                <a href="../other/ID_01.html">
+            
+                    
+                    ID体系 371
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.158" data-path="../other/KAISEKI_01.html">
+            
+                <a href="../other/KAISEKI_01.html">
+            
+                    
+                    解析基盤連携 372
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.159" data-path="../other/INBOX_01.html">
+            
+                <a href="../other/INBOX_01.html">
+            
+                    
+                    プッシュ通知機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.160" data-path="../restricted_access/RESTRICTED_ACCESS_01.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_01.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-1: アイテムタイプ管理（制限公開） 373
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.161" data-path="../restricted_access/RESTRICTED_ACCESS_02.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_02.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-2: アイテム詳細(制限公開) 376
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.162" data-path="../restricted_access/RESTRICTED_ACCESS_03.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_03.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-3: ワークフロー管理（制限公開） 378
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.163" data-path="../restricted_access/RESTRICTED_ACCESS_04.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_04.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-4: メールテンプレート 381
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.164" data-path="../tools/TOOL_01.html">
+            
+                <a href="../tools/TOOL_01.html">
+            
+                    
+                    TOOL-1: システムプロパティマッピング 390
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >API-6: SWORD API 9</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="sword-api"><a name="sword-api" class="plugin-anchor" href="#sword-api"><i class="fa fa-link" aria-hidden="true"></i></a>SWORD API</h1>
+<h2 id="目的・用途"><a name="目的・用途" class="plugin-anchor" href="#目的・用途"><i class="fa fa-link" aria-hidden="true"></i></a>目的・用途</h2>
+<p>クライアントからSWORD v3プロトコルに従いリポジトリ上のアイテム操作を実現する。<br></br>アイテム登録には、TSV/CSV、XML、あるいはJSON-LD形式のメタデータを含むZIPファイルを用いる。</p>
+<h2 id="利用方法"><a name="利用方法" class="plugin-anchor" href="#利用方法"><i class="fa fa-link" aria-hidden="true"></i></a>利用方法</h2>
+<p>APIの認証にはOAuth2を利用する。<br></br>アクセストークンの発行は<a href="API_01_Oauth2.html#oauth2">API-1:OAuth2</a>を参照。</p>
+<h3 id="scope："><a name="scope：" class="plugin-anchor" href="#scope："><i class="fa fa-link" aria-hidden="true"></i></a>Scope：</h3>
+<p>アイテムをアップロードし、直接登録するためには以下のスコープが必要となる。</p>
+<ul>
+<li>deposit:write</li>
+<li>deposit:actions</li>
+<li>item:create</li>
+</ul>
+<p>既存のアイテムを更新するためには以下のスコープが必要となる。</p>
+<ul>
+<li>deposit:write</li>
+<li>deposit:actions</li>
+<li>item:update</li>
+</ul>
+<p>アイテムを削除するためには以下のスコープが必要となる。</p>
+<ul>
+<li>deposit:write</li>
+<li>deposit:actions</li>
+<li>item:delete</li>
+</ul>
+<p>アイテムをワークフローを経由して登録・更新・削除するためには、さらに以下のスコープが必要となる。</p>
+<ul>
+<li>user:activity</li>
+</ul>
+<h3 id="エンドポイント："><a name="エンドポイント：" class="plugin-anchor" href="#エンドポイント："><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント：</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">項番</th>
+<th>HTTP request</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td>GET /sword/service-document</td>
+<td>リポジトリのサービスドキュメントを取得する。</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td>POST /sword/service-document</td>
+<td>WEKO3の一括登録フォーマットを用いて、アイテムを登録する。</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td>GET /sword/deposit/\<recid></recid></td>
+<td>recidを指定してリポジトリ上に存在するアイテムのステータスドキュメントを取得する。</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td>PUT /sword/deposit/\<recid></recid></td>
+<td>recidを指定してリポジトリ上に存在するアイテムに対して、メタデータやファイルを置換する。</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td>DELETE /sword/deposit/\<recid></recid></td>
+<td>recidを指定してアイテムを削除する。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="curlでのリクエスト実行例："><a name="curlでのリクエスト実行例：" class="plugin-anchor" href="#curlでのリクエスト実行例："><i class="fa fa-link" aria-hidden="true"></i></a>CURLでのリクエスト実行例：</h3>
+<p>各APIのリクエスト仕様の詳細は後述。</p>
+<h4 id="get-swordservice-document"><a name="get-swordservice-document" class="plugin-anchor" href="#get-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>GET /sword/service-document</h4>
+<h5 id="リクエスト"><a name="リクエスト" class="plugin-anchor" href="#リクエスト"><i class="fa fa-link" aria-hidden="true"></i></a>リクエスト</h5>
+<pre class="language-"><code class="lang-shell">$ <span class="token function">curl</span> <span class="token parameter variable">-X</span> GET https://192.168.56.101/sword/service-document <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">"Authorization:Bearer Dp85qdLJefoKZ9AuUeIVCqL0Zj9lHxulU1ZSqWGZKI0xJUfxA4wKFnWgztEo"</span>
+</code></pre>
+<ul>
+<li><p>-H オプション</p>
+<ul>
+<li>リクエストにカスタムヘッダーを追加する</li>
+<li>Authorization は "Bearer" + " (半角スペース)" + "アクセストークン"の形式で指定する</li>
+</ul>
+</li>
+</ul>
+<h5 id="レスポンス"><a name="レスポンス" class="plugin-anchor" href="#レスポンス"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンス</h5>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://swordapp.github.io/swordv3/swordv3.jsonld"</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"https://192.168.56.101/sword/service-document"</span><span class="token punctuation">,</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"ServiceDocument"</span><span class="token punctuation">,</span>
+  <span class="token property">"accept"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"*/*"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"acceptArchiveFormat"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"application/zip"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"acceptDeposits"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"acceptMetadata"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"https://github.com/JPCOAR/schema/blob/master/2.0/jpcoar_scm.xsd"</span><span class="token punctuation">,</span>
+    <span class="token string">"https://w3id.org/ro/crate/1.1/"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"acceptPackaging"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"*"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"authentication"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"OAuth"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"byReferenceDeposit"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token property">"collectionPolicy"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"dc:title"</span><span class="token operator">:</span> <span class="token string">"WEKO3"</span><span class="token punctuation">,</span>
+  <span class="token property">"dcterms:abstract"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"digest"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">"SHA-256"</span><span class="token punctuation">,</span>
+    <span class="token string">"SHA"</span><span class="token punctuation">,</span>
+    <span class="token string">"MD5"</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"maxAssembledSize"</span><span class="token operator">:</span> <span class="token number">30000000000000</span><span class="token punctuation">,</span>
+  <span class="token property">"maxByReferenceSize"</span><span class="token operator">:</span> <span class="token number">30000000000000000</span><span class="token punctuation">,</span>
+  <span class="token property">"maxSegments"</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+  <span class="token property">"maxUploadSize"</span><span class="token operator">:</span> <span class="token number">16777216000</span><span class="token punctuation">,</span>
+  <span class="token property">"onBehalfOf"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token property">"root"</span><span class="token operator">:</span> <span class="token string">"https://192.168.56.101/sword/service-document"</span><span class="token punctuation">,</span>
+  <span class="token property">"staging"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token property">"stagingMaxIdle"</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+  <span class="token property">"treatment"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"http://purl.org/net/sword/3.0"</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="post-swordservice-document"><a name="post-swordservice-document" class="plugin-anchor" href="#post-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>POST /sword/service-document</h4>
+<h5 id="リクエスト"><a name="リクエスト" class="plugin-anchor" href="#リクエスト"><i class="fa fa-link" aria-hidden="true"></i></a>リクエスト</h5>
+<pre class="language-"><code class="lang-shell">$ <span class="token function">curl</span> <span class="token parameter variable">-X</span> POST <span class="token parameter variable">-s</span> <span class="token parameter variable">-k</span> https://192.168.56.101/sword/service-document <span class="token parameter variable">-F</span> <span class="token string">"file=@import.zip;type=application/zip"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">"Authorization:Bearer Dp85qdLJefoKZ9AuUeIVCqL0Zj9lHxulU1ZSqWGZKI0xJUfxA4wKFnWgztEo"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">"Content-Disposition:attachment; filename=import.zip"</span> <span class="token parameter variable">-H</span> <span class="token string">"Packaging:http://purl.org/net/sword/3.0/package/SimpleZip"</span>
+</code></pre>
+<h5 id="レスポンス"><a name="レスポンス" class="plugin-anchor" href="#レスポンス"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンス</h5>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span>
+  <span class="token property">"@context"</span><span class="token operator">:</span> <span class="token string">"https://swordapp.github.io/swordv3/swordv3.jsonld"</span><span class="token punctuation">,</span>
+  <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"https://192.168.56.101/sword/deposit/96568"</span><span class="token punctuation">,</span>
+  <span class="token property">"@type"</span><span class="token operator">:</span> <span class="token string">"Status"</span><span class="token punctuation">,</span>
+  <span class="token property">"actions"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"appendFiles"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"appendMetadata"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"deleteFiles"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"deleteMetadata"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"deleteObject"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">"getFiles"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"getMetadata"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"replaceFiles"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">"replaceMetadata"</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"eTag"</span><span class="token operator">:</span> <span class="token string">"5"</span><span class="token punctuation">,</span>
+  <span class="token property">"fileSet"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"links"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"https://weko3.ir.rcos.nii.ac.jp/records/96568"</span><span class="token punctuation">,</span>
+      <span class="token property">"contentType"</span><span class="token operator">:</span> <span class="token string">"text/html"</span><span class="token punctuation">,</span>
+      <span class="token property">"rel"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"alternate"</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://hdl.handle.net/20.500.12465/0000096568"</span><span class="token punctuation">,</span>
+      <span class="token property">"contentType"</span><span class="token operator">:</span> <span class="token string">"text/html"</span><span class="token punctuation">,</span>
+      <span class="token property">"rel"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"alternate"</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">"metadata"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"service"</span><span class="token operator">:</span> <span class="token string">"/sword/service-document"</span><span class="token punctuation">,</span>
+  <span class="token property">"state"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">"@id"</span><span class="token operator">:</span> <span class="token string">"http://purl.org/net/sword/3.0/state/ingested"</span><span class="token punctuation">,</span>
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">""</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><p>-F オプション</p>
+<ul>
+<li>POSTするファイルを指定する。自動的にContent-Typeは"multipart/form-data"となる</li>
+<li>boundaryやContent-Lengthは自動で付加されるため自前で指定しなくてもよい</li>
+<li>ファイル名の先頭には@を付加すること</li>
+<li>ファイルのContent-Typeを"application/zip"とするため、ここでtypeを指定する（指定しないと application/octet-stream となってしまう）</li>
+</ul>
+</li>
+<li><p>-H オプション</p>
+<ul>
+<li>Authorization は "Bearer" + " (半角スペース)" + "アクセストークン"の形式で指定する</li>
+<li>Content-Disposition の filename は -Fオプションで指定したファイルのファイル名と一致させる</li>
+<li>Packaging は "<a href="http://purl.org/net/sword/3.0/package/SimpleZip" target="_blank">http://purl.org/net/sword/3.0/package/SimpleZip</a>" を指定</li>
+<li>必須の Content-Length および Content-Type については前述の通り、-Fオプションにて自動付加されるため-Hオプションでの指定は不要</li>
+</ul>
+</li>
+</ul>
+<h4 id="get-sworddeposit"><a name="get-sworddeposit" class="plugin-anchor" href="#get-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>GET /sword/deposit/\<recid\></recid\></h4>
+<pre class="language-"><code class="lang-shell"><span class="token function">curl</span> <span class="token parameter variable">-X</span> GET https://192.168.56.101/sword/deposit/1 <span class="token parameter variable">-H</span> <span class="token string">"Authorization:Bearer Dp85qdLJefoKZ9AuUeIVCqL0Zj9lHxulU1ZSqWGZKI0xJUfxA4wKFnWgztEo"</span>
+</code></pre>
+<ul>
+<li><p>recid</p>
+<ul>
+<li>アイテムIDを指定する</li>
+</ul>
+</li>
+<li><p>-H オプション</p>
+<ul>
+<li>Authorization は "Bearer" + " (半角スペース)" + "アクセストークン"の形式で指定する</li>
+</ul>
+</li>
+</ul>
+<h4 id="put-sworddeposit"><a name="put-sworddeposit" class="plugin-anchor" href="#put-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>PUT /sword/deposit/\<recid\></recid\></h4>
+<pre class="language-"><code class="lang-shell"><span class="token function">curl</span> <span class="token parameter variable">-X</span> PUT https://192.168.56.101/sword/deposit/1   <span class="token parameter variable">-F</span> <span class="token string">"file=@import.zip;type=application/zip"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">"Authorization:Bearer Dp85qdLJefoKZ9AuUeIVCqL0Zj9lHxulU1ZSqWGZKI0xJUfxA4wKFnWgztEo"</span> <span class="token punctuation">\</span>
+    <span class="token parameter variable">-H</span> <span class="token string">"Content-Disposition:attachment; filename=import.zip"</span> <span class="token parameter variable">-H</span> <span class="token string">"Packaging:http://purl.org/net/sword/3.0/package/SimpleZip"</span>
+</code></pre>
+<ul>
+<li><p>recid</p>
+<ul>
+<li>アイテムIDを指定する</li>
+</ul>
+</li>
+<li><p>-F オプション</p>
+<ul>
+<li>POSTするファイルを指定する。自動的にContent-Typeは"multipart/form-data"となる</li>
+<li>boundaryやContent-Lengthは自動で付加されるため自前で指定しなくてもよい</li>
+<li>ファイル名の先頭には@を付加すること</li>
+<li>ファイルのContent-Typeを"application/zip"とするため、ここでtypeを指定する（指定しないと application/octet-stream となってしまう）</li>
+</ul>
+</li>
+<li><p>-H オプション</p>
+<ul>
+<li>Authorization は "Bearer" + " (半角スペース)" + "アクセストークン"の形式で指定する</li>
+</ul>
+</li>
+</ul>
+<h4 id="delete-sworddeposit"><a name="delete-sworddeposit" class="plugin-anchor" href="#delete-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>DELETE /sword/deposit/\<recid\></recid\></h4>
+<pre class="language-"><code class="lang-shell"><span class="token function">curl</span> <span class="token parameter variable">-X</span> DELETE https://192.168.56.101/sword/deposit/1 <span class="token parameter variable">-H</span> <span class="token string">"Authorization:Bearer Dp85qdLJefoKZ9AuUeIVCqL0Zj9lHxulU1ZSqWGZKI0xJUfxA4wKFnWgztEo"</span>
+</code></pre>
+<ul>
+<li><p>recid</p>
+<ul>
+<li>アイテムIDを指定する</li>
+</ul>
+</li>
+<li><p>-H オプション</p>
+<ul>
+<li>Authorization は "Bearer" + " (半角スペース)" + "アクセストークン"の形式で指定する</li>
+</ul>
+</li>
+</ul>
+<h2 id="利用可能なロール"><a name="利用可能なロール" class="plugin-anchor" href="#利用可能なロール"><i class="fa fa-link" aria-hidden="true"></i></a>利用可能なロール</h2>
+<table>
+<thead>
+<tr>
+<th>ロール</th>
+<th>システム管理者</th>
+<th>リポジトリ管理者</th>
+<th>コミュニティ管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト(未ログイン)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>利用可否</td>
+<td>〇</td>
+<td>〇</td>
+<td>〇</td>
+<td>△</td>
+<td>△</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p>※ 〇：利用可能、△：一部機能のみ利用可能、×：利用不可</p>
+<ul>
+<li>アイテムを操作可能なAPIは、システム管理者、リポジトリ管理者が利用可能。</li>
+</ul>
+<h2 id="機能内容"><a name="機能内容" class="plugin-anchor" href="#機能内容"><i class="fa fa-link" aria-hidden="true"></i></a>機能内容</h2>
+<ul>
+<li><p>各APIへのリクエストに応じて処理を実行しレスポンスを返す</p>
+<ul>
+<li>OAuthアクセストークンによるユーザー認証を必須とする</li>
+</ul>
+</li>
+<li><p>アイテム登録機能で登録に使用するZIPファイルは、メタデータのファイルがTSV/CSV形式、XML形式、あるいはJSON-LD形式である必要がある。</p>
+<ul>
+<li>TSV/CSV形式のメタデータを含むZIPファイルの詳細は <a href="../admin/ADMIN_2_4.html#インポートファイルtsvファイルについて">ADMIN_2_4：インポート</a> を参照</li>
+<li>XML形式のメタデータを含むZIPファイルは、JPCOARスキーマに準拠したXMLファイルを含むZIPファイルである必要がある。</li>
+<li>JSON-LD形式のメタデータを含むZIPファイルは、<a href="../admin/ADMIN_2_5.html#ro-cratebagitファイルの構成">RO-Crate+BagIt</a>
+またはSWORDBagItに準拠したZIPファイルである必要がある。</li>
+</ul>
+</li>
+<li><p>メタデータ形式がXMLおよびJSON-LDの場合は、マッピング機能をもちいてWEKO3のアイテムタイプへ変換されメタデータの登録および更新に使用される。</p>
+</li>
+<li><p>メタデータ形式がJSON-LDの場合、メタデータ内の特定のフラグが有効の場合、展開せずZIPファイルそのものをアイテムのファイルとして保存する。<br></br>フラグについては <a href="../admin/ADMIN_2_5.html#カスタム語彙">ADMIN_2_5：RO-Crate インポート</a> を参照。</p>
+</li>
+<li><p>SWORD APIの管理者による設定は、<a href="../admin/ADMIN_1_5.md#json-ld-マッピング">ADMIN_1_5：JSON-LD マッピング</a> 、
+<a href="../admin/ADMIN_16_1.html">ADMIN_16_1：SWORD API</a> を参照。</p>
+</li>
+</ul>
+<h2 id="api仕様"><a name="api仕様" class="plugin-anchor" href="#api仕様"><i class="fa fa-link" aria-hidden="true"></i></a>API仕様</h2>
+<h3 id="サービスドキュメント取得機能：get-swordservice-document"><a name="サービスドキュメント取得機能：get-swordservice-document" class="plugin-anchor" href="#サービスドキュメント取得機能：get-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>サービスドキュメント取得機能：GET /sword/service-document</h3>
+<p>リポジトリのサービスドキュメントを取得する。</p>
+<h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
+<p>GET /sword/service-document</p>
+<h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
+<table>
+<thead>
+<tr>
+<th>ヘッダー</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>○</td>
+<td>操作するWEKOユーザーのOAuth認証情報。アクセストークンを用いる。<br></br>"Bearer" + " (半角スペース)" + "トークン"の形式。</td>
+<td>"Bearer fVzaeTNY5PCHsNS3rZOARrYR7kPBl4"</td>
+</tr>
+<tr>
+<td>On-Behalf-Of</td>
+<td>-</td>
+<td>代理投稿ユーザーのメールアドレス、パーソナルアクセストークンまたはePPNが入る。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンスコード"><a name="レスポンスコード" class="plugin-anchor" href="#レスポンスコード"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンスコード</h4>
+<table>
+<thead>
+<tr>
+<th>コード</th>
+<th>ドキュメント</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>サービスドキュメント</td>
+<td>サーバーのサービスドキュメントを返す。</td>
+</tr>
+<tr>
+<td>400</td>
+<td>エラードキュメント</td>
+<td>リクエスト内容に何らかの不備がある場合。</td>
+</tr>
+<tr>
+<td>401</td>
+<td>エラードキュメント</td>
+<td>リクエストでAuthorization ヘッダーが提供されない場合。</td>
+</tr>
+<tr>
+<td>403</td>
+<td>エラードキュメント</td>
+<td>認証に失敗した場合。</td>
+</tr>
+<tr>
+<td>412</td>
+<td>エラードキュメント</td>
+<td>サーバー側がOn-Behalf-Of をサポートしていないにもかかわらず、<br></br>リクエストでOn-Behalf-Of ヘッダーが提供された場合。</td>
+</tr>
+<tr>
+<td>500</td>
+<td>エラードキュメント</td>
+<td>サーバー内部エラーが発生した場合。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンス"><a name="レスポンス" class="plugin-anchor" href="#レスポンス"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンス</h4>
+<p>成功時 : <a href="#サービスドキュメント">サービスドキュメント</a>を返す。
+失敗時 : <a href="#エラードキュメント">エラードキュメント</a>を返す。</p>
+<h3 id="アイテム登録機能：post-swordservice-document"><a name="アイテム登録機能：post-swordservice-document" class="plugin-anchor" href="#アイテム登録機能：post-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム登録機能：POST /sword/service-document</h3>
+<p>一括登録用のZIPファイルを用いてアイテムを新規登録する。</p>
+<h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
+<p>POST /sword/service-document</p>
+<h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
+<table>
+<thead>
+<tr>
+<th>フィールド</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>○</td>
+<td>操作するWEKOユーザーのOAuth認証情報。アクセストークンを用いる。<br></br>"Bearer" + " (半角スペース)" + "トークン"の形式。</td>
+<td>"Bearer fVzaeTNY5PCHsNS3rZOARrYR7kPBl4"</td>
+</tr>
+<tr>
+<td>On-Behalf-Of</td>
+<td>-</td>
+<td>代理投稿ユーザーのメールアドレス、パーソナルアクセストークンまたはePPNが入る。</td>
+<td>パーソナルアクセストークン: <br></br>　　"e0Pke8qpzEkkGjPE1RoSqNw7qu3tH4..."<br></br>ePPN: "sample@sampleuniv.ac.jp"</td>
+</tr>
+<tr>
+<td>Content-Disposition</td>
+<td>○</td>
+<td>リクエストボディに付加したファイルのファイル名を指定する。</td>
+<td>"attachment; filename=example.zip"</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>-</td>
+<td>リクエストの大きさを指定する。付与されていない場合、リクエストのファイルサイズを代わりに参照する。</td>
+<td>1024000</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>○</td>
+<td>リクエストボディにファイルを付加するため "multipart/form-data" を指定する。</td>
+<td>multipart/form-data; boundary=xxxxxxxx</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td>○</td>
+<td>パッケージフォーマットと指定する。<br></br>SWORDでは以下の3つのパッケージフォーマットが定義されている。<br></br><a href="http://purl.org/net/sword/3.0/package/Binary" target="_blank">http://purl.org/net/sword/3.0/package/Binary</a><br></br><a href="http://purl.org/net/sword/3.0/package/SimpleZip" target="_blank">http://purl.org/net/sword/3.0/package/SimpleZip</a><br></br><a href="http://purl.org/net/sword/3.0/package/SWORDBagIt" target="_blank">http://purl.org/net/sword/3.0/package/SWORDBagIt</a><br></br>※現在Binaryは未対応</td>
+<td>"<a href="http://purl.org/net/sword/3.0/package/SimpleZip" target="_blank">http://purl.org/net/sword/3.0/package/SimpleZip</a>"</td>
+</tr>
+<tr>
+<td>Digest</td>
+<td>※</td>
+<td>ボディに付加したファイルのハッシュ値を指定する。<br></br>※ダイジェスト検証設定（<a href="#conf21">設定値:21</a>）が有効の場合、必須。</td>
+<td>"SHA-256=e0Pke8qpzEkkGjPE1RoSqNw7qu3tH4..."</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ボディ"><a name="ボディ" class="plugin-anchor" href="#ボディ"><i class="fa fa-link" aria-hidden="true"></i></a>ボディ</h4>
+<table>
+<thead>
+<tr>
+<th>フィールド</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>○</td>
+<td>form-data 形式でボディにZIPファイルを付加する。<br></br>ファイルのContent-Type には"application/zip"を指定すること。</td>
+<td>"file=@project/post_files/example.zip;type=application/zip"</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンスコード"><a name="レスポンスコード" class="plugin-anchor" href="#レスポンスコード"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンスコード</h4>
+<table>
+<thead>
+<tr>
+<th>コード</th>
+<th>ドキュメント</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>ステータスドキュメント</td>
+<td>登録されたアイテムのステータスドキュメントを返す。</td>
+</tr>
+<tr>
+<td>202</td>
+<td>ステータスドキュメント</td>
+<td>登録するアイテムのステータスドキュメントを返す。<br></br> 登録のリクエストを受け付け、アクティビティが承認待ちとなっていることを示す。</td>
+</tr>
+<tr>
+<td>400</td>
+<td>エラードキュメント</td>
+<td>リクエスト内容に何らかの不備がある場合。</td>
+</tr>
+<tr>
+<td>401</td>
+<td>エラードキュメント</td>
+<td>リクエストでAuthorization ヘッダーが提供されない場合。</td>
+</tr>
+<tr>
+<td>403</td>
+<td>エラードキュメント</td>
+<td>認証に失敗した場合。<br></br>認証したOAuthトークンに必要なスコープが与えられていない場合。</td>
+</tr>
+<tr>
+<td>404</td>
+<td>エラードキュメント</td>
+<td>登録されたアイテムが見つからない場合。</td>
+</tr>
+<tr>
+<td>412</td>
+<td>エラードキュメント</td>
+<td>サーバー側がOn-Behalf-Of をサポートしていないにもかかわらず、<br></br>リクエストでOn-Behalf-Of ヘッダーーが提供された場合。</td>
+</tr>
+<tr>
+<td>413</td>
+<td>エラードキュメント</td>
+<td>送信されたファイルのサイズがサーバーに設定されたmaxUploadSizeを超えている場合。</td>
+</tr>
+<tr>
+<td>415</td>
+<td>エラードキュメント</td>
+<td>ヘッダーまたはボディに付加されたファイルのContent-Typeがサーバー側で<br></br>サポートされていない場合。</td>
+</tr>
+<tr>
+<td>500</td>
+<td>エラードキュメント</td>
+<td>サーバー内部エラーが発生した場合。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンス"><a name="レスポンス" class="plugin-anchor" href="#レスポンス"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンス</h4>
+<p>成功時 : <a href="#ステータスドキュメント">ステータスドキュメント</a>を返す。
+失敗時 : <a href="#エラードキュメント">エラードキュメント</a>を返す。</p>
+<h3 id="アイテム状態取得機能：get-sworddeposit"><a name="アイテム状態取得機能：get-sworddeposit" class="plugin-anchor" href="#アイテム状態取得機能：get-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム状態取得機能：GET /sword/deposit/\<recid\></recid\></h3>
+<h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
+<p>GET /sword/deposit/\<recid\></recid\></p>
+<h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
+<table>
+<thead>
+<tr>
+<th>フィールド</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>○</td>
+<td>操作するWEKOユーザーのOAuth認証情報。アクセストークンを用いる。<br></br>"Bearer" + " (半角スペース)" + "トークン"の形式。</td>
+<td>"Bearer fVzaeTNY5PCHsNS3rZOARrYR7kPBl4"</td>
+</tr>
+<tr>
+<td>On-Behalf-Of</td>
+<td>-</td>
+<td>代理投稿ユーザーのメールアドレス、パーソナルアクセストークンまたはePPNが入る。</td>
+<td>"user@example.com"</td>
+</tr>
+</tbody>
+</table>
+<h4 id="パスパラメータ"><a name="パスパラメータ" class="plugin-anchor" href="#パスパラメータ"><i class="fa fa-link" aria-hidden="true"></i></a>パスパラメータ</h4>
+<table>
+<thead>
+<tr>
+<th>キー</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>recid</td>
+<td>○</td>
+<td>レコードID</td>
+<td>2000021</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンスコード"><a name="レスポンスコード" class="plugin-anchor" href="#レスポンスコード"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンスコード</h4>
+<table>
+<thead>
+<tr>
+<th>コード</th>
+<th>ドキュメント</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>ステータスドキュメント</td>
+<td>指定されたアイテムのステータスドキュメントを返す。</td>
+</tr>
+<tr>
+<td>400</td>
+<td>エラードキュメント</td>
+<td>リクエスト内容に何らかの不備がある場合。</td>
+</tr>
+<tr>
+<td>401</td>
+<td>エラードキュメント</td>
+<td>リクエストでAuthorization ヘッダーが提供されない場合。</td>
+</tr>
+<tr>
+<td>403</td>
+<td>エラードキュメント</td>
+<td>認証に失敗した場合。</td>
+</tr>
+<tr>
+<td>404</td>
+<td>エラードキュメント</td>
+<td>指定したrecidに該当するアイテムが存在しない（削除されている）場合。</td>
+</tr>
+<tr>
+<td>412</td>
+<td>エラードキュメント</td>
+<td>サーバー側がOn-Behalf-Of をサポートしていないにもかかわらず、<br></br>リクエストでOn-Behalf-Of ヘッダーが提供された場合。</td>
+</tr>
+<tr>
+<td>500</td>
+<td>エラードキュメント</td>
+<td>サーバー内部エラーが発生した場合。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンス"><a name="レスポンス" class="plugin-anchor" href="#レスポンス"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンス</h4>
+<p>成功時 : <a href="#ステータスドキュメント">ステータスドキュメント</a>を返す。
+失敗時 : <a href="#エラードキュメント">エラードキュメント</a>を返す。</p>
+<h3 id="アイテム更新機能：put-sworddeposit"><a name="アイテム更新機能：put-sworddeposit" class="plugin-anchor" href="#アイテム更新機能：put-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム更新機能：PUT /sword/deposit/\<recid\></recid\></h3>
+<h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
+<p>PUT /sword/deposit/\<recid\></recid\></p>
+<h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
+<table>
+<thead>
+<tr>
+<th>フィールド</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>○</td>
+<td>操作するWEKOユーザーのOAuth認証情報。アクセストークンを用いる。<br></br>"Bearer" + " (半角スペース)" + "トークン"の形式。</td>
+<td>"Bearer fVzaeTNY5PCHsNS3rZOARrYR7kPBl4"</td>
+</tr>
+<tr>
+<td>On-Behalf-Of</td>
+<td>-</td>
+<td>代理投稿ユーザーのメールアドレス、パーソナルアクセストークンまたはePPNが入る。</td>
+<td>パーソナルアクセストークン: <br></br>　　"e0Pke8qpzEkkGjPE1RoSqNw7qu3tH4..."<br></br>ePPN: "sample@sampleuniv.ac.jp"</td>
+</tr>
+<tr>
+<td>Content-Disposition</td>
+<td>○</td>
+<td>リクエストボディに付加したファイルのファイル名を指定する。</td>
+<td>"attachment; filename=example.zip"</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>-</td>
+<td>リクエストの大きさを指定する。付与されていない場合、リクエストのファイルサイズを代わりに参照する。</td>
+<td>1024000</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>○</td>
+<td>リクエストボディにファイルを付加するため "multipart/form-data" を指定する。</td>
+<td>multipart/form-data; boundary=xxxxxxxx</td>
+</tr>
+<tr>
+<td>Packaging</td>
+<td>○</td>
+<td>パッケージフォーマットと指定する。<br></br>SWORDでは以下の3つのパッケージフォーマットが定義されている。<br></br><a href="http://purl.org/net/sword/3.0/package/Binary" target="_blank">http://purl.org/net/sword/3.0/package/Binary</a><br></br><a href="http://purl.org/net/sword/3.0/package/SimpleZip" target="_blank">http://purl.org/net/sword/3.0/package/SimpleZip</a><br></br><a href="http://purl.org/net/sword/3.0/package/SWORDBagIt" target="_blank">http://purl.org/net/sword/3.0/package/SWORDBagIt</a><br></br>※現在Binaryは未対応</td>
+<td>"<a href="http://purl.org/net/sword/3.0/package/SimpleZip" target="_blank">http://purl.org/net/sword/3.0/package/SimpleZip</a>"</td>
+</tr>
+<tr>
+<td>Digest</td>
+<td>※</td>
+<td>ボディに付加したファイルのハッシュ値を指定する。<br></br>※ダイジェスト検証設定（<a href="#conf21">設定値:21</a>）が有効の場合、必須。</td>
+<td>"SHA-256=e0Pke8qpzEkkGjPE1RoSqNw7qu3tH4..."</td>
+</tr>
+</tbody>
+</table>
+<h4 id="パスパラメータ"><a name="パスパラメータ" class="plugin-anchor" href="#パスパラメータ"><i class="fa fa-link" aria-hidden="true"></i></a>パスパラメータ</h4>
+<table>
+<thead>
+<tr>
+<th>キー</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>recid</td>
+<td>○</td>
+<td>レコードID</td>
+<td>2000021</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ボディ"><a name="ボディ" class="plugin-anchor" href="#ボディ"><i class="fa fa-link" aria-hidden="true"></i></a>ボディ</h4>
+<table>
+<thead>
+<tr>
+<th>フィールド</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>file</td>
+<td>○</td>
+<td>form-data 形式でボディにZIPファイルを付加する。<br></br>ファイルのContent-Type には"application/zip"を指定すること。</td>
+<td>"file=@project/post_files/example.zip;type=application/zip"</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンスコード"><a name="レスポンスコード" class="plugin-anchor" href="#レスポンスコード"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンスコード</h4>
+<table>
+<thead>
+<tr>
+<th>コード</th>
+<th>ドキュメント</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>ステータスドキュメント</td>
+<td>更新されたアイテムのステータスドキュメントを返す。</td>
+</tr>
+<tr>
+<td>202</td>
+<td>ステータスドキュメント</td>
+<td>更新するアイテムのステータスドキュメントを返す。<br></br> 更新のリクエストを受け付け、アクティビティが承認待ちとなっていることを示す。</td>
+</tr>
+<tr>
+<td>400</td>
+<td>エラードキュメント</td>
+<td>リクエスト内容に何らかの不備がある場合。</td>
+</tr>
+<tr>
+<td>401</td>
+<td>エラードキュメント</td>
+<td>リクエストでAuthorization ヘッダーが提供されない場合。</td>
+</tr>
+<tr>
+<td>403</td>
+<td>エラードキュメント</td>
+<td>認証に失敗した場合。<br></br>認証したOAuthトークンに必要なスコープが与えられていない場合。</td>
+</tr>
+<tr>
+<td>404</td>
+<td>エラードキュメント</td>
+<td>登録されたアイテムが見つからない場合。</td>
+</tr>
+<tr>
+<td>412</td>
+<td>エラードキュメント</td>
+<td>サーバー側がOn-Behalf-Of をサポートしていないにもかかわらず、<br></br>リクエストでOn-Behalf-Of ヘッダーーが提供された場合。</td>
+</tr>
+<tr>
+<td>413</td>
+<td>エラードキュメント</td>
+<td>送信されたファイルのサイズがサーバーに設定されたmaxUploadSizeを超えている場合。</td>
+</tr>
+<tr>
+<td>415</td>
+<td>エラードキュメント</td>
+<td>ヘッダーまたはボディに付加されたファイルのContent-Typeがサーバー側で<br></br>サポートされていない場合。</td>
+</tr>
+<tr>
+<td>500</td>
+<td>エラードキュメント</td>
+<td>サーバー内部エラーが発生した場合。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="アイテム削除機能：delete-sworddeposit"><a name="アイテム削除機能：delete-sworddeposit" class="plugin-anchor" href="#アイテム削除機能：delete-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム削除機能：DELETE /sword/deposit/\<recid\></recid\></h3>
+<h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
+<p>DELETE /sword/deposit/\<recid\></recid\></p>
+<h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
+<table>
+<thead>
+<tr>
+<th>フィールド</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>○</td>
+<td>操作するWEKOユーザーのOAuth認証情報。アクセストークンを用いる。<br></br>"Bearer" + " (半角スペース)" + "トークン"の形式。</td>
+<td>"Bearer fVzaeTNY5PCHsNS3rZOARrYR7kPBl4"</td>
+</tr>
+<tr>
+<td>On-Behalf-Of</td>
+<td>-</td>
+<td>代理投稿ユーザーのメールアドレス、パーソナルアクセストークンまたはePPNが入る。</td>
+<td>"user@example.com"</td>
+</tr>
+</tbody>
+</table>
+<h4 id="パスパラメータ"><a name="パスパラメータ" class="plugin-anchor" href="#パスパラメータ"><i class="fa fa-link" aria-hidden="true"></i></a>パスパラメータ</h4>
+<table>
+<thead>
+<tr>
+<th>キー</th>
+<th>必須</th>
+<th>説明</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>recid</td>
+<td>○</td>
+<td>レコードID</td>
+<td>2000021</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンスコード"><a name="レスポンスコード" class="plugin-anchor" href="#レスポンスコード"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンスコード</h4>
+<table>
+<thead>
+<tr>
+<th>コード</th>
+<th>ドキュメント</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>202</td>
+<td>-</td>
+<td>アイテム削除のリクエストを受け付け、削除アクティビティが承認待ちとなっていることを示す。</td>
+</tr>
+<tr>
+<td>204</td>
+<td>-</td>
+<td>空のレスポンスを返す。削除に成功したことを示す。</td>
+</tr>
+<tr>
+<td>400</td>
+<td>エラードキュメント</td>
+<td>リクエスト内容に何らかの不備がある場合。</td>
+</tr>
+<tr>
+<td>401</td>
+<td>エラードキュメント</td>
+<td>リクエストでAuthorization ヘッダーが提供されない場合。</td>
+</tr>
+<tr>
+<td>403</td>
+<td>エラードキュメント</td>
+<td>認証に失敗した場合。</td>
+</tr>
+<tr>
+<td>404</td>
+<td>エラードキュメント</td>
+<td>指定したrecidに該当するアイテムが存在しない（削除されている）場合。</td>
+</tr>
+<tr>
+<td>412</td>
+<td>エラードキュメント</td>
+<td>サーバー側がOn-Behalf-Of をサポートしていないにもかかわらず、<br></br>リクエストでOn-Behalf-Of ヘッダーが提供された場合。</td>
+</tr>
+<tr>
+<td>500</td>
+<td>エラードキュメント</td>
+<td>サーバー内部エラーが発生した場合。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="レスポンス"><a name="レスポンス" class="plugin-anchor" href="#レスポンス"><i class="fa fa-link" aria-hidden="true"></i></a>レスポンス</h4>
+<p>成功時 : 空のレスポンスを返す。 アクティビティを使用している場合、アクティビティ詳細画面のURLをLinkヘッダーに含める。
+失敗時 : <a href="#エラードキュメント">エラードキュメント</a>を返す。</p>
+<h2 id="ドキュメント仕様"><a name="ドキュメント仕様" class="plugin-anchor" href="#ドキュメント仕様"><i class="fa fa-link" aria-hidden="true"></i></a>ドキュメント仕様</h2>
+<h3 id="サービスドキュメント"><a name="サービスドキュメント" class="plugin-anchor" href="#サービスドキュメント"><i class="fa fa-link" aria-hidden="true"></i></a>サービスドキュメント</h3>
+<p>サーバー全体の機能と操作パラメータを定義したドキュメント</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@context</td>
+<td>string</td>
+<td>"<a href="https://swordapp.github.io/swordv3/swordv3.jsonld" target="_blank">https://swordapp.github.io/swordv3/swordv3.jsonld</a>" を固定で出力。</td>
+</tr>
+<tr>
+<td>@id</td>
+<td>string</td>
+<td>"[WEKO3のURL]/sword/service-document"を出力。</td>
+</tr>
+<tr>
+<td>@type</td>
+<td>string</td>
+<td>"ServiceDocument"を固定で出力。</td>
+</tr>
+<tr>
+<td>accept</td>
+<td>array</td>
+<td>サーバーに受け入れられるコンテンツタイプのリスト。"*/*"を出力する。<a href="#conf03">設定値:3</a></td>
+</tr>
+<tr>
+<td>acceptArchiveFormat</td>
+<td>array</td>
+<td>サーバーが解凍できるアーカイブ形式のリスト。現状"application/zip"のみ対応。<a href="#conf04">設定値:4</a></td>
+</tr>
+<tr>
+<td>acceptDeposits</td>
+<td>boolean</td>
+<td>サーバーがデポジットを受け入れるか否か。<a href="#conf05">設定値:5</a></td>
+</tr>
+<tr>
+<td>acceptMetadata</td>
+<td>array</td>
+<td>サーバーで受け入れ可能なメタデータ形式のリスト。<a href="#conf06">設定値:6</a></td>
+</tr>
+<tr>
+<td>acceptPackaging</td>
+<td>array</td>
+<td>サーバーで受け入れ可能なパッケージ形式のリスト。<br></br>現状すべての形式を受け入れるが、アイテム登録はSimpleZip/SWORDBagIt形式でのみ可能。<a href="#conf07">設定値:9</a></td>
+</tr>
+<tr>
+<td>authentication</td>
+<td>Array</td>
+<td>サーバーでサポートされている認証スキームのリスト。現状”OAuth”のみ対応。<a href="#conf15">設定値:15</a></td>
+</tr>
+<tr>
+<td>byReferenceDeposit</td>
+<td>boolean</td>
+<td>サーバーがbyReferenceDepositをサポートしているか否か。現状未対応のためFalseを出力。<a href="#conf12">設定値:12</a></td>
+</tr>
+<tr>
+<td>collectionPolicy</td>
+<td>object</td>
+<td>コレクションポリシーを示すオブジェクト。<a href="#conf08">設定値:8</a></td>
+</tr>
+<tr>
+<td>collectionPolicy.@id</td>
+<td>string</td>
+<td>コレクションポリシーのURL。</td>
+</tr>
+<tr>
+<td>collectionPolicy.description</td>
+<td>string</td>
+<td>コレクションポリシーの説明。</td>
+</tr>
+<tr>
+<td>dc:title</td>
+<td>string</td>
+<td>リポジトリの名称を出力。"WEKO3"を固定で出力。</td>
+</tr>
+<tr>
+<td>dcterms:abstract</td>
+<td>string</td>
+<td>リポジトリの説明。未設定。<a href="#conf02">設定値:2</a></td>
+</tr>
+<tr>
+<td>digest</td>
+<td>array</td>
+<td>サーバーが受け入れるdigest形式のリスト。現状はSHA-256の検証が可能。<a href="#conf14">設定値:14</a></td>
+</tr>
+<tr>
+<td>maxAssembledSize</td>
+<td>integer</td>
+<td>Segmented File Upload時のファイル合計最大サイズ（単位：byte）。<a href="#conf19">設定値:19</a></td>
+</tr>
+<tr>
+<td>maxByReferenceSize</td>
+<td>integer</td>
+<td>By-Reference Deposit時のファイル最大サイズ（単位：byte）。<a href="#conf18">設定値:18</a></td>
+</tr>
+<tr>
+<td>maxSegmentSize</td>
+<td>integer</td>
+<td>Segmented File Upload時の１ファイルの最大サイズ（単位：byte）。<br></br>現時点では出力していない。</td>
+</tr>
+<tr>
+<td>maxSegments</td>
+<td>integer</td>
+<td>Segmented File Upload時のセグメントの最大数。<a href="#conf20">設定値:20</a></td>
+</tr>
+<tr>
+<td>maxUploadSize</td>
+<td>integer</td>
+<td>アップロードされるファイルの最大サイズ（単位：byte）。<a href="#conf17">設定値:17</a></td>
+</tr>
+<tr>
+<td>minSegmentSize</td>
+<td>integer</td>
+<td>Segmented File Upload時の１ファイルの最小サイズ（単位：byte）。</td>
+</tr>
+<tr>
+<td>onBehalfOf</td>
+<td>boolean</td>
+<td>代理投稿をサポートしているか否か。<a href="#conf13">設定値:13</a></td>
+</tr>
+<tr>
+<td>root</td>
+<td>string</td>
+<td>サービスドキュメントのルートURL。</td>
+</tr>
+<tr>
+<td>services</td>
+<td>array</td>
+<td>親サービスに含まれるサービスのリスト。現状未対応。<a href="#conf16">設定値:16</a></td>
+</tr>
+<tr>
+<td>staging</td>
+<td>string</td>
+<td>Segmented File Upload時にコンテンツをステージング先URL。現状未対応のため空文字を出力。<a href="#conf10">設定値:10</a></td>
+</tr>
+<tr>
+<td>stagingMaxIdle</td>
+<td>integer</td>
+<td>ステージングされたファイルの最小保持時間。<a href="#conf11">設定値:11</a></td>
+</tr>
+<tr>
+<td>treatment</td>
+<td>object</td>
+<td>デポジット時に期待される処理のURLと説明を示すオブジェクト。<a href="#conf09">設定値:9</a></td>
+</tr>
+<tr>
+<td>treatment.@id</td>
+<td>string</td>
+<td>処理のURL。</td>
+</tr>
+<tr>
+<td>treatment.description</td>
+<td>string</td>
+<td>処理の説明。</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>サポートしているSWORDバージョン。"<a href="http://purl.org/net/sword/3.0&quot;を出力。[設定値:1](#conf01" target="_blank">http://purl.org/net/sword/3.0"を出力。[設定値:1](#conf01</a>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ステータスドキュメント"><a name="ステータスドキュメント" class="plugin-anchor" href="#ステータスドキュメント"><i class="fa fa-link" aria-hidden="true"></i></a>ステータスドキュメント</h3>
+<p>アイテムの内容と現在の状態に関する詳細情報を示すドキュメント</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@context</td>
+<td>string</td>
+<td>"<a href="https://swordapp.github.io/swordv3/swordv3.jsonld" target="_blank">https://swordapp.github.io/swordv3/swordv3.jsonld</a>" を固定で出力。</td>
+</tr>
+<tr>
+<td>@id</td>
+<td>string</td>
+<td>"[WEKO3のURL]/sword/deposit/[アイテムのrecid]"を出力。</td>
+</tr>
+<tr>
+<td>@type</td>
+<td>string</td>
+<td>"ServiceDocument"を固定で出力。</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>object</td>
+<td>アイテムに対してSWORDで使用可能なアクション。  現時点では deleteObject のみTrueを返し、それ以外はFalseを返すようになっている。</td>
+</tr>
+<tr>
+<td>actions. appendFiles</td>
+<td>boolean</td>
+<td>ファイル追加要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions.appendMetadata</td>
+<td>boolean</td>
+<td>メタデータ追加要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions. deleteFiles</td>
+<td>boolean</td>
+<td>ファイル削除要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions. deleteMetadata</td>
+<td>boolean</td>
+<td>メタデータ削除要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions. deleteObject</td>
+<td>boolean</td>
+<td>アイテム削除要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions. getFiles</td>
+<td>boolean</td>
+<td>ファイル取得要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions. getMetadata</td>
+<td>boolean</td>
+<td>メタデータ取得要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions. replaceFiles</td>
+<td>boolean</td>
+<td>ファイル置き換え要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>actions. replaceMetadata</td>
+<td>boolean</td>
+<td>メタデータ置き換え要求が発行可能か否か。</td>
+</tr>
+<tr>
+<td>eTag</td>
+<td>string</td>
+<td>アイテムのeTag。  WEKOではアイテムのリビジョン番号を返す。</td>
+</tr>
+<tr>
+<td>fileSet</td>
+<td>object</td>
+<td>ファイルセットを示すオブジェクト。  現時点では空オブジェクトを返す。</td>
+</tr>
+<tr>
+<td>fileSet.@id</td>
+<td>string</td>
+<td>ファイルセットのURL。</td>
+</tr>
+<tr>
+<td>fileSet.eTag</td>
+<td>string</td>
+<td>ファイルセットのeTag。</td>
+</tr>
+<tr>
+<td>links</td>
+<td>array</td>
+<td>アイテムのリンクを示すオブジェクト。  現時点ではアイテム詳細ページのURLを出力する。またDOIやCNRIハンドルを持つ場合も同様に出力する。</td>
+</tr>
+<tr>
+<td>links[].@id</td>
+<td>string</td>
+<td>リソースのURL。</td>
+</tr>
+<tr>
+<td>links[].byReference</td>
+<td>string</td>
+<td>byReference deposit の際の参照元URL。</td>
+</tr>
+<tr>
+<td>links[].contentType</td>
+<td>string</td>
+<td>リソースのコンテンツタイプ。</td>
+</tr>
+<tr>
+<td>links[].dcterms:isReplacedBy</td>
+<td>string</td>
+<td>同じオブジェクト内のファイルの新しいバージョンへのURL。</td>
+</tr>
+<tr>
+<td>links[].dcterms:relation</td>
+<td>string</td>
+<td>非SWORDアクセスポイントへのURL。</td>
+</tr>
+<tr>
+<td>links[].dcterms:replaces</td>
+<td>string</td>
+<td>同じオブジェクト内の古いバージョンのファイルへのURL。</td>
+</tr>
+<tr>
+<td>links[].depositedBy</td>
+<td>string</td>
+<td>アイテム登録を行ったユーザーの識別子。</td>
+</tr>
+<tr>
+<td>links[].depositedOn</td>
+<td>string</td>
+<td>アイテム登録日時のタイムスタンプ。</td>
+</tr>
+<tr>
+<td>links[].depositedOnBehalfOf</td>
+<td>string</td>
+<td>代理投稿により登録を行ったユーザーの識別子。</td>
+</tr>
+<tr>
+<td>links[].derivedFrom</td>
+<td>string</td>
+<td>現在のリソースが派生したリソースのURLへの参照。</td>
+</tr>
+<tr>
+<td>links[].eTag</td>
+<td>string</td>
+<td>リソースのeTag。</td>
+</tr>
+<tr>
+<td>links[].log</td>
+<td>string</td>
+<td>クライアントが知っておくべきデポジットに関連する情報。</td>
+</tr>
+<tr>
+<td>links[].packaging</td>
+<td>string</td>
+<td>リソースがパッケージである場合、パッケージ形式の識別子を示す。</td>
+</tr>
+<tr>
+<td>links[].rel</td>
+<td>string</td>
+<td>リソースとオブジェクトの関係。  以下の何れかの文字列を持つ。<ul><li>alternate</li><li>packaging</li><li>depositedOn</li><li>depositedOnBehalfOf</li><li>status</li><li>log</li><li>dcterms:relation</li><li>dcterms:replaces</li><li>dcterms:isReplacedBy</li><li>versionReplaced</li><li>eTag</li><li>byReference</li><li>derivedFrom</li><li>metadataFormat</li></ul></td>
+</tr>
+<tr>
+<td>links[].status</td>
+<td>string</td>
+<td>取り込みに関するリソースのステータス。</td>
+</tr>
+<tr>
+<td>links[].versionReplacedOn</td>
+<td>string</td>
+<td>現在のリソースが新しいリソースに置き換えられた日付。</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>object</td>
+<td>メタデータを示すオブジェクト。  現時点では空オブジェクトを返す。</td>
+</tr>
+<tr>
+<td>metadata.@id</td>
+<td>string</td>
+<td>メタデータのURL。</td>
+</tr>
+<tr>
+<td>metadata.eTag</td>
+<td>string</td>
+<td>メタデータのeTag。</td>
+</tr>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>サービスドキュメントのURL。</td>
+</tr>
+<tr>
+<td>state</td>
+<td>array</td>
+<td>アイテムがサーバー上にある状態のリスト。</td>
+</tr>
+<tr>
+<td>state[].@id</td>
+<td>string</td>
+<td>状態の識別子。現状では"<a href="http://purl.org/net/sword/3.0/state/ingested&quot;を固定で出力。" target="_blank">http://purl.org/net/sword/3.0/state/ingested"を固定で出力。</a></td>
+</tr>
+<tr>
+<td>state[].description</td>
+<td>string</td>
+<td>状態の説明</td>
+</tr>
+</tbody>
+</table>
+<h3 id="エラードキュメント"><a name="エラードキュメント" class="plugin-anchor" href="#エラードキュメント"><i class="fa fa-link" aria-hidden="true"></i></a>エラードキュメント</h3>
+<p>エラー内容を表すドキュメント</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>型</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@context</td>
+<td>string</td>
+<td>"<a href="https://swordapp.github.io/swordv3/swordv3.jsonld&quot;を固定で出力。" target="_blank">https://swordapp.github.io/swordv3/swordv3.jsonld"を固定で出力。</a></td>
+</tr>
+<tr>
+<td>@type</td>
+<td>string</td>
+<td>エラータイプを示す文字列。<a href="#エラータイプ">エラータイプ</a> を参照。</td>
+</tr>
+<tr>
+<td>error</td>
+<td>string</td>
+<td>エラー内容の説明。</td>
+</tr>
+<tr>
+<td>log</td>
+<td>string</td>
+<td>より詳細なエラー内容。現在は出力していない。</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>エラー発生時のタイムスタンプ。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="エラータイプ"><a name="エラータイプ" class="plugin-anchor" href="#エラータイプ"><i class="fa fa-link" aria-hidden="true"></i></a>エラータイプ</h2>
+<table>
+<thead>
+<tr>
+<th>エラータイプ文字列</th>
+<th>エラーコード</th>
+<th>エラー原因等</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SWORD v3 ErrorType</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>AuthenticationFailed</td>
+<td>403</td>
+<td>認証に失敗。</td>
+</tr>
+<tr>
+<td>AuthenticationRequired</td>
+<td>401</td>
+<td>認証情報が不足。</td>
+</tr>
+<tr>
+<td>BadRequest</td>
+<td>400</td>
+<td>リクエストに何らかの不備がある。</td>
+</tr>
+<tr>
+<td>ByReferenceFileSizeExceeded</td>
+<td>400</td>
+<td>サーバーの制限を超えるファイルをデポジットしようとした。</td>
+</tr>
+<tr>
+<td>ByReferenceNotAllowed</td>
+<td>412</td>
+<td>サーバーが By-Reference deposit をサポートしていない。</td>
+</tr>
+<tr>
+<td>ContentMalformed</td>
+<td>400</td>
+<td>リクエスト本文の内容に不正がある。</td>
+</tr>
+<tr>
+<td>ContentTypeNotAcceptable</td>
+<td>415</td>
+<td>サーバーで許可されていないコンテンツタイプをリクエストした。</td>
+</tr>
+<tr>
+<td>DigestMismatch</td>
+<td>412</td>
+<td>リクエストヘッダーによって提供されたdigestがサーバーで受け取ったコンテンツと一致していない。</td>
+</tr>
+<tr>
+<td>ETagNotMatched</td>
+<td>412</td>
+<td>リクエストヘッダーによって提供されたIf-Matchの値が更新対象コンテンツのeTagと一致していない。</td>
+</tr>
+<tr>
+<td>ETagRequired</td>
+<td>412</td>
+<td>リクエストヘッダーにIf-Matchの値が指定されていない。</td>
+</tr>
+<tr>
+<td>Forbidden</td>
+<td>403</td>
+<td>サーバーによって許可されていない操作をリクエストした。</td>
+</tr>
+<tr>
+<td>FormatHeaderMismatch</td>
+<td>415</td>
+<td>サーバーがサポートしていない形式のコンテンツがリクエストされた。</td>
+</tr>
+<tr>
+<td>InvalidSegmentSize</td>
+<td>400</td>
+<td>Segmented File Upload時のファイルサイズが範囲外。</td>
+</tr>
+<tr>
+<td>MaxAssembledSizeExceeded</td>
+<td>400</td>
+<td>Segmented File Upload時の合計ファイルサイズが最大値を超えている。</td>
+</tr>
+<tr>
+<td>MaxUploadSizeExceeded</td>
+<td>413</td>
+<td>アップロードされたコンテンツサイズが最大値を超えている。</td>
+</tr>
+<tr>
+<td>MetadataFormatNotAcceptable</td>
+<td>415</td>
+<td>サーバーがサポートしていない形式のMetadata-Formatがリクエストされた。</td>
+</tr>
+<tr>
+<td>MethodNotAllowed</td>
+<td>405</td>
+<td>メソッドへのアクセスが許可されていない。</td>
+</tr>
+<tr>
+<td>OnBehalfOfNotAllowed</td>
+<td>412</td>
+<td>サーバーが On-Behalf-Of をサポートしていない。</td>
+</tr>
+<tr>
+<td>PackagingFormatNotAcceptable</td>
+<td>415</td>
+<td>サーバーがサポートしていない形式のPackagingフォーマットがリクエストされた。</td>
+</tr>
+<tr>
+<td>SegmentedUploadTimedOut</td>
+<td>410</td>
+<td>Segmented File Upload先のURLにアクセスできない。</td>
+</tr>
+<tr>
+<td>SegmentLimitExceeded</td>
+<td>400</td>
+<td>セグメント数が最大値を超えている。</td>
+</tr>
+<tr>
+<td>UnexpectedSegment</td>
+<td>400</td>
+<td>サーバーが予期していないセグメントを受信した。</td>
+</tr>
+<tr>
+<td><strong>Additional ErrorType</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>NotFound</td>
+<td>404</td>
+<td>リクエストされたリソースが存在しない。</td>
+</tr>
+<tr>
+<td>ServerError</td>
+<td>500</td>
+<td>サーバー内部エラーが発生した。</td>
+</tr>
+<tr>
+<td>TooManyRequests</td>
+<td>429</td>
+<td>分間のリクエスト数が制限を超えている。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="関連モジュール"><a name="関連モジュール" class="plugin-anchor" href="#関連モジュール"><i class="fa fa-link" aria-hidden="true"></i></a>関連モジュール</h2>
+<ul>
+<li><p>invenio_oauth2server：OAuthトークンによるユーザー認証を行う</p>
+</li>
+<li><p>invenio_deposit：OAuthトークンが参照するデポジット操作スコープを定義している</p>
+</li>
+<li><p>weko_swordserver：リクエストの処理を行う</p>
+</li>
+<li><p>weko_records_ui：レコード情報の取得、アイテムの削除を実行する</p>
+</li>
+<li><p>weko_search_ui：インポート処理およびメタデータのマッピング処理を実行する</p>
+</li>
+<li><p>weko_workflow：ワークフロー経由でインポート処理を実行する</p>
+</li>
+</ul>
+<h2 id="関連テーブル"><a name="関連テーブル" class="plugin-anchor" href="#関連テーブル"><i class="fa fa-link" aria-hidden="true"></i></a>関連テーブル</h2>
+<ul>
+<li><p>item_type_mapping：アイテムタイプとjpcoar語彙のマッピング情報を保持する</p>
+<ul>
+<li>id：ID</li>
+<li>item_type_id：アイテムタイプID</li>
+<li>mapping：マッピング定義(JSON)</li>
+</ul>
+</li>
+<li><p>sword_clients：SWORD連携設定情報を保持する</p>
+<ul>
+<li>id：ID</li>
+<li>client_id：クライアントID</li>
+<li>active：有効フラグ</li>
+<li>registration_type_id：登録方式区分。1:直接登録、2:ワークフロー登録</li>
+<li>mapping_id：マッピング定義ID</li>
+<li>workflow_id：ワークフローID</li>
+<li>duplicate_check：アイテム重複チェックフラグ</li>
+<li>meta_data_api：メタデータ補完APIの優先順序</li>
+</ul>
+</li>
+<li><p>jsonld_mappings：アイテムタイプとJSON-LD語彙のマッピング定義設定を保持する</p>
+<ul>
+<li>id：マッピング定義ID</li>
+<li>name：マッピング定義名</li>
+<li>mapping：マッピング定義(JSON)</li>
+<li>item_type_id：アイテムタイプID</li>
+<li>version_id：バージョンID</li>
+<li>is_delete：論理削除フラグ</li>
+</ul>
+</li>
+<li><p>oauth2server_token：クライアントが使用できるトークンを保持する</p>
+<ul>
+<li>id：オブジェクトID</li>
+<li>client_id：クライアントID</li>
+<li>user_id：ユーザーID</li>
+<li>token_type：トークンタイプ</li>
+<li>access_token：アクセストークン</li>
+<li>refresh_token：リフレッシュトークン</li>
+<li>expires：有効期限</li>
+<li>_scopes：スコープ</li>
+<li>is_personal：個人用トークンフラグ</li>
+<li>is_internal：内部用トークンフラグ</li>
+</ul>
+</li>
+</ul>
+<h2 id="処理概要"><a name="処理概要" class="plugin-anchor" href="#処理概要"><i class="fa fa-link" aria-hidden="true"></i></a>処理概要</h2>
+<p>使用する設定値は<a href="#サーバー設定値">サーバー設定値</a>、エラーメッセージは<a href="#エラーメッセージ">エラーメッセージ</a>を参照。</p>
+<h3 id="サービスドキュメント取得機能：get-swordservice-document"><a name="サービスドキュメント取得機能：get-swordservice-document" class="plugin-anchor" href="#サービスドキュメント取得機能：get-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>サービスドキュメント取得機能：GET /sword/service-document</h3>
+<ul>
+<li>リクエストをチェックする<ul>
+<li>Authorizationヘッダーに記載されたOAuth認証情報を使用しWEKOにログインする</li>
+<li>On-Behalf-Ofヘッダーが存在する場合、サーバー設定を確認する</li>
+</ul>
+</li>
+<li>サーバー設定値を参照し、サービスドキュメントを生成する</li>
+<li>サービスドキュメントを返却する</li>
+</ul>
+<h3 id="アイテム登録機能：post-swordservice-document"><a name="アイテム登録機能：post-swordservice-document" class="plugin-anchor" href="#アイテム登録機能：post-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム登録機能：POST /sword/service-document</h3>
+<h4 id="grdm側想定"><a name="grdm側想定" class="plugin-anchor" href="#grdm側想定"><i class="fa fa-link" aria-hidden="true"></i></a>GRDM側(想定)</h4>
+<ol>
+<li>GRDMでインポート画面を表示する際、WEKOのAPIを使用しユーザーの選択可能な登録先を取得する</li>
+<li>GRDMでインポートするデータを指定し、パッケージ化する</li>
+<li>WEKOのエンドポイントPOST /sword/service-documentにパッケージを送信する<br></br>この時、リクエストヘッダーにアクセストークンを付加する</li>
+</ol>
+<h4 id="weko3側"><a name="weko3側" class="plugin-anchor" href="#weko3側"><i class="fa fa-link" aria-hidden="true"></i></a>WEKO3側</h4>
+<ol>
+<li><p>リクエストをチェックする</p>
+<ul>
+<li><strong><code>Authorization</code></strong> ヘッダーに記載されたアクセストークンを使用しユーザーを認証する。<br></br>アクセストークンのScopeを確認し、<code>deposit:write</code>、<code>deposit:actions</code>、<code>item:create</code>が与えられていなければエラーとする。</li>
+<li><strong><code>On-Behalf-Of</code></strong> ヘッダーが存在する場合、<code>On-Behalf-Of</code>許容設定（<a href="#conf13">設定値:13</a>）が無効であればエラー（<a href="#err02">メッセージ:2</a>）とする。</li>
+<li><strong><code>Content-Length</code></strong> ヘッダーおよびファイルサイズを検証する。<br></br><code>Content-Length</code>ヘッダーの値あるいはファイルサイズがアップロードのサイズ上限（<a href="#conf17">設定値:17</a>）を上回っていればエラー（<a href="#err05">メッセージ:5</a>）とする。</li>
+<li><strong><code>Content-Disposition</code></strong> ヘッダーを解析する。<br></br>値が<code>attachment</code>かつオプションにファイル名が指定されているかを確認し、満たさない場合はエラー（<a href="#err08">メッセージ:8</a>）とする。
+リクエストのファイルの有無や実際のファイルと上記のファイル名の合致を確認し、不一致であればエラー（<a href="#err09）">メッセージ:9</a>とする。</li>
+<li><strong><code>Content-Type</code></strong> ヘッダーをもとに送付されたファイルを検証する。<br></br>ヘッダーの値が<code>application/zip</code>でなければ、エラー（<a href="#err06">メッセージ:6</a>）とする。</li>
+<li><strong><code>Packaging</code></strong> ヘッダーを検証する。<br></br>値の末尾が<code>SWORDBagIt</code>のとき、<code>/metadata</code>フォルダ直下に<code>sword.json</code>ファイルが存在すればSWORDBagIt形式と判定し、なければエラー（<a href="#err16">メッセージ:16</a>）とする。<br></br>値の末尾が<code>SimpleZip</code>のとき、<code>/data</code>フォルダ直下に<code>ro-crate-metadata.json</code>ファイルが存在すればRO-Crate+BagIt形式と判定し、<code>.tsv/.csv</code>ファイルがあればTSV/CSV形式、<code>.xml</code>ファイルがあればXML形式と判定する。<br></br>値がその他の場合はエラー（<a href="#err7">メッセージ:07</a>）とする。</li>
+<li><p><strong><code>Digest</code></strong> ヘッダーを検証する。<br></br>メタデータ形式がJSON-LD、かつダイジェスト検証設定（<a href="#conf21">設定値:21</a>）が有効であるとき、DigestとリクエストボディのZipファイルのハッシュ値が一致しなければエラー（<a href="#err10">メッセージ:10</a>）とする。</p>
+<p>※ SWORD APIでは使用可能なエラータイプが定められているため、適切なエラータイプが存在しない場合はBad Request（エラーコード400）とし、エラードキュメントにエラー原因を記述し返却する。</p>
+</li>
+</ul>
+</li>
+<li><p>ファイル内容に不備が無いかのチェックを行う</p>
+<p> Zipファイルを展開し、必要なファイルが含まれているか確認する。メタデータファイル形式によって必須事項が異なる。</p>
+<p> <strong>TSV/CSV形式</strong></p>
+<ul>
+<li><p>メタデータを記述したTSV/CSVファイルが含まれていなければエラーとする。</p>
+<p><strong>XML形式</strong></p>
+</li>
+<li><p>メタデータを記述したXMLファイルが含まれていなければエラーとする。</p>
+<p><strong>JSON-LD形式</strong></p>
+</li>
+<li>登録対象のファイルそれぞれのハッシュ値が<code>manifest-sha256.txt</code> に記載されている値と一致しなければエラー（<a href="#err24">メッセージ:24</a>）とする。</li>
+</ul>
+</li>
+<li><p>登録の前処理を行う</p>
+<p>メタデータファイル形式がXMLおよびJSON-LDであれば、メタデータをアイテムタイプへマッピングする。<br></br>また、アイテムを登録するとき、一括登録機能をもちいて直接登録をするか、個別登録機能をもちいてワークフローを経由して登録するかを、
+<a href="../admin/ADMIN_16_1.html">ADMIN_16_1：SWORD API TSV/XML</a>および<a href="../admin/ADMIN_16_2.html">ADMIN_16_2：SWORD API JSON-LD</a>の設定から取得する。<br></br>このとき、設定されたワークフローが削除されていた場合や、Item Registration アクションが含まれていなければエラー（<a href="#err22">メッセージ:22</a>）とする。</p>
+<p> <strong>TSV/CSV形式</strong></p>
+<ul>
+<li>メタデータのマッピングを行わず、直接アイテムタイプとして読み込む。</li>
+<li><p>アイテムタイプをもとに、使用できるワークフローを取得する。</p>
+<p><strong>XML形式</strong></p>
+</li>
+<li>メタデータをアイテムタイプにマッピングする。</li>
+<li>アイテムタイプとjpcoar語彙のマッピング定義からのキーが一致するXMLのメタデータの属性値を探す。</li>
+<li><p>新しいJSONを作成し対応する「item_xxxx」をキー、対応するXMLのメタデータ部分を値とする。</p>
+<p><strong>JSON-LD形式</strong></p>
+</li>
+<li>アクセストークンから、マッピング定義、マッピング先アイテムタイプを取得する。<br></br>  クライアントに対する設定がない場合はエラー（<a href="#err21">メッセージ:21</a>）とする。</li>
+<li>JSONファイルからメタデータを取得し、マッピング定義に基づいてメタデータをアイテムタイプへマッピングする。<br></br>  マッピング処理の詳細については、<a href="../admin/ADMIN_2_5.html#マッピング機能">メタデータマッピング機能</a>を参照。<br></br>  SWORD APIとしては原則1リクエストにつき1つのアイテムが登録されるべきだが、例外としてアイテム分割フラグ（<a href="../admin/ADMIN_2_5.html#wkissplitedアイテム分割フラグ">wk:isSplited</a>）が有効であれば、メタデータを論文アイテムと論拠データアイテムに分割する。
+  <a href="#アイテム分割機能">アイテム分割機能</a>を参照。  </li>
+<li>登録用ファイル保存フラグ（<a href="../admin/ADMIN_2_5.html#wksaveasis登録用ファイル保存フラグ">wk:saveAsIs</a>）が有効であれば、メタデータを含むZIPファイルそのものをアイテムのファイルとして
+登録するようにメタデータを作成する。</li>
+<li>マッピング先が無いメタデータはテキストエリアに保存する。</li>
+<li>メタデータ自動補完フラグ（<a href="../admin/ADMIN_2_5.html#wkmetadataautofillメタデータ自動補完フラグ">wk:metadataAutoFill</a>）が有効で、補完にもちいるDOIが指定されていれば、メタデータ補完APIを呼び出し、メタデータを補完する。</li>
+<li><p>ファイルが階層化されている場合、weko3のストレージでは階層を維持できないため、あらかじめ相対パスをURLエンコードしてファイル名を改め、<code>/data/</code>フォルダ直下に配置する。<br></br>例：<code>/data/20230101/sample.pdf</code> → <code>/data/20230101%2Fsample.pdf</code></p>
+<p><strong>共通処理</strong></p>
+</li>
+<li><code>On-Behalf-Of</code>ヘッダーが存在する場合、その値を取得しアイテムの代理投稿者情報とする。</li>
+<li>読み込まれたメタデータのバリデーションチェックや必須項目のチェックを行い、問題があればエラー（<a href="#err11">メッセージ:11</a>）とする。</li>
+<li>登録先インデックスの状態やアイテムの公開ステータスのチェックを行い、問題があればエラーとする。</li>
+<li>設定されたアイテム重複チェック（<a href="#conf27">設定値:27</a>）が有効であれば、アイテムの重複チェックを行う。<br></br>重複している場合はエラー（）とする。</li>
+</ul>
+</li>
+<li><p>登録処理を行う
+アイテムの登録方法に応じて別々の登録処理を行う。</p>
+<p> <strong>直接登録の場合</strong></p>
+<ul>
+<li><p>一括インポート機能を使用してインポート処理を行う。</p>
+<p><strong>ワークフロー経由で登録する場合</strong></p>
+</li>
+<li><p>設定されたワークフローで新しいアクティビティを作成する。</p>
+</li>
+<li>読み込まれたメタデータをもとにアクティビティにメタデータや登録先インデックスを保存する。</li>
+<li>承認不要のワークフローの場合はワークフローを最後まで実行し登録を完了させる。</li>
+<li>承認が必要なワークフローの場合はアクティビティを承認アクションまで進める。</li>
+<li>アクティビティの進行に必要なのメタデータが存在しない場合はアクティビティを停止し、どのメタデータが必須かエラーメッセージをJSON-LD形式で返却する。</li>
+<li><p>アイテムのPIDと、登録が完了した場合はレコードのURL、アクティビティ詳細画面のURLを返却する。</p>
+<p>※ メタデータ形式がXML形式の場合、現時点ではインデックスを指定することができないため、直接登録は行えない。<br></br>また、ワークフロー経由で登録する場合、ワークフローに登録先インデックスが指定されていなければ、アクティビティにメタデータとファイルを登録して停止する。</p>
+<p>アイテムの登録処理に失敗した場合は、エラー（<a href="#err14">メッセージ:14</a>）とする。</p>
+</li>
+</ul>
+</li>
+<li><p>レスポンスを返却する</p>
+<ul>
+<li>アイテムの登録が完了した場合は、登録されたアイテムのURLをステータスドキュメントに含めて返却する。</li>
+<li>アイテムの登録が完了していない場合は、アクティビティのURLをステータスドキュメントに含めて返却する。</li>
+<li>一連の登録処理に問題がありエラーが発生した場合は、エラードキュメントを返却する。</li>
+</ul>
+</li>
+</ol>
+<h3 id="アイテム状態取得機能：get-sworddeposit"><a name="アイテム状態取得機能：get-sworddeposit" class="plugin-anchor" href="#アイテム状態取得機能：get-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム状態取得機能：GET /sword/deposit/\<recid\></recid\></h3>
+<ul>
+<li>リクエストをチェックする<ul>
+<li>Authorizationヘッダーに記載されたOAuth認証情報を使用しWEKOにログインする</li>
+<li>On-Behalf-Ofヘッダーが存在する場合、サーバー設定を確認する</li>
+</ul>
+</li>
+<li>指定されたrecidからアイテム情報を取得する</li>
+<li>取得したアイテム情報からステータスドキュメントを生成する</li>
+<li>ステータスドキュメントを返却する</li>
+</ul>
+<h3 id="アイテム更新機能：put-sworddeposit"><a name="アイテム更新機能：put-sworddeposit" class="plugin-anchor" href="#アイテム更新機能：put-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム更新機能：PUT /sword/deposit/\<recid\></recid\></h3>
+<p>ほとんどの処理はアイテム状態取得機能と同様であるが、以下の点が異なる。</p>
+<ul>
+<li>アイテムの分割は許可されない</li>
+<li>SWORD v3プロトコルでは、PUTメソッドはアイテムのメタデータとファイルすべての置き換えを意味するが、
+例外として<a href="../admin/ADMIN_2_5.html#wkmetadatareplaceメタデータのみ置換フラグ">メタデータのみ置換フラグ</a>が有効な場合は、
+メタデータのみを置き換え、ファイルを維持する。<br></br>本来、このような扱いはメタデータのURIに対するPOSTメソッドで行うべき処理であるが、暫定的にアイテム更新のPUTメソッドで対応する。</li>
+<li>画面やAPI同士との競合を避けるため、排他制御を行う。排他制御によって更新が拒否された場合は、エラー（<a href="#err25">ーメッセージ:25</a>）とする。<br></br>一括インポート機能によって更新中である場合、すでにアイテムに対するアクティビティが存在する場合も同様にエラー（<a href="#err26">ーメッセージ:26</a>、<a href="#err27">メッセージ:27</a>）とする。</li>
+</ul>
+<h3 id="アイテム削除機能：delete-sworddeposit"><a name="アイテム削除機能：delete-sworddeposit" class="plugin-anchor" href="#アイテム削除機能：delete-sworddeposit"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム削除機能：DELETE /sword/deposit/\<recid\></recid\></h3>
+<ul>
+<li>リクエストをチェックする<ul>
+<li>Authorizationヘッダーに記載されたOAuth認証情報を使用しWEKOにログインする</li>
+<li>On-Behalf-Ofヘッダーが存在する場合、サーバー設定を確認する</li>
+</ul>
+</li>
+<li><a href="../admin/ADMIN_16_1.html">ADMIN_16_1：SWORD API TSV/XML</a>および<a href="../admin/ADMIN_16_2.html">ADMIN_16_2：SWORD API JSON-LD</a>の設定、
+ワークフローに削除用フローが設定されているかを確認し、直接削除を行うか、ワークフローを経由して削除するかを決定する。</li>
+<li>画面やAPI同士との競合を避けるため、排他制御を行う。排他制御によって更新が拒否された場合は、エラー（<a href="#err25">メッセージ:25</a>）とする。<br></br>一括インポート機能によって更新中である場合、すでにアイテムに対するアクティビティが存在する場合も同様にエラー（<a href="#err26">メッセージ:26</a>、<a href="#err27">メッセージ:27</a>）とする。</li>
+<li>直接削除の場合、アイテムの削除を行う</li>
+<li>ワークフロー経由で削除する場合、削除用のアクティビティを作成し、承認アクションがなければアイテムの削除を行う。ある場合はアクティビティを承認アクションまで進めて停止する。</li>
+<li>空のレスポンスを返却する</li>
+</ul>
+<h3 id="アイテム分割機能"><a name="アイテム分割機能" class="plugin-anchor" href="#アイテム分割機能"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム分割機能</h3>
+<ul>
+<li>SWORD v3プロトコルでは、1リクエストにつき1つのアイテムが登録されるべきであるが、WEKO3ではアイテム分割機能を提供している。</li>
+<li>これは、1つのアイテムを論文アイテムと論拠データアイテムに分割して登録する機能であり、複数アイテムを1リクエストで登録するために提供される機能ではない。</li>
+<li>この機能を使用するには、JSON-LD形式のメタデータ内で、<code>wk:isSplited</code>プロパティに<code>true</code>を設定する必要がある。</li>
+<li>記述方法については、<a href="../admin/ADMIN_2_5.html#wkissplitedアイテム分割フラグ">ADMIN_2_5：RO-Crate インポート</a>を参照。</li>
+<li>分割されるアイテムは、論文アイテムと論拠データアイテムの2種に分類され、相互にアイテムリンクされる。</li>
+<li>論文アイテムから論拠データアイテムへのアイテムリンクのリレーションタイプは<code>isSupplementedBy</code>、論拠データアイテムから論文アイテムへのアイテムリンクのリレーションタイプは<code>isSupplementTo</code>である。</li>
+<li>アイテムリンクにはアイテムIDが必要なため、先に論拠データを登録しそのアイテムIDを取得し、論文アイテムを登録する際に相互にアイテムリンクを設定する。 </li>
+<li>このとき、<code>isSupplementTo</code>のアイテムリンク先をもつ論拠データアイテムを先に登録するように、アイテムの登録順を制御する。</li>
+</ul>
+<h3 id="処理に関するエトセトラ"><a name="処理に関するエトセトラ" class="plugin-anchor" href="#処理に関するエトセトラ"><i class="fa fa-link" aria-hidden="true"></i></a>処理に関するエトセトラ</h3>
+<ul>
+<li>ZIPの展開に使用しているライブラリ：zipfile</li>
+<li>ハッシュ値の計算に使用しているライブラリ：hashlib</li>
+<li>Bagの整合性検証に使用しているライブラリ：<a href="https://github.com/LibraryOfCongress/bagit-python/tree/v1.7.0" target="_blank">bagit v1.7.0</a></li>
+<li><p>アイテムをインポートする際に作成する一時ディレクトリは以下のようにミリ秒までの日時を含めて生成する。</p>
+<p>  /tmp/weko_import_YYYYMMDDhhmmssfff</p>
+</li>
+</ul>
+<h2 id="エラーメッセージ"><a name="エラーメッセージ" class="plugin-anchor" href="#エラーメッセージ"><i class="fa fa-link" aria-hidden="true"></i></a>エラーメッセージ</h2>
+<ol>
+<li><p>OAuthトークンがリクエストに含まれていない場合<span id="err01"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"OAuth token is missing in the request."</span>
+</code></pre>
+</li>
+<li><p><code>On-Behalf-Of</code> ヘッダーがサポートされていない場合<span id="err02"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Not support On-Behalf-Of but request has it."</span>
+</code></pre>
+</li>
+<li><p>リクエストにファイルが含まれていない場合<span id="err03"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"No file part."</span>
+</code></pre>
+</li>
+<li><p>ファイルが選択されていない場合<span id="err05"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"No selected file."</span>
+</code></pre>
+</li>
+<li><p><code>Content-Length</code> が最大アップロードサイズを超える場合<span id="err05"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Content size is too large. (request:[Content-Lengthの値], maxUploadSize:[最大アップロードサイズ])"</span>
+</code></pre>
+</li>
+<li><p>サポートされていない <code>Content-Type</code> がリクエストに含まれている場合<span id="err06"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Not accept Content-Type: [サポートされていないContent-Type]"</span>
+</code></pre>
+</li>
+<li><p>サポートされていないパッケージング形式がリクエストに含まれている場合<span id="err07"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Not accept packaging: [サポートされていないパッケージング形式]"</span>
+</code></pre>
+</li>
+<li><p><code>Content-Disposition</code> ヘッダーからファイル名を取得できない場合<span id="err08"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Cannot get filename by Content-Disposition."</span>
+</code></pre>
+</li>
+<li><p>リクエストボディにファイルが見つからない場合<span id="err09"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Not found [ファイル名] in request body."</span>
+</code></pre>
+</li>
+<li><p>リクエストボディとダイジェストの検証に失敗した場合<span id="err10"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Failed to verify request body and digest."</span>
+</code></pre>
+</li>
+<li><p>インポートアイテムのチェック中にエラーが発生した場合<span id="err11"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Item check error: [エラーメッセージ]"</span>
+</code></pre>
+</li>
+<li><p>アイテムが既に登録されている場合<span id="err12"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"This item is already registered: [アイテムのタイトル]"</span>
+</code></pre>
+</li>
+<li><p>アイテムの重複を検知した場合<span id="err13"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"New item appears to be a duplicate: [重複が疑われるアイテムIDのリスト]"</span>
+</code></pre>
+</li>
+<li><p>アイテムのシステムへのインポート中にエラーが発生した場合<span id="err14"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Failed to import item; [エラーメッセージ]"</span>
+</code></pre>
+</li>
+<li><p>管理者による設定で特定のメタデータ形式によるアイテム登録が無効な場合<span id="err15"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"[メタデータ形式] metadata import is not enabled."</span>
+</code></pre>
+</li>
+<li><p>SWORDBagIt形式で <code>metadata/sword.json</code> が存在しない場合<span id="err16"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"SWORDBagIt requires metadate/sword.json."</span>
+</code></pre>
+</li>
+<li><p>RO-Crate+BagIt形式で <code>ro-crate-metadata.json</code> の位置が誤っている場合<span id="err17"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"ro-crate-metadata.json is required in data/ directory."</span>
+</code></pre>
+</li>
+<li><p>SimpleZip形式で <code>metadata/sword.json</code> が存在する場合<span id="err18"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"packaging format is SimpleZip, but sword.json is found."</span>
+</code></pre>
+</li>
+<li><p><code>On-Behalf-Of</code> ヘッダーでユーザーが見つからない場合<span id="err19"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"No user found by On-Behalf-Of."</span>
+</code></pre>
+</li>
+<li><p><code>On-Behalf-Of</code> ヘッダーでユーザー検索中にエラーが発生した場合<span id="err20"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Failed to get shared ID from On-Behalf-Of."</span>
+</code></pre>
+</li>
+<li><p>クライアントに対する設定がされていない場合<span id="err21"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"No SWORD API setting found for client ID that you are using."</span>
+</code></pre>
+</li>
+<li><p>ワークフローが見つからない、または削除されている場合<span id="err22"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Workflow is not for item registration."</span>
+</code></pre>
+</li>
+<li><p>マッピング定義設定のアイテムタイプIDとワークフローのアイテムタイプIDが一致しない場合<span id="err23"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Item type and workflow do not match. ItemType ID must be [マッピング定義設定のアイテムタイプID], but the workflow's ItemType ID was [ワークフローのアイテムタイプID]."</span>
+</code></pre>
+</li>
+<li><p>Bagの検証に失敗した場合<span id="err24"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Failed to validate import bagit file."</span>
+</code></pre>
+</li>
+<li><p>アイテムの更新や削除処理が排他制御によって拒否された場合<span id="err25"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Item [アイテムID] will be edited by another process."</span>
+</code></pre>
+</li>
+<li><p>更新、削除対象のアイテムが一括インポートによる更新中である場合<span id="err26"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Item [アイテムID] is in import progress."</span>
+</code></pre>
+</li>
+<li><p>アイテムに更新や削除のためのアクティビティが存在する場合<span id="err27"></span></p>
+<pre class="language-"><code class="lang-python"><span class="token string">"Item [アイテムID] is being edited."</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="サーバー設定値"><a name="サーバー設定値" class="plugin-anchor" href="#サーバー設定値"><i class="fa fa-link" aria-hidden="true"></i></a>サーバー設定値</h2>
+<ol>
+<li><p>サーバーがサポートするSWORDプロトコルのバージョン<span id="conf01"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SWORD_VERSION <span class="token operator">=</span> <span class="token string">"http://purl.org/net/sword/3.0"</span>
+</code></pre>
+</li>
+<li><p>サービスの説明<span id="conf02"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_ABSTRACT <span class="token operator">=</span> <span class="token string">""</span>
+</code></pre>
+</li>
+<li><p>サーバーが受け入れられるコンテンツタイプのリスト<span id="conf03"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_ACCEPT <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"*/*"</span><span class="token punctuation">]</span>
+</code></pre>
+</li>
+<li><p>サーバーが展開できるアーカイブ形式のリスト<span id="conf04"></span></p>
+<p> サーバーが異なるフォーマットでパッケージを送信した場合、サーバーはそれをバイナリファイルとして扱うことができる。  </p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_ACCEPT_ARCHIVE_FORMAT <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"application/zip"</span><span class="token punctuation">]</span>
+</code></pre>
+</li>
+<li><p>ファイルの登録を受け付けるかどうか<span id="conf05"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_ACCEPT_DEPOSITS <span class="token operator">=</span> <span class="token boolean">True</span>
+</code></pre>
+</li>
+<li><p>サーバーが受け入れられるメタデータ形式のリスト<span id="conf06"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_ACCEPT_METADATA <span class="token operator">=</span> <span class="token punctuation">[</span>
+     <span class="token string">"https://github.com/JPCOAR/schema/blob/master/2.0/jpcoar_scm.xsd"</span><span class="token punctuation">,</span>
+     <span class="token string">"https://w3id.org/ro/crate/1.1/"</span><span class="token punctuation">,</span>
+ <span class="token punctuation">]</span>
+</code></pre>
+</li>
+<li><p>サーバーで受け入れられるパッケージ形式のリスト<span id="conf07"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_ACCEPT_PACKAGING <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">]</span>
+ <span class="token triple-quoted-string string">"""
+ ["*"] or List of Packaging Formats URI
+ - http://purl.org/net/sword/3.0/package/Binary
+ - http://purl.org/net/sword/3.0/package/SimpleZip
+ - http://purl.org/net/sword/3.0/package/SWORDBagIt
+ """</span>
+</code></pre>
+</li>
+<li><p>サーバーの収集ポリシーのURLと説明<span id="conf08"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_COLLECTION_POLICY <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+ <span class="token triple-quoted-string string">"""
+ example:
+ {
+     "@id" : "http://www.myorg.ac.uk/collectionpolicy",
+     "description" : "...."
+ }
+ """</span>
+</code></pre>
+</li>
+<li><p>デポジット時に期待される処理のURLと説明を示すオブジェクト<span id="conf09"></span></p>
+<pre class="language-"><code class="lang-python"> WEKO_SWORDSERVER_SERVICEDOCUMENT_TREATMENT <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>セSegmented File Upload時のステージング先URL<span id="conf10"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_STAGING <span class="token operator">=</span> <span class="token string">""</span>
+</code></pre>
+</li>
+<li><p>Segmented File Upload時のステージングしたファイルを保持する最小時間<span id="conf11"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_STAGING_MAX_IDLE <span class="token operator">=</span> <span class="token number">3600</span>
+</code></pre>
+</li>
+<li><p>参照によるデポジットをサポートするか<span id="conf12"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_BY_REFERENCE_DEPOSIT <span class="token operator">=</span> <span class="token boolean">False</span>
+</code></pre>
+</li>
+<li><p>他のユーザーに代わっての代理投稿をサポートするか<span id="conf13"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_ON_BEHALF_OF <span class="token operator">=</span> <span class="token boolean">True</span>
+</code></pre>
+</li>
+<li><p>サーバーが受け入れるダイジェスト形式のリスト<span id="conf14"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_DIGEST <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"SHA-256"</span><span class="token punctuation">]</span>
+</code></pre>
+</li>
+<li><p>サポートする認証方式のリスト<span id="conf15"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_AUTHENTICATION <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"OAuth"</span><span class="token punctuation">]</span>
+</code></pre>
+</li>
+<li><p>親サービスに含まれるサービスのリスト<span id="conf16"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_SERVICES <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+</code></pre>
+</li>
+<li><p>アップロードされるファイルの最大サイズ (整数) (バイト単位)<span id="conf17"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_MAX_UPLOAD_SIZE <span class="token operator">=</span> <span class="token number">16777216000</span>
+</code></pre>
+</li>
+<li><p>参照によってアップロードされたファイルの最大サイズ (バイト単位)<span id="conf18"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_MAX_BY_REFERENCE_SIZE <span class="token operator">=</span> <span class="token number">30000000000000000</span>
+</code></pre>
+</li>
+<li><p>Segmented File Uploadの合計サイズの最大サイズ (整数) (バイト単位)<span id="conf19"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_MAX_ASSEMBLED_SIZE <span class="token operator">=</span> <span class="token number">30000000000000</span>
+</code></pre>
+</li>
+<li><p>Segmented File Uploadがサポートされている場合、サーバーがひとつのアップロードで受け入れるセグメントの最大数<span id="conf20"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_SERVICEDOCUMENT_MAX_SEGMENTS <span class="token operator">=</span> <span class="token number">1000</span>
+</code></pre>
+</li>
+<li><p>クライアントにダイジェストを送信することを要求するか<span id="conf21"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_DIGEST_VERIFICATION <span class="token operator">=</span> <span class="token boolean">True</span>
+</code></pre>
+</li>
+<li><p>SWORD APIを使用することができるロール<span id="conf22"></span></p>
+<pre class="language-"><code class="lang-python">WEKO_SWORDSERVER_DEPOSIT_ROLE_ENABLE <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token string">"System Administrator"</span><span class="token punctuation">,</span>
+    <span class="token string">"Repository Administrator"</span>
+<span class="token punctuation">]</span>
+</code></pre>
+</li>
+</ol>
+<h2 id="更新履歴"><a name="更新履歴" class="plugin-anchor" href="#更新履歴"><i class="fa fa-link" aria-hidden="true"></i></a>更新履歴</h2>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>GitHubコミットID</th>
+<th>更新内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022/06/13</td>
+<td>e6db31c99d459605f5bc09f15c4abd07ea573428</td>
+<td>初版作成</td>
+</tr>
+<tr>
+<td>2023/08/31</td>
+<td>353ba1deb094af5056a58bb40f07596b8e95a562</td>
+<td>ADMIN-2-4へのリンクを追加</td>
+</tr>
+<tr>
+<td>2025/02/12</td>
+<td>91e291b7bdb24c0f6cbc65d603f2f9427cd0f031</td>
+<td>JSON-LD形式のメタデータ登録機能を追加</td>
+</tr>
+<tr>
+<td>2025/03/07</td>
+<td>6918f05b5dccb52126c36afb5f9b180e847c958f</td>
+<td>アイテムの分割機能について追記</td>
+</tr>
+<tr>
+<td>2025/06/03</td>
+<td>c145ed4a8052597a2e552a628c92f3fa60b878d4</td>
+<td>更新・削除機能およびメタデータのみ置換フラグについて記載</td>
+</tr>
+</tbody>
+</table>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="API_05_index_op.html" class="navigation navigation-prev " aria-label="Previous page: API-5: Index操作API 7">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="API_07_item_search.html" class="navigation navigation-next " aria-label="Next page: API-7: アイテム検索用API 20">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API-6: SWORD API 9","level":"2.136","depth":1,"next":{"title":"API-7: アイテム検索用API 20","level":"2.137","depth":1,"path":"api/API_07_item_search.md","ref":"./api/API_07_item_search.md","articles":[]},"previous":{"title":"API-5: Index操作API 7","level":"2.135","depth":1,"path":"api/API_05_index_op.md","ref":"./api/API_05_index_op.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"api/API_06_sword_api.md","mtime":"2025-10-27T01:52:07.636Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-10-27T03:25:32.318Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -2322,45 +2322,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><h3 id="コンテンツファイル管理"><a name="コンテンツファイル管理" class="plugin-anchor" href="#コンテンツファイル管理"><i class="fa fa-link" aria-hidden="true"></i></a>コンテンツファイル管理</h3>
-<ul>
-<li><blockquote>
-<p>目的・用途</p>
-</blockquote>
-</li>
-</ul>
+                                <html><head></head><body><h1 id="コンテンツファイル管理"><a name="コンテンツファイル管理" class="plugin-anchor" href="#コンテンツファイル管理"><i class="fa fa-link" aria-hidden="true"></i></a>コンテンツファイル管理</h1>
+<h2 id="目的・用途"><a name="目的・用途" class="plugin-anchor" href="#目的・用途"><i class="fa fa-link" aria-hidden="true"></i></a>目的・用途</h2>
 <p>本機能は、アイテムに登録されたファイルの情報を表示し、ファイルバージョンを管理する機能である。</p>
+<h2 id="利用方法"><a name="利用方法" class="plugin-anchor" href="#利用方法"><i class="fa fa-link" aria-hidden="true"></i></a>利用方法</h2>
 <ul>
-<li><blockquote>
-<p>利用方法</p>
-</blockquote>
-</li>
+<li>アイテム詳細画面にファイル一覧を表示</li>
+<li>【information】を押下してファイルの詳細情報の表示</li>
+<li>【download】を押下してファイルのダウンロード</li>
+<li>【Import to GakuNin RDM】を押下することでGakuNin RDMへファイルを取り込み</li>
 </ul>
-<p>アイテム詳細画面のファイル一覧からファイルの情報の閲覧、【information】を押下して詳細情報の閲覧をし、【download】を押下してファイルのダウンロードを行う。</p>
-<ul>
-<li><blockquote>
-<p>利用可能なロール</p>
-</blockquote>
-</li>
-</ul>
+<h2 id="利用可能なロール"><a name="利用可能なロール" class="plugin-anchor" href="#利用可能なロール"><i class="fa fa-link" aria-hidden="true"></i></a>利用可能なロール</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>ロール</th>
-<th>システム<br></br>
-管理者</th>
-<th>リポジトリ<br></br>
-管理者</th>
-<th>コミュニティ<br></br>
-管理者</th>
-<th>登録ユーザー</th>
-<th>一般ユーザー</th>
-<th>ゲスト<br></br>
-(未ログイン)</th>
+<th>システム管理者</th>
+<th>リポジトリ管理者</th>
+<th>コミュニティ管理者</th>
+<th>登録ユーザ</th>
+<th>一般ユーザ</th>
+<th>ゲスト(未ログイン)</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>利用可否</td>
 <td>○</td>
 <td>○</td>
@@ -2371,14 +2357,8 @@
 </tr>
 </tbody>
 </table>
-
-<ul>
-<li><blockquote>
-<p>機能内容</p>
-</blockquote>
-</li>
-</ul>
-<p>1. ファイルの情報を表示する</p>
+<h2 id="機能内容"><a name="機能内容" class="plugin-anchor" href="#機能内容"><i class="fa fa-link" aria-hidden="true"></i></a>機能内容</h2>
+<h3 id="1-ファイルの情報を表示する"><a name="1-ファイルの情報を表示する" class="plugin-anchor" href="#1-ファイルの情報を表示する"><i class="fa fa-link" aria-hidden="true"></i></a>1. ファイルの情報を表示する</h3>
 <ul>
 <li><p>【アイテム詳細画面】の上端にファイルの情報を表示するアイテム登録時に選択された表示形式に応じてファイルの情報を以下のように表示する</p>
 <ul>
@@ -2398,6 +2378,7 @@
 </li>
 <li><p>【Information】：該当ファイル詳細画面に移動する。</p>
 </li>
+<li>【Import to GakuNin RDM】:GakuNin RDMへインポートする機能を提供する。</li>
 </ul>
 </li>
 </ul>
@@ -2432,33 +2413,7 @@
 </li>
 <li><p>【Information】：該当ファイル詳細画面に移動する。</p>
 </li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>表示形式： <strong>プレビュー（Preview）</strong></p>
-<ul>
-<li><p>ファイルのプレビューを表示する（プレビューの仕様について、「3-2.2 登録されたコンテンツファイル及び課金ファイルをプレビューできる」に参考する）</p>
-<ul>
-<li><p>プレビューエリアを開閉する。</p>
-</li>
-<li><p>スライドナビゲーションで、プレビュー対象を切り替える。<br></br>コンテンツファイルが無い場合は表示形式をプレビュー (Preview)と選択してもプレビューエリアは表示しない。また、コンテンツファイルがない場合表示形式に関係なく、【プレビュー (Preview)】、【ダウンロード (Download)】ボタンを表示しない。<br></br>公開前のアイテムがある場合は「Cannot preview file」と表示する。<br></br>該当登録者、管理者以外で公開前のアイテムがある場合は「Restricted Access」と表示する。</p>
-</li>
-</ul>
-</li>
-<li><p>ファイルサイズによりプレビューできない場合は、「Cannot preview file」の表示に、「 file size exceeded. 」が表示される。表示可能なファイルサイズの閾値は定数「WEKO_ITEMS_UI_FILE_SISE_PREVIEW_LIMIT」より設定できる。登録されたファイル一覧を表示する。</p>
-<ul>
-<li>ファイル名リンク：コンテンツファイルをダウンロードする。<br></br>コンテンツファイルが登録されていない場合はリンク先のURLへ遷移する。</li>
-</ul>
-</li>
-<li><p>ファイルに対してのアクション</p>
-<ul>
-<li><p>【ダウンロード（Download）】：該当ファイルをダウンロードする。<br></br>コンテンツファイルが登録されていない場合はリンク先のURLへ遷移する。</p>
-</li>
-<li><p>【Information】：該当ファイル詳細画面に移動する。</p>
-</li>
-<li><p>【プレビュー（Preview）】：該当ファイルのプレビューをプレビューエリアに表示する。</p>
-</li>
+<li>【Import to GakuNin RDM】:GakuNin RDMへインポートする機能を提供する。</li>
 </ul>
 </li>
 </ul>
@@ -2466,7 +2421,32 @@
 </ul>
 </li>
 </ul>
-<p>2. 登録されたコンテンツファイル及び課金ファイルをプレビューできる。</p>
+<pre class="language-"><code>  - 表示形式： **プレビュー（Preview）**
+
+      - ファイルのプレビューを表示する（プレビューの仕様について、「3-2.2 登録されたコンテンツファイル及び課金ファイルをプレビューできる」に参考する）
+
+          - プレビューエリアを開閉する。
+
+          - スライドナビゲーションで、プレビュー対象を切り替える。  
+            コンテンツファイルが無い場合は表示形式をプレビュー (Preview)と選択してもプレビューエリアは表示しない。また、コンテンツファイルがない場合表示形式に関係なく、【プレビュー (Preview)】、【ダウンロード (Download)】ボタンを表示しない。  
+            公開前のアイテムがある場合は「Cannot preview file」と表示する。  
+            該当登録者、管理者以外で公開前のアイテムがある場合は「Restricted Access」と表示する。
+
+      - ファイルサイズによりプレビューできない場合は、「Cannot preview file」の表示に、「 file size exceeded. 」が表示される。表示可能なファイルサイズの閾値は定数「WEKO\_ITEMS\_UI\_FILE\_SISE\_PREVIEW\_LIMIT」より設定できる。登録されたファイル一覧を表示する。
+
+          - ファイル名リンク：コンテンツファイルをダウンロードする。  
+            コンテンツファイルが登録されていない場合はリンク先のURLへ遷移する。
+
+      - ファイルに対してのアクション
+
+          - 【ダウンロード（Download）】：該当ファイルをダウンロードする。  
+            コンテンツファイルが登録されていない場合はリンク先のURLへ遷移する。
+
+          - 【Information】：該当ファイル詳細画面に移動する。
+
+          - 【プレビュー（Preview）】：該当ファイルのプレビューをプレビューエリアに表示する。
+        　- 【Import to GakuNin RDM】:GakuNin RDMへインポートする機能を提供する。
+</code></pre><h3 id="2-登録されたコンテンツファイル及び課金ファイルをプレビューできる。"><a name="2-登録されたコンテンツファイル及び課金ファイルをプレビューできる。" class="plugin-anchor" href="#2-登録されたコンテンツファイル及び課金ファイルをプレビューできる。"><i class="fa fa-link" aria-hidden="true"></i></a>2. 登録されたコンテンツファイル及び課金ファイルをプレビューできる。</h3>
 <ul>
 <li><p>ファイルを登録する時、アイテム登録画面での表示形式を「プレビュー(Preview)」を選択すると、アイテム詳細画面に登録されたファイルをプレビューできる。</p>
 </li>
@@ -2519,11 +2499,11 @@
 <li><p>表示形式をプレビューとしたJPEGファイルは、ファイルバージョンの管理を行う。</p>
 </li>
 </ul>
-<p>3. コンテンツファイル及び課金ファイルにアクセス制限がかけられている。</p>
+<h3 id="3-コンテンツファイル及び課金ファイルにアクセス制限がかけられている。"><a name="3-コンテンツファイル及び課金ファイルにアクセス制限がかけられている。" class="plugin-anchor" href="#3-コンテンツファイル及び課金ファイルにアクセス制限がかけられている。"><i class="fa fa-link" aria-hidden="true"></i></a>3. コンテンツファイル及び課金ファイルにアクセス制限がかけられている。</h3>
 <ul>
 <li>アクセス制限の内容を「5.2. 実装方法」での「(1)アイテム詳細画面に表示、ダウンロードする処理」を参照する。</li>
 </ul>
-<p>4. コンテンツファイルごとに更新履歴を表示する。</p>
+<h3 id="4-コンテンツファイルごとに更新履歴を表示する。"><a name="4-コンテンツファイルごとに更新履歴を表示する。" class="plugin-anchor" href="#4-コンテンツファイルごとに更新履歴を表示する。"><i class="fa fa-link" aria-hidden="true"></i></a>4. コンテンツファイルごとに更新履歴を表示する。</h3>
 <ul>
 <li><p>アイテム詳細画面の各ファイルの表示の【Information】ボタンを押すと、該当ファイル詳細画面に移動する。</p>
 <ul>
@@ -2675,7 +2655,7 @@
 </ul>
 </li>
 </ul>
-<p>5. コンテンツファイルのアクセス制御</p>
+<h3 id="5-コンテンツファイルのアクセス制御"><a name="5-コンテンツファイルのアクセス制御" class="plugin-anchor" href="#5-コンテンツファイルのアクセス制御"><i class="fa fa-link" aria-hidden="true"></i></a>5. コンテンツファイルのアクセス制御</h3>
 <p>コンテンツファイルが「未来日」・「ログインユーザのみ」・「公開しない」設定であり、インデックス条件が、アイテムが所属するインデックスとその上位のインデックスが「公開」設定(未来日では無い)の場合、以下のようにアクセス制御を行う</p>
 <ul>
 <li><p>Guest</p>
@@ -2723,9 +2703,11 @@
 <ul>
 <li><p>「制限公開」設定のファイルについては、下記条件の場合、DLボタンの代わりにApply（申請）ボタンが表示される。</p>
 <ul>
-<li><p>1.対象のコンテンツ（＝ファイル）のアクセスロールが「制限公開」（open_restricted)である。</p>
+<li><p>1.対象のコンテンツ（＝ファイル）のアクセスロールが「制限公開」（open_restricted）である。</p>
 </li>
 <li><p>2.該当コンテンツをダウンロードする権限が、画面表示しているユーザ（未ログイン含む）に無い。</p>
+</li>
+<li><p>3.WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG が True である。</p>
 </li>
 <li><p>　※アイテム登録者やリポジトリ管理者のみならず、申請によって権限を得ているログインユーザもダウンロード権限があるとみなす。</p>
 <ul>
@@ -2740,7 +2722,7 @@
 </li>
 <li><p>2.管理画面の制限公開画面にて、シークレットURLの表示が有効である。</p>
 </li>
-<li><p>3.ファイルが「公開しない」である。または、ファイルが「オープンアクセス日を指定する」かつ指定日が未来日である。</p>
+<li><p>3.ファイルが「公開しない」である。または、ファイルが「オープンアクセス日を指定する」かつ指定日が未来日である（WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG が False の際の「制限公開」は対象外）。</p>
 </li>
 </ul>
 </li>
@@ -2836,12 +2818,20 @@
 </li>
 </ul>
 <!-- end list -->
+<h3 id="6-「import-to-gakunin-rdm」機能"><a name="6-「import-to-gakunin-rdm」機能" class="plugin-anchor" href="#6-「import-to-gakunin-rdm」機能"><i class="fa fa-link" aria-hidden="true"></i></a>6. 「Import to GakuNin RDM」機能</h3>
+<p>この機能は、WEKO3で公開されているGakuNin RDMプロジェクトアーカイブを、GakuNin RDMに新しいプロジェクトとしてインポートするためのものです。GakuNin RDMプロジェクトアーカイブはGakuNin RDM上でプロジェクトをエクスポートすることで作成されます。</p>
+<p><strong>主な動作と条件</strong></p>
 <ul>
-<li><blockquote>
-<p>関連モジュール</p>
-</blockquote>
+<li><p>ボタンの表示条件: ファイルのMIME TYPEが application/rdm-project である場合にのみ、アクションボタンとして「Import to GakuNin RDM」が表示されます。</p>
+</li>
+<li><p>ボタンの活性条件: インポート対象のファイルが公開状態である必要があります。ファイルが非公開の場合、ボタンは表示されますが<strong>非活性（押せない状態）</strong>になります。</p>
+</li>
+<li><p>インポート処理: ユーザーが「Import to GakuNin RDM」ボタンを押すと、GakuNin RDMへ移動します。インポートが完了すると、アーカイブが展開され、GakuNin RDM上に新たなプロジェクトとして登録されます。</p>
+</li>
+<li><p>URL設定: ボタンを押した後の遷移先となるGakuNin RDMのURLは、設定項目 WEKO_RECORDS_UI_GAKUNIN_RDM_URL で変更することが可能です。</p>
 </li>
 </ul>
+<h2 id="関連モジュール"><a name="関連モジュール" class="plugin-anchor" href="#関連モジュール"><i class="fa fa-link" aria-hidden="true"></i></a>関連モジュール</h2>
 <!-- end list -->
 <ul>
 <li><blockquote>
@@ -2850,17 +2840,13 @@
 </li>
 </ul>
 <!-- end list -->
-<ul>
-<li><blockquote>
-<p>処理概要</p>
-</blockquote>
-</li>
-</ul>
-<p>1. 設定</p>
+<h2 id="処理概要"><a name="処理概要" class="plugin-anchor" href="#処理概要"><i class="fa fa-link" aria-hidden="true"></i></a>処理概要</h2>
+<h3 id="1-設定"><a name="1-設定" class="plugin-anchor" href="#1-設定"><i class="fa fa-link" aria-hidden="true"></i></a>1. 設定</h3>
+<h4 id="filesrestdefaultpdfsavepath"><a name="filesrestdefaultpdfsavepath" class="plugin-anchor" href="#filesrestdefaultpdfsavepath"><i class="fa fa-link" aria-hidden="true"></i></a>FILES_REST_DEFAULT_PDF_SAVE_PATH</h4>
 <ul>
 <li><p>ファイルをプレビュー表示するため、ファイルからPDF形式に変換し、テンポラリーフォルダーに書き込む処理を行う</p>
 </li>
-<li><p>テンポラリーフォルダーの初期値は「/var/tmp」であり、以下のConfigファイルで設定できる<br></br><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-files-rest/invenio_files_rest/config.py#L128" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-files-rest/invenio_files_rest/config.py#L128</a></p>
+<li><p>テンポラリーフォルダーの初期値は「/var/tmp」であり、以下のConfigファイルで設定できる<br></br><a href="https://github.com/RCOSDP/weko/blob/develop_v2.0.0/modules/invenio-files-rest/invenio_files_rest/config.py#L132" target="_blank">https://github.com/RCOSDP/weko/blob/develop_v2.0.0/modules/invenio-files-rest/invenio_files_rest/config.py#L132</a></p>
 <ul>
 <li><p>設定キー：「FILES_REST_DEFAULT_PDF_SAVE_PATH」</p>
 </li>
@@ -2871,14 +2857,21 @@
 <li><p>予期せぬエラーによりファイルをテンポラリーフォルダーに書き込むことができない場合、以下のメッセージがプレビュー画面に表示される<br></br>メッセージ：「Unexpected server response (502) while retrieving PDF + ファイルパス」</p>
 </li>
 </ul>
-<p>2. 実装方法</p>
+<h4 id="wekorecordsuigakuninrdmurl"><a name="wekorecordsuigakuninrdmurl" class="plugin-anchor" href="#wekorecordsuigakuninrdmurl"><i class="fa fa-link" aria-hidden="true"></i></a>WEKO_RECORDS_UI_GAKUNIN_RDM_URL</h4>
+<p>【Import to GakuNin RDM】ボタンを押下したときに、アクセスするGakuNin RDMのURLを指定する。</p>
+<ul>
+<li>設定キー：WEKO_RECORDS_UI_GAKUNIN_RDM_URL</li>
+<li>現在の設定値："<a href="https://rdm.nii.ac.jp" target="_blank">https://rdm.nii.ac.jp</a>"</li>
+</ul>
+<p>指定されたGakuNin RDMはボタン押下後、WEKO3からファイルをダウンロードする。</p>
+<h3 id="2-実装方法"><a name="2-実装方法" class="plugin-anchor" href="#2-実装方法"><i class="fa fa-link" aria-hidden="true"></i></a>2. 実装方法</h3>
 <ul>
 <li><p>ファイルビューアのライブラリ：pdfjs-dist (ver. 1.4.192)</p>
 </li>
 <li><p>weko_records_ui.permissions.check_file_download_permissionを使用する。</p>
 </li>
 </ul>
-<p>(1)アイテム詳細画面に表示、ダウンロードする処理</p>
+<h4 id="1アイテム詳細画面に表示、ダウンロードする処理"><a name="1アイテム詳細画面に表示、ダウンロードする処理" class="plugin-anchor" href="#1アイテム詳細画面に表示、ダウンロードする処理"><i class="fa fa-link" aria-hidden="true"></i></a>(1)アイテム詳細画面に表示、ダウンロードする処理</h4>
 <ul>
 <li><p>ファイル情報の表示処理について<br></br>アクセスしているユーザーの権限が管理者であるかどうか、weko_records_ui.permissions.check_file_download_permissionにて「WEKO_PERMISSION_SUPER_ROLE_USER」を使用する</p>
 <ul>
@@ -2894,7 +2887,7 @@
 <ul>
 <li><p>オープンアクセス日が経過していない場合、管理者または登録者、または設定されているグループに所属するユーザーには該当コンテンツファイルを表示、ダウンロードできる</p>
 </li>
-<li><p>オープンアクセス日が経過していない場合、権限がないユーザーには該当コンテンツファイルを表示しない<br></br>　 ⇒権限が無いユーザーには「「Download is available from YYYY/MM/DD.」と表示する</p>
+<li><p>オープンアクセス日が経過していない場合、権限がないユーザーには該当コンテンツファイルを表示しない<br></br>　 ⇒権限が無いユーザーには「Download is available from YYYY/MM/DD.」と表示する</p>
 </li>
 <li><p>オープンアクセス日が経過した場合、すべてのユーザーは該当コンテンツファイルを表示、ダウンロードができる</p>
 </li>
@@ -2922,6 +2915,8 @@
 </li>
 <li><p>コンテンツのアクセスが「制限公開」とした場合、以下のように制限する</p>
 <ul>
+<li><p>WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG が False の場合は「公開しない」と同様の制限を行う</p>
+</li>
 <li><p>管理者またはアイテム登録者には該当コンテンツファイルを表示する</p>
 </li>
 <li><p>権限がないユーザーには、「アクセス制限（Restricted Access）」と表示する</p>
@@ -2977,11 +2972,13 @@
 <ul>
 <li><p>weko_records_ui.permissions.check_file_download_permissionでcheck_open_restricted_permissionを呼び出して使用する。</p>
 </li>
+<li><p>WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG が False の場合は「公開しない」と同様の制限となる</p>
+</li>
 <li><p>管理者またはアイテム登録者本人は常時ダウンロード可</p>
 </li>
-<li><p>その他のユーザー(代理投稿者含む)には、ダウンロードボタンではなく「利用申請」ボタンが表示される</p>
+<li><p>その他のユーザーには、ダウンロードボタンではなく「利用申請」ボタンが表示される</p>
 </li>
-<li><p>その他のユーザー(代理投稿者含む)がファイルをダウンロードする場合、上記ボタンから利用申請を行い、管理者による承認を受けなければならない</p>
+<li><p>その他のユーザーがファイルをダウンロードする場合、上記ボタンから利用申請を行い、管理者による承認を受けなければならない</p>
 <ul>
 <li><p>アイテム登録・編集画面内で、制限公開用のコンテンツファイルの「提供方法」を編集することで、どのロールのユーザーに対して利用申請を許可するかを選択できる</p>
 <ul>
@@ -3001,7 +2998,7 @@
 </li>
 <li><p>利用規約文表示エリア下部に「利用規約を確認の上、スクロール最下部にある「利用規約に同意する」にチェックを入れてください (I have read and agreed to the Terms and conditions)」を固定で表示する</p>
 </li>
-<li><p>[利用規約に同意する」ラベルクリック時もチェックボックスのオンオフができるようにする</p>
+<li><p>「利用規約に同意する」ラベルクリック時もチェックボックスのオンオフができるようにする</p>
 </li>
 <li><p>利用規約を最後まで確認すると「利用規約に同意する」チェックボックスをチェックできる。チェック前は「次へ」ボタンを非活性とする</p>
 </li>
@@ -3017,7 +3014,7 @@
 </li>
 </ul>
 </li>
-<li><p>「Contributor」等の任意のロールが「 提供方法：ワークフロー (Providing Method: WorkFlow)」で設定される場合、指定されたワークフローの画面に遷移する</p>
+<li><p>「Contributor」等の任意のロールが「提供方法：ワークフロー (Providing Method: WorkFlow)」で設定される場合、指定されたワークフローの画面に遷移する</p>
 </li>
 </ul>
 </li>
@@ -3033,134 +3030,111 @@
 </li>
 <li><p>作成されたワンタイムURLはテーブルfile_onetime_downloadに保存される</p>
 </li>
-<li><p>アイテム登録者と管理者には、ファイルのInformamation画面に現在「有効」であるワンタイムURLの一覧が表示される</p>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>　　　　　　　　　　- ワンタイムURLは以下のロジックにより生成される</p>
+<pre class="language-"><code>                  - 「シークレットキー」「URL発行日」「URLのID」「アイテムID」「ファイル名」「有効期限」「ダウンロード上限回数」を足し合わせたバイト列から、SHA-256アルゴリズムでハッシュ値を作成
+
+                  - 上記「ハッシュ値」と「デリミタ(アンダースコア)」,「URLのID」を連結しbase64形式でエンコードし、これをトークンとする
+
+              - アイテム登録者と管理者には、ファイルのInformamation画面に現在「有効」であるワンタイムURLの一覧が表示される
+
+                  - 以下の要件をすべて満たす場合、そのURLは「有効」であると見なされる
+
+                      - ダウンロードされた回数が、指定されたダウンロード回数上限に満たない
+
+                      - 有効期限内である
+
+                      - 削除フラグが無効である
+
+                  - ワンタイムURL一覧表には以下の項目が表示される
+
+                      - 1.URL利用者(=利用申請を行ったユーザー)のメールアドレス
+
+                      - 2.URLが発行された日付
+
+                      - 3.URLの有効期限
+
+                      - 4.ダウンロード回数制限
+
+                      - 5.URLの削除ボタン
+
+                      - 6.URLのコピーボタン
+
+                          - 削除ボタンを押下すると、該当URLの論理削除フラグがチェックされ、非表示状態になる
+
+                          - コピーボタンを押下すると、該当URLをクリップボードにコピーする
+
+          - 有効なワンタイムURLにアクセスした場合、コンテンツファイルがダウンロードできる。
+
+              - 有効期限を超過している場合、エラーメッセージが表示される
+
+                  - 日本語：「ダウンロード有効期限を超過しています。」
+
+                  -  英語：「 The expiration date for download has been exceeded. 」
+
+              - ダウンロード回数を超過している場合、エラーメッセージが表示される
+
+                  - 日本語：「ダウンロード上限回数を超過しています。」
+
+                  - 英語：「 The download limit has been exceeded. 」
+
+              - 論理削除フラグが立っている場合、エラーメッセージが表示される
+
+                  - 日本語：「このURLは削除されました。」
+
+                  - 英語：「 This URL has been deactivated. 」
+
+          - 利用申請を承認されたユーザーには、申請ボタンではなくダウンロードボタンが表示されるようになる
+
+              - 発行されたワンタイムURLが失効した場合、申請ボタンに戻る
+
+              - 申請ボタンからダウンロードボタンになるのは、そのアイテムの制限公開のコンテンツファイルすべて（承認が行われた時点でのすべて）である。
+
+                  - ひとつの制限公開ファイルに対して利用申請が行われ、それが承認された場合、同アイテムに含まれるすべての制限公開ファイルに対するURLがそれぞれ発行される
+
+                  - 利用申請後にダウンロードボタンを使用する場合、ワンタイムURLへリダイレクトが行われるため、リンクに直接アクセスする場合と内部の処理は同様である
+
+          - 各ワンタイムURLの初回利用時、ユーザーのアカウントに応じた利用報告ワークフローのリンクが利用者にメールで通知される
+
+              - ゲストユーザの利用報告ワークフローに対して、
+                リンクの有効期限は【Administration \&gt; Setting \&gt; Restricted Access画面】での「利用報告ワークフローへのアクセス」(Usage Report Workflow Access)エリアで設定される
+
+                  - 設定された有効期限を超過した場合、対象の利用報告ワークフローのステータスを「キャンセル」に自動で更新する
+
+                  - 設定された有効期限を超過したリンクにアクセスした場合は、エラーページを表示する
+
+                      - weko\_workflow.utils.validate\_guest\_activity\_expiredを使用する。
+
+                      - 日本語：「指定したリンクはアクセス有効期限を超過しています。 」
+
+                      - 英語：「The specified link has expired.」
+</code></pre><!-- 
+              - シークレットURLを使用しダウンロードした場合運用側で以下の内容を取得しログをテーブルfile_url_download_logにレコードを作成、査読者を追跡できる
+
+                  - 「作成日時」
+
+                  - 「更新日時」
+
+                  - 「識別子」
+
+                  - 「URL種別」
+
+                  - 「シークレットURLID」
+
+                  - 「IPアドレス」
+
+                  - 「ファイルのアクセス形態」
+
+                  - 「URLトークン」 -->
 <ul>
-<li><p>以下の要件をすべて満たす場合、そのURLは「有効」であると見なされる</p>
-<ul>
-<li><p>ダウンロードされた回数が、指定されたダウンロード回数上限に満たない</p>
-</li>
-<li><p>有効期限内である</p>
-</li>
-<li><p>削除フラグが無効である</p>
-</li>
-</ul>
-</li>
-<li><p>ワンタイムURL一覧表には以下の項目が表示される</p>
-<ul>
-<li><p>1.URL利用者(=利用申請を行ったユーザー)のメールアドレス</p>
-</li>
-<li><p>2.URLが発行された日付</p>
-</li>
-<li><p>3.URLの有効期限</p>
-</li>
-<li><p>4.ダウンロード回数制限</p>
-</li>
-<li><p>5.URLの削除ボタン</p>
-</li>
-<li><p>6.URLのコピーボタン</p>
-<ul>
-<li><p>削除ボタンを押下すると、該当URLの論理削除フラグがチェックされ、非表示状態になる</p>
-</li>
-<li><p>コピーボタンを押下すると、該当URLをクリップボードにコピーする</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>有効なワンタイムURLにアクセスした場合、コンテンツファイルがダウンロードできる。</p>
-<ul>
-<li><p>有効期限を超過している場合、エラーメッセージが表示される</p>
-<ul>
-<li><p>日本語：「ダウンロード有効期限を超過しています。」</p>
-</li>
-<li><p>英語：「 The expiration date for download has been exceeded. 」</p>
-</li>
-</ul>
-</li>
-<li><p>ダウンロード回数を超過している場合、エラーメッセージが表示される</p>
-<ul>
-<li><p>日本語：「ダウンロード上限回数を超過しています。」</p>
-</li>
-<li><p>英語：「 The download limit has been exceeded. 」</p>
-</li>
-</ul>
-</li>
-<li><p>論理削除フラグが立っている場合、エラーメッセージが表示される</p>
-<ul>
-<li><p>日本語：「このURLは削除されました。」</p>
-</li>
-<li><p>英語：「 This URL has been deactivated. 」</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>利用申請を承認されたユーザーには、申請ボタンではなくダウンロードボタンが表示されるようになる</p>
-<ul>
-<li><p>発行されたワンタイムURLが失効した場合、申請ボタンに戻る</p>
-</li>
-<li><p>申請ボタンからダウンロードボタンになるのは、そのアイテムの制限公開のコンテンツファイルすべて（承認が行われた時点でのすべて）である。</p>
-<ul>
-<li><p>ひとつの制限公開ファイルに対して利用申請が行われ、それが承認された場合、同アイテムに含まれるすべての制限公開ファイルに対するURLがそれぞれ発行される</p>
-</li>
-<li><p>利用申請後にダウンロードボタンを使用する場合、ワンタイムURLへリダイレクトが行われるため、リンクに直接アクセスする場合と内部の処理は同様である</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>各ワンタイムURLの初回利用時、ユーザーのアカウントに応じた利用報告ワークフローのリンクが利用者にメールで通知される</p>
-<ul>
-<li><p>ゲストユーザの利用報告ワークフローに対して、
-リンクの有効期限は【Administration &gt; Setting &gt; Restricted Access画面】での「利用報告ワークフローへのアクセス」(Usage Report Workflow Access)エリアで設定される</p>
-<ul>
-<li><p>設定された有効期限を超過した場合、対象の利用報告ワークフローのステータスを「キャンセル」に自動で更新する</p>
-</li>
-<li><p>設定された有効期限を超過したリンクにアクセスした場合は、エラーページを表示する</p>
-<ul>
-<li><p>weko_workflow.utils.validate_guest_activity_expiredを使用する。</p>
-</li>
-<li><p>日本語：「指定したリンクはアクセス有効期限を超過しています。 」</p>
-</li>
-<li><p>英語：「The specified link has expired.」
-&lt;!-- </p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>シークレットURLを使用しダウンロードした場合運用側で以下の内容を取得しログをテーブルfile_url_download_logにレコードを作成、査読者を追跡できる</p>
-<ul>
-<li><p>「作成日時」</p>
-</li>
-<li><p>「更新日時」</p>
-</li>
-<li><p>「識別子」</p>
-</li>
-<li><p>「URL種別」</p>
-</li>
-<li><p>「シークレットURLID」</p>
-</li>
-<li><p>「IPアドレス」</p>
-</li>
-<li><p>「ファイルのアクセス形態」</p>
-</li>
-<li><p>「URLトークン」 --&gt;</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
 <li><p>シークレットURLについて</p>
 <ul>
 <li><p>シークレットURLへアクセスしたとき、URL論理削除フラグが立っておらず、またURLの有効期限とダウンロード回数が超えない場合、コンテンツファイルがダウンロードされる</p>
@@ -3233,7 +3207,7 @@
 </ul>
 </li>
 </ul>
-<p>(2) ファイル詳細画面に表示、ダウンロードする処理</p>
+<h4 id="2-ファイル詳細画面に表示、ダウンロードする処理"><a name="2-ファイル詳細画面に表示、ダウンロードする処理" class="plugin-anchor" href="#2-ファイル詳細画面に表示、ダウンロードする処理"><i class="fa fa-link" aria-hidden="true"></i></a>(2) ファイル詳細画面に表示、ダウンロードする処理</h4>
 <ul>
 <li><p>表示処理について</p>
 <ul>
@@ -3264,7 +3238,7 @@
 <li><p>ダウンロード処理について<br></br>(1)での「ダウンロード処理について」のようにチェックする</p>
 </li>
 </ul>
-<p>(3)ファイルバージョンの情報をweko_records_ui.view.default_view_methodで取得し、更新履歴情報を表示する</p>
+<h4 id="3ファイルバージョンの情報をwekorecordsuiviewdefaultviewmethodで取得し、更新履歴情報を表示する"><a name="3ファイルバージョンの情報をwekorecordsuiviewdefaultviewmethodで取得し、更新履歴情報を表示する" class="plugin-anchor" href="#3ファイルバージョンの情報をwekorecordsuiviewdefaultviewmethodで取得し、更新履歴情報を表示する"><i class="fa fa-link" aria-hidden="true"></i></a>(3)ファイルバージョンの情報をweko_records_ui.view.default_view_methodで取得し、更新履歴情報を表示する</h4>
 <ul>
 <li><p>データベースから該当ファイルの情報を以下のように取得する</p>
 <ul>
@@ -3285,8 +3259,10 @@
 </ul>
 <p>【補足】</p>
 <ul>
-<li><p>ファイルプレビューのビューアは、ファイルのアクセス権限と同様。<br></br>ファイルのアクセス権限がないユーザーは、ファイルプレビュー及びファイルの情報を見ることはできない</p>
-</li>
+<li>ファイルプレビューのビューアは、ファイルのアクセス権限と同様。<br></br>ファイルのアクセス権限がないユーザーは、ファイルプレビュー及びファイルの情報を見ることはできない</li>
+</ul>
+<h4 id="4マルチパートダウンロード処理について"><a name="4マルチパートダウンロード処理について" class="plugin-anchor" href="#4マルチパートダウンロード処理について"><i class="fa fa-link" aria-hidden="true"></i></a>(4)マルチパートダウンロード処理について</h4>
+<ul>
 <li><p>ファイルダウンロードの際にテーブルfile_url_download_logにレコードを作成し、査読者を追跡できる。ログは以下のように情報を記録する。</p>
 <ul>
 <li>作成日時：ダウンロード日時</li>
@@ -3297,10 +3273,12 @@
 <li>ワンタイムURL ID：種別が「secret」の場合null</li>
 <li>IPアドレス：種別が「onetime」の場合null</li>
 <li>ファイルのアクセス形態：3つの値のうち１つを取る列挙型。非公開の場合「open_no」、エンバーゴの場合「open_date」、制限公開の場合「open_restricted」</li>
-<li>URLトークン：URLのトークン
-(4)マルチパートダウンロード処理について</li>
+<li>URLトークン：URLのトークン</li>
 </ul>
 </li>
+</ul>
+<p>(4)マルチパートダウンロード処理について</p>
+<ul>
 <li><p>閾値を超えるサイズのファイルについては、マルチパートダウンロードを行う。マルチパートダウンロードは、本文URLとは異なるURLからファイルをダウンロードできる。</p>
 </li>
 <li><p>閾値は、定数「MAX_DOWNLOAD_SIZE_AT_ONE_TIME」にて設定できる。1パートあたりのサイズは、定数「 DOWNLOAD_SIZE_IN_ONE_PART」にて設定できる。</p>
@@ -3324,56 +3302,45 @@
 </li>
 </ul>
 <p>1TBファイルまではダウンロードの動作を確認済みだが、それより大きいファイルについては、動作を保証していない。</p>
-<ul>
-<li><blockquote>
-<p>更新履歴</p>
-</blockquote>
-</li>
-</ul>
+<h2 id="更新履歴"><a name="更新履歴" class="plugin-anchor" href="#更新履歴"><i class="fa fa-link" aria-hidden="true"></i></a>更新履歴</h2>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>日付</th>
 <th>GitHubコミットID</th>
 <th>更新内容</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td><blockquote>
-<p>2023/08/31</p>
-</blockquote></td>
+<tr>
+<td>2023/08/31</td>
 <td>353ba1deb094af5056a58bb40f07596b8e95a562</td>
 <td>初版作成</td>
 </tr>
-<tr class="even">
-<td><blockquote>
-<p>2023/11/11</p>
-</blockquote></td>
-<td>V0.9.27</td>
+<tr>
+<td>2023/11/11</td>
 <td></td>
+<td>V0.9.27</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>2023/12/22</td>
 <td>4ec162bf3bdcf843df23863fbf7d5bb36ba875e4</td>
 <td>W2023-42</td>
 </tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><blockquote>
-<p>2024/07/1</p>
-</blockquote></td>
+<tr>
+<td>2024/07/1</td>
 <td>7733de131da9ad59ab591b2df1c70ddefcfcad98</td>
 <td>v1.0.7対応</td>
+</tr>
+<tr>
+<td>2025/09/15</td>
+<td>c387c0a978c9eb318044b3d17d72838872012370</td>
+<td>Import to GakuNin RDM機能を追加</td>
+</tr>
+<tr>
+<td>2025/10/31</td>
+<td>160a811eed2c61492558905db34fa0619da6b18f</td>
+<td>設定値による機能制御を記載</td>
 </tr>
 </tbody>
 </table>
@@ -3420,7 +3387,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"USER-3-2: コンテンツファイル管理 51","level":"2.11","depth":1,"next":{"title":"USER-3-3: アイテムバージョン管理 63","level":"2.12","depth":1,"path":"user/USER_3_3.md","ref":"./user/USER_3_3.md","articles":[]},"previous":{"title":"USER-3-1: メタデータ表示 44","level":"2.10","depth":1,"path":"user/USER_3_1.md","ref":"./user/USER_3_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_3_2.md","mtime":"2025-10-27T01:52:07.744Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-10-27T03:25:32.318Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"USER-3-2: コンテンツファイル管理 51","level":"2.11","depth":1,"next":{"title":"USER-3-3: アイテムバージョン管理 63","level":"2.12","depth":1,"path":"user/USER_3_3.md","ref":"./user/USER_3_3.md","articles":[]},"previous":{"title":"USER-3-1: メタデータ表示 44","level":"2.10","depth":1,"path":"user/USER_3_1.md","ref":"./user/USER_3_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_3_2.md","mtime":"2025-11-05T07:44:25.948Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

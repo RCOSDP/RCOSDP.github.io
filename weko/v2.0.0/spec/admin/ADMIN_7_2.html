@@ -2482,7 +2482,7 @@
 </li>
 </ul>
 </li>
-<li><p>システム管理者でない（リポジトリ管理者、サブリポジトリ管理者）の場合、利用申請に関するワークフローは閲覧・編集ができない。また利用申請に関するワークフローを追加できない。（利用申請フラグが非表示であり、登録時に利用申請フラグがFalseとして登録される）。利用申請フラグの編集はシステム管理者のみ可能。</p>
+<li><p>WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG が True かつシステム管理者でない（リポジトリ管理者、サブリポジトリ管理者）の場合、利用申請に関するワークフローは閲覧・編集ができない。また利用申請に関するワークフローを追加できない。（利用申請フラグが非表示であり、登録時に利用申請フラグがFalseとして登録される）。利用申請フラグの編集は WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG と WEKO_ADMIN_DISPLAY_RESTRICTED_SETTINGS が True かつシステム管理者の場合のみ可能。</p>
 </li>
 <li><p>戻るボタンをクリックすると、一つ前のアクションに戻ることが可能(v1.0.7追加)。</p>
 </li>
@@ -2578,8 +2578,31 @@
 </ul>
 <blockquote>
 <p>ワークフロー名押下で編集画面に移行した際は、[保存（Save）]ボタンの横に[削除（Delete）]ボタンが配置される。[削除（Delete）]ボタン押下時は、削除可能なワークフローである場合はdb内のworkflow_workflowテーブルのis_deletedカラムにチェックが入る。</p>
+<p>設定値</p>
 </blockquote>
 <ul>
+<li><blockquote>
+<p>WEKO_ADMIN_DISPLAY_RESTRICTED_SETTINGS</p>
+</blockquote>
+<ul>
+<li><blockquote>
+<p>パス：<a href="https://github.com/RCOSDP/weko/blob/develop_v2.0.0/modules/weko-admin/weko_admin/config.py#L1380" target="_blank">https://github.com/RCOSDP/weko/blob/develop_v2.0.0/modules/weko-admin/weko_admin/config.py#L1380</a></p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>初期値：False</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>利用申請フラグの表示非表示を切り替える。</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>scripts/instance.cfg で定義されている場合は、そちらの設定を優先する。</p>
+</blockquote>
+</li>
+</ul>
+</li>
 <li><blockquote>
 <p>更新履歴</p>
 </blockquote>
@@ -2603,6 +2626,11 @@
 <td style="text-align:center">&gt; 2025/01/23</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">サブリポジトリ対応</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt; 2025/10/31</td>
+<td style="text-align:center">160a811eed2c61492558905db34fa0619da6b18f</td>
+<td style="text-align:center">要素の表示条件・アクセス権限を記載</td>
 </tr>
 </tbody>
 </table>
@@ -2649,7 +2677,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-7-2: ワークフロー 253","level":"2.75","depth":1,"next":{"title":"ADMIN-7-3: ワークスペース設定","level":"2.76","depth":1,"path":"admin/ADMIN_7_3.md","ref":"admin/ADMIN_7_3.md","articles":[]},"previous":{"title":"ADMIN-7-1: フロー 242","level":"2.74","depth":1,"path":"admin/ADMIN_7_1.md","ref":"./admin/ADMIN_7_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_7_2.md","mtime":"2025-10-27T01:52:07.632Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-10-27T03:25:32.318Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-7-2: ワークフロー 253","level":"2.75","depth":1,"next":{"title":"ADMIN-7-3: ワークスペース設定","level":"2.76","depth":1,"path":"admin/ADMIN_7_3.md","ref":"admin/ADMIN_7_3.md","articles":[]},"previous":{"title":"ADMIN-7-1: フロー 242","level":"2.74","depth":1,"path":"admin/ADMIN_7_1.md","ref":"./admin/ADMIN_7_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_7_2.md","mtime":"2025-11-05T07:44:25.945Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2387,15 +2387,33 @@
 </li>
 <li><p>デフォルトは[This user]とする（アイテム登録者のみをContributorとする）</p>
 </li>
-<li><p>他のユーザから選択する場合は、[Other users]を選択する<br></br>選択すると、ユーザ設定エリア(下記2項目)が表示される</p>
+<li><p>他のユーザから選択する場合は、[Other user]を選択する<br></br>選択すると、Owner・Contributor の Username テキストおよび Email テキスト、ゴミ箱アイコン、Newボタンが表示される。</p>
 <ul>
-<li><p>Username</p>
+<li><p>WEKO_ITEMS_UI_PROXY_POSTING が False の場合、Ownerの Username テキストと Email テキストのみ活性化し、New ボタンが非活性となる。</p>
 </li>
-<li><p>Email</p>
+<li><p>[Other user]で未登録の場合：初期表示は、Username テキストと Email テキストは空欄である。</p>
+</li>
+<li><p>[Other user]で登録済みの場合：初期表示は、Username テキストと Email テキストに登録済みのユーザー名とEmailアドレスが表示される。登録済みのユーザーと、Newボタン押下で追加される行はラジオボタンで選択できる。<br></br>ラジオボタンのON・OFFで以下のように表示が切り替わる。</p>
+<ul>
+<li><p>ラジオボタンON：Username ラベルは Owner へ変更される。Contributor から Owner になる。ゴミ箱アイコンが非表示になる。</p>
+</li>
+<li><p>ラジオボタンOFF：Username ラベルは Contributor へ変更される。Owner 　から Contributor になる。ゴミ箱アイコンが表示になる。</p>
 </li>
 </ul>
 </li>
-<li><p>上記の2項目に任意の文字列を入力すると、インクリメンタルサーチでヒットするユーザが候補一覧に自動表示される</p>
+<li><p>Newボタン押下：Username ラベルは Username、Username テキストと Email テキストは空欄で1行追加する。<br></br>追加できる行に上限はない。</p>
+</li>
+<li><p>ゴミ箱アイコン押下：2行以上存在する場合、1行削除する。</p>
+<ul>
+<li><p>1行のみ存在し、ゴミ箱アイコンを押下した場合、以下のエラーメッセージを表示し、削除をキャンセルする。<br></br>英語：「At least 1 user is required.」<br></br>日本語：「ユーザーは1名以上必要です。」</p>
+</li>
+<li><p>削除対象のユーザーのログイン状態をチェックする。ログインしている場合、以下のエラーメッセージを表示し、削除をキャンセルする。<br></br>英語：「Logged-in user cannot be deleted.」<br></br>日本語：「ログインユーザーは削除できません。」</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Username または Email に任意の文字列を入力すると、インクリメンタルサーチでヒットするユーザが候補一覧に自動表示される</p>
 <ul>
 <li>ヒットするユーザが無い場合、「No result found」のメッセージを候補一覧に表示する</li>
 </ul>
@@ -2404,19 +2422,32 @@
 </li>
 <li><p>「Username」及び「Email」を手動入力することもできる</p>
 </li>
-<li><p>［次へ（Next）］ボタンを押したときに、以下のチェックを行う</p>
+<li><p>「保存」ボタンを押したときに、以下のチェックを行う</p>
 <ul>
-<li><p>入力したUsernameが存在しない、または[Other users]を選択してユーザ設定エリアに何も入力していない場合は、指定されたユーザが存在しない旨メッセージを表示し、入力確定できない<br></br>メッセージ：<br></br>「Shared user information is not valid<br></br>Please check it again!」</p>
+<li><p>[Other user]のユーザーで Owner が選択されていない場合、以下のエラーメッセージを表示し、保存をキャンセルする。<br></br>メッセージ：<br></br>「Be sure to select an owner.」</p>
 </li>
-<li><p>Usernameを入力しておらず、入力したEmailが存在しない場合は、Usernameの入力が必要である旨のメッセージを表示し、入力確定できない<br></br>メッセージ：<br></br>「An error ocurred while processing the input data!<br></br>Cannot read properties of null (reading 'username')」</p>
+<li><p>Owner の Email テキストが空白である場合、以下のエラーメッセージを表示し、保存をキャンセルする。<br></br>メッセージ：<br></br>「[owner email address is blank.]」</p>
 </li>
-<li><p>入力ユーザがアイテム登録ユーザーであれば、メッセージを表示する<br></br>メッセージ：「You cannot specify yourself in "Other users" setting.」</p>
+<li><p>WEKO_ITEMS_UI_PROXY_POSTING がTrue かつ[Other user]のユーザーの中にログインしているユーザーが存在しない場合、以下のエラーメッセージを表示し、保存をキャンセルする。<br></br>メッセージ：<br></br>英語：「Logged-in user cannot be deleted」<br></br>日本語：「ログインユーザーは削除できません。」</p>
 </li>
 </ul>
 </li>
-<li><p>Contributorとして指定されたユーザは、アイテム登録者と同様に該当アイテムの登録(編集)権限が付与される</p>
+<li><p>［次へ（Next）］ボタンを押したときに、以下のチェックを行う</p>
+<ul>
+<li><p>入力したUsernameが存在しない、または[Other user]を選択してユーザ設定エリアに何も入力していない場合は、指定されたユーザが存在しない旨メッセージを表示し、入力確定できない<br></br>メッセージ：<br></br>「Shared user information is not valid<br></br>Please check it again!」</p>
 </li>
-<li><p>Contributorの設定は1つのユーザのみできる</p>
+<li><p>Usernameを入力しておらず、入力したEmailが存在しない場合は、Usernameの入力が必要である旨のメッセージを表示し、入力確定できない<br></br>メッセージ：<br></br>「An error ocurred while processing the input data!<br></br>Cannot read properties of null (reading 'username')」</p>
+</li>
+<li><p>WEKO_ITEMS_UI_PROXY_POSTING が False かつ入力ユーザがアイテム登録ユーザーであれば、メッセージを表示する<br></br>メッセージ：「You cannot specify yourself in "Other user" setting.」</p>
+</li>
+<li><p>[Other user]のユーザーで Owner が選択されていない場合、以下のエラーメッセージを表示し、保存をキャンセルする。<br></br>メッセージ：<br></br>「Be sure to select an owner.」</p>
+<ul>
+<li>WEKO_ITEMS_UI_PROXY_POSTING がTrue かつ[Other user]のユーザーの中にログインしているユーザーが存在しない場合、以下のエラーメッセージを表示し、保存をキャンセルする。<br></br>メッセージ：<br></br>英語：「Logged-in user cannot be deleted」<br></br>日本語：「ログインユーザーは削除できません。」</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Contributorとして指定されたユーザは、アイテム登録者と同様に該当アイテムの登録(編集)権限が付与される      </p>
 </li>
 </ul>
 <!-- end list -->
@@ -2471,7 +2502,7 @@
 </blockquote>
 </li>
 <li><blockquote>
-<p>［次へ（Next）］または［保存（Save）］ボタンを押すと、代理投稿としてユーザー情報を再度チェックする、問題なければ、入力したユーザーが「shared_user_id」としてメタデータに保存する</p>
+<p>［次へ（Next）］または［保存（Save）］ボタンを押すと、代理投稿としてユーザー情報を再度チェックする、問題なければ、入力したユーザーが「shared_user_ids」としてメタデータに保存する</p>
 </blockquote>
 </li>
 </ul>
@@ -2480,15 +2511,29 @@
 </blockquote>
 <ul>
 <li><blockquote>
-<p>アクティビティにアクセスすると、「check_authority_action」メソッドでログインしているユーザーの権限をチェックし、管理者及び登録者以外、ログインしているユーザーIDが「shared_user_id」に属すれば、アクティビティ詳細画面に移動する</p>
+<p>アクティビティにアクセスすると、「check_authority_action」メソッドでログインしているユーザーの権限をチェックし、管理者及び登録者以外、ログインしているユーザーIDが「shared_user_ids」に属すれば、アクティビティ詳細画面に移動する</p>
 </blockquote>
 </li>
 </ul>
 <!-- end list -->
 <ul>
 <li><blockquote>
+<p>設定値</p>
+<pre class="language-"><code>- &gt; WEKO_ITEMS_UI_PROXY_POSTING
+</code></pre></blockquote>
+<pre class="language-"><code>    - &gt; パス：&lt;https://github.com/RCOSDP/weko/blob/develop_v2.0.0/modules/weko-items-ui/weko_items_ui/config.py&gt;
+
+    - &gt; 初期値： False
+
+    - &gt; 代理投稿を複数登録可能な機能の有効無効を切り替える。
+
+    - &gt; scripts/instance.cfg で定義されている場合は、そちらの設定を優先する。
+</code></pre><ul>
+<li><blockquote>
 <p>更新履歴</p>
 </blockquote>
+</li>
+</ul>
 </li>
 </ul>
 <table>
@@ -2506,6 +2551,13 @@
 </blockquote></td>
 <td>353ba1deb094af5056a58bb40f07596b8e95a562</td>
 <td>初版作成</td>
+</tr>
+<tr class="even">
+<td><blockquote>
+<p>2025/10/31</p>
+</blockquote></td>
+<td>160a811eed2c61492558905db34fa0619da6b18f</td>
+<td>設定値による代理投稿者の制御を記載</td>
 </tr>
 </tbody>
 </table></body></html>
@@ -2551,7 +2603,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"USER-4-7: Item Registration：代理投稿 28","level":"2.29","depth":1,"next":{"title":"USER-4-8: Item Registration：フィードバックメール機能 30","level":"2.30","depth":1,"path":"user/USER_4_8.md","ref":"./user/USER_4_8.md","articles":[]},"previous":{"title":"USER-4-6: Item Registration：メタデータ入力 23","level":"2.28","depth":1,"path":"user/USER_4_6.md","ref":"./user/USER_4_6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_4_7.md","mtime":"2025-04-04T05:35:16.809Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-10-27T03:25:32.318Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"USER-4-7: Item Registration：代理投稿 28","level":"2.29","depth":1,"next":{"title":"USER-4-8: Item Registration：フィードバックメール機能 30","level":"2.30","depth":1,"path":"user/USER_4_8.md","ref":"./user/USER_4_8.md","articles":[]},"previous":{"title":"USER-4-6: Item Registration：メタデータ入力 23","level":"2.28","depth":1,"path":"user/USER_4_6.md","ref":"./user/USER_4_6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_4_7.md","mtime":"2025-11-05T07:44:25.949Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

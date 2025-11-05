@@ -2420,7 +2420,7 @@
 </li>
 <li><p>利用申請③：ワークフロー終了後の挙動</p>
 <ul>
-<li><p>アイテム詳細画面の「申請」ボタンから起動したワークフローが「作業済み(Done)」となった際にダウンロード用のURL(以下、ワンタイムURL)をメールで通知する。リンクの有効期限とダウンロード回数は【Administration &gt; Setting &gt; Restricted Access画面】での「コンテンツファイルのダウンロード」(Content File Download)エリアで設定される</p>
+<li><p>WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG が True かつアイテム詳細画面の「申請」ボタンから起動したワークフローが「作業済み(Done)」となった際にダウンロード用のURL(以下、ワンタイムURL)をメールで通知する。リンクの有効期限とダウンロード回数は【Administration &gt; Setting &gt; Restricted Access画面】での「コンテンツファイルのダウンロード」(Content File Download)エリアで設定される</p>
 </li>
 <li><p>ワンタイムURLへアクセスした際、その時点でまだ有効なURLであればダウンロードが開始する</p>
 <ul>
@@ -2459,6 +2459,8 @@
 <li><p>ファイルあるいはアイテムが削除された場合</p>
 </li>
 <li><p>システムのアップデートによりURL情報を保存するデータベースに変更が生じた場合</p>
+</li>
+<li><p>WEKO_ADMIN_RESTRICTED_ACCESS_DISPLAY_FLAG が False の場合</p>
 </li>
 </ul>
 </li>
@@ -2527,6 +2529,13 @@
 <td>353ba1deb094af5056a58bb40f07596b8e95a562</td>
 <td>初版作成</td>
 </tr>
+<tr class="even">
+<td><blockquote>
+<p>2025/10/31</p>
+</blockquote></td>
+<td>160a811eed2c61492558905db34fa0619da6b18f</td>
+<td>コンフィグ値による条件を記載</td>
+</tr>
 </tbody>
 </table></body></html>
                                 
@@ -2571,7 +2580,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RESTRICTED_ACCESS-13-2: アイテム詳細(制限公開) 376","level":"2.161","depth":1,"next":{"title":"RESTRICTED_ACCESS-13-3: ワークフロー管理（制限公開） 378","level":"2.162","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_03.md","ref":"./restricted_access/RESTRICTED_ACCESS_03.md","articles":[]},"previous":{"title":"RESTRICTED_ACCESS-13-1: アイテムタイプ管理（制限公開） 373","level":"2.160","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_01.md","ref":"./restricted_access/RESTRICTED_ACCESS_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"restricted_access/RESTRICTED_ACCESS_02.md","mtime":"2025-10-27T01:52:07.720Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-10-27T03:25:32.318Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RESTRICTED_ACCESS-13-2: アイテム詳細(制限公開) 376","level":"2.161","depth":1,"next":{"title":"RESTRICTED_ACCESS-13-3: ワークフロー管理（制限公開） 378","level":"2.162","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_03.md","ref":"./restricted_access/RESTRICTED_ACCESS_03.md","articles":[]},"previous":{"title":"RESTRICTED_ACCESS-13-1: アイテムタイプ管理（制限公開） 373","level":"2.160","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_01.md","ref":"./restricted_access/RESTRICTED_ACCESS_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"restricted_access/RESTRICTED_ACCESS_02.md","mtime":"2025-11-05T07:44:25.946Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

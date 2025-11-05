@@ -2359,46 +2359,56 @@
 </li>
 <li><p>「Action User」カラムに、アクションを実行するユーザーを限定できる</p>
 <ul>
-<li><p>「Action User」プルダウンを選択する。「Action User」プルダウンでの選択肢は現在システムに登録されたユーザーである</p>
+<li><p>「Action User」プルダウンから選択する。「Action User」プルダウンの選択肢は以下である。</p>
 <ul>
+<li><p>システム管理者、リポジトリ管理者は、システムに登録されたすべてのユーザが表示される。</p>
+</li>
+<li><p>サブリポジトリ管理者は、自身が管理するサブリポジトリに関連するユーザのみが表示される。</p>
+</li>
+<li><p>「Item Registration」アクションに対して</p>
+<ul>
+<li><p>「Action User」プルダウンの値下にある、「登録者にメールを送信する」チェックボックスと「利用申請時に、アイテム登録者に対しメールを送信する」チェックボックスで利用申請時に送信するメールの送信可否を設定する。</p>
+<ul>
+<li><p>admin_settings テーブルの name が restricted_access のレコードの settings.edit_mail_templates_enable が true の場合のみ有効</p>
+</li>
+<li><p>「登録者にメールを送信する」チェックボックス：利用申請時に、申請者に対して送信するメールを設定する。</p>
+</li>
+<li><p>「利用申請時に、アイテム登録者に対しメールを送信する」チェックボックス：利用登録/利用申請時に、申請先アイテムの登録者に対して送信するメールを設定する。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>「Approval」アクションに対して</p>
 <ul>
-<li><p>選択肢はシステムに登録しているユーザーと、「プロパティを指定」(Specify Property)である</p>
+<li><p>選択肢は上記のユーザーと、「アイテム登録者」、「プロパティを指定」(Specify Property)である</p>
 <ul>
-<li><p>「プロパティを指定」(Specify Property)を選択した場合、「プロパティを指定する」(Specify Property)モーダル画面を表示する。当該画面でプロパティを選択する</p>
+<li><p>「アイテム登録者」および「プロパティを指定」は　admin_settings テーブルの name が restricted_access のレコードの settings.edit_mail_templates_enable が true の場合のみ有効</p>
 </li>
-<li><p>モーダル画面には、プロパティ定義に「"approval":true」キーワードを持つプロパティ名を表示する</p>
+<li><p>「アイテム登録者」を設定した場合には、workflow_flow_action_role テーブルの action_item_registrant に true を設定する。</p>
 </li>
-<li><p>モーダルに表示しているプロパティを選択して「設定」(Setting)ボタンを押すことで、プロパティを指定できる</p>
+<li><p>action_item_registrant が true の場合には該当フローを用いたワークフローで approval 時にアイテム登録者が承認者として action_user に設定される。</p>
 </li>
-<li><p>「閉じる」（Close）ボタンを押すと、モーダルを閉じる</p>
+<li><p>「アイテム登録者」を選択した場合には、「承認依頼通知メール」は発行されない。</p>
+</li>
+<li><p>「プロパティを指定」(Specify Property)を選択した場合、「プロパティを指定する」(Specify Property)モーダル画面を表示する。当該画面でプロパティを選択する。</p>
+</li>
+<li><p>モーダル画面には、プロパティ定義に「"approval":true」キーワードを持つプロパティ名を表示する。</p>
+</li>
+<li><p>モーダルに表示しているプロパティを選択して「設定」(Setting)ボタンを押すことで、プロパティを指定できる。</p>
+</li>
+<li><p>「閉じる」（Close）ボタンを押すと、モーダルを閉じる。</p>
 </li>
 </ul>
 </li>
-<li><p>「Item Resistration」アクションの以下チェックボックスにチェックを入れることで、管理者画面で登録したメールを自動送信することができる</p>
+<li><p>「Approval」アクションごとに通知メールを設定できるモーダル画面を表示する「通知メール設定」ボタンを表示する。</p>
 <ul>
-<li><p>チェックボックス：「Send an email to the registrant」<br></br>Item Resistration登録完了時に、登録者にリマインドメールを送信する<br></br><strong>**</strong>*チェックボックスをクリックすると、チェックボックス下のリストボックスが活性する。</p>
-<ul>
-<li>リストボックスから、【Admin &gt; 設定 &gt; メールテンプレート】で登録したメールのタイトルを選択することができる。</li>
-</ul>
+<li><p>admin_settings テーブルの name が restricted_access のレコードの settings.edit_mail_templates_enable が true の場合のみ有効</p>
+</li>
+<li><p>モーダル画面に表示されたチェックボックスにチェックを入れ、プルダウンからメールテンプレートを設定することで、管理者画面で登録したメールを自動送信することができる。</p>
 </li>
 </ul>
 </li>
-<li><p>「Approval」アクションごとに以下チェックボックスにチェックを入れることで、管理者画面で登録したメールを自動送信することができる</p>
-<ul>
-<li><p>チェックボックス</p>
-<ul>
-<li><p>「承認依頼通知メール」（Approval Request Notification Email）<br></br>Approvalフロー遷移時に、設定した承認者に承認を依頼するメールを送信する</p>
-</li>
-<li><p>「承認却下通知メール」（Approval Rejection Notification Email）<br></br>Approvalフローにて承認者が却下を行った場合、登録者に承認者が却下された旨を通知するメールを送信する</p>
-</li>
-<li><p>「承認通知メール」（Approval Notification Email）<br></br>Approvalフローにて承認者が承認を行った場合、登録者に承認者が承認された旨を通知するメールを送信する</p>
-</li>
-</ul>
-</li>
-<li><p>チェックボックスをクリックすると、チェックボックス下のリストボックスが活性する。</p>
-<ul>
-<li>リストボックスから、【Admin &gt; 設定 &gt; メールテンプレート】で登録したメールのタイトルを選択することができる。</li>
 </ul>
 </li>
 </ul>
@@ -2407,16 +2417,24 @@
 </li>
 </ul>
 </li>
-<li><p>「Deny」チェックボックスにチェックを入れる場合、選択されているユーザーが実施不可とする</p>
-</li>
 </ul>
-</li>
-<li><p>「Change Order」カラムにアクションの順序を設定できる<br></br>一番上の項目は、［↑］ボタンが無効になる。一番下の項目は、［↓］ボタンが無効になる</p>
-</li>
-<li><p>画面の下部に表示されている［保存］を押すと、フローを保存し、メッセージを一覧画面の上部に表示する<br></br>メッセージ：「Updated flow action successfully」</p>
-</li>
-</ul>
-</li>
+<pre class="language-"><code>                      - 「承認依頼通知メール」（Approval Request Notification Email）  
+                        承認者に承認を依頼するメールを送信する。
+
+                      - 「承認却下通知メール」（Approval Rejection Notification Email）  
+                        登録者に承認者が却下された旨を通知するメールを送信する。
+
+                      - 「承認通知メール」（Approval Notification Email」
+                        登録者に承認者が承認された旨を通知するメールを送信する。
+
+      - 「Deny」チェックボックスにチェックを入れる場合、選択されているユーザーが実施不可とする
+
+  - 「Change Order」カラムにアクションの順序を設定できる  
+    一番上の項目は、［↑］ボタンが無効になる。一番下の項目は、［↓］ボタンが無効になる
+
+  - 画面の下部に表示されている［保存］を押すと、フローを保存し、メッセージを一覧画面の上部に表示する  
+    メッセージ：「Updated flow action successfully」
+</code></pre><ul>
 <li><p>ワークフロー:　WorkFlow List</p>
 <ul>
 <li><p>【Admin &gt; WorkFlow &gt; WorkFlow List画面】に登録されたワークフローが一覧に表示される</p>
@@ -2431,7 +2449,7 @@
 <li>利用申請<br></br>ワークフロー: 利用申請<br></br>フロー：利用報申請<br></br>アイテムタイプ：利用申請<br></br>制限公開フラグ：チェックする<br></br>GakuNinRDM Flag：チェックしない<br></br>登録インデックスの指定：利用申請（インデックスにて登録）</li>
 <li><p>表示/非表示<br></br>　表示：System Administrator, Repository Administrator<br></br>　非表示：Contributor,Community Administrator</p>
 </li>
-<li><p>二段階利用申請<br></br>ワークフロー: 二段階利用申請<br></br>フロー：二段階利用申請<br></br>アイテムタイプ：二段階利用申請<br></br>制限公開フラグ：チェックする<br></br>GakuNinRDM Flag：チェックしない<br></br>登録インデックスの指定：利用申請（インデックスにて登録)</p>
+<li><p>二段階利用申請<br></br>ワークフロー: 二段階利用申請<br></br>フロー：二段階利用申請<br></br>アイテムタイプ：二段階利用申請<br></br>制限公開フラグ：チェックする<br></br>GakuNinRDM Flag：チェックしない<br></br>登録インデックスの指定：利用申請（インデックスにて登録）</p>
 </li>
 <li><p>表示/非表示<br></br>　表示：System Administrator, Repository Administrator<br></br>　非表示：Contributor,Community Administrator</p>
 </li>
@@ -2484,11 +2502,16 @@ GakuNinRDM Flag：チェックしない
 </thead>
 <tbody>
 <tr class="odd">
+<td>2025/10/31</td>
+<td>160a811eed2c61492558905db34fa0619da6b18f</td>
+<td>設定値による表示制御を記載</td>
+</tr>
+<tr class="even">
 <td>2024/01/19</td>
 <td></td>
 <td></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><blockquote>
 <p>2023/08/31</p>
 </blockquote></td>
@@ -2539,7 +2562,7 @@ GakuNinRDM Flag：チェックしない
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"RESTRICTED_ACCESS-13-3: ワークフロー管理（制限公開） 378","level":"2.162","depth":1,"next":{"title":"RESTRICTED_ACCESS-13-4: メールテンプレート 381","level":"2.163","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_04.md","ref":"./restricted_access/RESTRICTED_ACCESS_04.md","articles":[]},"previous":{"title":"RESTRICTED_ACCESS-13-2: アイテム詳細(制限公開) 376","level":"2.161","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_02.md","ref":"./restricted_access/RESTRICTED_ACCESS_02.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"restricted_access/RESTRICTED_ACCESS_03.md","mtime":"2025-10-27T01:52:07.720Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-10-27T03:25:32.318Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"RESTRICTED_ACCESS-13-3: ワークフロー管理（制限公開） 378","level":"2.162","depth":1,"next":{"title":"RESTRICTED_ACCESS-13-4: メールテンプレート 381","level":"2.163","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_04.md","ref":"./restricted_access/RESTRICTED_ACCESS_04.md","articles":[]},"previous":{"title":"RESTRICTED_ACCESS-13-2: アイテム詳細(制限公開) 376","level":"2.161","depth":1,"path":"restricted_access/RESTRICTED_ACCESS_02.md","ref":"./restricted_access/RESTRICTED_ACCESS_02.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"restricted_access/RESTRICTED_ACCESS_03.md","mtime":"2025-11-05T07:44:25.947Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

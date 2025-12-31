@@ -2685,16 +2685,32 @@ CNRIが有効である場合は、ハンドルを発行し、当該のエンド�
 </li>
 </ul>
 <ul>
-<li><p>インデックスのキャッシュについて</p>
-<ul>
-<li><p>インデックスのキャッシュはRedisサーバに以下キー名でインデックス保存時に作成される。</p>
-<ul>
-<li>index_tree_view_" + os.environ.get('INVENIO_WEB_HOST_NAME') + "_" + lang</li>
+<li>インデックスのキャッシュについて</li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">No.</th>
+<th style="text-align:left">キャッシュ名</th>
+<th style="text-align:left">有効期限</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">index<em>tree_view</em>" + os.environ.get('INVENIO<em>WEB_HOST_NAME') + "</em>" + lang</td>
+<td style="text-align:left">無期限</td>
+<td style="text-align:left">ユーザ権限に基づく加工前のルートインデックスのツリー情報。<br></br>　・キャッシュ名の［ホスト名(INVENIO_WEB_HOST_NAME)］、［言語(current_i18n.language)］は設定に応じて変わる<br></br>　　例）index_tree_view_weko3.example.org_ja<br></br>ユーザ＝認証あり:当該redisキャッシュを使用する。<br></br>ユーザ＝認証なし:No2のredisキャッシュが存在しない場合、No2のredisキャッシュ生成のために当該redisキャッシュを使用する。</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">index<em>reset_tree_view</em>" + os.environ.get('INVENIO<em>WEB_HOST_NAME') + "</em>" + lang</td>
+<td style="text-align:left">有効期限(秒) = 有効期限日時 - キャッシュ登録日時</td>
+<td style="text-align:left">非ログインユーザ向けに加工したMore表示が有効のルートインデックスのツリー情報<br></br>ツリー情報取得処理、詳細検索条件用の情報取得処理の改善用<br></br>・キャッシュ名の［ホスト名(INVENIO_WEB_HOST_NAME)］、［言語(current_i18n.language)］は設定に応じて変わる<br></br>例）index_reset_tree_view_weko3.example.org_ja<br></br>・有効期限の［有効期限日時］は、キャッシュ登録日の翌00時00分00秒とする<br></br>例）[キャッシュ登録日時］2025-04-01 23:59:00　［有効期限日時］2025-04-02 00:00:00　［有効期限］60秒<br></br>※公開日が未来日に設定されたインデックス情報は削除された状態でredisキャッシュに保存される。<br></br>そのため公開日を迎えたインデックスが表示されるように、日付が変わるタイミングで毎日キャッシュを削除する必要がある。<br></br>・ユーザ認証なしの権限に基づいた加工後のルートインデックスのツリー情報を保存する<br></br>ユーザ認証なしの場合に、当該redisキャッシュを使用する</td>
+</tr>
+</tbody>
+</table>
 <p>5. 設定</p>
 <ul>
 <li><p>GakuNin mAPから連携されたグループ情報の閲覧権限初期値を設定する。（Trueの場合、閲覧権限ありとして初期値を設定する。）</p>
@@ -3028,6 +3044,11 @@ CNRIが有効である場合は、ハンドルを発行し、当該のエンド�
 <td style="text-align:center">3581747ebfbda5f623e7b8da759293d2090c4112</td>
 <td style="text-align:center">インデックス公開ロック機能追加</td>
 </tr>
+<tr>
+<td style="text-align:center">2025/11/12</td>
+<td style="text-align:center">5254da1cf9caafb27a27f361ae36099da4f2c042</td>
+<td style="text-align:center">キャッシュ機能の改善</td>
+</tr>
 </tbody>
 </table>
 </body></html>
@@ -3073,7 +3094,7 @@ CNRIが有効である場合は、ハンドルを発行し、当該のエンド�
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-3-1: ツリー編集 155","level":"2.62","depth":1,"next":{"title":"ADMIN-3-2: 雑誌情報 162","level":"2.63","depth":1,"path":"admin/ADMIN_3_2.md","ref":"./admin/ADMIN_3_2.md","articles":[]},"previous":{"title":"ADMIN-2-5: RO-Crateインポート","level":"2.61","depth":1,"path":"admin/ADMIN_2_5.md","ref":"./admin/ADMIN_2_5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_3_1.md","mtime":"2025-10-27T01:52:07.618Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-3-1: ツリー編集 155","level":"2.62","depth":1,"next":{"title":"ADMIN-3-2: 雑誌情報 162","level":"2.63","depth":1,"path":"admin/ADMIN_3_2.md","ref":"./admin/ADMIN_3_2.md","articles":[]},"previous":{"title":"ADMIN-2-5: RO-Crateインポート","level":"2.61","depth":1,"path":"admin/ADMIN_2_5.md","ref":"./admin/ADMIN_2_5.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_3_1.md","mtime":"2025-11-12T10:34:35.933Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-12-31T14:49:00.748Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

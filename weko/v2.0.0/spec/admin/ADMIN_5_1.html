@@ -2514,12 +2514,8 @@
 </li>
 <li><p>外部著者IDテキストボックス：外部著者IDを入力する。<br></br>クリーンビルド環境の場合、初期に表示される選択肢は「ORCID, CiNii, KAKEN2,ROR」とする。</p>
 </li>
-<li><p>「ID Prefix」画面にはリスト上に "WEKO" が存在する(WEKO3で著者を一意に決定するWEKO著者ID)が、「著者ID」のプルダウンのリストには表示されず、初期で固定されている。
-"WEKO"は著者追加画面表示時に自動付番(初期値のWEKO著者IDはmax(WEKO ID)＋1)される。</p>
-</li>
-<li><p>外部著者識別子がWEKOの外部著者IDテキストボックスは必須項目とする。</p>
-</li>
-<li><p>外部著者識別子がWEKOの外部著者IDテキストボックスは半角数字のみとする。</p>
+<li><p>「ID Prefix」画面にはリスト上に "WEKO" が存在する(WEKO3で著者を一意に決定するWEKO著者ID)が、「著者ID」のプルダウンのリストには表示されない。
+"WEKO"は著者登録時に自動付番(初期値のWEKO著者IDは1, 以降は2, 3, ...と付番されている max(authors.id)＋１)される。</p>
 </li>
 <li><p>[確認（Confirm）]ボタンを押すと、選択された外部著者IDに応じたランディングページが表示される。</p>
 <ul>
@@ -2664,21 +2660,12 @@
   (Please set end date to be after start date.)」と表示される。</li>
 </ul>
 </li>
-<li><p>保存ボタンを押下時にWEKO IDが以下の場合でエラーを起こす</p>
-<ul>
-<li>入力されていない場合、「WEKO IDの値を設定してください。（Please set WEKO ID.）」と表示する。</li>
-<li><p>入力されたWEKO IDの値が既に使われている場合、<br></br>「そのWEKO IDは既に使われています。（The value is already in use as WEKO ID）」と表示する。</p>
-</li>
-<li><p>入力された値が半角数字でない場合、<br></br>  「WEKO IDは半角数字のみです。(The WEKO ID must be numeric characters only.)」と表示する。</p>
-<ul>
-<li>問題なく保存できれば、Author IDの一覧画面に遷移する。</li>
-</ul>
-</li>
-</ul>
-</li>
 </ul>
 <ul>
-<li>姓、名から姓名の情報（fullName）が生成される。</li>
+<li><p>問題なく保存できれば、Author IDの一覧画面に遷移する。</p>
+</li>
+<li><p>姓、名から姓名の情報（fullName）が生成される。</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -2844,7 +2831,7 @@
 </blockquote>
 <p>2. 実装方法</p>
 <ul>
-<li>nameIdentifiersでnameIdentifierScheme=WEKOを利用してWEKOIDと紐づいているpk_idを取得し<br></br>当該アイテムに属性(author_link)を追加する。<br></br>著者情報のアイテム件数（Item Count）は以下のようにクエリを作成し、"author_link"毎に著者情報をカウントする。</li>
+<li>nameIdentifiersでnameIdentifierScheme=WEKOを利用して当該アイテムに属性(author_link)を追加する。<br></br>著者情報のアイテム件数（Item Count）は以下のようにクエリを作成し、"author_link"毎に著者情報をカウントする。</li>
 </ul>
 <blockquote>
 <p>"size": 0,</p>
@@ -2899,8 +2886,7 @@
 </blockquote>
 </li>
 <li><blockquote>
-<p><strong>著者ID→ID選択欄に「WEKO」(ただし、2項目目以降の追加時は「WEKO」は表示されない。)</strong>
-<strong>初期値はWEKO IDのmax+1</strong></p>
+<p><strong>著者ID→ID選択欄に「ORCID」(ただし、2項目目以降の追加時は「WEKO」が入力される。著者IDが「WEKO」のものは編集できないため、追加したテキストボックスは自動的に非活性となる。)</strong></p>
 </blockquote>
 </li>
 <li><blockquote>
@@ -2966,6 +2952,11 @@
 <td style="text-align:center">-</td>
 <td style="text-align:center">v1.1.0対応</td>
 </tr>
+<tr>
+<td style="text-align:center">&gt; 2025/11/27</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">WEKO ID対応</td>
+</tr>
 </tbody>
 </table>
 </body></html>
@@ -3011,7 +3002,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-5-1: 編集 185","level":"2.67","depth":1,"next":{"title":"Affiliation ID","level":"2.67.1","depth":2,"path":"admin/ADMIN_5_1_3.md","ref":"./admin/ADMIN_5_1_3.md","articles":[]},"previous":{"title":"ADMIN-4-2: ページレイアウト 180","level":"2.66","depth":1,"path":"admin/ADMIN_4_2.md","ref":"./admin/ADMIN_4_2.md","articles":[]},"articles":[{"title":"Affiliation ID","level":"2.67.1","depth":2,"path":"admin/ADMIN_5_1_3.md","ref":"./admin/ADMIN_5_1_3.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_5_1.md","mtime":"2025-10-27T01:52:07.627Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-5-1: 編集 185","level":"2.67","depth":1,"next":{"title":"Affiliation ID","level":"2.67.1","depth":2,"path":"admin/ADMIN_5_1_3.md","ref":"./admin/ADMIN_5_1_3.md","articles":[]},"previous":{"title":"ADMIN-4-2: ページレイアウト 180","level":"2.66","depth":1,"path":"admin/ADMIN_4_2.md","ref":"./admin/ADMIN_4_2.md","articles":[]},"articles":[{"title":"Affiliation ID","level":"2.67.1","depth":2,"path":"admin/ADMIN_5_1_3.md","ref":"./admin/ADMIN_5_1_3.md","articles":[]}],"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_5_1.md","mtime":"2025-12-31T13:59:09.890Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-12-31T14:49:00.748Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

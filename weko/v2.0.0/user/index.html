@@ -2941,11 +2941,6 @@
 <p><img src="media/media/image346.png" alt=""></img></p>
 <p>図511[ユーザ情報入力項目]画面 新規行</p>
 <p>[<img src="media/media/image347.png" alt=""></img>]ボタンをクリックすると、行が削除されます。</p>
-<p><img src="media/media/image348.png" alt=""></img></p>
-<p>図 512[ユーザ情報入力項目]画面 Owner選択 </p>
-<p>Usernameの左側のラジオボタンをいずれかのユーザから選択し（１名の場合はそのユーザ）、Ownerに設定します。 </p>
-<p>代理投稿者として指定するユーザには必ずログインユーザを指定します。 </p>
-<p>入力したログインユーザの行を削除しようとするとき［ログインユーザーは削除できません。］というエラーメッセージが表示されます。 </p>
 </blockquote>
 <ol>
 <li>ファイルを登録する</li>
@@ -2977,6 +2972,7 @@
 <p>　　</p>
 <p>ファイルがアップロードされます。</p>
 <p>アップロードするファイルがリポジトリ内で登録できる許容サイズを超える場合はエラーメッセージ「Error:Location has no quota」が表示され、登録することはできません。</p>
+<p>また、アップロードに使用できるファイルのサイズは20GBまでとなっています。それを超える場合、アップロードを行うことはできません。</p>
 <p>正常にアップロードが完了すると、「表示名」「本文URL」「フォーマット」「サイズ」の値が自動で入力されます。</p>
 <p>【補足】</p>
 <p>複数のファイルがある場合、アイテム詳細画面での表示順序は、[Item</p>
@@ -3746,6 +3742,7 @@
 </table>
 
 <p><img src="media/media/image183.png" alt="グラフィカル ユーザー インターフェイス, アプリケーション 自動的に生成された説明"></img></p>
+<p><img src="media/media/image353.png" alt="グラフィカル ユーザー インターフェイス, アプリケーション 自動的に生成された説明"></img></p>
 <p>図 5‑36［著者追加］画面</p>
 <p>表 5-16［著者追加］画面の項目と説明</p>
 <table>
@@ -3779,77 +3776,101 @@
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>［E-mail］テキストボックス</td>
-<td>E-mailを入力します。</td>
+<td>［E-Mail］テキストボックス</td>
+<td>E-Mailを入力します。</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td>［所属機関識別子］プルダウンリスト</td>
-<td>所属機関識別子のスキーマ名をプルダウンリストから選択します。「図5-40 ［所属機関識別子］プルダウンリスト」を参照してください。</td>
+<td>［コミュニティ］テキストボックス</td>
+<td>著者を管理するコミュニティを選択します。</td>
 </tr>
 <tr class="odd">
 <td>7</td>
-<td>［所属機関識別子］テキストボックス</td>
-<td>著者が所属する機関の識別子を入力します。</td>
+<td>［+著者項目を追加］リンク</td>
+<td>クリックすると、氏名欄が追加されます。</td>
 </tr>
 <tr class="even">
 <td>8</td>
-<td>［所属機関名］テキストボックス</td>
-<td>所属機関名を入力します。</td>
-</tr>
-<tr class="odd">
-<td><blockquote>
-<p>9</p>
-</blockquote></td>
-<td><blockquote>
-<p>［+著者項目を追加］リンク</p>
-</blockquote></td>
-<td><blockquote>
-<p>クリックすると、氏名欄が追加されます。</p>
-</blockquote></td>
-</tr>
-<tr class="even">
-<td>10</td>
 <td>［+著者IDを追加］リンク</td>
 <td>クリックすると、著者ID欄が追加されます。</td>
 </tr>
 <tr class="odd">
+<td>9</td>
+<td>［+E-Mailを追加］リンク</td>
+<td>クリックすると、E-Mail欄が追加されます。</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>［+コミュニティを追加］リンク</td>
+<td>クリックするとコミュニティの入力欄が追加されます。</td>
+</tr>
+<tr class="odd">
 <td>11</td>
-<td>［+e-mailを追加］リンク</td>
-<td>クリックすると、e-mail欄が追加されます。</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>［+所属機関識別子を追加］リンク</td>
-<td>クリックすると、所属機関識別子欄が追加されます。</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>［+所属機関名を追加］リンク</td>
-<td>クリックすると、所属機関名欄が追加されます。</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>［+所属情報を追加］リンク</td>
-<td>クリックすると、所属情報欄が追加されます。</td>
-</tr>
-<tr class="odd">
-<td>15</td>
 <td>［<img src="media/media/image184.png" style="width:0.35417in;height:0.25in" alt="icon050170"></img>］ボタン</td>
 <td>クリックすると、著者が追加されず［作成者検索］画面に遷移します。</td>
 </tr>
 <tr class="even">
+<td>12</td>
+<td>［所属機関識別子］プルダウンリスト</td>
+<td>所属機関識別子のスキーマ名をプルダウンリストから選択します。「図5-40 ［所属機関識別子］プルダウンリスト」を参照してください。</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>［所属機関識別子］テキストボックス</td>
+<td>著者が所属する機関の識別子を入力します。</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>［所属機関名］テキストボックス</td>
+<td>所属機関名を入力します。</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>［所属機関名］プルダウンリスト</td>
+<td>所属機関名の言語をプルダウンリストから選択します。</td>
+</tr>
+<tr class="even">
 <td>16</td>
+<td>［所属期間］開始日デートピッカー</td>
+<td>機関の所属開始日をカレンダーから選択します。</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>［所属期間］終了日デートピッカー</td>
+<td>機関の所属終了日をカレンダーから選択します。</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>［+所属機関識別子を追加］リンク</td>
+<td>クリックすると、所属機関識別子欄が追加されます。</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>［+所属機関名を追加］リンク</td>
+<td>クリックすると、所属機関名欄が追加されます。</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>［+所属期間を追加］リンク</td>
+<td>クリックすると、所属期間欄が追加されます。</td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td>［+所属情報を追加］リンク</td>
+<td>クリックすると、所属情報欄が追加されます。</td>
+</tr>
+<tr class="even">
+<td>22</td>
 <td>［<img src="media/media/image185.png" style="width:0.38542in;height:0.25in" alt="icon050180"></img>］ボタン</td>
 <td>クリックすると、［作成者検索］画面に遷移します。</td>
 </tr>
 <tr class="odd">
-<td>17</td>
+<td>23</td>
 <td>［<img src="media/media/image186.png" style="width:0.38542in;height:0.25in" alt="icon050190"></img>］ボタン</td>
 <td>クリックすると、著者が追加され［作成者検索］画面に遷移します。</td>
 </tr>
 <tr class="even">
-<td>18</td>
+<td>24</td>
 <td>［<img src="media/media/image182.png" style="width:0.47674in;height:0.22844in"></img>］ボタン</td>
 <td>クリックすると、［著者追加］画面が閉じ、［作成者検索］画面に遷移します。</td>
 </tr>
@@ -5546,104 +5567,6 @@
 <li>「Administration」を選択します。［Administration］画面が表示されます。操作方法については、「システム管理者ガイド」をご覧ください。</li>
 </ol>
 <p><img src="media/media/image294.png" alt=""></img></p>
-<h3 id="非公開コンテンツをワンタイムアドレスを利用して共有したい"><a name="非公開コンテンツをワンタイムアドレスを利用して共有したい" class="plugin-anchor" href="#非公開コンテンツをワンタイムアドレスを利用して共有したい"><i class="fa fa-link" aria-hidden="true"></i></a>非公開コンテンツをワンタイムアドレスを利用して共有したい</h3>
-<h4 id="シークレットurl機能"><a name="シークレットurl機能" class="plugin-anchor" href="#シークレットurl機能"><i class="fa fa-link" aria-hidden="true"></i></a>シークレットURL機能</h4>
-<p>管理者画面でシークレットURL機能を有効化することで、シークレットURLを発行することができます。<br></br>
-シークレットURLとは、投稿者（代理投稿者を含む）及びシステム、リポジトリ管理者が発行できるワンタムアドレスであり、このURLを知っている人は、誰でも対象のコンテンツファイルをダウンロードできます</p>
-
-<p><strong>本機能は、公開コンテンツ、ならびにサイトライセンス機能を利用してサイトライセンスユーザーに対してアクセス可能になっているコンテンツに対して、<span style="color: red; ">新たにアクセス権限を付与し、シークレットURLを通じたアクセスに制限する機能ではありません<span>。</span></span></strong></p>
-<p> 下記の条件を満たすことで、Information画面のファイルエリアに「Secret URL」ボタンが表示されます。</p>
-<p> 1.アイテム投稿者・アイテムの代理投稿者・リポジトリ管理者・システム管理者がログインしている。</p>
-<p> 2.管理画面の制限公開画面にて、シークレットURLの表示を有効化している。</p>
-<p> 3.当該ファイルを「公開しない」と設定している。または、ファイルが「オープンアクセス日を指定する」と設定し、指定日が未来日である。</p>
-<p> <img src="media/media/images01.png" alt=""></img></p>
-<p> 図9s1 シークレットURL機能を有効化した場合のInformation画面ファイルエリア</p>
-<p>シークレットURL機能を有効化した場合、以下の項目が追加されます。</p>
-<p>表 9‑s1 シークレットURL機能有効化時に表示される項目と説明</p>
-<table>
-<thead>
-<tr class="header">
-<th>項番</th>
-<th>項目</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>シークレットURLボタン</td>
-<td><p>このボタンをクリックすることで、シークレットURLを作成欄が表示されます。</p></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>リンク名</td>
-<td><p>シークレットURLが作成されている場合に表示されます。</p><p>シークレットURL作成時に付与したリンク名、リンク名を付与しなかった場合は当該URLの識別子が表示されます</p></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>作成日時</td>
-<td><p>シークレットURLが作成されている場合に表示されます。</p><p>当該シークレットURLの作成日時が表示されます</p></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>DL期限</td>
-<td><p>シークレットURLが作成されている場合に表示されます。</p><p>当該シークレットURLのDL回数と残DL回数が表示されます</p></td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>削除ボタン</td>
-<td><p>シークレットURLが作成されている場合に表示されます。</p><p>このボタンをクリックすると、削除確認モーダル画面が表示され、このモーダル画面内の削除ボタンをクリックすると、当該シークレットURLが削除されます。削除をやめる場合は閉じるボタンをクリックし、モーダル画面を閉じてください。</p></td>
-</tr><tr class="odd">
-<td>7</td>
-<td>コピーボタン</td>
-<td><p>シークレットURLが作成されている場合に表示されます。</p><p>このボタンをクリックすると、モーダル画面が表示され、発行したシークレットURLをクリップボードにコピーすることができます。モーダル画面上の閉じるボタンをクリックすることで、モーダル画面を閉じることができます。</p></td>
-</tr>
-
-</tbody>
-</table>
-
-<p>「Secret URL」ボタンをクリックすると、シークレットURL編集作成欄が表示されます。</p>
-<p>　<img src="media/media/images02.png" alt=""></img></p>
-<p>図 9s2 シークレッㇳURLボタンをクリックし、シークレットURL作成欄を表示した状態</p>
-<p>シークレットURL作成欄の各項目の内容は以下の通りです。</p>
-<p>表 9‑s2 シークレットURL作成欄の項目と説明</p>
-
-&gt;<table>
-<thead>
-<tr class="header">
-<th>項番</th>
-<th>項目</th>
-<th>説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>作成ボタン</td>
-<td><p>このボタンをクリックすることで、シークレットURLを作成します。</p></td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>メール通知 チェックボックス</td>
-<td>このチェックボックスにチェックを入れ、作成ボタンをクリックすると、シークレットURLボタンをクリックしたアカウントに対してメールで通知します。</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>リンク名フィールド</td>
-<td><p>作製するシークレットURLのファイル名を入力する。</p></td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>DL期限フィールド</td>
-<td>作製するシークレットURLのDL期限をカレンダーから選択し、設定します。</td></tr>
-<tr class="odd">
-<td>5</td>
-<td>DL回数フィールド</td>
-<td>作製するシークレットURLのDL回数を設定します。</td>
-</tr>
-</tbody>
-</table>
-
 <h3 id="cookie使用確認画面を表示したい"><a name="cookie使用確認画面を表示したい" class="plugin-anchor" href="#cookie使用確認画面を表示したい"><i class="fa fa-link" aria-hidden="true"></i></a>Cookie使用確認画面を表示したい</h3>
 <p>Cookieの使用確認画面を表示する方法を説明します。</p>
 <p>1.[ホーム]画面を下にスクロールし、画面左下「Change consent settings」をクリックしてください。[Cookie使用確認]画面が表示されます。</p>
@@ -5720,7 +5643,7 @@
 シークレットURLとは、投稿者（代理投稿者を含む）及びシステム、リポジトリ管理者が発行できるワンタムアドレスであり、このURLを知っている人は、誰でも対象のコンテンツファイルをダウンロードできます</p>
 
 <p><strong><span style="color: red; ">本機能は、公開コンテンツ、ならびにサイトライセンス機能を利用してサイトライセンスユーザーに対してアクセス可能になっているコンテンツに対して、新たにアクセス権限を付与し、シークレットURLを通じたアクセスに制限する機能ではありません<span>。</span></span></strong></p>
-<p> 下記の条件を満たすことで、Information画面のファイルエリアに「Secret URL」ボタンが追加されるのは、以下の条件を満たした場合となります。</p>
+<p> Information画面のファイルエリアに「Secret URL」ボタンが追加されるのは、以下の条件を満たした場合となります。</p>
 <p> 1.管理画面の制限公開画面にて、シークレットURLの表示を有効化している。</p>
 <p> 2.アイテム投稿者・アイテムの代理投稿者・リポジトリ管理者・システム管理者がログインしている。</p>
 <p> 3.当該ファイルを「公開しない」と設定している。または、ファイルが「オープンアクセス日を指定する」と設定し、指定日が未来日である。</p>
@@ -5757,18 +5680,23 @@
 <tr class="even">
 <td>4</td>
 <td>DL期限</td>
-<td><p>シークレットURLが作成されている場合に表示されます。</p><p>当該シークレットURLのDL回数と残DL回数が表示されます</p></td>
+<td><p>シークレットURLが作成されている場合に表示されます。</p><p>当該シークレットURLの有効期限が表示されます</p></td>
 </tr>
 <tr class="odd">
+<td>5</td>
+<td>DL回数</td>
+<td><p>シークレットURLが作成されている場合に表示されます。</p><p>当該シークレットURLのDL回数と残DL回数が表示されます</p></td>
+</tr>
+<tr class="even">
 <td>6</td>
 <td>削除ボタン</td>
 <td><p>シークレットURLが作成されている場合に表示されます。</p><p>このボタンをクリックすると、削除確認モーダル画面が表示され、このモーダル画面内の削除ボタンをクリックすると、当該シークレットURLが削除されます。削除をやめる場合は閉じるボタンをクリックし、モーダル画面を閉じてください。</p></td>
-</tr><tr class="even">
+</tr>
+<tr class="odd">
 <td>7</td>
 <td>コピーボタン</td>
 <td><p>シークレットURLが作成されている場合に表示されます。</p><p>このボタンをクリックすると、モーダル画面が表示され、発行したシークレットURLをクリップボードにコピーすることができます。モーダル画面上の閉じるボタンをクリックすることで、モーダル画面を閉じることができます。</p></td>
 </tr>
-
 </tbody>
 </table>
 
@@ -6489,7 +6417,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ユーザ操作マニュアル V1.0.7","language":"ja","gitbook":"*","description":"一般閲覧者・登録ユーザ・管理者"},"file":{"path":"README.md","mtime":"2025-11-05T07:44:25.931Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T21:39:18.164Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"ユーザ操作マニュアル V1.0.7","language":"ja","gitbook":"*","description":"一般閲覧者・登録ユーザ・管理者"},"file":{"path":"README.md","mtime":"2025-12-31T13:59:09.829Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-12-31T14:05:42.729Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

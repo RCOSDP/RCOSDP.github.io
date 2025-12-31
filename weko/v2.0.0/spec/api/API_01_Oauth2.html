@@ -2347,7 +2347,7 @@
 <ul>
 <li><p>【アカウント(Account)&gt;Applications】画面にてOAuthアプリケーション、OAuthトークンを登録することができる。</p>
 </li>
-<li><p>詳細は<a href="https://ivis.sharepoint.com/sites/NIIDMR646/Shared%20Documents/%5bWEKO3%5d10_開発/01.開発/2023/JAIRO%20Cloud（WEKO3）のドキュメント整備/機能設計書/マージ前/機能設計書_WebAPI_API-1-6.docx#_API設定" target="_blank">USER-8-5 API設定</a>を参照すること</p>
+<li><p>詳細は<a href="../user/USER_8_5.html">USER-8-5 API設定</a>を参照すること</p>
 </li>
 </ul>
 <p><strong>Authorize URL (GET) /oauth/authorize</strong></p>
@@ -2386,6 +2386,25 @@
 <p>/oauth/authorize…に接続した際、許可される内容について表示される。</p>
 <p>「Authorize application」ボタンを押下すると、codeとstateの値がサーバー側からクライアント側に渡される。</p>
 </blockquote>
+<p>レスポンスコード</p>
+<table>
+<thead>
+<tr>
+<th>コード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>・正常終了<br></br>・ユーザが OAuth 認証画面で Reject を押下した時</td>
+</tr>
+<tr>
+<td>400</td>
+<td>リクエストに不備がある時</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Access token URL (POST) /oauth/token</strong></p>
 <p>Request body parameters:</p>
 <ul>
@@ -2432,6 +2451,25 @@
 <p>accessurl = '<a href="https://「weko3の接続先」/oauth/token" target="_blank">https://「weko3の接続先」/oauth/token</a>'</p>
 <p>request = requests.post(url=accessurl, data=params)</p>
 </blockquote>
+<p>レスポンスコード</p>
+<table>
+<thead>
+<tr>
+<th>コード</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>正常終了</td>
+</tr>
+<tr>
+<td>400</td>
+<td>リクエストに不備がある時</td>
+</tr>
+</tbody>
+</table>
 <p><strong>アクセストークンの発行</strong></p>
 <p>Personal access tokens の新規発行(/account/settings/applications/tokens/new/)からアクセストークンを発行することができる。</p>
 <p>curlコマンドによるアクセストークン利用例</p>
@@ -2512,7 +2550,7 @@ url, headers, body = oauth.prepare_token_request('<a href="https://dev.ir.rcos.n
 </li>
 </ul>
 <blockquote>
-<p>invenio_oauth2server</p>
+<p>invenio_oauth2server </p>
 </blockquote>
 <ul>
 <li><blockquote>
@@ -2542,6 +2580,13 @@ url, headers, body = oauth.prepare_token_request('<a href="https://dev.ir.rcos.n
 </blockquote></td>
 <td>7733de131da9ad59ab591b2df1c70ddefcfcad98</td>
 <td>v1.0.7対応</td>
+</tr>
+<tr class="odd">
+<td><blockquote>
+<p>2025/06/11</p>
+</blockquote></td>
+<td></td>
+<td>レスポンスコードを追記</td>
 </tr>
 </tbody>
 </table>
@@ -2588,7 +2633,7 @@ url, headers, body = oauth.prepare_token_request('<a href="https://dev.ir.rcos.n
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API-1: OAuth2 425","level":"2.131","depth":1,"next":{"title":"API-2: OAI-PMH 429","level":"2.132","depth":1,"path":"api/API_02_OAIPMH.md","ref":"./api/API_02_OAIPMH.md","articles":[]},"previous":{"title":"ADMIN-15-1: Elasticsearchインデックス 423","level":"2.130","depth":1,"path":"admin/ADMIN_15_1.md","ref":"./admin/ADMIN_15_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"api/API_01_Oauth2.md","mtime":"2025-04-04T05:35:16.635Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-11-05T07:45:04.771Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API-1: OAuth2 425","level":"2.131","depth":1,"next":{"title":"API-2: OAI-PMH 429","level":"2.132","depth":1,"path":"api/API_02_OAIPMH.md","ref":"./api/API_02_OAIPMH.md","articles":[]},"previous":{"title":"ADMIN-15-1: Elasticsearchインデックス 423","level":"2.130","depth":1,"path":"admin/ADMIN_15_1.md","ref":"./admin/ADMIN_15_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"api/API_01_Oauth2.md","mtime":"2025-12-31T13:59:09.903Z","type":"markdown"},"gitbook":{"version":"6.1.4","time":"2025-12-31T14:49:00.748Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

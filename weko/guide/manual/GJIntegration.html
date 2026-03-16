@@ -1,0 +1,489 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>GakuNin RDM-JAIRO Cloud連携を利用した場合の操作 · 操作の流れに沿ったマニュアル</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="OAAssist.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">操作の流れに沿ったマニュアル</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="GJIntegration.html">
+            
+                <a href="GJIntegration.html">
+            
+                    
+                    GakuNin RDM-JAIRO Cloud連携を利用した場合の操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="OAAssist.html">
+            
+                <a href="OAAssist.html">
+            
+                    
+                    OAアシストを利用した場合の操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >GakuNin RDM-JAIRO Cloud連携を利用した場合の操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="gakunin-rdm-jairo-cloud連携を利用した場合の操作"><a name="gakunin-rdm-jairo-cloud連携を利用した場合の操作" class="plugin-anchor" href="#gakunin-rdm-jairo-cloud連携を利用した場合の操作"><i class="fa fa-link" aria-hidden="true"></i></a>GakuNin RDM-JAIRO Cloud連携を利用した場合の操作</h1>
+<h2 id="下準備"><a name="下準備" class="plugin-anchor" href="#下準備"><i class="fa fa-link" aria-hidden="true"></i></a>下準備</h2>
+<p>JAIRO Cloud連携機能を利用できるようにするには、GakuNin RDM機関管理者が機関管理者画面から機関リポジトリ情報を設定する必要があります。</p>
+<h3 id="機関リポジトリにoauth2アプリケーションを登録"><a name="機関リポジトリにoauth2アプリケーションを登録" class="plugin-anchor" href="#機関リポジトリにoauth2アプリケーションを登録"><i class="fa fa-link" aria-hidden="true"></i></a>機関リポジトリにOAuth2アプリケーションを登録</h3>
+<p><strong>【実施者】機関リポジトリ担当者</strong><br></br>機関リポジトリのOAuth2アプリケーションを発行するには、機関リポジトリのアカウント設定画面において、「Applications」を選択します。
+<img src="images/grdm/app_setting_1.png" alt="alt text"></img></p>
+<p>この画面では、以下のパラメータを入力してください。</p>
+<ul>
+<li><strong>名前</strong>: 任意の名前を入力してください。機関リポジトリの設定画面からアプリケーションを識別するための名前です。</li>
+<li><strong>記述</strong>: アプリケーションの説明を入力してください。任意の文字列を入力してください。</li>
+<li><strong>Website URL</strong>: <a href="https://rdm.nii.ac.jp" target="_blank">https://rdm.nii.ac.jp</a> としてください。</li>
+<li><strong>Redirect URIs</strong>: <a href="https://rdm.nii.ac.jp/oauth/callback/weko/(機関リポジトリのホスト名" target="_blank">https://rdm.nii.ac.jp/oauth/callback/weko/(機関リポジトリのホスト名</a>: 例えばxx.repo.nii.ac.jp)/ としてください。</li>
+<li><strong>Client type</strong>: Confidential としてください。</li>
+</ul>
+<p>「登録」をクリックすると、アプリケーションが登録されます。登録されたアプリケーションのクライアントIDおよびクライアントシークレットを控えておいてください。GakuNin RDM機関管理者がWEKOアドオンを有効化する際に必要となります。</p>
+<h3 id="gakunin-rdmに機関リポジトリ情報を登録し、jairo-cloudアドオンの利用を有効化する"><a name="gakunin-rdmに機関リポジトリ情報を登録し、jairo-cloudアドオンの利用を有効化する" class="plugin-anchor" href="#gakunin-rdmに機関リポジトリ情報を登録し、jairo-cloudアドオンの利用を有効化する"><i class="fa fa-link" aria-hidden="true"></i></a>GakuNin RDMに機関リポジトリ情報を登録し、JAIRO Cloudアドオンの利用を有効化する</h3>
+<p><strong>【実施者】GakuNin RDM機関管理者</strong><br></br>GakuNin RDM機関管理者画面の「アドオン利用制御」画面から、機関リポジトリ情報をJAIRO Cloudアドオンに登録し、有効化することができます。</p>
+<ol>
+<li><p>「アドオン利用制御」画面を開く
+ GakuNin RDM機関管理者としてログインし、「アドオン利用制御」をクリックします。
+ <img src="images/grdm/addon_setting_1.png" alt="alt text"></img></p>
+</li>
+<li><p>WEKOセクションの「追加」をクリックする
+ WEKOアプリケーションの登録画面が表示されます。機関リポジトリに登録したOAuth2アプリケーションの情報を入力してください。
+ <img src="images/grdm/addon_setting_2.png" alt="alt text"></img></p>
+<p> この画面では、以下のパラメータを入力してください。</p>
+<ul>
+<li><strong>WEKO 表示名</strong>: 機関リポジトリの名前を入力してください。この名前が研究者に対して、接続先リポジトリの選択候補として表示されます。</li>
+<li><strong>WEKO URL</strong>: 機関リポジトリのURLを入力してください。（例： <a href="https://xx.repo.nii.ac.jp）" target="_blank">https://xx.repo.nii.ac.jp）</a></li>
+<li><strong>WEKO OAuthクライアントID</strong>: 機関リポジトリから発行されたOAuth2アプリケーションのクライアントIDを入力してください。</li>
+<li><strong>WEKO OAuthクライアントシークレット</strong>: 機関リポジトリから発行されたOAuth2アプリケーションのクライアントシークレットを入力してください。</li>
+</ul>
+</li>
+<li><p>WEKOアドオンの利用を有効化する</p>
+<p> 機関リポジトリ情報を登録したら、チェックボックスを選択してアドオンの利用を有効化してください。これで、研究者がプロジェクトでWEKOアドオンを使用することができるようになります。
+ <img src="images/grdm/addon_setting_3.png" alt="alt text"></img></p>
+</li>
+</ol>
+<h3 id="swordapi設定"><a name="swordapi設定" class="plugin-anchor" href="#swordapi設定"><i class="fa fa-link" aria-hidden="true"></i></a>SWORDAPI設定</h3>
+<p><strong>【実施者】機関リポジトリ担当者</strong>  </p>
+<ol>
+<li><p>JAIRO Cloud にアプリケーションを登録したユーザーでログイン後、右上プルダウンから「Administration」を選択します。<br></br> <img src="images/oa-assist/sword_setting_1.png" alt="トップ画面の画像　※Administrationを強調"></img></p>
+</li>
+<li><p>画面左のメニューから「SWORDAPI」 → 「JSON-LD」 をクリックします。<br></br> <img src="images/oa-assist/sword_setting_2.png" alt="管理画面の画像　※JSON-LDを強調"></img></p>
+</li>
+<li><p>作成タブを選択します。<br></br> <img src="images/oa-assist/sword_setting_3.png" alt="JSON-LDの一覧画面　※作成タブを強調"></img></p>
+</li>
+<li><p><a href="#機関リポジトリにoauth2アプリケーションを登録">機関リポジトリにOAuth2アプリケーションを登録</a>で登録したOAアシストのアプリケーションを選択します。<br></br> <img src="images/oa-assist/sword_setting_4.png" alt="JSON-LD設定の作成画面"></img></p>
+</li>
+<li><p>登録方式はいずれかを選択します。  </p>
+<ul>
+<li>直接登録: アイテムを直接登録します。</li>
+<li>ワークフロー登録: 指定したワークフローを経由して登録します。  </li>
+</ul>
+<p>※ワークフロー登録を選択した場合、設定されたワークフローに承認待ちのアクティビティが残っている間は設定の変更ができなくなります。</p>
+</li>
+<li><p>マッピングは「デフォルトマッピング（フル）」を選択します。<br></br>登録するアイテムタイプに対応するマッピングを選択して下さい。<br></br>※マッピングはワークフローで用いるアイテムタイプに対応している必要があります。</p>
+</li>
+<li><p>その他の項目は必要に応じて選択し、［保存］ボタンをクリックします。</p>
+</li>
+</ol>
+<h3 id="jairo-cloud連携機能の有効化"><a name="jairo-cloud連携機能の有効化" class="plugin-anchor" href="#jairo-cloud連携機能の有効化"><i class="fa fa-link" aria-hidden="true"></i></a>JAIRO Cloud連携機能の有効化</h3>
+<p><strong>【実施者】研究者（GakuNin RDMプロジェクトメンバー）</strong><br></br>GakuNin RDMプロジェクトごとに、以下の手順でアドオンを有効化することでJAIRO Cloud連携機能を使用できるようになります。</p>
+<ol>
+<li><p>メタデータアドオンの追加
+ ナビゲーションバーの「アドオン」をクリックし、「アドオンを選択」に移り、表示されたアドオン一覧のうち「Metadata」の「有効にする」をクリックします。
+ <img src="images/grdm/enable_addon_1.png" alt="alt text"></img></p>
+</li>
+<li><p>WEKOアドオンの追加
+ 「Metadata」と同様に、アドオン一覧の「WEKO」を有効にします。
+ <img src="images/grdm/enable_addon_2.png" alt="alt text"></img></p>
+</li>
+<li><p>接続する機関リポジトリの選択
+ 「アドオンを構成」一覧にアドオン「WEKO」が表示されますので、「アカウントに接続する」をクリックしてください。<br></br> 機関リポジトリの選択画面が表示されます。<br></br> 接続したい機関リポジトリを選択し、「接続」をクリックしてください。<br></br> <img src="images/grdm/enable_addon_3.png" alt="alt text"></img></p>
+</li>
+<li><p>機関リポジトリへのログインと連携の認可
+ 「接続」をクリックすると、機関リポジトリのログイン画面が表示されます。<br></br> リポジトリ担当者から提供されたJAIRO Cloudアカウント情報を使って機関リポジトリにログインし、GakuNin RDMが機関リポジトリに対してアクセスすることを許可してください。
+ <img src="images/grdm/enable_addon_4.png" alt="alt text"></img></p>
+</li>
+<li><p>インデックスの選択
+ 機関リポジトリへの接続が完了すると、「アドオンを構成」画面に選択可能なインデックスが表示されます。<br></br> リポジトリ担当者から案内された、アイテムの登録先インデックスを選択し、「保存」をクリックしてください。
+ <img src="images/grdm/enable_addon_5.png" alt="alt text"></img></p>
+</li>
+</ol>
+<h2 id="gakunin-rdmでの操作"><a name="gakunin-rdmでの操作" class="plugin-anchor" href="#gakunin-rdmでの操作"><i class="fa fa-link" aria-hidden="true"></i></a>GakuNin RDMでの操作</h2>
+<h3 id="論文ファイル・根拠データの登録"><a name="論文ファイル・根拠データの登録" class="plugin-anchor" href="#論文ファイル・根拠データの登録"><i class="fa fa-link" aria-hidden="true"></i></a>論文ファイル・根拠データの登録</h3>
+<p>プロジェクトに論文ファイルと根拠データを登録します。
+<img src="images/image-53.png" alt="論文ファイル・根拠データを登録した画像"></img></p>
+<h3 id="根拠データのメタデータ登録"><a name="根拠データのメタデータ登録" class="plugin-anchor" href="#根拠データのメタデータ登録"><i class="fa fa-link" aria-hidden="true"></i></a>根拠データのメタデータ登録</h3>
+<ol>
+<li>根拠データのファイルを選択し、［メタデータ編集］ボタンをクリックします。<br></br> ファイルメタデータの編集画面が表示されます。  </li>
+<li>メタデータ様式として、「公的資金による研究データのメタデータ登録」を選択します。  </li>
+<li>ファイルの種類としてデータセットを選択します。<br></br><img src="images/image-54.png" alt="根拠データのメタデータ設定"></img></li>
+<li><p>必要なメタデータ項目を入力し、［保存］ボタンをクリックします。
+<img src="images/image-55.png" alt="alt text"></img></p>
+</li>
+<li><p>メタデータの保存に成功すると、ファイル名の横に{}マークがに表示されます。</p>
+</li>
+</ol>
+<h3 id="論文ファイルのメタデータ登録"><a name="論文ファイルのメタデータ登録" class="plugin-anchor" href="#論文ファイルのメタデータ登録"><i class="fa fa-link" aria-hidden="true"></i></a>論文ファイルのメタデータ登録</h3>
+<ol>
+<li>論文ファイルを選択し、メタデータ編集画面を表示します。</li>
+<li><p>ファイルの種別として「論文」を選択します。
+<img src="images/image-56.png" alt="alt text"></img></p>
+</li>
+<li><p>論文のDOIの欄にPIDを入力し、当該PIDの発行元を選択すると、メタデータの補完機能を利用することができます。
+<img src="images/image-57.png" alt="alt text"></img></p>
+</li>
+<li>内容を確認し、［保存］ボタンをクリックします。</li>
+</ol>
+<h3 id="プロジェクトメタデータの作成"><a name="プロジェクトメタデータの作成" class="plugin-anchor" href="#プロジェクトメタデータの作成"><i class="fa fa-link" aria-hidden="true"></i></a>プロジェクトメタデータの作成</h3>
+<ol>
+<li><p>ナビゲーションバーから［メタデータ］を選択します。
+<img src="images/image-58.png" alt="alt text"></img></p>
+</li>
+<li><p>［新規メタデータを作成］をクリックします。
+<img src="images/image-59.png" alt="alt text"></img></p>
+</li>
+<li><p>「公的資金による研究データのメタデータ登録」を選択し、［メタデータを作成］をクリックします。</p>
+</li>
+<li>プロジェクトメタデータを登録します。
+<img src="images/image-60.png" alt="alt text"></img></li>
+<li>論文ファイルと根拠データを選択します。
+<img src="images/image-61.png" alt="alt text"></img></li>
+<li>［内容確認］ボタンをクリックします。
+<img src="images/image-62.png" alt="alt text"></img></li>
+</ol>
+<h3 id="jairo-cloudへのエクスポート"><a name="jairo-cloudへのエクスポート" class="plugin-anchor" href="#jairo-cloudへのエクスポート"><i class="fa fa-link" aria-hidden="true"></i></a>JAIRO Cloudへのエクスポート</h3>
+<p><strong>【注意】ファイルサイズ制限について</strong><br></br>JAIRO Cloudへの連携では，1GBを超えるファイルは送信できません。<br></br>1GB以上のファイルが含まれる場合、エクスポートは失敗します。  </p>
+<ol>
+<li>内容を確認後、［エクスポート］ボタンをクリックします。<br></br> <img src="images/image-63.png" alt="alt text"></img></li>
+<li>登録先のリポジトリを選択します。</li>
+<li>［エクスポート］ボタンをクリックします。</li>
+<li>エクスポートに成功すると、完了画面が表示されます。
+<img src="images/image-64.png" alt="alt text"></img>
+閉じるボタンをクリックします。</li>
+</ol>
+<p>※エクスポートが完了すると、研究者による操作は終了です。<br></br>エクスポート後は、リポジトリ担当者が内容の確認を行います。<br></br>必要に応じて、メタデータの修正や確認依頼の連絡があります。  </p>
+<h2 id="jairo-cloudでの操作"><a name="jairo-cloudでの操作" class="plugin-anchor" href="#jairo-cloudでの操作"><i class="fa fa-link" aria-hidden="true"></i></a>JAIRO Cloudでの操作</h2>
+<p><strong>【実施者】機関リポジトリ担当者</strong></p>
+<p><strong>■ ワークフロー登録方式の場合</strong></p>
+<ol>
+<li>JAIRO Cloudにログインし、リポジトリの［ワークフロー］をクリックします。</li>
+<li>GakuNin RDM連携により作成されたアクティビティを再開し、通常の個別登録手順に従って登録します。<br></br>論文と根拠データをセットにしてエクスポートした場合、それぞれのアクティビティが作成されます。それぞれのアクティビティでメタデータを確認してください。<br></br>また、論文と根拠データはアイテム間リンクが自動で設定されます。
+<img src="images/image-65.png" alt="alt text"></img></li>
+</ol>
+<p><strong>■ 直接登録方式の場合</strong></p>
+<ol>
+<li>JAIRO Cloudにログインします。</li>
+<li><p>GakuNin RDM連携により作成されたアイテムを確認します。<br></br> 論文と根拠データをセットにしてエクスポートした場合、それぞれのアイテムが作成されます。<br></br> 各アイテムのメタデータを確認し、必要に応じて修正を行ってください。<br></br> また、論文と根拠データにはアイテム間リンクが自動で設定されます。  </p>
+<p>※入力するメタデータの詳細や登録時の操作については<a href="学術雑誌論文登録の流れ.md#メタデータ入力画面での入力・選択">JAIRO Cloud（WEKO3）登録ガイド　学術雑誌論文編</a>を参照してください。</p>
+</li>
+</ol>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="OAAssist.html" class="navigation navigation-next " aria-label="Next page: OAアシストを利用した場合の操作">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GakuNin RDM-JAIRO Cloud連携を利用した場合の操作","level":"1.2","depth":1,"next":{"title":"OAアシストを利用した場合の操作","level":"1.3","depth":1,"path":"manual/OAAssist.md","ref":"./manual/OAAssist.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"操作の流れに沿ったマニュアル","language":"ja","gitbook":"*","description":"このマニュアルは、操作の流れに沿って、各機能の説明や使用方法をまとめたものです。ユーザーが必要な情報を迅速に見つけられるように構成されています。"},"file":{"path":"manual/GJIntegration.md","mtime":"2026-03-11T21:43:14.000Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-03-16T19:30:17.039Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

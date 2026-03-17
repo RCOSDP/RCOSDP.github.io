@@ -1,0 +1,1052 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>JAIRO Cloud（WEKO3）登録ガイド　学術雑誌論文編 · 操作の流れに沿ったマニュアル</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="researchdatadeposit.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">操作の流れに沿ったマニュアル</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="journalPaperdeposit.html">
+            
+                <a href="journalPaperdeposit.html">
+            
+                    
+                    JAIRO Cloud（WEKO3）登録ガイド　学術雑誌論文編
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="researchdatadeposit.html">
+            
+                <a href="researchdatadeposit.html">
+            
+                    
+                    JAIRO Cloud（WEKO3）登録ガイド　研究データ編
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="GJIntegration.html">
+            
+                <a href="GJIntegration.html">
+            
+                    
+                    GakuNin RDMxJAIRO Cloud連携を利用した場合の操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="OAAssist.html">
+            
+                <a href="OAAssist.html">
+            
+                    
+                    OA Assistを利用した場合の操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JAIRO Cloud（WEKO3）登録ガイド　学術雑誌論文編</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="jairo-cloud（weko3）登録ガイド　学術雑誌論文編"><a name="jairo-cloud（weko3）登録ガイド　学術雑誌論文編" class="plugin-anchor" href="#jairo-cloud（weko3）登録ガイド　学術雑誌論文編"><i class="fa fa-link" aria-hidden="true"></i></a>JAIRO Cloud（WEKO3）登録ガイド　学術雑誌論文編<!-- omit from toc --></h1>
+<p>※本資料の最新版はJPCOARで公開予定です。現状、リンク維持のため残しております。</p>
+<p>ここでは、学術雑誌論文単体をJAIRO Cloudに登録する時の流れについて説明します。</p>
+<p>研究データ（根拠データ）単体でJAIRO Cloudに登録する場合の流れについては、<a href="researchdatadeposit.html">JAIRO Cloud（WEKO3）登録ガイド　研究データ編</a>をご参照ください。</p>
+<p>JAIRO Cloudの操作に関しては、<a href="https://jpcoar.org/support/jairo-cloud/manual/item-registration/" target="_blank">基本マニュアル個別登録編</a>もご参照ください。</p>
+<p>また、操作に関する資料（動画等）やお問い合わせ先は<a href="https://jpcoar.org/support/jairo-cloud/portal/" target="_blank">JAIRO Cloudサポートポータル</a>に掲載されていますので、ぜひご確認ください。</p>
+<h2 id="目次"><a name="目次" class="plugin-anchor" href="#目次"><i class="fa fa-link" aria-hidden="true"></i></a>目次<!-- omit from toc --></h2>
+<ul>
+<li><a href="#1-即時oaの対象となる学術雑誌論文とリポジトリ担当者の対応">1 即時OAの対象となる学術雑誌論文とリポジトリ担当者の対応</a></li>
+<li><a href="#2-下準備">2 下準備</a><ul>
+<li><a href="#21-出版社ポリシー論文の版の確認">2.1 出版社ポリシー・論文の版の確認</a></li>
+</ul>
+</li>
+<li><a href="#3-oa-assistを利用した場合の操作概要">3 OA Assistを利用した場合の操作（概要）</a></li>
+<li><a href="#4-jairo-cloudから登録する操作手順">4 JAIRO Cloudから登録する操作手順</a><ul>
+<li><a href="#41-概要">4.1 概要</a></li>
+<li><a href="#42-ログイン後からワークフロー開始まで">4.2 ログイン後からワークフロー開始まで</a></li>
+<li><a href="#43-item-registration画面の概要">4.3 Item Registration画面の概要</a><ul>
+<li><a href="#431-画面全体の構成">4.3.1 画面全体の構成</a></li>
+<li><a href="#432-操作の流れこの画面で行うこと">4.3.2 操作の流れ（この画面で行うこと）</a></li>
+</ul>
+</li>
+<li><a href="#44-ファイルのアップロード">4.4 ファイルのアップロード</a></li>
+<li><a href="#45-メタデータ入力画面での入力選択">4.5 メタデータ入力画面での入力・選択</a><ul>
+<li><a href="#451-メタデータ自動入力ボタンについて">4.5.1 メタデータ自動入力ボタンについて</a></li>
+<li><a href="#452-メタデータの入力">4.5.2 メタデータの入力</a></li>
+</ul>
+</li>
+<li><a href="#46-メタデータ入力画面末尾で次へを選択した後の操作">4.6 メタデータ入力画面末尾で「次へ」を選択した後の操作</a><ul>
+<li><a href="#461-インデックスの指定">4.6.1 インデックスの指定</a></li>
+<li><a href="#462-アイテム間リンク">4.6.2 アイテム間リンク</a></li>
+<li><a href="#463-doiの付与">4.6.3 DOIの付与</a></li>
+</ul>
+</li>
+<li><a href="#47-アクティビティの承認">4.7 アクティビティの承認</a></li>
+<li><a href="#48-ワークフロー完了">4.8 ワークフロー完了</a></li>
+<li><a href="#49-登録完了様式aの登録見本">4.9 登録完了（様式（A）の登録見本）</a></li>
+<li><a href="#410-ハーベスト結果の確認">4.10 ハーベスト結果の確認</a></li>
+</ul>
+</li>
+<li><a href="#5-gakunin-rdm-jairo-cloud連携を利用した場合の操作概要">5 GakuNin RDM-JAIRO Cloud連携を利用した場合の操作（概要）</a></li>
+<li><a href="#6-補足">6 補足</a><ul>
+<li><a href="#61-ccライセンスの付与について">6.1 CCライセンスの付与について</a></li>
+<li><a href="#62-出版社ポリシーへの対応">6.2 出版社ポリシーへの対応</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="注意：論文の根拠データの登録について"><a name="注意：論文の根拠データの登録について" class="plugin-anchor" href="#注意：論文の根拠データの登録について"><i class="fa fa-link" aria-hidden="true"></i></a>注意：論文の根拠データの登録について<!-- omit from toc --></h2>
+<p>論文の根拠データを含む研究データを登録する場合、以下の2パターンがあります。</p>
+<ul>
+<li><strong>様式（A）</strong>：「研究データ」として、個別の１アイテムとして登録する。</li>
+<li><strong>様式（B）</strong>：論文を公開する主アイテムの一部として、「根拠データ」のファイルを付属する形で公開する。</li>
+</ul>
+<p>即時オープンアクセス義務化では「論文とその根拠データ」を原則機関リポジトリ登録することが求められていますが、最終的な掲載先であるCiNii Researchでは以下のページのとおり、<strong><span style="color:red">論文の根拠データは、原則、論文とは別の個別の1アイテムとして登録し、【関連情報】項での記述やアイテム間リンク等で論文と紐づける形（様式（A））にすることが推奨されています。</span></strong></p>
+<p><a href="https://support.nii.ac.jp/ja/cir/researchdata_harvest" target="_blank">「研究データ」「根拠データ」の収録について | 学術コンテンツサービス サポート</a></p>
+<p>このマニュアルでは様式（A）に従って研究データとは別々に学術雑誌論文を登録する場合の操作の流れを説明します。</p>
+<p>ただし、諸般の事情で「論文と根拠データを合わせた形」（様式（B））で登録することになる場合もありますので、参考に様式（B）の場合の対応も示します。</p>
+<p>様式（B）に対応する記述は<span style="color:green">緑色</span>の字で示します。様式（B）で登録する場合はご参照ください。</p>
+<p>なお、根拠データ（研究データ）の登録については「<a href="https://jpcoar.org/system/wp-content/uploads/2025/09/research_data_registration_guideline.pdf" target="_blank">機関リポジトリへの研究データ登録ガイドライン</a>」もご確認ください。</p>
+<h2 id="1-即時oaの対象となる学術雑誌論文とリポジトリ担当者の対応"><a name="1-即時oaの対象となる学術雑誌論文とリポジトリ担当者の対応" class="plugin-anchor" href="#1-即時oaの対象となる学術雑誌論文とリポジトリ担当者の対応"><i class="fa fa-link" aria-hidden="true"></i></a>1 即時OAの対象となる学術雑誌論文とリポジトリ担当者の対応</h2>
+<ul>
+<li><p><strong>即時OAの対象となる学術雑誌論文</strong><br></br>科研費等の、対象となる一部の競争的研究費（2025年度新規公募分以降）による研究成果のうち、電子ジャーナルに掲載された査読済みの研究論文（およびその根拠データ）※論文は著者最終稿でも可</p>
+<p><img src="images/image.png" alt="alt text"></img></p>
+<p><img src="images/image-1.png" alt="alt text"></img></p>
+<p>電子ジャーナルに関する学内向け説明資料ー素材集ー【OA編】（JUSTICE,2025.3）より</p>
+</li>
+<li><p><strong>即時OAのためリポジトリ担当者が行うこと</strong><br></br>➀ 学術雑誌論文（+根拠データ）をオープンアクセスにする場合どうするか、（また即時オープンアクセス義務化の対象かどうか判断する際）、教員が迷わないように案内を行う。<br></br>➁ 出版元でOAになっていない学術雑誌論⽂（+根拠データ）を機関リポジトリに登録する。<br></br>（出版元でOA済みの学術雑誌論文（＋根拠データ）を、さらに機関リポジトリへ登録することも可能）<br></br>③ NII RDC上で学術雑誌論文（+根拠データ）を検索できるようにする＝IRDBにきちんとハーベストされるようにする。  </p>
+</li>
+</ul>
+<h2 id="2-下準備"><a name="2-下準備" class="plugin-anchor" href="#2-下準備"><i class="fa fa-link" aria-hidden="true"></i></a>2 下準備</h2>
+<h3 id="21-出版社ポリシー・論文の版の確認"><a name="21-出版社ポリシー・論文の版の確認" class="plugin-anchor" href="#21-出版社ポリシー・論文の版の確認"><i class="fa fa-link" aria-hidden="true"></i></a>2.1 出版社ポリシー・論文の版の確認</h3>
+<ol>
+<li>申請のあった論文をリポジトリに登録することに問題がないか確認する</li>
+<li>申請者から提出された論文ファイルの版（基本的にはAM（著者最終稿）かVoR（出版社版））を確認する</li>
+<li>出版社や学会のセルフアーカイブポリシーを確認する<br></br><a href="https://openpolicyfinder.jisc.ac.uk/" target="_blank">Open Policy Finder</a>（海外学術誌ポリシー確認ツール）や<a href="https://jpcoar.org/support/scpj/" target="_blank">SCPJ</a>（国内学術誌ポリシー確認ツール）が活用できますが、出版社等のページで直接ポリシーを確認すると確実です。</li>
+</ol>
+<p>詳細は以下の資料を確認してください。</p>
+<p><a href="https://jpcoar.org/system/wp-content/uploads/2025/07/2024_3-3_jpcoar_webinar.pdf" target="_blank">オープンアクセスと著作権 （2024年度 リポジトリ担当者の基礎知識研修（2024年度第3回JPCOAR Webinar））</a></p>
+<p><a href="https://jpcoar.org/members/fy2024/immediate-oa-seminar-01-1/" target="_blank">「即時オープンアクセスに備える」シリーズセミナー その1 学術雑誌論文の権利確認方法って？①よくあるパターン講義編 | オープンアクセスリポジトリ推進協会（JPCOAR）</a>（JPCOAR会員機関限定・ID/パスワード認証有）</p>
+<p>（地域ワークショップの資料（著作権ポリシー実習）を追加予定）</p>
+<h2 id="3-oa-assistを利用した場合の操作（概要）"><a name="3-oa-assistを利用した場合の操作（概要）" class="plugin-anchor" href="#3-oa-assistを利用した場合の操作（概要）"><i class="fa fa-link" aria-hidden="true"></i></a>3 OA Assistを利用した場合の操作（概要）</h2>
+<p>OAアシストを利用することで、前述の対象論文の抽出、出版社ポリシーの確認、論文ファイルの提供依頼といった論文登録の下準備を効率化できます。</p>
+<p>具体的な操作手順については、<a href="OAアシストを利用した登録手順.md">「OAアシストを利用した登録手順」</a>を参照して下さい。</p>
+<h2 id="4-jairo-cloudから登録する操作手順"><a name="4-jairo-cloudから登録する操作手順" class="plugin-anchor" href="#4-jairo-cloudから登録する操作手順"><i class="fa fa-link" aria-hidden="true"></i></a>4 JAIRO Cloudから登録する操作手順</h2>
+<h3 id="41-概要"><a name="41-概要" class="plugin-anchor" href="#41-概要"><i class="fa fa-link" aria-hidden="true"></i></a>4.1 概要</h3>
+<p>操作は基本マニュアルの<a href="https://jpcoar.org/support/jairo-cloud/manual/item-registration/" target="_blank">アイテム個別登録</a>で説明している内容と同じです。学術雑誌論文を登録する時に、どの項目に何を入れていくかをメインに説明します。</p>
+<p>なお、本文中で参照・リンクしている<a href="https://schema.irdb.nii.ac.jp/ja/schema?version=257" target="_blank">JPCOARスキーマのバージョンは2.0</a>です。バージョンにより差異が発生する可能性がありますので、ご留意ください。</p>
+<p>登録作業は以下の流れで行います。</p>
+<ol>
+<li>ワークフローのアクティビティを作成</li>
+<li>メタデータを入力</li>
+<li>アイテムにその他の情報を設定</li>
+<li>リポジトリ担当者が承認</li>
+<li>登録完了</li>
+<li>登録結果の確認（JAIRO Cloud）</li>
+<li>ハーベスト結果の確認（IRDB）</li>
+</ol>
+<h3 id="42-ログイン後からワークフロー開始まで"><a name="42-ログイン後からワークフロー開始まで" class="plugin-anchor" href="#42-ログイン後からワークフロー開始まで"><i class="fa fa-link" aria-hidden="true"></i></a>4.2 ログイン後からワークフロー開始まで</h3>
+<ol>
+<li><p>ログイン後、トップ画面のメニューから［ワークフロー］タブをクリックします。
+<img src="images/image-26.png" alt="alt text"></img>
+［アクティビティ一覧］画面が表示されます。</p>
+</li>
+<li><p>表示された［アクティビティ一覧］画面の右下にある［+新規アクティビティ］ボタンをクリックします。
+<img src="images/image-27.png" alt="alt text"></img>
+［ワークフロー選択］画面が表示されます。</p>
+</li>
+<li><p>表示された［ワークフロー選択］画面のデフォルトアイテムタイプ（フル）の［+New］ボタンをクリックします。<br></br>※このマニュアルの説明では、デフォルトアイテムタイプ（フル）を利用して登録します。自機関でどうしても追加したい（表示させたい）項目がない限りは、デフォルトアイテムタイプ（フル）を利用して登録することを推奨します。
+<img src="images/image-2.png" alt="alt text"></img>
+アイテムのメタデータとコンテンツを登録する画面が表示されます。</p>
+</li>
+</ol>
+<h3 id="43-item-registration画面の概要"><a name="43-item-registration画面の概要" class="plugin-anchor" href="#43-item-registration画面の概要"><i class="fa fa-link" aria-hidden="true"></i></a>4.3 Item Registration画面の概要</h3>
+<p>この画面では、ファイルのアップロードとメタデータの入力を行います。</p>
+<h4 id="431-画面全体の構成"><a name="431-画面全体の構成" class="plugin-anchor" href="#431-画面全体の構成"><i class="fa fa-link" aria-hidden="true"></i></a>4.3.1 画面全体の構成</h4>
+<p>Item Registration画面は、主に次の項目で構成されています。</p>
+<p><img src="images/image-28.png" alt="alt text"></img></p>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ファイルアップロードエリア</td>
+<td>ファイルをドラッグアンドドロップまたは［Click to select］ボタンからファイルをアップロードします。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>メタデータ入力エリア</td>
+<td>複数のパネルに分かれており、タイトル、作成者、権利情報などを入力します。<br></br>［v］/［&gt;］ボタンを操作することでパネルの開閉が可能です。<br></br><b>※初期状態で展開されているパネルは入力必須項目です。</b></td>
+</tr>
+<tr>
+<td>3</td>
+<td>［削除］ボタン</td>
+<td>クリックすると、選択されているメールアドレスがフィードバックメール送信先から削除されます。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>［保存］ボタン</td>
+<td>クリックすると、入力した内容が一時保存されます。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>［次へ］ボタン</td>
+<td>クリックすると、［インデックス指定］画面に遷移します。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>［強制終了］ボタン</td>
+<td>クリックすると、入力した内容を破棄し、作業中のアクティビティを中止します。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>［戻る］ボタン</td>
+<td>クリックすると、入力した内容は保存されず［ワークフロー選択］画面に遷移します。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="432-操作の流れ（この画面で行うこと）"><a name="432-操作の流れ（この画面で行うこと）" class="plugin-anchor" href="#432-操作の流れ（この画面で行うこと）"><i class="fa fa-link" aria-hidden="true"></i></a>4.3.2 操作の流れ（この画面で行うこと）</h4>
+<ol>
+<li><p>ファイルアップロード</p>
+<ul>
+<li>論文ファイル<span style="color:green">（＋根拠データ）</span>をアップロードします。</li>
+<li>アップロード後、ファイル情報（ライセンス、アクセス権など）を入力します。</li>
+</ul>
+</li>
+<li><p>メタデータ入力</p>
+<ul>
+<li>タイトル、作成者情報、権利情報、助成情報などを入力します。</li>
+<li>登録しようとしている論文のDOIやCiNii IDが分かっている場合は「メタデータ自動入力」機能を活用できます。</li>
+</ul>
+</li>
+<li><p>確認と次のステップ</p>
+<ul>
+<li>入力が完了したら「次へ」をクリックし、インデックス指定や承認画面に進みます。</li>
+</ul>
+</li>
+</ol>
+<p>次章では、ファイルアップロードの具体的な操作を詳しく説明します。</p>
+<h3 id="44-ファイルのアップロード"><a name="44-ファイルのアップロード" class="plugin-anchor" href="#44-ファイルのアップロード"><i class="fa fa-link" aria-hidden="true"></i></a>4.4 ファイルのアップロード</h3>
+<p>論文ファイル<span style="color:green">（と根拠データのファイル）</span>をアップロードします。</p>
+<ol>
+<li><p>［Drop files or folders here］に登録するファイルをドラッグ＆ドロップします。または［Click to select］ボタンをクリックすると表示される［アップロードファイル選択］ダイアログで、アップロードするファイルを選択後、［開く］ボタンをクリックします。
+<img src="images/image-3.png" alt="alt text"></img>
+ファイル名とサイズが表示されます。
+<img src="images/image-4.png" alt="alt text"></img></p>
+</li>
+<li><p>表示されたファイル情報の［Start upload］ボタンをクリックします。<br></br><img src="images/image-29.png" alt="alt text"></img>
+ファイルがアップロードされるとProgressに[✓]が表示されます。
+<img src="images/image-5.png" alt="alt text"></img></p>
+</li>
+</ol>
+<h3 id="45-メタデータ入力画面での入力・選択"><a name="45-メタデータ入力画面での入力・選択" class="plugin-anchor" href="#45-メタデータ入力画面での入力・選択"><i class="fa fa-link" aria-hidden="true"></i></a>4.5 メタデータ入力画面での入力・選択</h3>
+<h4 id="451-メタデータ自動入力ボタンについて"><a name="451-メタデータ自動入力ボタンについて" class="plugin-anchor" href="#451-メタデータ自動入力ボタンについて"><i class="fa fa-link" aria-hidden="true"></i></a>4.5.1 メタデータ自動入力ボタンについて</h4>
+<p>DOIや各種外部サービスIDを用いて、Web APIからメタデータを取得し、自動入力することができます。<br></br>［メタデータをAPIから取得］ボタンをクリックすると、利用するサービスを選択できます。</p>
+<p><img src="images/image-6.png" alt="alt text"></img></p>
+<p><strong>■ 利用可能なサービスと入力項目</strong></p>
+<table>
+<thead>
+<tr>
+<th>選択肢</th>
+<th>入力項目</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CrossRef</td>
+<td>DOI</td>
+<td>海外雑誌論文等<br></br>※システム管理者による Web APIアカウント設定が必要です。</td>
+</tr>
+<tr>
+<td>CiNii</td>
+<td>CRID</td>
+<td>CiNii Research収録論文</td>
+</tr>
+<tr>
+<td>WEKOID</td>
+<td>レコードID</td>
+<td>同一WEKO内の既存アイテム参照<br></br>※レコードID：アイテム詳細画面のURLの末尾の数値部分</td>
+</tr>
+<tr>
+<td>researchmap</td>
+<td>permalink, 業績種別, 業績ID</td>
+<td>researchmapに登録されている業績情報を取得します。研究者のpermalink、業績種別、業績IDを入力してください。</td>
+</tr>
+<tr>
+<td>DOI</td>
+<td>DOI</td>
+<td>システム管理者によって設定された優先度順で外部Web API（例：JaLC等）へ問い合わせを行い、取得可能なメタデータを自動入力します。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>■ 利用例</strong></p>
+<ul>
+<li><p>海外学術雑誌論文の場合<br></br>CrossRefを選択し、DOI（「10.」で始まる番号）を入力します。
+<img src="images/image-9.png" alt="alt text"></img></p>
+</li>
+<li><p>CiNii Researchに収録されている論文の場合<br></br>CiNiiを選択し、CRIDを入力します。
+<img src="images/image-8.png" alt="alt text"></img></p>
+</li>
+</ul>
+<p>詳細は<a href="https://jpcoar.org/support/jairo-cloud/manual/item-registration/#metadata_auto" target="_blank">基本マニュアル（アイテム個別登録＞メタデータ自動入力）</a>をご確認ください。</p>
+<h4 id="452-メタデータの入力"><a name="452-メタデータの入力" class="plugin-anchor" href="#452-メタデータの入力"><i class="fa fa-link" aria-hidden="true"></i></a>4.5.2 メタデータの入力</h4>
+<p><span style="background:yellow">黄色のハイライト</span>部分は入力必須の項目で、その他の項目も可能な限り入力が推奨されますが、<strong>太字</strong>のものは特に推奨される項目です。※<span style="color:#0969da">青字</span>のものはJPCOARスキーマガイドラインへのリンクがあります。</p>
+<ul>
+<li><strong>ファイル情報</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>【ファイル情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/43-.1" target="_blank">【本文URL】</a>→【オブジェクトタイプ】</td>
+<td>論文：「fulltext」を選択  <br></br><span style="color:green">根拠データ：「dataset」を選択</span></td>
+</tr>
+<tr>
+<td>2</td>
+<td>【ファイル情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/43-.4" target="_blank">【日付】</a></td>
+<td>個別ファイルに関連する日付はこちらに記入する。記入方法は<a href="#date">【日付】</a>参照。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>【ファイル情報】【表示形式】</td>
+<td>「詳細表示」を選択する。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>【ファイル情報】  <strong>【ライセンス】</strong></td>
+<td>論文<span style="color:green">（＋データ）</span>本体内の記載や著者の指定に従って、ライセンス情報がある場合は選択（もしくは自由記述）する。※詳しくは補足<a href="#ccライセンスの付与について">「CCライセンスの付与について」</a>へ  <br></br>特にライセンスを指定しない場合は選択しないか「自由入力（write your own licence）」を選択して何も記述せずに進める。 <br></br>※ここに入力するのはあくまでファイルのライセンス情報で、ここに入力しただけではメタデータとして流通しません。必ず 【権利情報】 にも入力します。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>【ファイル情報】  <strong>【アクセス】</strong></td>
+<td>ファイル個別のアクセス権を選択する。<br></br>・エンバーゴなし：「オープンアクセス」を選択。  <br></br>・エンバーゴあり：「オープンアクセス日を指定する」を選択。【日付】部分でも記入したエンバーゴの解禁日を再び入れる。</td>
+</tr>
+</tbody>
+</table>
+<p>  入力例：
+<img src="images/image-10.png" alt="alt text"></img></p>
+<ul>
+<li><strong>公開日・タイトル</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><span style="background:yellow">【公開日】</span></td>
+<td>リポジトリに登録する日を選択する（基本的には登録作業を行っている日）。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span style="background:yellow"><a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/1" target="_blank">【タイトル】</a></span></td>
+<td>論文のタイトルと言語を入力する。<br></br>※斜体や特殊文字も登録可能ですが、CiNiiやほかサービスに連携した際に文字化けする場合があります。</td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-11.png" alt="alt text"></img></p>
+<ul>
+<li><strong>作成者</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>【作成者】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/3-.1" target="_blank">作成者識別子</a></td>
+<td>「e-Rad研究者番号とORCID」を記入する。<br></br>※e-Rad研究者番号・ORCIDは<a href="https://nrid.nii.ac.jp/index/" target="_blank">KAKEN</a>や<a href="https://researchmap.jp/researchers" target="_blank">researchmap</a>で確認できる。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>【作成者】</strong>  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/3-.2" target="_blank"><strong>作成者姓名</strong></a></td>
+<td>「姓, 名」の形で入力する。<br></br>例：公開, 太郎/Koukai, Taro</td>
+</tr>
+<tr>
+<td>3</td>
+<td>【作成者】  作成者所属.<a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/3-.6-.1" target="_blank">所属機関識別子</a></td>
+<td>作成者の所属機関識別子（RORが推奨される）を入力する。<br></br>※RORは[Research Organization Registry (ROR) \</td>
+<td>Home](<a href="https://ror.org/)の検索窓に英語で大学名を入れて検索するとヒットするURI形式（`https://ror.org/…`）のもの。" target="_blank">https://ror.org/)の検索窓に英語で大学名を入れて検索するとヒットするURI形式（`https://ror.org/…`）のもの。</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>【作成者】  作成者所属.<a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/3-.6-.2" target="_blank">所属機関名</a></td>
+<td>作成者の所属機関名を入力する。</td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-12.png" alt="alt text"></img></p>
+<p><strong>※複数著者や作成者姓名の別名（日・英・カナ）を入力する場合の注意</strong><br></br>複数の著者を登録する場合や、作成者姓名の別名（日本語／英語／カナ）を入力する場合は、「+New」ボタンを押す箇所を間違えないように注意してください。<br></br>「+New」ボタンは入力項目ごとに複数表示されており、誤った箇所のボタンを押すと、意図しない構造のメタデータが登録される場合があります。  </p>
+<p>下図のように、  </p>
+<ul>
+<li>①：作成者姓名の別名を追加するための「+New」</li>
+<li>②：著者（作成者）を追加するための「+New」</li>
+</ul>
+<p>を確認し、追加したい内容に対応する番号のボタンを押してください。
+<img src="images/image-32.png" alt="alt text"></img></p>
+<ul>
+<li><strong>アクセス権・権利情報</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/5" target="_blank"><strong>【アクセス権】</strong></a></td>
+<td>エンバーゴなし： 「open access」を選択。<br></br>エンバーゴあり： 「embargoed access」を選択。<br></br>※「embargoed access」を選択した場合、エンバーゴ期間経過後「open access」に変更する。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/6" target="_blank"><strong>【権利情報】</strong></a></td>
+<td>権利情報を入力する。<br></br>（例：©（出版社・学会名）./ This is an Open access Article under CreativeCommons Licence.）<br></br>※CCライセンスの時は補足<a href="#ccライセンスの付与について">「CCライセンスの付与について」</a>を参照<br></br><span style="color:green">根拠データについて、「データの利活用・提供方針」があればこちらに入力する。著者から事前に聞いておくとスムーズ。（例：無償。ただしクレジット表記を条件とする。）  <br></br>※研究者には<a href="https://japanlinkcenter.org/rduf/doc/rduf_license_guideline.pdf" target="_blank">「研究データの公開・利用条件指定ガイドライン」</a>等を参考に「データの利活用・提供方針」を定めるよう周知する。</span></td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-13.png" alt="alt text"></img></p>
+<ul>
+<li><strong>内容記述</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/9" target="_blank"><strong>【内容記述】</strong></a></td>
+<td>出版社ポリシーに応じて、引用文（citation）や出版社のstatementを入力する。※詳しくは補足<a href="#出版社ポリシーへの対応">「出版社ポリシーへの対応」</a>へ  <br></br><span style="color:green">根拠データがある場合、データの内容に関する説明を入力する。（内容記述タイプはOtherか（技術的な情報の場合）TechnicalInfoを選択し、言語も選択する）  <br></br>例：〇〇のシミュレーションにおいて〇〇の条件のもとで得られたデータ</span></td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-14.png" alt="alt text"></img></p>
+<ul>
+<li><strong>日付・資源タイプ</strong><span id="date"></span></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/12" target="_blank"><strong>【日付】</strong></a></td>
+<td>日付（YYYY-MM-DD形式）を選択する。複数入力することも可能。  <br></br>・発行日がある場合は【日付】か<a href="#journal-date">【書誌情報】【発行日】</a>のどちらかに必ず記入し、日付タイプは"Issued"を指定する。<br></br>・エンバーゴがある場合は日付タイプに"Available"を指定し、エンバーゴの解禁日を必ず記入する。</td>
+</tr>
+<tr>
+<td>2</td>
+<td><span style="background:yellow"><a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/15" target="_blank">【資源タイプ】</a></span></td>
+<td>「journal article」を選択する。  <br></br><span style="color:green">※根拠データを併せて登録する場合も同様</span></td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-15.png" alt="alt text"></img></p>
+<ul>
+<li><strong>出版タイプ・関連情報</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/17" target="_blank"><strong>【出版タイプ】</strong></a></td>
+<td>登録する論文ファイルの版を選択肢から選択する。  <br></br>基本的にはAM（著者最終稿）かVoR（出版社版）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>【関連情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/20-.1" target="_blank"><strong>関連識別子</strong></a></td>
+<td>出版社版のDOI（<code>https://doi.org/10.～</code>）を【関連識別子】に入れ、識別子タイプ（DOI）、関連タイプ（AMならisVersionOf、VoRならisIdenticalTo）を選択する。  <br></br>根拠データと別々に登録する場合は、ここに根拠データのDOIやURIを入れ、識別子タイプ、関連タイプ（isSupplemetedBy）を入れる。</td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-16.png" alt="alt text"></img></p>
+<ul>
+<li><strong>助成情報</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.1" target="_blank">助成機関識別子</a>. 識別子タイプ</td>
+<td>助成機関識別子タイプを入力する。  <br></br>例：e-Rad_funder</td>
+</tr>
+<tr>
+<td>2</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.1" target="_blank">助成機関識別子</a>.助成機関識別子</td>
+<td>助成機関識別子を入力する（以下は日本学術振興会の例）。<br></br>例：識別子：1025<br></br>　　タイプURI: <a href="https://www.e-rad.go.jp/datasets/files/haibunkikan.csv" target="_blank">https://www.e-rad.go.jp/datasets/files/haibunkikan.csv</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.2" target="_blank">助成機関名</a>[0]. 助成機関名</td>
+<td>助成機関名を入力する。※言語はjaを選択  <br></br>例：日本学術振興会(JSPS)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.2" target="_blank">助成機関名</a>[1]. 助成機関名</td>
+<td>助成機関名を入力する。※言語はenを選択  <br></br>例：Japan Society for the Promotion of Science (JSPS)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.4" target="_blank">プログラム情報</a></td>
+<td>プログラム情報を記入する。※言語はjaを選択  <br></br>例：科学研究費助成事業</td>
+</tr>
+<tr>
+<td>6</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.5" target="_blank">研究課題番号</a>.研究課題番号</td>
+<td>研究課題番号を入力する。研究課題番号タイプは「JGN」を選択する。  <br></br>例：JP25KF0049</td>
+</tr>
+<tr>
+<td>7</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.5" target="_blank">研究課題番号</a>.研究課題番号URI</td>
+<td>研究課題番号URIを入力する。  <br></br>例：<code>https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-25KF0049/</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.6" target="_blank">研究課題名</a>[0].研究課題名</td>
+<td>研究課題名（日本語）を入力する。※言語はjaを選択  <br></br>例：電極触媒反応における多孔性配位高分子の動的化学解明</td>
+</tr>
+<tr>
+<td>9</td>
+<td>【助成情報】  <a href="https://schema.irdb.nii.ac.jp/ja/schema/2.0/23-.6" target="_blank">研究課題名</a>[1].研究課題名</td>
+<td>研究課題名（英語）を入力する。※言語はenを選択  <br></br>例：Elucidating the Dynamic Chemistry of Porous Coordination Polymers in Electrocatalytic Reactions</td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-17.png" alt="alt text"></img></p>
+<ul>
+<li><strong>書誌情報</strong><span id="journal-date"></span></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項番</th>
+<th>項目</th>
+<th>入力・選択内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>【書誌情報】</td>
+<td>既に出版済みのものであれば入力する。<br></br>発行日がある場合は<a href="#date">【日付】</a>か【書誌情報】【発行日】のどちらかに必ず記入し、日付タイプは"Issued"を指定する。</td>
+</tr>
+</tbody>
+</table>
+<p>入力例：
+<img src="images/image-25.png" alt="alt text"></img></p>
+<h3 id="46-メタデータ入力画面末尾で「次へ」を選択した後の操作"><a name="46-メタデータ入力画面末尾で「次へ」を選択した後の操作" class="plugin-anchor" href="#46-メタデータ入力画面末尾で「次へ」を選択した後の操作"><i class="fa fa-link" aria-hidden="true"></i></a>4.6 メタデータ入力画面末尾で「次へ」を選択した後の操作</h3>
+<h4 id="461-インデックスの指定"><a name="461-インデックスの指定" class="plugin-anchor" href="#461-インデックスの指定"><i class="fa fa-link" aria-hidden="true"></i></a>4.6.1 インデックスの指定</h4>
+<ol>
+<li><p>［インデックスツリー］でアイテムを登録したいインデックスのチェックボックスにチェックを入れます。<br></br>※ 複数インデックスに登録できるため、指定するインデックスに注意してください。</p>
+<p><img src="images/image-18.png" alt="alt text"></img>
+チェックしたインデックス名が表示されます。</p>
+<p>※子インデックスを選択する場合<br></br>「▶」をクリックして子インデックスを表示し、アイテムを登録したいインデックスのチェックボックスにチェックを入れます。
+<img src="images/image-47.png" alt="alt text"></img></p>
+</li>
+<li><p>［次へ］ボタンをクリックします。<br></br>［コメント入力］画面が表示されます。<br></br><img src="images/image-19.png" alt="alt text"></img></p>
+<p>※下の図のように、登録作業中のコメントを入力することができます。（アイテムのメタデータには含まれず、登録作業中のみ確認することができます。）<br></br>必要に応じて入力してください。
+<img src="images/image-33.png" alt="alt text"></img></p>
+</li>
+<li><p>［次へ］ボタンをクリックします。<br></br>［Item Registration］アクションが完了します。</p>
+</li>
+</ol>
+<h4 id="462-アイテム間リンク"><a name="462-アイテム間リンク" class="plugin-anchor" href="#462-アイテム間リンク"><i class="fa fa-link" aria-hidden="true"></i></a>4.6.2 アイテム間リンク</h4>
+<p>別に登録した研究データがある場合に、その研究データを論文に関連付けることができます。</p>
+<ul>
+<li><p><strong>注意事項</strong></p>
+<ul>
+<li><p><strong>アイテム間リンクを一度作成すると削除できない不具合が発生する場合がありますので、ご注意ください。</strong></p>
+</li>
+<li><p>関連付ける研究データをメタデータの登録時に【関連情報】に入力している場合は必要ありません。</p>
+</li>
+<li><p>関連付ける研究データが複数ある場合、その研究データはすべて同じインデックスに登録されている必要があります。<br></br>論文と研究データは同じインデックスでも、別のインデックスでも問題ありません。<br></br>研究データが複数ある場合にまとめて管理できるよう、研究データ専用のインデックスを作成すると便利です。</p>
+</li>
+</ul>
+</li>
+<li><p>［インデックスツリー］から対象のインデックス名をクリックします。<br></br>そのインデックスに所属するアイテムが［アイテムリンク］に表示されます。
+<img src="images/image-20.png" alt="alt text"></img></p>
+</li>
+<li><p>［アイテムリンク］から対象アイテムの「+」ボタンをクリックします。<br></br>［アイテムリンク］に選択したアイテムが表示されます。
+<img src="images/image-21.png" alt="alt text"></img></p>
+</li>
+<li><p>リレーションタイプのプルダウンから「isSupplementedBy」を選択します。
+<img src="images/image-22.png" alt="alt text"></img></p>
+</li>
+<li><p>［次へ］ボタンをクリックします。<br></br>アイテム間リンクが登録されます。</p>
+</li>
+</ul>
+<h4 id="463-doiの付与"><a name="463-doiの付与" class="plugin-anchor" href="#463-doiの付与"><i class="fa fa-link" aria-hidden="true"></i></a>4.6.3 DOIの付与</h4>
+<p>自機関の識別子付与ルールに従って、JaLC DOI等のDOIを付与する機関では付与を行います。（handleなど他の識別子を利用している機関ではそちらでも可）</p>
+<p>ただし、出版社版（VoR）の論文ファイルを登録する際に、既に他のプラットフォームでDOIが付与されている場合は、DOIを付与しないようにしてください。</p>
+<p>識別子の付与ができたら、［次へ］ボタンをクリックします。<br></br>［戻る］ボタンをクリックすると、アイテム間リンクの画面に戻ることができます。</p>
+<p><img src="images/image-23.png" alt="alt text"></img></p>
+<p><strong>DOI登録に関する注意事項（学術雑誌論文）</strong></p>
+<p>DOIの登録には、DOI登録機関ごとに必須となるメタデータ項目があります。<br></br>必須項目が満たされていない場合、DOI登録は行えません。<br></br>詳細な項目や条件は、<a href="https://jpcoar.repo.nii.ac.jp/records/2000282" target="_blank">「IRDBデータ提供機関のための DOI管理・メタデータ入力ガイドライン : JPCOARスキーマ ver2.0.x編」</a>を参照してください。</p>
+<ul>
+<li><p><strong>共通事項</strong></p>
+<ul>
+<li>アイテムを登録するインデックスは公開状態であり、かつハーベスト公開が有効である必要があります。</li>
+<li>本文ファイルが登録されていないアイテムはDOI登録できません。</li>
+</ul>
+</li>
+<li><p><strong>JaLC DOI</strong><br></br>以下の項目が必須です。</p>
+<ul>
+<li><strong>出版者</strong>: 不明な場合は「出版者不明」と入力してください。</li>
+<li><strong>日付</strong>: Issued / Created / Updated のいずれかが必須です。いずれも存在しない場合は、Issued: 9999-01-01を入力してください。</li>
+<li><strong>開始ページ</strong>: 不明な場合は「none」と入力してください。</li>
+</ul>
+</li>
+<li><p><strong>Crossref DOI</strong><br></br>以下の項目が必須です。</p>
+<ul>
+<li><strong>出版者</strong>: 英語（en）の入力が必須です。</li>
+<li><strong>日付</strong>: Issued / Created / Updated のいずれかが必須です。いずれも存在しない場合は、Issued: 9999-01-01を入力してください。</li>
+<li><strong>助成機関名</strong>: 入力する場合は、英語（en）が必須です。</li>
+<li><strong>収録物識別子</strong></li>
+<li><strong>収録物名</strong>: 英語（en）の入力が必須です。</li>
+<li><strong>巻</strong></li>
+<li><strong>開始ページ</strong>: 不明な場合は「none」と入力してください。</li>
+</ul>
+</li>
+</ul>
+<h3 id="47-アクティビティの承認"><a name="47-アクティビティの承認" class="plugin-anchor" href="#47-アクティビティの承認"><i class="fa fa-link" aria-hidden="true"></i></a>4.7 アクティビティの承認</h3>
+<p>リポジトリ担当者がメタデータに不備がないか確認します。<br></br><img src="images/image-24.png" alt="alt text"></img></p>
+<p>入力内容に問題がなければ［承認］ボタンをクリックします。<br></br>不備があった場合、［戻る］ボタンを押すと識別子の付与の画面に戻ることができます。<br></br>承認後、ワークフロー完了画面が表示されます。</p>
+<h3 id="48-ワークフロー完了"><a name="48-ワークフロー完了" class="plugin-anchor" href="#48-ワークフロー完了"><i class="fa fa-link" aria-hidden="true"></i></a>4.8 ワークフロー完了</h3>
+<p>リポジトリ担当者により承認されるとアイテム登録が完了します。<br></br>登録されたアイテムを確認するために［Access］ボタンをクリックします。
+<img src="images/image-30.png" alt="alt text"></img>
+アイテム詳細画面が表示されます。</p>
+<h3 id="49-登録完了（様式（a）の登録見本）"><a name="49-登録完了（様式（a）の登録見本）" class="plugin-anchor" href="#49-登録完了（様式（a）の登録見本）"><i class="fa fa-link" aria-hidden="true"></i></a>4.9 登録完了（様式（A）の登録見本）</h3>
+<p>登録されたアイテムの詳細ページを確認します。<br></br>ファイルが正しく表示されているか、メタデータが正しく反映されているか、DOIや関連情報のリンクが正しく設定されているか等を確認します。
+<img src="images/image-31.png" alt="alt text"></img></p>
+<p>登録後にアイテムの修正が必要な場合は、［編集］ボタンをクリックすることで再編集が可能です。<br></br>編集時の操作に関しては、<a href="https://jpcoar.org/support/jairo-cloud/manual/item-registration/#m4" target="_blank">基本マニュアル個別登録編</a>もご参照ください。</p>
+<h3 id="410-ハーベスト結果の確認"><a name="410-ハーベスト結果の確認" class="plugin-anchor" href="#410-ハーベスト結果の確認"><i class="fa fa-link" aria-hidden="true"></i></a>4.10 ハーベスト結果の確認</h3>
+<p>IRDBによるコンテンツの収集（ハーベスト）が完了すると、登録された連絡先へ「ハーベスト処理結果通知メール」が届きます。<br></br>メールの内容を確認し、エラーやワーニングの有無を確認して下さい。  </p>
+<ol>
+<li><p>通知メールの確認<br></br>メール本文に「レコードエラー件数」や「項目エラー件数」、「ワーニング件数」、「項目変換件数」が記載されています。<br></br>レコードエラーの内容はメール本文で、項目エラー・ワーニング・項目変換の詳細はIRDBのマイコンテンツから確認できます。<br></br><img src="images/image-36.png" alt="alt text"></img><br></br>出典:「学術機関リポジトリデータベースサポート | マイコンテンツ・ユーザ情報」<a href="https://support.irdb.nii.ac.jp/ja/harvest/usercontents" target="_blank">https://support.irdb.nii.ac.jp/ja/harvest/usercontents</a>（参照日: 2026-01-28）</p>
+</li>
+<li><p>エラー詳細の取得と原因の特定<br></br>詳細な原因を確認するため、学術機関リポジトリデータベース（IRDB）にログインします。<br></br>マイコンテンツ画面を開き、項目エラーとワーニング、項目変換の詳細を確認します。<br></br>エラーメッセージの見方や修正方法については、以下の資料をご参照ください。</p>
+<ul>
+<li><a href="https://support.irdb.nii.ac.jp/ja/harvest/jpcoar/validation" target="_blank">エラーチェック解説 | 学術機関リポジトリデータベースサポート</a></li>
+<li><a href="https://jpcoar.org/system/wp-content/uploads/2025/06/4-3_jpcoar_webinar_rev2.pdf" target="_blank">ハーベストエラー解消の手順（第4回学術コミュニケーションセミナー IRDB-カラクリと役割：どこから・どこへ・どのように-）</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="5-gakunin-rdm-jairo-cloud連携を利用した場合の操作（概要）"><a name="5-gakunin-rdm-jairo-cloud連携を利用した場合の操作（概要）" class="plugin-anchor" href="#5-gakunin-rdm-jairo-cloud連携を利用した場合の操作（概要）"><i class="fa fa-link" aria-hidden="true"></i></a>5 GakuNin RDM-JAIRO Cloud連携を利用した場合の操作（概要）</h2>
+<p>GakuNin RDM–JAIRO Cloud連携を利用することで、論文ファイルおよび根拠データの登録とメタデータ入力をGakuNin RDM上で行い、その内容をJAIRO Cloudへ連携して登録できます。</p>
+<p>本連携を利用した場合の登録の流れは、以下のとおりです。</p>
+<ol>
+<li>GakuNin RDMで論文ファイル・根拠データを登録する</li>
+<li>GakuNin RDMでメタデータを入力し、JAIRO Cloudへエクスポートする</li>
+<li>JAIRO Cloudで登録アクティビティを再開し、登録を完了する</li>
+</ol>
+<p>GakuNin RDMでの具体的な操作手順（画面操作や入力項目の詳細）については、<a href="Gakunin%20RDM-JAIRO%20Cloud連携を利用した場合の操作.md">「Gakunin RDM-JAIRO Cloud連携を利用した場合の操作」</a>を参照してください。</p>
+<p>JAIRO Cloud側の操作については、
+本マニュアル内の<a href="#jairo-cloudから登録する操作手順">「JAIRO Cloudから登録する操作手順」</a>に従ってください。</p>
+<h2 id="6-補足"><a name="6-補足" class="plugin-anchor" href="#6-補足"><i class="fa fa-link" aria-hidden="true"></i></a>6 補足</h2>
+<h3 id="61-ccライセンスの付与について"><a name="61-ccライセンスの付与について" class="plugin-anchor" href="#61-ccライセンスの付与について"><i class="fa fa-link" aria-hidden="true"></i></a>6.1 CCライセンスの付与について</h3>
+<p>クリエイティブ・コモンズ・ライセンス（CCライセンス）は本来、著者（著作権者）の意向に従い付与するものですが、学術雑誌論文の場合には著者最終稿の登録であっても、出版社の著作権ポリシー（後述）に従って指定された種類のライセンスを付与します。また、一度付与したCCライセンスは著者であっても撤回・変更はできません。</p>
+<p>「ファイル情報[0].ライセンス」に入力しただけでは、アイコンが表示されるだけで、メタデータとして流通しません。必ず「権利情報」にも入力します。
+（参照）<a href="https://schema.irdb.nii.ac.jp/ja/schema/1.0.2/7" target="_blank">権利情報 | JPCOARスキーマガイドライン</a></p>
+<ul>
+<li><p>CC BY 4.0の場合、以下のように選択または記入する。  </p>
+<ul>
+<li>ファイル情報[0].ライセンス：Creative Commons Attribution 4.0 International (CC BY 4.0)  </li>
+<li>権利情報[0].権利情報Resource：<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">https://creativecommons.org/licenses/by/4.0/</a>  </li>
+<li>権利情報[0].権利情報：Creative Commons Attribution 4.0 International  </li>
+<li>権利情報[0].言語：en  </li>
+</ul>
+<p>入力例：
+<img src="images/image-34.png" alt="alt text"></img></p>
+</li>
+<li><p>CC BY-NC-ND 4.0の場合、以下のように選択または記入する。  </p>
+<ul>
+<li>ファイル情報[0].ライセンス：Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)  </li>
+<li>権利情報[0].権利情報Resource：<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">https://creativecommons.org/licenses/by-nc-nd/4.0/</a>  </li>
+<li>権利情報[0].権利情報：Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International  </li>
+<li>権利情報[0].言語：en  </li>
+</ul>
+<p>入力例：
+<img src="images/image-35.png" alt="alt text"></img></p>
+</li>
+</ul>
+<h3 id="62-出版社ポリシーへの対応"><a name="62-出版社ポリシーへの対応" class="plugin-anchor" href="#62-出版社ポリシーへの対応"><i class="fa fa-link" aria-hidden="true"></i></a>6.2 出版社ポリシーへの対応</h3>
+<p>Open Policy Finderや出版社ポリシーで以下のような記述があった場合のリポジトリでの記述方法です。</p>
+<ul>
+<li><p>Must link to publisher version with DOI<br></br>【関連情報】に出版社版のDOIを記入し、「isVersionOf」（AMの場合）、「isIdenticalTo」（VoRの場合）などの関連タイプを設定する。</p>
+</li>
+<li><p>Published source must be acknowledged with citation<br></br>【内容記述】にCite情報を掲載（出版社版掲載ページで、”Cite”,”Cite this article”,”Download Citation”といったようなボタンがあるため、そこからCite情報ををコピー＆ペーストする。内容記述タイプは「Other」を設定する。）</p>
+</li>
+<li><p>Set statement to accompany deposit (see policy)<br></br>【内容記述】に出版社のセルフアーカイブポリシー等にあるStatementをコピー＆ペーストする。内容記述タイプは「Other」を設定する。（その際DOI等はちゃんと差し替える）</p>
+<p>例：<a href="https://authorservices.wiley.com/author-resources/Journal-Authors/licensing/self-archiving.html" target="_blank">Wiley</a>（AMをリポジトリに掲載する場合　※2026/01時点）</p>
+<p>"This is the peer reviewed version of the following article: <strong>[FULL CITE]</strong>, which has been published in final form at <strong>[Link to final article using the DOI]</strong>. This article may be used for non-commercial purposes in accordance with Wiley Terms and Conditions for Use of Self-Archived Versions. This article may not be enhanced, enriched or otherwise transformed into a derivative work, without express permission from Wiley or by statutory rights under applicable legislation. Copyright notices must not be removed, obscured or modified. The article must be linked to Wiley’s version of record on Wiley Online Library and any embedding, framing or otherwise making available the article or pages thereof by third parties from platforms, services and websites other than Wiley Online Library must be prohibited."</p>
+</li>
+</ul>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="researchdatadeposit.html" class="navigation navigation-next " aria-label="Next page: JAIRO Cloud（WEKO3）登録ガイド　研究データ編">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JAIRO Cloud（WEKO3）登録ガイド　学術雑誌論文編","level":"1.2","depth":1,"next":{"title":"JAIRO Cloud（WEKO3）登録ガイド　研究データ編","level":"1.3","depth":1,"path":"manual/researchdatadeposit.md","ref":"./manual/researchdatadeposit.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","lunr":{"maxIndexSize":1000000000},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"操作の流れに沿ったマニュアル","language":"ja","gitbook":"*","description":"このマニュアルは、操作の流れに沿って、各機能の説明や使用方法をまとめたものです。ユーザーが必要な情報を迅速に見つけられるように構成されています。"},"file":{"path":"manual/journalPaperdeposit.md","mtime":"2026-03-17T03:40:43.240Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-03-17T03:43:19.753Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

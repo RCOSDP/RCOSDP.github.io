@@ -1749,7 +1749,7 @@
                 <span>
             
                     
-                    11 SWQRD API
+                    11 SWORD API
             
                 </span>
             
@@ -3839,27 +3839,12 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <html><head></head><body><h3 id="エクスポート"><a name="エクスポート" class="plugin-anchor" href="#エクスポート"><i class="fa fa-link" aria-hidden="true"></i></a>エクスポート</h3>
-<ul>
-<li><blockquote>
-<p>目的・用途</p>
-</blockquote>
-</li>
-</ul>
+                                <html><head></head><body><h1 id="エクスポート"><a name="エクスポート" class="plugin-anchor" href="#エクスポート"><i class="fa fa-link" aria-hidden="true"></i></a>エクスポート</h1>
+<h2 id="目的・用途"><a name="目的・用途" class="plugin-anchor" href="#目的・用途"><i class="fa fa-link" aria-hidden="true"></i></a>目的・用途</h2>
 <p>本機能は、アイテム詳細画面から特定のアイテムの情報を設定されたスキーマ形式に出力する機能である。</p>
-<ul>
-<li><blockquote>
-<p>利用方法</p>
-</blockquote>
-</li>
-</ul>
+<h2 id="利用方法"><a name="利用方法" class="plugin-anchor" href="#利用方法"><i class="fa fa-link" aria-hidden="true"></i></a>利用方法</h2>
 <p>エクスポートは、アイテム詳細画面の右下にあるOAI-PMH, BIBTEX, JSONのボタンを押下することで、アイテムの情報がスキーマ形式に出力される。</p>
-<ul>
-<li><blockquote>
-<p>利用可能なロール</p>
-</blockquote>
-</li>
-</ul>
+<h2 id="利用可能なロール"><a name="利用可能なロール" class="plugin-anchor" href="#利用可能なロール"><i class="fa fa-link" aria-hidden="true"></i></a>利用可能なロール</h2>
 <table>
 <thead>
 <tr class="header">
@@ -3889,12 +3874,7 @@
 </tbody>
 </table>
 
-<ul>
-<li><blockquote>
-<p>機能内容</p>
-</blockquote>
-</li>
-</ul>
+<h2 id="機能内容"><a name="機能内容" class="plugin-anchor" href="#機能内容"><i class="fa fa-link" aria-hidden="true"></i></a>機能内容</h2>
 <p>1. OAI-PMHスキーマを管理</p>
 <ul>
 <li><p>【Administration &gt; アイテムタイプ管理 (Item Types) &gt; OAIスキーマ (OAI Schema)&gt; 作成画面】にOAI-PMHスキーマを設定できる<br></br>設定内容は以下の通りである</p>
@@ -4266,86 +4246,48 @@
 <ul>
 <li><p>アイテム詳細画面の「Other Formats」で以下の形式でアイテム情報を出力できる</p>
 <ul>
-<li><blockquote>
-<p>JSON</p>
-</blockquote>
+<li><p>JSON</p>
 <ul>
-<li><blockquote>
-<p>アイテムのメタデータをJSON形式でエクスポートする。</p>
-</blockquote>
+<li><p>アイテムのメタデータをJSON形式でエクスポートする。</p>
 </li>
-<li><blockquote>
-<p>アイテム詳細画面のエクスポートエリアに表示されているJSONリンクを押下する。/records/\<item\_id\>/export/json</item\_id\></p>
-</blockquote>
+<li><p>アイテム詳細画面のエクスポートエリアに表示されているJSONリンクを押下する。/records/\<item\_id\>/export/json</item\_id\></p>
 </li>
-<li><blockquote>
-<p>表示例は別紙「JSON出力例.txt」を参照。</p>
-</blockquote>
+<li><p>表示例は別紙「JSON出力例.txt」を参照。</p>
 </li>
-<li><blockquote>
-<p>設定</p>
-</blockquote>
+<li><p>設定</p>
 <ul>
-<li><blockquote>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L198-L202" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L198-L202</a></p>
-</blockquote>
+<li><p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L198-L202" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L198-L202</a></p>
 </li>
-<li><blockquote>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/__init__.py#L17" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/__init__.py#L17</a></p>
-</blockquote>
+<li><p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/__init__.py#L17" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/__init__.py#L17</a></p>
 </li>
 </ul>
 </li>
-<li><blockquote>
-<p>シリアライザ：</p>
-</blockquote>
+<li><p>シリアライザ：</p>
 <ul>
-<li><blockquote>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/json.py#L70" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/json.py#L70</a></p>
-</blockquote>
-</li>
+<li><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/json.py#L70" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-records-rest/invenio_records_rest/serializers/json.py#L70</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><blockquote>
-<p>BIBTEX</p>
-</blockquote>
+<li><p>BIBTEX</p>
 <ul>
-<li><blockquote>
-<p>アイテムのメタデータをBIBTEX形式でエクスポートする。</p>
-</blockquote>
+<li><p>アイテムのメタデータをBIBTEX形式でエクスポートする。</p>
 </li>
-<li><blockquote>
-<p>アイテム詳細画面のエクスポートエリアに表示されているBIBTEXリンクを押下する。/records/\<item\_id\>/export/bibtex</item\_id\></p>
-</blockquote>
+<li><p>アイテム詳細画面のエクスポートエリアに表示されているBIBTEXリンクを押下する。/records/\<item\_id\>/export/bibtex</item\_id\></p>
 </li>
-<li><blockquote>
-<p>表示例は別紙「BIBTEX出力例.txt」を参照。</p>
-</blockquote>
+<li><p>表示例は別紙「BIBTEX出力例.txt」を参照。</p>
 </li>
-<li><blockquote>
-<p>設定</p>
-</blockquote>
+<li><p>設定</p>
 <ul>
-<li><blockquote>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L203-L207" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L203-L207</a></p>
-</blockquote>
+<li><p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L203-L207" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/config.py#L203-L207</a></p>
 </li>
-<li><blockquote>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/templates/weko_records_ui/box/export.html" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/templates/weko_records_ui/box/export.html</a></p>
-</blockquote>
+<li><p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/templates/weko_records_ui/box/export.html" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-records-ui/weko_records_ui/templates/weko_records_ui/box/export.html</a></p>
 </li>
 </ul>
 </li>
-<li><blockquote>
-<p>シリアライザ：</p>
-</blockquote>
+<li><p>シリアライザ：</p>
 <ul>
-<li><blockquote>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-schema-ui/weko_schema_ui/serializers/WekoBibTexSerializer.py" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-schema-ui/weko_schema_ui/serializers/WekoBibTexSerializer.py</a></p>
-</blockquote>
-</li>
+<li><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-schema-ui/weko_schema_ui/serializers/WekoBibTexSerializer.py" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-schema-ui/weko_schema_ui/serializers/WekoBibTexSerializer.py</a></li>
 </ul>
 </li>
 </ul>
@@ -4355,32 +4297,20 @@
 </ul>
 <!-- end list -->
 <ul>
-<li><blockquote>
-<p>関連モジュール</p>
-</blockquote>
+<li>関連モジュール</li>
+</ul>
+<!-- end list -->
+<ul>
+<li><p>weko-schema-ui</p>
+</li>
+<li><p>invenio-oaiserver</p>
+</li>
+<li><p>invenio_records</p>
 </li>
 </ul>
 <!-- end list -->
 <ul>
-<li><blockquote>
-<p>weko-schema-ui</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>invenio-oaiserver</p>
-</blockquote>
-</li>
-<li><blockquote>
-<p>invenio_records</p>
-</blockquote>
-</li>
-</ul>
-<!-- end list -->
-<ul>
-<li><blockquote>
-<p>処理概要</p>
-</blockquote>
-</li>
+<li>処理概要</li>
 </ul>
 <p>1. 設定</p>
 <ul>
@@ -4403,6 +4333,11 @@
 </li>
 <li><p>以下のケースに当たれば、プロバイダ機能が無効とし、エラーレスポンスを返す</p>
 <ul>
+<li><p>前提条件</p>
+<ul>
+<li>アイテムが単一のインデックスにのみ属している</li>
+</ul>
+</li>
 <li><p>ケース</p>
 <ul>
 <li><p>アイテムがプロバイダ機能の無効と設定しているインデックスに属する</p>
@@ -4417,18 +4352,33 @@
 <ul>
 <li><p>エラーコード：コンフィグに設定している「OAISERVER_CODE_NO_RECORDS_MATCH」キー</p>
 </li>
-<li><blockquote>
-<p>エラーメッセージ：コンフィグに設定している「OAISERVER_MESSAGE_NO_RECORDS_MATCH 」キー</p>
-</blockquote>
+<li><p>エラーメッセージ：コンフィグに設定している「OAISERVER_MESSAGE_NO_RECORDS_MATCH 」キー</p>
 </li>
-<li><blockquote>
-<p>getrecordのエラーコード：errorに渡す引数<br></br>「idDoesNotExist」</p>
-</blockquote>
+<li><p>getrecordのエラーコード：errorに渡す引数<br></br>「idDoesNotExist」</p>
 </li>
-<li><blockquote>
-<p>getrecordのエラーメッセージ：errorに渡す引数<br></br>「No matching identifier」</p>
-</blockquote>
+<li><p>getrecordのエラーメッセージ：errorに渡す引数<br></br>「No matching identifier」</p>
 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>アイテムが複数インデックス（ハーベスト公開／ハーベスト非公開の両方）に所属する場合</p>
+<ul>
+<li><p>GetRecord</p>
+<ul>
+<li>アイテムのメタデータは出力される</li>
+<li>setSpecには公開インデックスのみ分のみ出力される</li>
+</ul>
+</li>
+<li><p>ListRecords：setパラメータでアイテムが所属している 公開インデックス を指定した場合</p>
+<ul>
+<li>該当アイテムのメタデータは出力される</li>
+<li>setSpecには公開インデックスのみ分のみ出力される</li>
+</ul>
+</li>
+<li><p>ListRecords：setパラメータでアイテムが所属している 非公開インデックス を指定した場合</p>
+<ul>
+<li>アイテムは出力されない（<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>error</span> <span class="token attr-name">code</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>noRecordsMatch<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>The combination of the values of the from, until, set and metadataPrefix arguments results in an empty list.&lt;/      error&gt;</code>が出力される）</li>
 </ul>
 </li>
 </ul>
@@ -4527,12 +4477,7 @@
 </li>
 </ul>
 <!-- end list -->
-<ul>
-<li><blockquote>
-<p>更新履歴</p>
-</blockquote>
-</li>
-</ul>
+<h2 id="更新履歴"><a name="更新履歴" class="plugin-anchor" href="#更新履歴"><i class="fa fa-link" aria-hidden="true"></i></a>更新履歴</h2>
 <table>
 <thead>
 <tr class="header">
@@ -4593,7 +4538,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"USER-3-7: エクスポート 73","level":"1.2.3.8","depth":3,"next":{"title":"USER-3-8: Google Scholar メタデータ出力 81","level":"1.2.3.9","depth":3,"path":"user/USER_3_8.md","ref":"./user/USER_3_8.md","articles":[]},"previous":{"title":"USER-3-6: 共有 72","level":"1.2.3.7","depth":3,"path":"user/USER_3_6.md","ref":"./user/USER_3_6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_3_7.md","mtime":"2026-02-01T16:10:14.925Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-04-09T21:34:06.469Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"USER-3-7: エクスポート 73","level":"1.2.3.8","depth":3,"next":{"title":"USER-3-8: Google Scholar メタデータ出力 81","level":"1.2.3.9","depth":3,"path":"user/USER_3_8.md","ref":"./user/USER_3_8.md","articles":[]},"previous":{"title":"USER-3-6: 共有 72","level":"1.2.3.7","depth":3,"path":"user/USER_3_6.md","ref":"./user/USER_3_6.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_3_7.md","mtime":"2026-04-14T12:09:42.853Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-04-22T18:23:21.851Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

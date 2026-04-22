@@ -6,7 +6,7 @@
         <title>OA Assistを利用した場合の操作 · 操作の流れに沿ったマニュアル</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.6">
+        <meta name="generator" content="HonKit 6.1.7">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -295,7 +295,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="swordapi設定"><a name="swordapi設定" class="plugin-anchor" href="#swordapi設定"><i class="fa fa-link" aria-hidden="true"></i></a>SWORDAPI設定</h3>
+<h3 id="sword-api設定"><a name="sword-api設定" class="plugin-anchor" href="#sword-api設定"><i class="fa fa-link" aria-hidden="true"></i></a>SWORD API設定</h3>
 <ol>
 <li><p>JAIRO Cloud にアプリケーションを登録したユーザーでログイン後、右上プルダウンから「Administration」を選択します。<br></br> <img src="images/oa-assist/sword_setting_1.png" alt="トップ画面の画像　※Administrationを強調"></img></p>
 </li>
@@ -314,7 +314,47 @@
 </li>
 <li><p>マッピングは「デフォルトマッピング（フル）」を選択します。<br></br>登録するアイテムタイプに対応するマッピングを選択して下さい。<br></br>※マッピングはワークフローで用いるアイテムタイプに対応している必要があります。</p>
 </li>
+<li><p>マッピング設定に問題がないことを確認します。</p>
+<p> <img src="images/oa-assist/sword_setting_5.png" alt="マッピングの選択"></img>  </p>
+<p>※ マッピングに問題がある場合は×が表示されます。下記が表示された場合は、「アイテムタイプ管理」→「JSON-LDマッピング」の修正が必要となります。</p>
+<p> <img src="images/oa-assist/sword_setting_6.png" alt="マッピングエラー"></img>  </p>
+</li>
 <li><p>その他の項目は必要に応じて選択し、［保存］ボタンをクリックします。</p>
+</li>
+</ol>
+<h3 id="json-ldマッピング設定"><a name="json-ldマッピング設定" class="plugin-anchor" href="#json-ldマッピング設定"><i class="fa fa-link" aria-hidden="true"></i></a>JSON-LDマッピング設定</h3>
+<p>通常は設定変更は必要ありませんが、JSON-LDマッピングエラーが発生した場合、
+OA Assist連携で独自のアイテムタイプを利用する場合などに、
+JSON-LDマッピングを変更します。</p>
+<ol>
+<li><p>JAIRO Cloud にアプリケーションを登録したユーザーでログイン後、右上プルダウンから「Administration」を選択します。<br></br> <img src="images/oa-assist/sword_setting_1.png" alt="トップ画面の画像　※Administrationを強調"></img></p>
+</li>
+<li><p>画面左のメニューから「アイテムタイプ管理」 → 「JSON-LDマッピング」 をクリックします。
+ <img src="images/oa-assist/jsonld_setting_1.png" alt="マッピングエラー"></img> </p>
+</li>
+<li><p>設定を変更する場合は、変更するマッピング項目の鉛筆マークをクリックします。</p>
+</li>
+<li><p>現在利用中のマッピングを変更すると下記注意画面が表示されます。
+ <img src="images/oa-assist/jsonld_setting_2.png" alt="マッピングエラー"></img> </p>
+</li>
+<li><p>「閉じる」ボタンをクリックすると、JSON-LDマッピング画面が表示されます。
+ <img src="images/oa-assist/jsonld_setting_3.png" alt="マッピングエラー"></img> </p>
+</li>
+</ol>
+<p>マッピング設定は、マッピング先であるアイテムタイプのプロパティを示す左辺と、
+マッピング元であるJSON-LD値を示す右辺から構成されます。
+図示すると以下のような関係性となっています。</p>
+<p><img src="images/oa-assist/jsonld_setting_7.png" alt="マッピングエラー"></img></p>
+<ol>
+<li><p>マッピングエラーの有無を確認する場合は、「保存」ボタンをクリックします。エラーがある場合は以下画面が表示されます。
+ <img src="images/oa-assist/jsonld_setting_4.png" alt="マッピングエラー"></img> 
+ ※ このエラーは、アイテムタイプ上ではラベルとして「タイトル」を設定していますが、マッピング設定上は「Title」と設定されていることで、マッピングに不整合が生じているために発生しています。</p>
+</li>
+<li><p>マッピングエラーを解消するには、JSON-LDマッピング設定を修正する、または、アイテムタイプのラベルを修正する、の2通りの手法があります。</p>
+<p> <img src="images/oa-assist/jsonld_setting_5.png" alt="マッピングエラー"></img> </p>
+</li>
+<li><p>下記例ではアイテムタイプのラベルを変更することで、マッピングエラーを解消しています。</p>
+<p> <img src="images/oa-assist/jsonld_setting_6.png" alt="マッピングエラー"></img> </p>
 </li>
 </ol>
 <h3 id="メールアドレスの登録"><a name="メールアドレスの登録" class="plugin-anchor" href="#メールアドレスの登録"><i class="fa fa-link" aria-hidden="true"></i></a>メールアドレスの登録</h3>
@@ -410,7 +450,8 @@
 <h2 id="ステータス"><a name="ステータス" class="plugin-anchor" href="#ステータス"><i class="fa fa-link" aria-hidden="true"></i></a>ステータス</h2>
 <p>OA Assistでは、各論文の対応状況をステータスで管理します。
 メール送信、本文入手、登録完了などの各工程に応じてステータスを更新することで、進捗状況を一覧で把握できます。</p>
-<p>また、JAIRO Cloudと連携している場合は、登録状況に応じたステータス管理が可能です。<br></br>JAIRO Cloudの研究者用ワークスペースで登録状況を確認できるほか、JAIRO Cloud側でアイテムの状態が変更された際に、OA Assist側のステータスを連動させることができます。</p>
+<p>また、JAIRO Cloudと連携している場合は、登録状況に応じたステータス管理が可能です※。<br></br>JAIRO Cloudの研究者用ワークスペースで登録状況を確認できるほか、JAIRO Cloud側でアイテムの状態が変更された際に、OA Assist側のステータスを連動させることができます。</p>
+<p>※ステータス連動機能については、システム管理者によるAPI設定が必要です。環境構築時に設定されるものとなります。</p>
 <p>本マニュアルでは、各作業工程の完了時に、対応するステータスへ更新することを前提としています。
 特に以下のタイミングでステータスを更新します。</p>
 <ul>
@@ -604,7 +645,7 @@ JAIRO Cloud上でアイテムとして登録・公開するまでの作業手順
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"OA Assistを利用した場合の操作","level":"1.5","depth":1,"previous":{"title":"GakuNin RDMxJAIRO Cloud連携を利用した場合の操作","level":"1.4","depth":1,"path":"manual/GJIntegration.md","ref":"./manual/GJIntegration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight","-lunr","-search","search-pro-kui","uml","expandable-chapters","include-codeblock","code-editor","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"collapsible-chapters":{},"code-editor":{},"code":{"copyButtons":true},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"back-to-top-button":{},"search-pro-kui":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"操作の流れに沿ったマニュアル","language":"ja","gitbook":"*","description":"このマニュアルは、操作の流れに沿って、各機能の説明や使用方法をまとめたものです。ユーザーが必要な情報を迅速に見つけられるように構成されています。"},"file":{"path":"manual/OAAssist.md","mtime":"2026-03-17T02:43:31.318Z","type":"markdown"},"gitbook":{"version":"6.1.6","time":"2026-03-17T22:33:27.880Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"OA Assistを利用した場合の操作","level":"1.5","depth":1,"previous":{"title":"GakuNin RDMxJAIRO Cloud連携を利用した場合の操作","level":"1.4","depth":1,"path":"manual/GJIntegration.md","ref":"./manual/GJIntegration.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight","-lunr","-search","search-pro-kui","uml","expandable-chapters","include-codeblock","code-editor","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"collapsible-chapters":{},"code-editor":{},"code":{"copyButtons":true},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"uml":{"format":"svg","charset":"UTF-8","nailgun":false,"config":"classic"},"back-to-top-button":{},"search-pro-kui":{},"include-codeblock":{"check":false,"edit":false,"lang":"","fixlang":false,"template":"default","theme":"chrome","unindent":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"操作の流れに沿ったマニュアル","language":"ja","gitbook":"*","description":"このマニュアルは、操作の流れに沿って、各機能の説明や使用方法をまとめたものです。ユーザーが必要な情報を迅速に見つけられるように構成されています。"},"file":{"path":"manual/OAAssist.md","mtime":"2026-04-20T08:02:29.970Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-04-22T18:41:48.735Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

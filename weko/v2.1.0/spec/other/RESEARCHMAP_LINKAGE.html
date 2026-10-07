@@ -1,0 +1,4672 @@
+
+<!DOCTYPE HTML>
+<html lang="ja" >
+    <head>
+        <meta charset="UTF-8">
+        <title>API連携によるレコード追加機能（researchmap） · 機能仕様書</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-intopic-toc/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/honkit-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/@honkit/honkit-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../restricted_access/" />
+    
+    
+    <link rel="prev" href="JSONLD_IMPORT_REPLACE.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book honkit-cloak">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="検索ワードを入力" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    開発者向けガイド
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../ARCHITECTURE.html">
+            
+                <a href="../ARCHITECTURE.html">
+            
+                    
+                    アーキテクチャ全体像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../MODULE_INDEX.html">
+            
+                <a href="../MODULE_INDEX.html">
+            
+                    
+                    モジュール索引（逆引きリファレンス）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../DEV_GUIDE.html">
+            
+                <a href="../DEV_GUIDE.html">
+            
+                    
+                    開発者ガイド（道しるべ）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../CROSS_REFERENCE.html">
+            
+                <a href="../CROSS_REFERENCE.html">
+            
+                    
+                    横断索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../GLOSSARY.html">
+            
+                <a href="../GLOSSARY.html">
+            
+                    
+                    用語集
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../user/">
+            
+                <a href="../user/">
+            
+                    
+                    ユーザ機能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" >
+            
+                <span>
+            
+                    
+                    アイテム検索
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.1" data-path="../user/USER_1_1.html">
+            
+                <a href="../user/USER_1_1.html">
+            
+                    
+                    USER-1-1: 簡易検索（全文検索・キーワード検索）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2" data-path="../user/USER_1_2.html">
+            
+                <a href="../user/USER_1_2.html">
+            
+                    
+                    USER-1-2: 詳細検索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.3" data-path="../user/USER_1_3.html">
+            
+                <a href="../user/USER_1_3.html">
+            
+                    
+                    USER-1-3: インデックス検索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.4" data-path="../user/USER_1_4.html">
+            
+                <a href="../user/USER_1_4.html">
+            
+                    
+                    USER-1-4: ファセット検索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.5" data-path="../user/USER_1_5.html">
+            
+                <a href="../user/USER_1_5.html">
+            
+                    
+                    USER-1-5: RSS
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" >
+            
+                <span>
+            
+                    
+                    アイテムリスト
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="../user/USER_2_1.html">
+            
+                <a href="../user/USER_2_1.html">
+            
+                    
+                    USER-2-1: 一覧形式表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="../user/USER_2_2.html">
+            
+                <a href="../user/USER_2_2.html">
+            
+                    
+                    USER-2-2: 目次形式表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="../user/USER_2_3.html">
+            
+                <a href="../user/USER_2_3.html">
+            
+                    
+                    USER-2-3: 雑誌情報
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="../user/USER_2_4.html">
+            
+                <a href="../user/USER_2_4.html">
+            
+                    
+                    USER-2-4: アイテム一括出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" >
+            
+                <span>
+            
+                    
+                    アイテム詳細
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.3.1" data-path="../user/USER_3_1.html">
+            
+                <a href="../user/USER_3_1.html">
+            
+                    
+                    USER-3-1: メタデータ表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.2" data-path="../user/USER_3_2.html">
+            
+                <a href="../user/USER_3_2.html">
+            
+                    
+                    USER-3-2: コンテンツファイル管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.3" data-path="../user/USER_3_2_1.html">
+            
+                <a href="../user/USER_3_2_1.html">
+            
+                    
+                    USER-3-2-1:ファイル管理機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.4" data-path="../user/USER_3_3.html">
+            
+                <a href="../user/USER_3_3.html">
+            
+                    
+                    USER-3-3: アイテムバージョン管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.5" data-path="../user/USER_3_4.html">
+            
+                <a href="../user/USER_3_4.html">
+            
+                    
+                    USER-3-4: 引用情報表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.6" data-path="../user/USER_3_5.html">
+            
+                <a href="../user/USER_3_5.html">
+            
+                    
+                    USER-3-5: 統計情報表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.7" data-path="../user/USER_3_6.html">
+            
+                <a href="../user/USER_3_6.html">
+            
+                    
+                    USER-3-6: 共有
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.8" data-path="../user/USER_3_7.html">
+            
+                <a href="../user/USER_3_7.html">
+            
+                    
+                    USER-3-7: エクスポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.9" data-path="../user/USER_3_8.html">
+            
+                <a href="../user/USER_3_8.html">
+            
+                    
+                    USER-3-8: Google Scholar メタデータ出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.10" data-path="../user/USER_3_9.html">
+            
+                <a href="../user/USER_3_9.html">
+            
+                    
+                    USER-3-9: Google Dataset メタデータ出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.11" data-path="../user/USER_3_10.html">
+            
+                <a href="../user/USER_3_10.html">
+            
+                    
+                    USER-3-10: 所属コミュニティ情報表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.12" data-path="../user/USER_3_11.html">
+            
+                <a href="../user/USER_3_11.html">
+            
+                    
+                    USER-3-11: リクエスト機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.13" data-path="../user/USER_3_12.html">
+            
+                <a href="../user/USER_3_12.html">
+            
+                    
+                    USER-3-12: メールアドレス入力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3.14" data-path="../user/USER_3_13.html">
+            
+                <a href="../user/USER_3_13.html">
+            
+                    
+                    USER-3-13: アイテム利用申請機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" >
+            
+                <span>
+            
+                    
+                    ワークフロー
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.4.1" data-path="../user/USER_4_1.html">
+            
+                <a href="../user/USER_4_1.html">
+            
+                    
+                    USER-4-1: アクティビティ一覧表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.2" data-path="../user/USER_4_2.html">
+            
+                <a href="../user/USER_4_2.html">
+            
+                    
+                    USER-4-2: ワークフロー一覧表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.3" data-path="../user/USER_4_3.html">
+            
+                <a href="../user/USER_4_3.html">
+            
+                    
+                    USER-4-3: ワークフロー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.4" data-path="../user/USER_4_4.html">
+            
+                <a href="../user/USER_4_4.html">
+            
+                    
+                    USER-4-4: Item Registration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.5" data-path="../user/USER_4_5.html">
+            
+                <a href="../user/USER_4_5.html">
+            
+                    
+                    USER-4-5: Item Registration：ファイルアップロード
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.6" data-path="../user/USER_4_6.html">
+            
+                <a href="../user/USER_4_6.html">
+            
+                    
+                    USER-4-6: Item Registration：メタデータ入力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.7" data-path="../user/USER_4_7.html">
+            
+                <a href="../user/USER_4_7.html">
+            
+                    
+                    USER-4-7: Item Registration：代理投稿
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.8" data-path="../user/USER_4_8.html">
+            
+                <a href="../user/USER_4_8.html">
+            
+                    
+                    USER-4-8: Item Registration：フィードバックメール機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.9" data-path="../user/USER_4_9.html">
+            
+                <a href="../user/USER_4_9.html">
+            
+                    
+                    USER-4-9: Item Registration：インデックス指定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.10" data-path="../user/USER_4_14.html">
+            
+                <a href="../user/USER_4_14.html">
+            
+                    
+                    USER-4-14: Item Registration：リクエストメール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.11" data-path="../user/USER_4_16.html">
+            
+                <a href="../user/USER_4_16.html">
+            
+                    
+                    USER-4-16: Item Registration：アイテム未登録時の制限公開機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.12" data-path="../user/USER_4_17.html">
+            
+                <a href="../user/USER_4_17.html">
+            
+                    
+                    USER-4-17: Item Registration：リクエストメール機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.13" data-path="../user/USER_4_10.html">
+            
+                <a href="../user/USER_4_10.html">
+            
+                    
+                    USER-4-10: Identifier Grant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.14" data-path="../user/USER_4_11.html">
+            
+                <a href="../user/USER_4_11.html">
+            
+                    
+                    USER-4-11: Item Link
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.15" data-path="../user/USER_4_12.html">
+            
+                <a href="../user/USER_4_12.html">
+            
+                    
+                    USER-4-12: OA Policy Confirmation（現在非対応）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.16" data-path="../user/USER_4_13.html">
+            
+                <a href="../user/USER_4_13.html">
+            
+                    
+                    USER-4-13: Approval
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4.17" data-path="../user/USER_4_15.html">
+            
+                <a href="../user/USER_4_15.html">
+            
+                    
+                    USER-4-15: End
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" >
+            
+                <span>
+            
+                    
+                    コミュニティ
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.5.1" data-path="../user/USER_5_1.html">
+            
+                <a href="../user/USER_5_1.html">
+            
+                    
+                    USER-5-1: コミュニティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5.2" data-path="../user/USER_5_2.html">
+            
+                <a href="../user/USER_5_2.html">
+            
+                    
+                    USER-5-2: コンテンツポリシー
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" >
+            
+                <span>
+            
+                    
+                    ランキング
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.6.1" data-path="../user/USER_6_1.html">
+            
+                <a href="../user/USER_6_1.html">
+            
+                    
+                    USER-6-1: ランキング
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" >
+            
+                <span>
+            
+                    
+                    大容量ファイルアップロード（未リリース）
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.7.1" data-path="../user/USER_7_1.html">
+            
+                <a href="../user/USER_7_1.html">
+            
+                    
+                    USER-7-1: ファイルアップロード（未リリース）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" >
+            
+                <span>
+            
+                    
+                    言語切替
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.8.1" data-path="../user/USER_7_2.html">
+            
+                <a href="../user/USER_7_2.html">
+            
+                    
+                    USER-7-2: 言語切替
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" >
+            
+                <span>
+            
+                    
+                    ユーザーアカウント
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.9.1" data-path="../user/USER_8_1.html">
+            
+                <a href="../user/USER_8_1.html">
+            
+                    
+                    USER-8-1: サインアップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.2" data-path="../user/USER_8_2.html">
+            
+                <a href="../user/USER_8_2.html">
+            
+                    
+                    USER-8-2: ログイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.3" data-path="../user/USER_8_3.html">
+            
+                <a href="../user/USER_8_3.html">
+            
+                    
+                    USER-8-3: パスワードリセット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.4" data-path="../user/USER_8_4.html">
+            
+                <a href="../user/USER_8_4.html">
+            
+                    
+                    USER-8-4: ユーザープロファイル設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9.5" data-path="../user/USER_8_5.html">
+            
+                <a href="../user/USER_8_5.html">
+            
+                    
+                    USER-8-5: API設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" >
+            
+                <span>
+            
+                    
+                    Cookie
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.10.1" data-path="../user/USER_9_1.html">
+            
+                <a href="../user/USER_9_1.html">
+            
+                    
+                    USER-9-1: Cookie使用確認画面表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" >
+            
+                <span>
+            
+                    
+                    ワークスペース
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.11.1" data-path="../user/USER_10_1.html">
+            
+                <a href="../user/USER_10_1.html">
+            
+                    
+                    USER-10-1: アイテム一覧情報取得
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11.2" data-path="../user/USER_10_2.html">
+            
+                <a href="../user/USER_10_2.html">
+            
+                    
+                    USER-10-2: 簡易アイテム登録機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11.3" data-path="../user/USER_10_3.html">
+            
+                <a href="../user/USER_10_3.html">
+            
+                    
+                    USER-10-3: メタデータ自動補完機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" >
+            
+                <span>
+            
+                    
+                    連携機能
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.12.1" data-path="../user/USER_11_1.html">
+            
+                <a href="../user/USER_11_1.html">
+            
+                    
+                    researchmap連携機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../admin/">
+            
+                <a href="../admin/">
+            
+                    
+                    管理機能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" >
+            
+                <span>
+            
+                    
+                    アイテムタイプ管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../admin/ADMIN_1_1.html">
+            
+                <a href="../admin/ADMIN_1_1.html">
+            
+                    
+                    ADMIN-1-1: メタデータ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../admin/ADMIN_1_2.html">
+            
+                <a href="../admin/ADMIN_1_2.html">
+            
+                    
+                    ADMIN-1-2: マッピング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../admin/ADMIN_1_3.html">
+            
+                <a href="../admin/ADMIN_1_3.html">
+            
+                    
+                    ADMIN-1-3: OAIスキーマ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="../admin/ADMIN_1_4.html">
+            
+                <a href="../admin/ADMIN_1_4.html">
+            
+                    
+                    ADMIN-1-4: プロパティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="../admin/ADMIN_1_5.html">
+            
+                <a href="../admin/ADMIN_1_5.html">
+            
+                    
+                    ADMIN-1-5: JSON-LD マッピング
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" >
+            
+                <span>
+            
+                    
+                    アイテム管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../admin/ADMIN_2_1.html">
+            
+                <a href="../admin/ADMIN_2_1.html">
+            
+                    
+                    ADMIN-2-1: 一括更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../admin/ADMIN_2_2.html">
+            
+                <a href="../admin/ADMIN_2_2.html">
+            
+                    
+                    ADMIN-2-2: 一括削除
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../admin/ADMIN_2_3.html">
+            
+                <a href="../admin/ADMIN_2_3.html">
+            
+                    
+                    ADMIN-2-3: 一括エクスポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../admin/ADMIN_2_4.html">
+            
+                <a href="../admin/ADMIN_2_4.html">
+            
+                    
+                    ADMIN-2-4: インポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../admin/ADMIN_2_5.html">
+            
+                <a href="../admin/ADMIN_2_5.html">
+            
+                    
+                    ADMIN-2-5: RO-Crateインポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" >
+            
+                <span>
+            
+                    
+                    インデックスツリー管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.3.1" data-path="../admin/ADMIN_3_1.html">
+            
+                <a href="../admin/ADMIN_3_1.html">
+            
+                    
+                    ADMIN-3-1: ツリー編集
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.2" data-path="../admin/ADMIN_3_2.html">
+            
+                <a href="../admin/ADMIN_3_2.html">
+            
+                    
+                    ADMIN-3-2: 雑誌情報
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3.3" data-path="../admin/ADMIN_3_3.html">
+            
+                <a href="../admin/ADMIN_3_3.html">
+            
+                    
+                    ADMIN-3-3: カスタムソート
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" >
+            
+                <span>
+            
+                    
+                    ウェブデザイン管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="../admin/ADMIN_4_1.html">
+            
+                <a href="../admin/ADMIN_4_1.html">
+            
+                    
+                    ADMIN-4-1: ウィジェット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="../admin/ADMIN_4_2.html">
+            
+                <a href="../admin/ADMIN_4_2.html">
+            
+                    
+                    ADMIN-4-2: ページレイアウト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" >
+            
+                <span>
+            
+                    
+                    著者DB管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1" data-path="../admin/ADMIN_5_1.html">
+            
+                <a href="../admin/ADMIN_5_1.html">
+            
+                    
+                    ADMIN-5-1: 編集
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.5.1.1" data-path="../admin/ADMIN_5_1_3.html">
+            
+                <a href="../admin/ADMIN_5_1_3.html">
+            
+                    
+                    Affiliation ID
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.2" data-path="../admin/ADMIN_5_2.html">
+            
+                <a href="../admin/ADMIN_5_2.html">
+            
+                    
+                    ADMIN-5-2: 一括出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.3" data-path="../admin/ADMIN_5_3.html">
+            
+                <a href="../admin/ADMIN_5_3.html">
+            
+                    
+                    ADMIN-5-3: 一括登録
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5.4" data-path="../admin/ADMIN_5_4.html">
+            
+                <a href="../admin/ADMIN_5_4.html">
+            
+                    
+                    ADMIN-5-4: 外部著者ID Prefix
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    統計
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.6.1" data-path="../admin/ADMIN_6_1.html">
+            
+                <a href="../admin/ADMIN_6_1.html">
+            
+                    
+                    ADMIN-6-1: 運用レポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.2" data-path="../admin/ADMIN_6_2.html">
+            
+                <a href="../admin/ADMIN_6_2.html">
+            
+                    
+                    ADMIN-6-2: フィードバックメール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6.3" data-path="../admin/ADMIN_6_3.html">
+            
+                <a href="../admin/ADMIN_6_3.html">
+            
+                    
+                    ADMIN-6-3: サイトライセンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" >
+            
+                <span>
+            
+                    
+                    ワークフロー管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.7.1" data-path="../admin/ADMIN_7_1.html">
+            
+                <a href="../admin/ADMIN_7_1.html">
+            
+                    
+                    ADMIN-7-1: フロー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.2" data-path="../admin/ADMIN_7_2.html">
+            
+                <a href="../admin/ADMIN_7_2.html">
+            
+                    
+                    ADMIN-7-2: ワークフロー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7.3" data-path="../admin/ADMIN_7_3.html">
+            
+                <a href="../admin/ADMIN_7_3.html">
+            
+                    
+                    ADMIN-7-3: ワークスペース設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" >
+            
+                <span>
+            
+                    
+                    コミュニティ管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.8.1" data-path="../admin/ADMIN_8_1.html">
+            
+                <a href="../admin/ADMIN_8_1.html">
+            
+                    
+                    ADMIN-8-1: コミュニティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.2" data-path="../admin/ADMIN_8_2.html">
+            
+                <a href="../admin/ADMIN_8_2.html">
+            
+                    
+                    ADMIN-8-2: 注目のコミュニティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8.3" data-path="../admin/ADMIN_8_3.html">
+            
+                <a href="../admin/ADMIN_8_3.html">
+            
+                    
+                    ADMIN-8-3: 参加リクエスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" >
+            
+                <span>
+            
+                    
+                    OAI-PMH
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.9.1" data-path="../admin/ADMIN_9_1.html">
+            
+                <a href="../admin/ADMIN_9_1.html">
+            
+                    
+                    ADMIN-9-1: ハーベスト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.2" data-path="../admin/ADMIN_9_2.html">
+            
+                <a href="../admin/ADMIN_9_2.html">
+            
+                    
+                    ADMIN-9-2: Identify
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9.3" data-path="../admin/ADMIN_9_3.html">
+            
+                <a href="../admin/ADMIN_9_3.html">
+            
+                    
+                    ADMIN-9-3: Sets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" >
+            
+                <span>
+            
+                    
+                    Resource Sync
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.10.1" data-path="../admin/ADMIN_10_1.html">
+            
+                <a href="../admin/ADMIN_10_1.html">
+            
+                    
+                    ADMIN-10-1: Resource List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.2" data-path="../admin/ADMIN_10_2.html">
+            
+                <a href="../admin/ADMIN_10_2.html">
+            
+                    
+                    ADMIN-10-2: Change List
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10.3" data-path="../admin/ADMIN_10_3.html">
+            
+                <a href="../admin/ADMIN_10_3.html">
+            
+                    
+                    ADMIN-10-3: Resync
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" >
+            
+                <span>
+            
+                    
+                    SWORD API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.11.1" data-path="../admin/ADMIN_16_1.html">
+            
+                <a href="../admin/ADMIN_16_1.html">
+            
+                    
+                    ADMIN-16-1: TSV/XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11.2" data-path="../admin/ADMIN_16_2.html">
+            
+                <a href="../admin/ADMIN_16_2.html">
+            
+                    
+                    ADMIN-16-2: JSON-LD
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" >
+            
+                <span>
+            
+                    
+                    レコード管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.12.1" data-path="../admin/ADMIN_11_1.html">
+            
+                <a href="../admin/ADMIN_11_1.html">
+            
+                    
+                    ADMIN-11-1: 永続識別子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12.2" data-path="../admin/ADMIN_11_2.html">
+            
+                <a href="../admin/ADMIN_11_2.html">
+            
+                    
+                    ADMIN-11-2: レコードメタデータ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" >
+            
+                <span>
+            
+                    
+                    ファイル管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.13.1" data-path="../admin/ADMIN_12_1.html">
+            
+                <a href="../admin/ADMIN_12_1.html">
+            
+                    
+                    ADMIN-12-1: バケット
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.2" data-path="../admin/ADMIN_12_2.html">
+            
+                <a href="../admin/ADMIN_12_2.html">
+            
+                    
+                    ADMIN-12-2: ファイルインスタンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.3" data-path="../admin/ADMIN_12_3.html">
+            
+                <a href="../admin/ADMIN_12_3.html">
+            
+                    
+                    ADMIN-12-3: ロケーション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.4" data-path="../admin/ADMIN_12_4.html">
+            
+                <a href="../admin/ADMIN_12_4.html">
+            
+                    
+                    ADMIN-12-4: マルチパートオブジェクト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13.5" data-path="../admin/ADMIN_12_5.html">
+            
+                <a href="../admin/ADMIN_12_5.html">
+            
+                    
+                    ADMIN-12-5: オブジェクトバージョン
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" >
+            
+                <span>
+            
+                    
+                    ユーザ管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.14.1" data-path="../admin/ADMIN_13_1.html">
+            
+                <a href="../admin/ADMIN_13_1.html">
+            
+                    
+                    ADMIN-13-1: アクセス_ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.2" data-path="../admin/ADMIN_13_2.html">
+            
+                <a href="../admin/ADMIN_13_2.html">
+            
+                    
+                    ADMIN-13-2: アクセス_システムロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.3" data-path="../admin/ADMIN_13_3.html">
+            
+                <a href="../admin/ADMIN_13_3.html">
+            
+                    
+                    ADMIN-13-3: アクセス_ユーザー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.4" data-path="../admin/ADMIN_13_4.html">
+            
+                <a href="../admin/ADMIN_13_4.html">
+            
+                    
+                    ADMIN-13-4: 連結アカウント識別子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.5" data-path="../admin/ADMIN_13_5.html">
+            
+                <a href="../admin/ADMIN_13_5.html">
+            
+                    
+                    ADMIN-13-5: 連結アカウントトークン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.6" data-path="../admin/ADMIN_13_6.html">
+            
+                <a href="../admin/ADMIN_13_6.html">
+            
+                    
+                    ADMIN-13-6: 連結アカウント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.7" data-path="../admin/ADMIN_13_7.html">
+            
+                <a href="../admin/ADMIN_13_7.html">
+            
+                    
+                    ADMIN-13-7: OAuthアプリケーショントークン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.8" data-path="../admin/ADMIN_13_8.html">
+            
+                <a href="../admin/ADMIN_13_8.html">
+            
+                    
+                    ADMIN-13-8: OAuthアプリケーション
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.9" data-path="../admin/ADMIN_13_9.html">
+            
+                <a href="../admin/ADMIN_13_9.html">
+            
+                    
+                    ADMIN-13-9: ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.10" data-path="../admin/ADMIN_13_10.html">
+            
+                <a href="../admin/ADMIN_13_10.html">
+            
+                    
+                    ADMIN-13-10: セッションアクティビティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.11" data-path="../admin/ADMIN_13_11.html">
+            
+                <a href="../admin/ADMIN_13_11.html">
+            
+                    
+                    ADMIN-13-11: ユーザー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14.12" data-path="../admin/ADMIN_13_12.html">
+            
+                <a href="../admin/ADMIN_13_12.html">
+            
+                    
+                    ADMIN-13-12: ユーザープロファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" >
+            
+                <span>
+            
+                    
+                    ADMIN-14 設定
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.15.1" data-path="../admin/ADMIN_14_1.html">
+            
+                <a href="../admin/ADMIN_14_1.html">
+            
+                    
+                    ADMIN-14-1: アイテム表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.2" data-path="../admin/ADMIN_14_2.html">
+            
+                <a href="../admin/ADMIN_14_2.html">
+            
+                    
+                    ADMIN-14-2: インデックスリンク表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.3" data-path="../admin/ADMIN_14_3.html">
+            
+                <a href="../admin/ADMIN_14_3.html">
+            
+                    
+                    ADMIN-14-3: 言語表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.4" data-path="../admin/ADMIN_14_4.html">
+            
+                <a href="../admin/ADMIN_14_4.html">
+            
+                    
+                    ADMIN-14-4: PDFカバーページ表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.5" data-path="../admin/ADMIN_14_5.html">
+            
+                <a href="../admin/ADMIN_14_5.html">
+            
+                    
+                    ADMIN-14-5: ランキング表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.6" data-path="../admin/ADMIN_14_6.html">
+            
+                <a href="../admin/ADMIN_14_6.html">
+            
+                    
+                    ADMIN-14-6: 統計情報表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.7" data-path="../admin/ADMIN_14_7.html">
+            
+                <a href="../admin/ADMIN_14_7.html">
+            
+                    
+                    ADMIN-14-7: 画面背景色
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.8" data-path="../admin/ADMIN_14_8.html">
+            
+                <a href="../admin/ADMIN_14_8.html">
+            
+                    
+                    ADMIN-14-8: 識別子
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.9" data-path="../admin/ADMIN_14_9.html">
+            
+                <a href="../admin/ADMIN_14_9.html">
+            
+                    
+                    ADMIN-14-9: アイテム一括出力
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.10" data-path="../admin/ADMIN_14_10.html">
+            
+                <a href="../admin/ADMIN_14_10.html">
+            
+                    
+                    ADMIN-14-10: ログ解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.11" data-path="../admin/ADMIN_14_11.html">
+            
+                <a href="../admin/ADMIN_14_11.html">
+            
+                    
+                    ADMIN-14-11: 検索設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.12" data-path="../admin/ADMIN_14_12.html">
+            
+                <a href="../admin/ADMIN_14_12.html">
+            
+                    
+                    ADMIN-14-12: ファセット検索
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.13" data-path="../admin/ADMIN_14_13.html">
+            
+                <a href="../admin/ADMIN_14_13.html">
+            
+                    
+                    ADMIN-14-13: サイト情報
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.14" data-path="../admin/ADMIN_14_14.html">
+            
+                <a href="../admin/ADMIN_14_14.html">
+            
+                    
+                    ADMIN-14-14: サイトライセンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.15" data-path="../admin/ADMIN_14_15.html">
+            
+                <a href="../admin/ADMIN_14_15.html">
+            
+                    
+                    ADMIN-14-15: サイトマップ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.16" data-path="../admin/ADMIN_14_16.html">
+            
+                <a href="../admin/ADMIN_14_16.html">
+            
+                    
+                    ADMIN-14-16: メール送信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.17" data-path="../admin/ADMIN_14_17.html">
+            
+                <a href="../admin/ADMIN_14_17.html">
+            
+                    
+                    ADMIN-14-17: WebAPIアカウント
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.18" data-path="../admin/ADMIN_14_18.html">
+            
+                <a href="../admin/ADMIN_14_18.html">
+            
+                    
+                    ADMIN-14-18: ファイルプレビュー
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.19" data-path="../admin/ADMIN_14_19.html">
+            
+                <a href="../admin/ADMIN_14_19.html">
+            
+                    
+                    ADMIN-14-19: Shibboleth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.20" data-path="../admin/ADMIN_14_20.html">
+            
+                <a href="../admin/ADMIN_14_20.html">
+            
+                    
+                    ADMIN-14-20: 制限公開
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.21" data-path="../admin/ADMIN_14_21.html">
+            
+                <a href="../admin/ADMIN_14_21.html">
+            
+                    
+                    ADMIN-14-21: その他
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.22" data-path="../admin/ADMIN_14_22.html">
+            
+                <a href="../admin/ADMIN_14_22.html">
+            
+                    
+                    ADMIN-14-22: メールテンプレート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15.23" data-path="../admin/ADMIN_14_23.html">
+            
+                <a href="../admin/ADMIN_14_23.html">
+            
+                    
+                    ADMIN-14-23: CRIS連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" >
+            
+                <span>
+            
+                    
+                    基本監査ログ
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.16.1" data-path="../admin/ADMIN_17_1.html">
+            
+                <a href="../admin/ADMIN_17_1.html">
+            
+                    
+                    ADMIN-17-1: エクスポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" >
+            
+                <span>
+            
+                    
+                    メンテナンス
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.17.1" data-path="../admin/ADMIN_15_1.html">
+            
+                <a href="../admin/ADMIN_15_1.html">
+            
+                    
+                    ADMIN-15-1: Elasticsearchインデックス
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" >
+            
+                <span>
+            
+                    
+                    プロフィール
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.18.1" data-path="../admin/ADMIN_18_1.html">
+            
+                <a href="../admin/ADMIN_18_1.html">
+            
+                    
+                    ADMIN-18-1:プロフィール設定編集機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                    WebAPI
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../api/API_01_Oauth2.html">
+            
+                <a href="../api/API_01_Oauth2.html">
+            
+                    
+                    API-1: OAuth2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../api/API_02_OAIPMH.html">
+            
+                <a href="../api/API_02_OAIPMH.html">
+            
+                    
+                    API-2: OAI-PMH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../api/API_03_OpenSearch.html">
+            
+                <a href="../api/API_03_OpenSearch.html">
+            
+                    
+                    API-3: OpenSearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../api/API_04_workflow.html">
+            
+                <a href="../api/API_04_workflow.html">
+            
+                    
+                    API-4: Workflow API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../api/API_05_index_op.html">
+            
+                <a href="../api/API_05_index_op.html">
+            
+                    
+                    API-5: Index操作API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../api/API_06_sword_api.html">
+            
+                <a href="../api/API_06_sword_api.html">
+            
+                    
+                    API-6: SWORD API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../api/API_07_item_search.html">
+            
+                <a href="../api/API_07_item_search.html">
+            
+                    
+                    API-7: アイテム検索用API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../api/API_08_index_search.html">
+            
+                <a href="../api/API_08_index_search.html">
+            
+                    
+                    API-8: インデックス検索用API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../api/API_09_render.html">
+            
+                <a href="../api/API_09_render.html">
+            
+                    
+                    API-9: Render
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../api/API_10_JSON_Schema.html">
+            
+                <a href="../api/API_10_JSON_Schema.html">
+            
+                    
+                    API-10: JSON Schema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.11" data-path="../api/API_11_JSON_Form.html">
+            
+                <a href="../api/API_11_JSON_Form.html">
+            
+                    
+                    API-11: JSON Form
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.12" data-path="../api/API_12_item_search_RO-Crate.html">
+            
+                <a href="../api/API_12_item_search_RO-Crate.html">
+            
+                    
+                    API-12: アイテム検索用API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.13" data-path="../api/API_13_author.html">
+            
+                <a href="../api/API_13_author.html">
+            
+                    
+                    API-13: 著者DB機能API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.14" data-path="../api/API_14_acquiring_application.html">
+            
+                <a href="../api/API_14_acquiring_application.html">
+            
+                    
+                    API-14: 利用規約取得API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.15" data-path="../api/API_15_application_decision.html">
+            
+                <a href="../api/API_15_application_decision.html">
+            
+                    
+                    API-15: 利用申請が必要か判定するAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.16" data-path="../api/API_16_activity_list.html">
+            
+                <a href="../api/API_16_activity_list.html">
+            
+                    
+                    API-16: アクティビティ一覧取得API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.17" data-path="../api/API_17_approval_activity.html">
+            
+                <a href="../api/API_17_approval_activity.html">
+            
+                    
+                    API-17: 承認API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.18" data-path="../api/API_18_CAPTCHA.html">
+            
+                <a href="../api/API_18_CAPTCHA.html">
+            
+                    
+                    API-18: CAPTCHA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.19" data-path="../api/API_19_reqest_mail.html">
+            
+                <a href="../api/API_19_reqest_mail.html">
+            
+                    
+                    API-19: リクエストメール送信API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.20" data-path="../api/API_20_bulk_import.html">
+            
+                <a href="../api/API_20_bulk_import.html">
+            
+                    
+                    API-20: 一括インポートAPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    データ構造
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="SCHEMA_1_1.html">
+            
+                <a href="SCHEMA_1_1.html">
+            
+                    
+                    SCHEMA-1-1: Render
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="SCHEMA_1_2.html">
+            
+                <a href="SCHEMA_1_2.html">
+            
+                    
+                    SCHEMA-1-2: Schema
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="SCHEMA_1_3.html">
+            
+                <a href="SCHEMA_1_3.html">
+            
+                    
+                    SCHEMA-1-3: Form
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    その他
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="MODULE_01.html">
+            
+                <a href="MODULE_01.html">
+            
+                    
+                    モジュール、ライブラリ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="CONFIG_01.html">
+            
+                <a href="CONFIG_01.html">
+            
+                    
+                    コンフィグ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="DB_01.html">
+            
+                <a href="DB_01.html">
+            
+                    
+                    DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="OTHER_elasticsearch.html">
+            
+                <a href="OTHER_elasticsearch.html">
+            
+                    
+                    elasticsearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="CELERY_01.html">
+            
+                <a href="CELERY_01.html">
+            
+                    
+                    celery タスク
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="LOG.html">
+            
+                <a href="LOG.html">
+            
+                    
+                    ログ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="USAGE_LOG.html">
+            
+                <a href="USAGE_LOG.html">
+            
+                    
+                    利用統計ログ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="USER_ACTIVITY_LOG.html">
+            
+                <a href="USER_ACTIVITY_LOG.html">
+            
+                    
+                    基本監査ログ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="SESSION_01.html">
+            
+                <a href="SESSION_01.html">
+            
+                    
+                    セッション管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="../api/API_ENDPOINT_01.html">
+            
+                <a href="../api/API_ENDPOINT_01.html">
+            
+                    
+                    API Endpoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.11" data-path="SHIBBOLETH_01.html">
+            
+                <a href="SHIBBOLETH_01.html">
+            
+                    
+                    Shibboleth対応
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.12" data-path="WORKFLOW_01.html">
+            
+                <a href="WORKFLOW_01.html">
+            
+                    
+                    GakuNinRDM連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.13" data-path="ID_01.html">
+            
+                <a href="ID_01.html">
+            
+                    
+                    ID体系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.14" data-path="KAISEKI_01.html">
+            
+                <a href="KAISEKI_01.html">
+            
+                    
+                    解析基盤連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.15" data-path="INBOX_01.html">
+            
+                <a href="INBOX_01.html">
+            
+                    
+                    プッシュ通知機能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.16" data-path="OA-ASSIST_STATUS_LINKING.html">
+            
+                <a href="OA-ASSIST_STATUS_LINKING.html">
+            
+                    
+                    OAアシスト機能ステータス連携
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.17" data-path="SIGNPOSTING_01.html">
+            
+                <a href="SIGNPOSTING_01.html">
+            
+                    
+                    Signposting（FAIR Signposting）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.18" data-path="JSONLD_IMPORT_REPLACE.html">
+            
+                <a href="JSONLD_IMPORT_REPLACE.html">
+            
+                    
+                    JSONLDインポート文字列置換
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.19" data-path="RESEARCHMAP_LINKAGE.html">
+            
+                <a href="RESEARCHMAP_LINKAGE.html">
+            
+                    
+                    API連携によるレコード追加機能（researchmap）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../restricted_access/">
+            
+                <a href="../restricted_access/">
+            
+                    
+                    制限公開機能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../restricted_access/RESTRICTED_ACCESS_01.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_01.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-1: アイテムタイプ管理（制限公開）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../restricted_access/RESTRICTED_ACCESS_02.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_02.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-2: アイテム詳細(制限公開)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../restricted_access/RESTRICTED_ACCESS_03.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_03.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-3: ワークフロー管理（制限公開）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../restricted_access/RESTRICTED_ACCESS_04.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_04.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-4: メールテンプレート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="../restricted_access/RESTRICTED_ACCESS_05.html">
+            
+                <a href="../restricted_access/RESTRICTED_ACCESS_05.html">
+            
+                    
+                    RESTRICTED_ACCESS-13-5: プロフィール表示設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../tools/">
+            
+                <a href="../tools/">
+            
+                    
+                    ツール
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../tools/TOOL_01.html">
+            
+                <a href="../tools/TOOL_01.html">
+            
+                    
+                    TOOL-1: Render
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../access_control/">
+            
+                <a href="../access_control/">
+            
+                    
+                    アクセスコントロール
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" >
+            
+                <span>
+            
+                    
+                    ユーザ画面
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1.1" data-path="../access_control/USER_ITEM_DETAIL_01.html">
+            
+                <a href="../access_control/USER_ITEM_DETAIL_01.html">
+            
+                    
+                    アイテム詳細画面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.2" data-path="../access_control/USER_ITEM_SEARCH_01.html">
+            
+                <a href="../access_control/USER_ITEM_SEARCH_01.html">
+            
+                    
+                    検索画面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.3" data-path="../access_control/USER_FILES_DETAIL_01.html">
+            
+                <a href="../access_control/USER_FILES_DETAIL_01.html">
+            
+                    
+                    ファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.4" data-path="../access_control/USER_WORKFLOW_ACTIVITY_01.html">
+            
+                <a href="../access_control/USER_WORKFLOW_ACTIVITY_01.html">
+            
+                    
+                    ワークフローアクティビティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.5" data-path="../access_control/USER_COMMUNITY_SUBREPOSITORY_01.html">
+            
+                <a href="../access_control/USER_COMMUNITY_SUBREPOSITORY_01.html">
+            
+                    
+                    コミュニティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.6" data-path="../access_control/USER_ITEM_RANKING_01.html">
+            
+                <a href="../access_control/USER_ITEM_RANKING_01.html">
+            
+                    
+                    ランキング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.7" data-path="../access_control/USER_ITEM_EXPORT_01.html">
+            
+                <a href="../access_control/USER_ITEM_EXPORT_01.html">
+            
+                    
+                    アイテムエクスポート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.8" data-path="../access_control/USER_ACCOUNT_SETTING_01.html">
+            
+                <a href="../access_control/USER_ACCOUNT_SETTING_01.html">
+            
+                    
+                    アカウント設定画面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.1.9" data-path="../access_control/USER_WORKSPACE_01.html">
+            
+                <a href="../access_control/USER_WORKSPACE_01.html">
+            
+                    
+                    ワークスペース
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <span>
+            
+                    
+                    管理画面
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.2.1" data-path="../access_control/ADMIN_ITEM_TYPE_01.html">
+            
+                <a href="../access_control/ADMIN_ITEM_TYPE_01.html">
+            
+                    
+                    アイテムタイプ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.2" data-path="../access_control/ADMIN_ITEM_01.html">
+            
+                <a href="../access_control/ADMIN_ITEM_01.html">
+            
+                    
+                    アイテム管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.3" data-path="../access_control/ADMIN_INDEXTREE_01.html">
+            
+                <a href="../access_control/ADMIN_INDEXTREE_01.html">
+            
+                    
+                    インデックスツリー管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.4" data-path="../access_control/ADMIN_WEB_DESIGN_01.html">
+            
+                <a href="../access_control/ADMIN_WEB_DESIGN_01.html">
+            
+                    
+                    ウェブデザイン管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.5" data-path="../access_control/ADMIN_AUTHOR_01.html">
+            
+                <a href="../access_control/ADMIN_AUTHOR_01.html">
+            
+                    
+                    著者DB管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.6" data-path="../access_control/ADMIN_STATISTICS_01.html">
+            
+                <a href="../access_control/ADMIN_STATISTICS_01.html">
+            
+                    
+                    統計
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.7" data-path="../access_control/ADMIN_WORKFLOW_01.html">
+            
+                <a href="../access_control/ADMIN_WORKFLOW_01.html">
+            
+                    
+                    ワークフロー管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.8" data-path="../access_control/ADMIN_COMMUNITY_01.html">
+            
+                <a href="../access_control/ADMIN_COMMUNITY_01.html">
+            
+                    
+                    コミュニティ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.9" data-path="../access_control/ADMIN_OAI_PMH_01.html">
+            
+                <a href="../access_control/ADMIN_OAI_PMH_01.html">
+            
+                    
+                    OAI-PMH
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.10" data-path="../access_control/ADMIN_RESOURCE_SYNC_01.html">
+            
+                <a href="../access_control/ADMIN_RESOURCE_SYNC_01.html">
+            
+                    
+                    Resource Sync
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.11" data-path="../access_control/ADMIN_SWORD_API_01.html">
+            
+                <a href="../access_control/ADMIN_SWORD_API_01.html">
+            
+                    
+                    SWORD API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.12" data-path="../access_control/ADMIN_FILES_01.html">
+            
+                <a href="../access_control/ADMIN_FILES_01.html">
+            
+                    
+                    ファイル管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.13" data-path="../access_control/ADMIN_RECORDS_01.html">
+            
+                <a href="../access_control/ADMIN_RECORDS_01.html">
+            
+                    
+                    レコード管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.14" data-path="../access_control/ADMIN_USER_01.html">
+            
+                <a href="../access_control/ADMIN_USER_01.html">
+            
+                    
+                    ユーザー管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.15" data-path="../access_control/ADMIN_SETTING_01.html">
+            
+                <a href="../access_control/ADMIN_SETTING_01.html">
+            
+                    
+                    設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.16" data-path="../access_control/ADMIN_LOGS_01.html">
+            
+                <a href="../access_control/ADMIN_LOGS_01.html">
+            
+                    
+                    ログ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.17" data-path="../access_control/ADMIN_MAINTENANCE_01.html">
+            
+                <a href="../access_control/ADMIN_MAINTENANCE_01.html">
+            
+                    
+                    メンテナンス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2.18" data-path="../access_control/ADMIN_ADVANCED_01.html">
+            
+                <a href="../access_control/ADMIN_ADVANCED_01.html">
+            
+                    
+                    アドバンスド
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" >
+            
+                <span>
+            
+                    
+                    API
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.3.1" data-path="../access_control/API_ITEM_01.html">
+            
+                <a href="../access_control/API_ITEM_01.html">
+            
+                    
+                    アイテム
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.2" data-path="../access_control/API_FILE_01.html">
+            
+                <a href="../access_control/API_FILE_01.html">
+            
+                    
+                    ファイル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.3" data-path="../access_control/API_INDEX_01.html">
+            
+                <a href="../access_control/API_INDEX_01.html">
+            
+                    
+                    インデックス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.4" data-path="../access_control/API_ACTIVITY_01.html">
+            
+                <a href="../access_control/API_ACTIVITY_01.html">
+            
+                    
+                    アクティビティ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.5" data-path="../access_control/API_OPEN_SEARCH_01.html">
+            
+                <a href="../access_control/API_OPEN_SEARCH_01.html">
+            
+                    
+                    OpenSearch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.6" data-path="../access_control/API_AUTHOR_01.html">
+            
+                <a href="../access_control/API_AUTHOR_01.html">
+            
+                    
+                    著者
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.7" data-path="../access_control/API_REQUEST_MAIL_01.html">
+            
+                <a href="../access_control/API_REQUEST_MAIL_01.html">
+            
+                    
+                    リクエストメール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.8" data-path="../access_control/API_LOGIN_01.html">
+            
+                <a href="../access_control/API_LOGIN_01.html">
+            
+                    
+                    ログイン
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.9" data-path="../access_control/API_OA_STATUS_01.html">
+            
+                <a href="../access_control/API_OA_STATUS_01.html">
+            
+                    
+                    OAステータス
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.10" data-path="../access_control/API_SWORD_API_01.html">
+            
+                <a href="../access_control/API_SWORD_API_01.html">
+            
+                    
+                    SWORD API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3.11" data-path="../access_control/API_RESTRICTED_ACCESS_01.html">
+            
+                <a href="../access_control/API_RESTRICTED_ACCESS_01.html">
+            
+                    
+                    制限公開
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../ams/">
+            
+                <a href="../ams/">
+            
+                    
+                    AMS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../ams/AMS_ACCESS_CONTROLL.html">
+            
+                <a href="../ams/AMS_ACCESS_CONTROLL.html">
+            
+                    
+                    未病フロント アクセスコントロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../ams/AMS_ARCHITECTURE_01.html">
+            
+                <a href="../ams/AMS_ARCHITECTURE_01.html">
+            
+                    
+                    未病データベースとWEKOの構成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../ams/AMS_GRDM_BUTTON_01.html">
+            
+                <a href="../ams/AMS_GRDM_BUTTON_01.html">
+            
+                    
+                    未病データベース GakuNin RDMボタン表示
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../ams/AMS_SHIBBOLETH_01.html">
+            
+                <a href="../ams/AMS_SHIBBOLETH_01.html">
+            
+                    
+                    未病データベース Shibboleth対応
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../ams/AMS_EXTENDED_METADATA.html">
+            
+                <a href="../ams/AMS_EXTENDED_METADATA.html">
+            
+                    
+                    未病データベース 拡張メタデータ対応
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://github.com/honkit/honkit" target="blank" class="gitbook-link">
+            HonKitで公開 
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >API連携によるレコード追加機能（researchmap）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="api連携によるレコード追加機能"><a name="api連携によるレコード追加機能" class="plugin-anchor" href="#api連携によるレコード追加機能"><i class="fa fa-link" aria-hidden="true"></i></a>API連携によるレコード追加機能</h1>
+<h2 id="目的・用途"><a name="目的・用途" class="plugin-anchor" href="#目的・用途"><i class="fa fa-link" aria-hidden="true"></i></a>目的・用途</h2>
+<p>本機能は、WEKO3のシステム内で登録した公開状態のアイテムのレコードを、researchmapで提供されているAPIを利用してresearchmapの業績情報に追加するための機能である。この機能により、事前に利用機関毎にJSTが発行したAPIキーを使用して、API キーに紐づいた機関に所属する一般会員の業績情報の更新を行うことが出来る。</p>
+<h2 id="利用方法"><a name="利用方法" class="plugin-anchor" href="#利用方法"><i class="fa fa-link" aria-hidden="true"></i></a>利用方法</h2>
+<p>celeryのタスクとして、researchmapへの業績情報の登録処理が実行される。<br></br>定期的に（例：一日一回）、バッチ処理により実行される（<code>scripts/instance.cfg</code> の <code>CELERY_BEAT_SCHEDULE</code> に <code>bulk_post_item_to_researchmap</code>（<code>weko_items_ui.tasks.bulk_post_item_to_researchmap</code>）が毎日 0:00 で登録されている）。<br></br>画面からの連携指定は <a href="../user/USER_4_6.html">Item Registration：メタデータ入力</a> の researchmap連携フラグ、連携結果の表示等は <a href="../user/USER_11_1.html">researchmap連携機能</a> を参照。</p>
+<h2 id="利用可能なロール"><a name="利用可能なロール" class="plugin-anchor" href="#利用可能なロール"><i class="fa fa-link" aria-hidden="true"></i></a>利用可能なロール</h2>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%"></col>
+<col style="width: 14%"></col>
+<col style="width: 14%"></col>
+<col style="width: 14%"></col>
+<col style="width: 14%"></col>
+<col style="width: 14%"></col>
+<col style="width: 14%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>ロール</th>
+<th>システム<br></br>
+管理者</th>
+<th>リポジトリ<br></br>
+管理者</th>
+<th>コミュニティ<br></br>
+管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト<br></br>
+(未ログイン)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>利用可否</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+
+<p>※バッチ処理により定期的に実行される。</p>
+<h2 id="機能内容"><a name="機能内容" class="plugin-anchor" href="#機能内容"><i class="fa fa-link" aria-hidden="true"></i></a>機能内容</h2>
+<blockquote>
+<p>実装補足（v2.1.0）：本書は要件定義を基にした記述を含む。release_v2.1.0 の実装（weko-items-ui の <code>tasks.py</code> / <code>linkage.py</code> / <code>signals.py</code> / <code>models.py</code>）の挙動は以下のとおりで、本文と異なる箇所は実装が正となる。</p>
+<ul>
+<li>連携予約：Item Registration で researchmap にチェックして登録完了したとき（<code>weko_workflow.views.next_action</code>）、インポート（<code>weko_search_ui.utils.import_items_to_system</code> で <code>researchmap_linkage</code> が真の場合。RO-Crate/JSON-LD インポート・SWORD API を含む）で登録完了したときに、シグナル <code>cris_researchmap_linkage_request</code> を送信する。受信側（<code>weko_items_ui.signals.receiver</code>）は <code>cris_linkage_result</code> を実行中（<code>succeed = NULL</code>）にし、RabbitMQ のキュー <code>cris_researchmap_linkage</code>（config <code>LINKAGE_MQ_EXCHANGE</code> / <code>LINKAGE_MQ_QUEUE</code>）に <code>{"item_uuid": ...}</code> を投入する。</li>
+<li>バッチ：<code>bulk_post_item_to_researchmap</code> がキューを読み切るまで1件ずつ処理する（<code>process_researchmap_queue</code>）。処理後はメッセージを ack して削除する（失敗時も再投入しない）。</li>
+<li>対象判定：アイテムが非公開（<code>check_publish_status</code>）または非公開インデックスに属する場合は「非公開」、連携対象著者がいない場合は「連携対象者無し」、資源タイプが config <code>WEKO_ITEMS_UI_CRIS_LINKAGE_RESEARCHMAP_TYPE_MAPPINGS</code> に無い場合は「連携形式対象外」として失敗を記録し送信しない。</li>
+<li>連携対象著者：レコードの <code>author_link</code>（著者DBの著者ID）から著者DBを引き、著者識別子のスキーム <code>researchmap</code>（<code>AuthorsPrefixSettings</code>）に登録された ID（パーマリンク）を <code>user_id</code> として使う（<code>weko_authors.models.Authors.get_authorIdInfo</code>）。レコードのメタデータ中の nameIdentifier を直接は参照しない。</li>
+<li>業績データ：<code>WEKO_ITEMS_UI_CRIS_LINKAGE_RESEARCHMAP_MAPPINGS</code>（researchmap 項目と JPCOAR マッピングの対応）で作成し、連携対象著者ごとに1行の JSON を作って改行（CRLF）で連結し、1アイテム分を1回の <code>POST <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>WEKO_ITEMS_UI_CRIS_LINKAGE_RESEARCHMAP_BASE_URL</span><span class="token punctuation">&gt;</span></span>/_bulk</code> で送信する。整合性チェック（<code>check</code> パラメータ）は使用しない。</li>
+<li>マージモード：AdminSettings（config <code>WEKO_ADMIN_SETTINGS_RESEARCHMAP_LINKAGE_SETTINGS</code>）の <code>merge_mode</code>、未設定時は config <code>WEKO_ITEMS_UI_CRIS_LINKAGE_RESEARCHMAP_MERGE_MODE_DEFAULT</code>（既定 <code>similar_merge_similar_data</code>）。</li>
+<li>認証：AdminSettings <code>researchmap_linkage_settings</code> のクライアントID（<code>researchmap_cidkey_contents</code>）と秘密鍵（<code>researchmap_pkey_contents</code>）で RS256 の JWT（有効期限10分）を作り、<code>/oauth2/token</code> からアクセストークンを取得する（scope は送信時 <code>write achievements</code>）。</li>
+<li>リトライ：HTTP ステータスが 200/404 以外の場合に config <code>WEKO_ITEMS_UI_CRIS_LINKAGE_RESEARCHMAP_RETRY_MAX</code>（既定 5）回まで再送する。401 かつ <code>invalid_token</code> の場合はアクセストークンを取り直す。結果確認（<code>_bulk_results</code> の URL）は処理中（code 102）の間 10 秒ごとに再取得する。</li>
+<li>結果の記録：<code>cris_linkage_result</code> テーブル（主キー recid + cris_institution（<code>researchmap</code>）、<code>succeed</code>（真偽値。NULL は実行中）、<code>last_linked_date</code>、<code>last_linked_item</code>、<code>failed_log</code>）。結果1行目の code が 200/201/204/304 のとき成功（<code>succeed = true</code>、連携日時・アイテムUUIDを更新）、それ以外や例外時は失敗（<code>succeed = false</code>、<code>failed_log</code> に応答や例外内容）とする。本文中の連携フラグ「0（未連携）」「-2（連携エラー）」の値は実装には存在しない。</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>タスクをscripts/instance.cfgのCELERY_BEAT_SCHEDULEに記載し、参照する。</p>
+</li>
+<li><p>処理キューにレコードIDが入っているアイテムに対して、連携を行う。処理キューに処理を予約するには、「ItemRegistrationにてCRIS連携の機関チェックボックスをONにして登録し、アイテム登録が完了したとき」「連携フラグをTRUEにしてインポートし、登録完了したとき」（<a href="../admin/ADMIN_2_4.html">インポート</a>を参照）（「JSON-LD形式で連携フラグをTRUEにしてインポート（RO-Crateインポート、SWORD API）し、登録完了したとき」<a href="../admin/ADMIN_2_5.html">RO-Crateインポート</a>を参照）のいずれかのタイミングで行える。</p>
+</li>
+<li><p>Celeryによりバッチ処理として、連携機能がONの場合、WEKOに登録されているアイテムのデータをresearchmapへ業績情報として追加する。</p>
+<ul>
+<li><p>機能のON/OFFは設定ファイルに定義する。（実装上は専用の ON/OFF 設定値はなく、<code>CELERY_BEAT_SCHEDULE</code> へのタスク登録の有無と、アイテムごとの連携フラグで制御される）</p>
+</li>
+<li><p>ResearchmapがCRIS連携に指定されているアイテムがキューに入っている場合、そのアイテムをresearchmapへの業績情報登録を行う。ただし、そのアイテムが公開状態であること、「著者」「コントリビュータ」欄（attribute_nameがcreator, contributor）に著者が登録されており、その著者の著者DBにresearchmapへのparmalinkが登録されている必要がある。また、researchmap側の設定としても、対象機関の下にある著者であり、公開状態にあることなど、連携を許可される設定下にある必要がある。（researchmap側の設定については、researchmapの連携API仕様書「3.10 研究者情報、代理人情報における取得・更新範囲」を参照のこと）</p>
+<ul>
+<li><p>登録対象アイテムの公開状態を確認する。</p>
+<ul>
+<li><p>対象レコードのrecord_metadataのpublish_status, publish_dateを既存のメソッドを用いて確認する。（返り値True: public, False: private）</p>
+</li>
+<li><p>対象レコードが登録されているインデックスの公開状態を既存のメソッドを用いて確認する。（返り値True: public, False: private）</p>
+</li>
+<li><p>ファイルが添付されている場合は、ファイル情報の公開状態を既存のメソッドを用いて確認する。（返り値True: ダウンロード可能, False: ダウンロード不可）（※release_v2.1.0 の実装ではファイルの公開状態による判定は行っていない。アイテムの公開状態（<code>check_publish_status</code>）と非公開インデックス判定（<code>invenio_oaiserver.response.is_private_index</code>）のみで判定する）</p>
+</li>
+<li><p>確認結果が公開状態であれば、著者情報を確認する。<br></br>アイテムのrecord_metadataを確認し、researchmapへ業績情報として登録できる入力データを作成する。</p>
+</li>
+<li><p>確認結果が非公開状態であれば、researchmapへの業績情報のレコード追加処理は行わない。</p>
+</li>
+</ul>
+</li>
+<li><p>登録対象アイテムのrecord_metadataのjsonに、nameIdentifiersを持つ著者情報のデータがあるか確認する。</p>
+<ul>
+<li><p>attribute_nameがcreator, contributorの項目にnameIdentifiersを持つ著者情報がある場合、 CRISシステムの種別によって登録する著者情報の確認を行う。</p>
+<ul>
+<li><p>CRISシステムの種別がresearchmapの場合、nameIdentifierSchemeとしてresearchmapの会員ID(user_id)が設定されているかどうか確認する。</p>
+</li>
+<li><p>researchmapの会員ID(user_id)が設定されている場合、該当のアイテムをデータ連携対象とする。</p>
+</li>
+<li><p>特定の作成者識別子Scheme (CRISシステムの種別がresearchmapの場合はresearchmap Member ID)と対応する作成者識別子の著者の業績情報として、連携用データの作成を行う。</p>
+</li>
+<li><p>researchmapの会員ID(user_id) を持つ複数の著者情報が連携対象のアイテムに登録されている場合、それぞれの著者の業績情報として連携用データの作成を行う。</p>
+<ul>
+<li><p>連携対象著者のresearchmap会員IDをそれぞれuser_idとして指定し、複数の業績情報を登録する。</p>
+</li>
+<li><p>authorsのフィールドがある業績種別(論文: published_papers, MISC: misc, 書籍等出版物: books_etc)の業績として登録する場合、著者（authors）のフィールドの項目に、登録対象の会員ID以外の著者情報も含むデータを登録する。</p>
+</li>
+<li><p>業績種別が受賞:awardsの業績として登録する場合、受賞者(winners) のフィールドの項目に、登録対象の会員ID以外の著者情報も含むデータを登録する。</p>
+</li>
+<li><p>業績種別が講演・口頭発表等:presentationの業績として登録する場合、講演者(presenters) のフィールドの項目に、登録対象の会員ID以外の著者情報も含むデータを登録する。</p>
+</li>
+<li><p>業績種別がWorks:worksの業績として登録する場合、発表者(creators) のフィールドの項目に、登録対象の会員ID以外の著者情報も含むデータを登録する。</p>
+</li>
+<li><p>業績種別が共同研究・競争的資金等の研究課題:research_projectsの業績として登録する場合、担当研究者(investigators) のフィールドの項目に、登録対象の会員ID以外の著者情報も含むデータを登録する。</p>
+</li>
+<li><p>業績種別が産業財産権: industrial_property_rightsの業績として登録する場合、 発明者/考案者/創作者(inventors) のフィールドの項目に、登録対象の会員ID以外の著者情報も含むデータを登録する。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>nameIdentifiersを持つ著者情報がない場合、データの連携処理は行わない。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>アイテムの登録データから業績情報として登録できる入力データを作成する。</p>
+<ul>
+<li><p>登録対象のアイテムのメタデータをjpcoarmappingスキーマに対応した状態で既存のメソッドを用いて取得する。</p>
+</li>
+<li><p>対象レコードのファイルのメタデータは既存のメソッドを用いて、公開、または公開日が過去日のメタデータのみ取得する。</p>
+<ul>
+<li><p>CRISシステムの種別がresearchmapの場合、登録項目（必須、任意）は、researchmapの業績種別と登録対象アイテムの資源タイプのデータの対応付けを定義したJSONを参照し、対応する項目の登録されている値を登録する。</p>
+</li>
+<li><p>資源タイプと researchmapの業績種別の対応表は別に添付する。</p>
+</li>
+<li><p>WEKOの登録アイテムのメタデータとresearchmapへの登録の際のメタデータを、 JPCOARスキーママッピングを利用して対応付ける。</p>
+<ul>
+<li><p>登録アイテムのWEKOの資源タイプと対応するresearchmap業績種別のフィールドに、 JPCOARのスキーママッピングと対応付けてマッピングを行い、対応するメタデータを登録する。</p>
+<ul>
+<li><p>マッピング情報のうち、jpcoar_mappingの指定する設定値を持つ項目をデータ連携対象とする。</p>
+</li>
+<li><p>連携対象アイテムのrecords_metadataを取得する。</p>
+</li>
+<li><p>researchmapの対象の業績種別のフィールドの値に、jpcoar_mappingスキーマ形式で取得したアイテムのメタデータの対応する項目の値を、設定ファイルを利用して対応付け、登録するメタデータのJSONを作成する。</p>
+<ul>
+<li><p>一つのJSONを作成する際に含まれる業績情報のデータの件数は、1アイテム分とする。</p>
+</li>
+<li><p>最大件数を越えた場合、次のJSONデータを作成する。</p>
+</li>
+<li><p>JSONの例</p>
+<pre class="language-"><code class="lang-json">  <span class="token punctuation">{</span><span class="token property">"insert"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"published_papers"</span><span class="token punctuation">,</span> <span class="token property">"user_id"</span><span class="token operator">:</span> <span class="token string">"xx"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token property">"merge"</span><span class="token operator">:</span>  
+  <span class="token punctuation">{</span><span class="token property">"paper_title"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token property">"ja"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">,</span> <span class="token property">"en"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token property">"publication_date"</span><span class="token operator">:</span><span class="token string">"2011-10-10"</span><span class="token punctuation">,</span><span class="token property">"publication_name"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token property">"ja"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">,</span> <span class="token property">"en"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><p>※ 1 リクエストあたりの JSON の最大サイズは、10MB。</p>
+</li>
+<li><p>※ 1 行に1 業績、あるいは1 研究者のデータを記載する。不要な改行を含んでいる場合、エラーが発生する。プロフィール等でデータに改行を含む場合、¥n で記載する必要がある。</p>
+</li>
+<li><p>※ 以下の文字をデータ中に含める場合は、「\」でエスケープする。「"」であれば「\"」と記載する。</p>
+<p>| エスケープ表記 | 説明                                  |
+| -------------- | ------------------------------------- |
+| \"             | ダブルクォーテーション                |
+| \\           | バックスラッシュ                      |
+| \n             | 改行                                  |
+| \uXXXX         | 4 桁の16 進数で表記されたUnicode 文字 |</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>researchmapへの成果物登録の際の業績種別とJPCOARスキーマの資源タイプの対応表は、設定ファイルで変更可能とする。</p>
+</li>
+<li><p>メタデータにJPCOARスキーマとの対応関係がない場合、該当のメタデータは登録しない。</p>
+</li>
+<li><p>登録するアイテムのメタデータの取得が出来なかった場合は、該当のメタデータを登録しない。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>新たにアクセストークンを取得する。アクセストークンの取得処理の流れは以下。</p>
+<ul>
+<li><p>JWTを作成する。</p>
+</li>
+<li><p>JWTを用いてトークンAPI リクエストを送信し、アクセストークンを取得する。</p>
+</li>
+<li><p>アクセストークンの取得に失敗し場合、リトライする。</p>
+</li>
+<li><p>リトライにX回失敗した場合、エラーメッセージをログに記録し業績情報登録処理を終了する。（Xは設定ファイルより取得する。デフォルトは5とする）</p>
+</li>
+</ul>
+</li>
+<li><p>JWTを作成する。</p>
+<ul>
+<li><p>既存のJWT作成ライブラリを利用する。(jpadilla/pyjwt)</p>
+</li>
+<li><p>有効期限は2分とする。（推奨値）設定ファイルで値を管理する。（※release_v2.1.0 の実装では有効期限は10分固定（<code>Researchmap.create_jwt</code>）で、設定値はない）</p>
+</li>
+<li><p>利用機関で機関毎に事前に取得しているAPIキーのクライアントIDを保持する。</p>
+<ul>
+<li>APIキーのクライアントIDの変数および、JWTの署名に用いる秘密鍵はAdminSettingsから取得する。</li>
+</ul>
+</li>
+<li><p>APIキーのクライアントIDを使用してJSON Web トークン（JWT）を作成する。</p>
+</li>
+<li><p>各 header、claim の内容についてはresearchmapの連携API仕様書を参照のこと</p>
+</li>
+</ul>
+</li>
+<li><p>JWTを用いてトークンAPI リクエストを送信し、アクセストークンを取得する。</p>
+<ul>
+<li><p>APIのリクエストは設定ファイルに定義し、CRISシステムの種別毎に該当する形式を利用できるようにする。</p>
+</li>
+<li><p>APIリクエスト時にエラーレスポンスが返ってきた場合、そのエラー内容によって処理を行う。</p>
+<ul>
+<li><p>APIリクエスト時に再送信によって解消する可能性があるエラーレスポンスが返ってきた場合、トークンAPI リクエストを再度送信する。</p>
+<ul>
+<li><p>リトライ回数は設定ファイルで定義し、変更可能とする。（デフォルト値：5回）</p>
+</li>
+<li><p>最後の再実行時にエラーが返ってきた場合は、失敗をCRIS連携結果テーブルに書き戻し、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+</li>
+</ul>
+</li>
+<li><p>APIリクエスト時にJWTの再作成によって解消する可能性があるエラーレスポンスが返ってきた場合、 JWTの再作成後、トークンAPI リクエストを再度送信する。</p>
+<ul>
+<li><p>リトライ回数は設定ファイルで定義し、変更可能とする。（デフォルト値：5回）</p>
+</li>
+<li><p>最後の再実行時にエラーレスポンスが返ってきた場合は、失敗をCRIS連携結果テーブルに書き戻し、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+</li>
+</ul>
+</li>
+<li><p>再送信により解消しないエラーレスポンスが返ってきた場合は、失敗をCRIS連携結果テーブルに書き戻し、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+</li>
+<li><p>エラー表に記載のないその他のエラーレスポンスが返ってきた場合は、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+</li>
+<li><p>エラー時レスポンス表<br></br>アクセス時に返すエラー理由と内容</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>アクセストークンを利用して、WEKOの登録アイテムに関するメタデータをresearchmapの業績情報に登録する前の整合性チェックのリクエストAPIを呼び出す。</p>
+<ul>
+<li><p>リクエスト<br></br>GET <a href="https://api.researchmap.jp/_bulk" target="_blank">https://api.researchmap.jp/_bulk</a></p>
+</li>
+<li><p>パラメータ</p>
+<table>
+<colgroup>
+<col style="width: 18%"></col>
+<col style="width: 22%"></col>
+<col style="width: 59%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>パラメーター名</th>
+<th>項目名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>check</td>
+<td>整合性チェックのみ行うかどうか</td>
+<td>パラメーター（GET）に「check」（または、check=1）を記載すると、入力チェックのみ実行され、その結果を確認できます。その場合、「<u>一括更新結果確認</u>」の API より確認します。check を指定しなくても入力チェックを行い、1 件でもエラーがあった場合、更新処理は行いません。</td>
+</tr>
+<tr class="even">
+<td>id</td>
+<td>一括更新 ID</td>
+<td><p>「check」パラメーターをつけ、入力チェックのみ行ったデータは、本 API のレスポンスより取得される</p>
+<p>bulk_url を用いてインポートを実行できます。対象は、 check の API を実行し、その結果が確認できる状態であれば、実行できます。</p></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><p>入力チェックの結果、エラーが発生したデータについては登録対象外として、登録時のリクエストの入力データから除外する。</p>
+<ul>
+<li>該当のアイテムのresearchmap連携フラグは-2(連携エラー)とする。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>アクセストークンを利用して、WEKOの登録アイテムに関するメタデータをresearchmapの業績情報に登録するリクエストAPIを呼び出す。</p>
+<ul>
+<li><p>リクエスト<br></br>POST or PUT <a href="https://api.researchmap.jp/\_bulk" target="_blank">https://api.researchmap.jp/\_bulk</a></p>
+</li>
+<li><p>パラメータ （POST BODY（JSON））例  </p>
+<pre class="language-"><code class="lang-json"><span class="token punctuation">{</span><span class="token property">"insert"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"published_papers"</span><span class="token punctuation">,</span> <span class="token property">"user_id"</span><span class="token operator">:</span> <span class="token string">"xx"</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token property">"merge"</span><span class="token operator">:</span>  
+<span class="token punctuation">{</span><span class="token property">"paper_title"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token property">"ja"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">,</span> <span class="token property">"en"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token property">"publication_date"</span><span class="token operator">:</span><span class="token string">"2011-10-10"</span><span class="token punctuation">,</span><span class="token property">"publication_name"</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token property">"ja"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">,</span> <span class="token property">"en"</span><span class="token operator">:</span> <span class="token string">"XXXXX"</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li><p>※ 1 リクエストあたりの JSON の最大サイズは、10MB。</p>
+</li>
+<li><p>※ 1 行に1 業績、あるいは1 研究者のデータを記載する。不要な改行を含んでいる場合、エラーが発生する。プロフィール等でデータに改行を含む場合、¥n で記載する必要がある。</p>
+</li>
+<li><p>※ 以下の文字をデータ中に含める場合は、「\」でエスケープする。「"」であれば「\"」と記載する。</p>
+<p>  | エスケープ表記 | 説明                                  |
+  | -------------- | ------------------------------------- |
+  | \"             | ダブルクォーテーション                |
+  | \\           | バックスラッシュ                      |
+  | \n             | 改行                                  |
+  | \uXXXX         | 4 桁の16 進数で表記されたUnicode 文字 |</p>
+</li>
+</ul>
+</li>
+<li><p>情報が更新可能な範囲は、API キーに紐づいた機関に所属する一般会員。（researchmapのAPI設計書記載の仕様）</p>
+</li>
+<li><p>各研究者の権限設定、機関の権限設定によって利用可否が決定される。（researchmapのAPI設計書記載の仕様）</p>
+<ul>
+<li>登録処理の際に、 researchmap側の設定や登録情報の状態によりエラーとなったアイテムについては、 researchmapへの連携フラグを-2（連携エラー）として設定する。</li>
+</ul>
+</li>
+<li><p>登録対象アイテムのrecord_metadataに登録されている、研究者のresearchmapの会員ID(user_id)を指定して業績情報の登録を行う。</p>
+<ul>
+<li><p>researchmapへの業績情報登録時の類似性チェックについては、デフォルト設定はメタデータ補完とする。</p>
+<ul>
+<li><p>類似データのマージに関するアクションの設定値は、パラメータ化して機関毎に変更可能とする。（設定値の種類については「アクションの種類」参照）<br></br>scripts/instance.cfgに保持し、リクエスト時に送信するJSONデータを作成する際に利用する。</p>
+</li>
+<li><p>類似データのマージに関するアクションの設定値がない場合は、類似データマージ（類似データ優先）のアクションを指定する。</p>
+</li>
+</ul>
+</li>
+<li><p>アクションの種類</p>
+<table>
+<colgroup>
+<col style="width: 33%"></col>
+<col style="width: 33%"></col>
+<col style="width: 33%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th>項目名</th>
+<th>アクション名</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>insert</p>
+<p>（merge 指定）</p></td>
+<td><p>マージ</p>
+<p>（追加・更新）</p></td>
+<td>指定ドキュメントがない場合、新規登録。追加・更新を行おうとしている会員の業績リスト中に類似ドキュメントがあればエラーとなります。</td>
+</tr>
+<tr class="even">
+<td><p>insert</p>
+<p>（similar_merge指定）</p>
+<p>priority=input_data</p></td>
+<td><p>類似データマージ（入力データ優先）</p></td>
+<td><p>「マージ」と基本的には同じですが、追加・更新を行おうとしている会員の業績リスト中に類似ドキュメントがあった場合、入力データ（または、入力データを指定ドキュメントとマージしたもの）を優先させ、類似ドキュメントをマージします。</p>
+<p>※ 業績情報のみ指定可能。</p>
+<p>※ 入力データの項目に存在しない項目のみ、類似ドキュメントの値を補完することになります。</p>
+<p>※ 類似業績とマージした際は、本人による登録であっても承認状態を「承認済-自動」とします（「却下」可能にするため）。</p>
+<p>※ 研究者、代理人ではsimilar_merge 指定はできません。</p></td>
+</tr>
+<tr class="odd">
+<td><p>insert</p>
+<p>（similar_merge指定）</p>
+<p>priority=similar_data</p></td>
+<td><p>類似データマージ（類似データ優先）</p></td>
+<td><p>「マージ」と基本的には同じですが、追加・更新を行おうとしている会員の業績リスト中に類似ドキュメントがあった場合、類似ドキュメントを優先させ、入力データ（または、入力データを指定ドキュメントとマージしたもの）をマージします。</p>
+<p>※ 業績情報のみ指定可能。</p>
+<p>※ 類似ドキュメントの項目に存在しない項目のみ、入力データの値を補完することになります。</p>
+<p>※ 類似業績とマージした際は、本人による登録であっても承認状態を「承認済-自動」とします（「却下」可能にするため）。</p></td>
+</tr>
+<tr class="even">
+<td><p>insert（force 指定）</p></td>
+<td>入力データ強制追加</td>
+<td><p>「マージ」と基本的には同じですが、類似ドキュメントがあった場合でも、別業績として扱い強制的に新規登録を行います。ただし、類似ドキュメントが機関以外（本人相当）によって登録／更新されている場合は、追加することができません。</p>
+<p>※ 業績情報のみ指定可能。</p>
+<p>※ 多用すると、同じ会員リスト中に類似業績が増え続けます。通常の「merge」指定でエラーになり、類似業績と分けてどうしても登録したい場合のみご利用ください。</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</li>
+<li><p>APIリクエスト時にエラーレスポンスが返ってきた場合、そのエラー内容によって処理を行う。</p>
+<ul>
+<li><p>APIリクエスト時に再送信によって解消する可能性があるエラーレスポンス（通信エラー・アクセストークン期限切れ等）が返ってきた場合、業績情報登録リクエストを再度送信する。（アクセストークンを再取得する）</p>
+<ul>
+<li><p>リトライ回数は設定ファイルで定義し、変更可能とする。（デフォルト値：5回）</p>
+</li>
+<li><p>最後の再実行時にエラーが返ってきた場合は、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+</li>
+<li><p>業績情報の登録処理を終了する場合、アイテムのresearchmap連携フラグは、0(未連携)のままとする。</p>
+</li>
+</ul>
+</li>
+<li><p>APIリクエスト時にアクセストークンの再作成によって解消する可能性があるエラーレスポンスが返ってきた場合、 アクセストークンの再作成後、業績情報登録リクエストを再度送信する。</p>
+<ul>
+<li><p>リトライ回数は設定ファイルで定義し、変更可能とする。（デフォルト値：5回）</p>
+</li>
+<li><p>最後の再実行時にエラーレスポンスが返ってきた場合は、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+</li>
+<li><p>業績情報の登録処理を終了する場合、アイテムのresearchmap連携フラグは、0(未連携)のままとする。</p>
+</li>
+</ul>
+</li>
+<li><p>再送信により解消しないエラーレスポンスが返ってきた場合は、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+<ul>
+<li>業績情報の登録処理を終了する際に、該当アイテムのresearchmap連携フラグは、0(未連携)のままとする。</li>
+</ul>
+</li>
+<li><p>JSONのサイズエラーなど、エラー表に記載のないその他のエラーレスポンスが返ってきた場合は、ステータスコードとエラーログを出力し、業績情報の登録処理を終了する。</p>
+</li>
+</ul>
+</li>
+<li><p>登録処理中に一部のアイテムで登録エラーが発生した場合、該当アイテムの業績情報登録処理を行わず、次の対象アイテムの業績情報登録処理に進む。（researchmapAPI仕様）</p>
+<ul>
+<li><p>登録処理中に再実行により解消しないエラーが発生したアイテムのresearchmap連携フラグは、-2(連携失敗)とする。</p>
+</li>
+<li><p>登録処理中にエラーが発生したアイテムのresearchmap連携フラグは、0(未連携)のままとする。</p>
+</li>
+<li><p>エラー時レスポンス表<br></br>アクセス時に返すエラー理由と内容について説明します。</p>
+</li>
+<li><p>共通バリデーションエラー　レスポンス表<br></br>※ 一括更新で返却するレスポンスコードはバリデーションエラーの場合、200 を返します（各行のエラーが全体のレスポンスコードに影響を及ぼさない）。</p>
+</li>
+<li><p>一括更新時バリデーションエラーは304は成功として扱い、それ以外は失敗として扱う。（researchmapの連携API仕様書「3.1.4一括更新時バリデーションエラー レスポンス表」を参照のこと）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>業績情報の一括更新結果の確認を行う。</p>
+<ul>
+<li><p>リクエスト<br></br>  GET <a href="https://api.researchmap.jp/\_bulk_results" target="_blank">https://api.researchmap.jp/\_bulk_results</a></p>
+</li>
+<li><p>パラメーター（GET）</p>
+  <table>
+  <colgroup>
+  <col style="width: 33%"></col>
+  <col style="width: 33%"></col>
+  <col style="width: 33%"></col>
+  </colgroup>
+  <thead>
+  <tr class="header">
+  <th>パラメーター名</th>
+  <th>項目名</th>
+  <th>説明</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="odd">
+  <td>id</td>
+  <td><p>一括更新ID（必須）</p></td>
+  <td>「研究者情報、代理人情報一括更新」のレスポンスにて取得したID。</td>
+  </tr>
+  <tr class="even">
+  <td>display_type</td>
+  <td><p>成功 or 失敗のどちらのリストを表示するか</p></td>
+  <td><p>success: 正常に登録されたリストを表示（or 正常にチェック終了になったもの）</p>
+  <p>error: エラーリストを表示</p>
+  <p>デフォルト: error</p></td>
+  </tr>
+  <tr class="odd">
+  <td>next</td>
+  <td><p>次ページを表示するかどうか</p></td>
+  <td><p>「next=xxx」指定。</p>
+  <p>＜インポート結果＞</p>
+  <p>json の最終行の"no", "line"を「_」区切りで指定するとxxx 以降のデータが出力されます。例えば「next=1_30」であれば、1 ファイル目の 31 行目からの結果が表示されます。</p>
+  <p>＜API の更新結果＞</p>
+  <p>行数: 指定した行数の続きからデータを取得します。</p>
+  <p>"true": 前回取得した続きからデータを取得します。（next パラメーターを指定し、値を指定しない場合も、前回取得した続きからデータ取得します。）</p>
+  <p>前のページを取得したい場合は、再度、next を指定せず取得する必要があります（1 ページから再取得）。</p>
+  <p>ただし、next パラメーターを利用せずに、ある一定期間過ぎますと、有効期限切れとなりエラーとなります。</p></td>
+  </tr>
+  <tr class="even">
+  <td>limit</td>
+  <td><p>ページあたりの一括更新結果件数</p></td>
+  <td><p>デフォルト: 1000 件。最大：3000 件。</p>
+  <p>※ 最大値をこえた指定をした場合、3000 として出力されます。</p></td>
+  </tr>
+  </tbody>
+  </table>
+</li>
+<li><p>失敗が１件以上あった場合は、そのアイテムへの送信は失敗として扱う。</p>
+</li>
+</ul>
+</li>
+<li><p>業績情報の一括更新結果を基に、データ連携済みのアイテムおよび、登録時にエラーが発生したアイテムのresearchmap連携フラグ（CRIS連携結果テーブルのsucceedカラム）を変更する。</p>
+<ul>
+<li><p>statusが completion「完了」の場合、該当行のアイテムのresearchmap連携フラグを「成功」にする。</p>
+</li>
+<li><p>statusが error「エラー」の場合、response項目のerrorを参照し、発生したエラーが再実行で解消しない類のエラーである場合、該当行のアイテムのresearchmap連携フラグを「失敗」とする。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="更新履歴"><a name="更新履歴" class="plugin-anchor" href="#更新履歴"><i class="fa fa-link" aria-hidden="true"></i></a>更新履歴</h2>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>GitHubコミットID</th>
+<th>更新内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026/10/05</td>
+<td>508030789</td>
+<td>release_v2.1.0突合：実行タイミング・連携予約・対象判定・著者特定・認証・リトライ・結果記録を実装補足に追記し、ファイル公開判定・JWT 有効期限・ON/OFF 設定の記述に実装との差異を注記</td>
+</tr>
+</tbody>
+</table>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="JSONLD_IMPORT_REPLACE.html" class="navigation navigation-prev " aria-label="Previous page: JSONLDインポート文字列置換">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../restricted_access/" class="navigation navigation-next " aria-label="Next page: 制限公開機能">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"API連携によるレコード追加機能（researchmap）","level":"1.7.19","depth":2,"next":{"title":"制限公開機能","level":"1.8","depth":1,"path":"restricted_access/README.md","ref":"./restricted_access/README.md","articles":[{"title":"RESTRICTED_ACCESS-13-1: アイテムタイプ管理（制限公開）","level":"1.8.1","depth":2,"path":"restricted_access/RESTRICTED_ACCESS_01.md","ref":"./restricted_access/RESTRICTED_ACCESS_01.md","articles":[]},{"title":"RESTRICTED_ACCESS-13-2: アイテム詳細(制限公開)","level":"1.8.2","depth":2,"path":"restricted_access/RESTRICTED_ACCESS_02.md","ref":"./restricted_access/RESTRICTED_ACCESS_02.md","articles":[]},{"title":"RESTRICTED_ACCESS-13-3: ワークフロー管理（制限公開）","level":"1.8.3","depth":2,"path":"restricted_access/RESTRICTED_ACCESS_03.md","ref":"./restricted_access/RESTRICTED_ACCESS_03.md","articles":[]},{"title":"RESTRICTED_ACCESS-13-4: メールテンプレート","level":"1.8.4","depth":2,"path":"restricted_access/RESTRICTED_ACCESS_04.md","ref":"./restricted_access/RESTRICTED_ACCESS_04.md","articles":[]},{"title":"RESTRICTED_ACCESS-13-5: プロフィール表示設定","level":"1.8.5","depth":2,"path":"restricted_access/RESTRICTED_ACCESS_05.md","ref":"./restricted_access/RESTRICTED_ACCESS_05.md","articles":[]}]},"previous":{"title":"JSONLDインポート文字列置換","level":"1.7.18","depth":2,"path":"other/JSONLD_IMPORT_REPLACE.md","ref":"./other/JSONLD_IMPORT_REPLACE.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"other/RESEARCHMAP_LINKAGE.md","mtime":"2026-10-05T00:10:27.423Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <noscript>
+        <style>
+            .honkit-cloak {
+                display: block !important;
+            }
+        </style>
+    </noscript>
+    <script>
+        // Restore sidebar state as critical path for prevent layout shift
+        function __init__getSidebarState(defaultValue){
+            var baseKey = "";
+            var key = baseKey + ":sidebar";
+            try {
+                var value = localStorage[key];
+                if (value === undefined) {
+                    return defaultValue;
+                }
+                var parsed = JSON.parse(value);
+                return parsed == null ? defaultValue : parsed;
+            } catch (e) {
+                return defaultValue;
+            }
+        }
+        function __init__restoreLastSidebarState() {
+            var isMobile = window.matchMedia("(max-width: 600px)").matches;
+            if (isMobile) {
+                // Init last state if not mobile
+                return;
+            }
+            var sidebarState = __init__getSidebarState(true);
+            var book = document.querySelector(".book");
+            // Show sidebar if it enabled
+            if (sidebarState && book) {
+                book.classList.add("without-animation", "with-summary");
+            }
+        }
+
+        try {
+            __init__restoreLastSidebarState();
+        } finally {
+            var book = document.querySelector(".book");
+            book.classList.remove("honkit-cloak");
+        }
+    </script>
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/anchor.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/gumshoe.polyfills.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-intopic-toc/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-published-with/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/@honkit/honkit-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

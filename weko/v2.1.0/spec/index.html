@@ -6,7 +6,7 @@
         <title>Introduction · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4011,7 +4011,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <html><head></head><body><h1 id="weko3機能仕様書"><a name="weko3機能仕様書" class="plugin-anchor" href="#weko3機能仕様書"><i class="fa fa-link" aria-hidden="true"></i></a>WEKO3機能仕様書</h1>
-<p>v.2.0.0</p>
+<p>v2.1.0</p>
 <table>
 <thead>
 <tr>
@@ -4020,6 +4020,30 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>v2.1.0</td>
+<td>- 全カテゴリの機能仕様を release_v2.1.0 の実装と突き合わせて修正し、v2.1.0 で変わった箇所に【v2.1.0】を付けた</td>
+</tr>
+<tr>
+<td></td>
+<td>- 主な修正：認可の強化（コミュニティ管理者の管轄限定、グループ権限、ゲストトークンのバケット限定など）、ログイン API の失敗応答の統一とレート制限、エンバーゴを考慮したアクセス権（検索・OAI-PMH・ResourceSync）、プレビュー・IIIF・統計・signposting の権限、ワークスペース（arXiv からの自動入力、出力の No. 列、DOI リンク）、サイトライセンスでのダウンロード、No Group・ロールの判定、アイテムタイプのマッピングの制約、SWORD API・OAI-PMH、Shibboleth の属性の受け付け元の限定</td>
+</tr>
+<tr>
+<td></td>
+<td>- 追加：<a href="api/API_20_bulk_import.html">API-20: 一括インポートAPI</a> / <a href="other/SIGNPOSTING_01.html">Signposting（FAIR Signposting）</a> / <a href="other/JSONLD_IMPORT_REPLACE.html">JSONLDインポート文字列置換</a> / <a href="other/RESEARCHMAP_LINKAGE.html">API連携によるレコード追加機能（researchmap）</a> / <a href="ams/AMS_EXTENDED_METADATA.html">未病データベース 拡張メタデータ対応</a>、API 共通の認証認可と個別の仕様が無い API の認可一覧</td>
+</tr>
+<tr>
+<td></td>
+<td>- 大容量ファイルのアップロードなど、リリースに含まれない機能を「未リリース」と明記</td>
+</tr>
+<tr>
+<td></td>
+<td>- 見出しのパス引数をコード表記にし、リンク切れ・画像の欠落を修正（HTML 版で切れるアンカーを含む）</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
 <tr>
 <td>v2.0.2 索引</td>
 <td>- 開発者・AI 向けのナビ層を新設：<a href="ARCHITECTURE.html">アーキテクチャ全体像</a> / <a href="MODULE_INDEX.html">モジュール索引（逆引き）</a> / <a href="DEV_GUIDE.html">開発者ガイド（道しるべ）</a> / <a href="CROSS_REFERENCE.html">横断索引</a>。既存の機能仕様を束ね、機能↔モジュール↔実装ファイルを辿れるようにした</td>
@@ -4077,7 +4101,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"開発者向けガイド","level":"1.2","depth":1,"ref":"","articles":[{"title":"アーキテクチャ全体像","level":"1.2.1","depth":2,"path":"ARCHITECTURE.md","ref":"./ARCHITECTURE.md","articles":[]},{"title":"モジュール索引（逆引きリファレンス）","level":"1.2.2","depth":2,"path":"MODULE_INDEX.md","ref":"./MODULE_INDEX.md","articles":[]},{"title":"開発者ガイド（道しるべ）","level":"1.2.3","depth":2,"path":"DEV_GUIDE.md","ref":"./DEV_GUIDE.md","articles":[]},{"title":"横断索引","level":"1.2.4","depth":2,"path":"CROSS_REFERENCE.md","ref":"./CROSS_REFERENCE.md","articles":[]},{"title":"用語集","level":"1.2.5","depth":2,"path":"GLOSSARY.md","ref":"./GLOSSARY.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"README.md","mtime":"2026-07-15T10:08:45.343Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"開発者向けガイド","level":"1.2","depth":1,"ref":"","articles":[{"title":"アーキテクチャ全体像","level":"1.2.1","depth":2,"path":"ARCHITECTURE.md","ref":"./ARCHITECTURE.md","articles":[]},{"title":"モジュール索引（逆引きリファレンス）","level":"1.2.2","depth":2,"path":"MODULE_INDEX.md","ref":"./MODULE_INDEX.md","articles":[]},{"title":"開発者ガイド（道しるべ）","level":"1.2.3","depth":2,"path":"DEV_GUIDE.md","ref":"./DEV_GUIDE.md","articles":[]},{"title":"横断索引","level":"1.2.4","depth":2,"path":"CROSS_REFERENCE.md","ref":"./CROSS_REFERENCE.md","articles":[]},{"title":"用語集","level":"1.2.5","depth":2,"path":"GLOSSARY.md","ref":"./GLOSSARY.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"README.md","mtime":"2026-10-08T13:26:46.889Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

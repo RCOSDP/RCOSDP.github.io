@@ -6,7 +6,7 @@
         <title>ADMIN-6-3: サイトライセンス · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4091,7 +4091,7 @@
 <li>送信時の処理(v0.9.22)<ul>
 <li>宛先：チェックした機関のメールアドレス</li>
 <li>件名：[○○機関リポジトリ]YYYY.MM-yyyy.mm statistics report<br></br>※YYYY.MMは集計月(from), yyyy.mmは集計月(to)を表示</li>
-<li>メールのテンプレート： <a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/templates/weko_admin/email_templates/site_license_report.html" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/templates/weko_admin/email_templates/site_license_report.html</a></li>
+<li>メールのテンプレート： <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/templates/weko_admin/email_templates/site_license_report.html" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/templates/weko_admin/email_templates/site_license_report.html</a></li>
 <li>本文：サイトライセンス利用統計の内容<ul>
 <li>WEKO Top Page Access Count</li>
 <li>Number Of Searches</li>
@@ -4156,7 +4156,7 @@
 <ul>
 <li><p>画面表示したとき、［保存（Save）］ボタンを押したときの処理は、以下で行う。</p>
 <ul>
-<li>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/admin.py" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/admin.py</a></li>
+<li>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/admin.py" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/admin.py</a></li>
 <li>SiteLicenseSendMailSettingsViewクラスのindexメソッド<ul>
 <li>［保存（Save）］ボタンを押したときは、画面からPOSTで呼び出される。POSTで呼ばれたときに限り、データの更新を行う。<ul>
 <li>「Automatic Send」ラジオボタンの選択状態によって、admin_settingsテーブルの、nameが「site_license_mail_settings」であるレコード（repo_id をキーとするネスト dict）の該当リポジトリ分を更新する。</li>
@@ -4176,7 +4176,7 @@
 </li>
 <li><p>［メール手動送信（Manual Send）］ボタンを押したときの処理は、以下で行う。</p>
 <ul>
-<li>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/views.py" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/views.py</a></li>
+<li>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/views.py" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/views.py</a></li>
 <li>manual_send_site_license_mailメソッド<ul>
 <li>画面で選択中のリポジトリIDがフォームの <code>repo_id</code> として送信される。</li>
 <li>【v2.1.0】権限確認：login_required ＋ System/Repository/Community Administrator のロール確認に加え、<code>_form_repository_scope_required</code> により、フォームの <code>repo_id</code> が操作者の担当範囲であることを確認する（System/Repository Administrator は全リポジトリ、それ以外は <code>Community.get_repositories_by_user</code> で得た担当コミュニティのみ。<code>repo_id</code> が空、または担当外の場合は 403）。内部呼び出しで引数 <code>repo_id</code> を渡した場合はこの確認は行わない。</li>
@@ -4298,7 +4298,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-6-3: サイトライセンス","level":"1.4.6.3","depth":3,"next":{"title":"ワークフロー管理","level":"1.4.7","depth":2,"ref":"","articles":[{"title":"ADMIN-7-1: フロー","level":"1.4.7.1","depth":3,"path":"admin/ADMIN_7_1.md","ref":"./admin/ADMIN_7_1.md","articles":[]},{"title":"ADMIN-7-2: ワークフロー","level":"1.4.7.2","depth":3,"path":"admin/ADMIN_7_2.md","ref":"./admin/ADMIN_7_2.md","articles":[]},{"title":"ADMIN-7-3: ワークスペース設定","level":"1.4.7.3","depth":3,"path":"admin/ADMIN_7_3.md","ref":"./admin/ADMIN_7_3.md","articles":[]}]},"previous":{"title":"ADMIN-6-2: フィードバックメール","level":"1.4.6.2","depth":3,"path":"admin/ADMIN_6_2.md","ref":"./admin/ADMIN_6_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_6_3.md","mtime":"2026-10-05T13:15:03.522Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-6-3: サイトライセンス","level":"1.4.6.3","depth":3,"next":{"title":"ワークフロー管理","level":"1.4.7","depth":2,"ref":"","articles":[{"title":"ADMIN-7-1: フロー","level":"1.4.7.1","depth":3,"path":"admin/ADMIN_7_1.md","ref":"./admin/ADMIN_7_1.md","articles":[]},{"title":"ADMIN-7-2: ワークフロー","level":"1.4.7.2","depth":3,"path":"admin/ADMIN_7_2.md","ref":"./admin/ADMIN_7_2.md","articles":[]},{"title":"ADMIN-7-3: ワークスペース設定","level":"1.4.7.3","depth":3,"path":"admin/ADMIN_7_3.md","ref":"./admin/ADMIN_7_3.md","articles":[]}]},"previous":{"title":"ADMIN-6-2: フィードバックメール","level":"1.4.6.2","depth":3,"path":"admin/ADMIN_6_2.md","ref":"./admin/ADMIN_6_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_6_3.md","mtime":"2026-10-11T02:48:20.514Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

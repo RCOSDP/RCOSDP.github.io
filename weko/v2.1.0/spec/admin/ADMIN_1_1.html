@@ -6,7 +6,7 @@
         <title>ADMIN-1-1: メタデータ · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4228,8 +4228,8 @@
 </li>
 <li>「リスト表示」（Show List）：アイテム一覧画面にメタデータをカンマ区切りで一覧に表示される。<ul>
 <li>例外：アイテムタイプのサムネイルプロパティのオプションで「Show List」が"ON"になっているときに、アイテムリストへアップロードされたサムネイルファイルを表示する。アイテムに複数のサムネイルファイルがアップロードされている場合、アイテム詳細画面の１つ目のサムネイルファイルを表示する。</li>
-<li>例外：アイテムタイプの作成者プロパティののオプションで「Show List」が"ON"になっているときに、著者IDはアイコンで表示する。ORCIDの場合はORCIDアイコン、それ以外の識別子は頭文字を利用したアイコン表示となる。</li>
-<li>アイテムタイプのファイルプロパティののオプションで「Show List」が"ON"になっているときに、ファイルのタイプを示すボックスを表示する。</li>
+<li>例外：アイテムタイプの作成者プロパティのオプションで「Show List」が"ON"になっているときに、著者IDはアイコンで表示する。ORCIDの場合はORCIDアイコン、それ以外の識別子は頭文字を利用したアイコン表示となる。</li>
+<li>アイテムタイプのファイルプロパティのオプションで「Show List」が"ON"になっているときに、ファイルのタイプを示すボックスを表示する。</li>
 </ul>
 </li>
 <li>「改行を指定」（Specify Newline）：アイテム一覧画面にメタデータを改行で表示される</li>
@@ -4504,7 +4504,7 @@
 <ul>
 <li><p>HTMLテンプレート</p>
 <ul>
-<li>パス：<a href="https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L29-L31" target="_blank">https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L29-L31</a><ul>
+<li>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L29-L31" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L29-L31</a><ul>
 <li>設定キー: WEKO_ITEMTYPES_UI_ADMIN_REGISTER_TEMPLATE = \<br></br>'weko_itemtypes_ui/admin/create_itemtype.html'<br></br>"""Register template for the item type page."""</li>
 </ul>
 </li>
@@ -4512,7 +4512,7 @@
 </li>
 <li><p>デフォルトプロパティの表示・非表示</p>
 <ul>
-<li>パス: <a href="https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L44-L45" target="_blank">https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L44-L45</a><ul>
+<li>パス: <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L44-L45" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L44-L45</a><ul>
 <li>設定キー: WEKO_ITEMTYPES_UI_SHOW_DEFAULT_PROPERTIES = True<br></br>"""Set to show or hide default properties on the item type page."""<br></br>デフォルト：True（表示）。False: 非表示。</li>
 </ul>
 </li>
@@ -4520,15 +4520,15 @@
 </li>
 <li><p>デフォルトプロパティ一覧</p>
 <ul>
-<li>パス: <a href="https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L47-L55" target="_blank">https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L47-L55</a><ul>
-<li>設定キー: WEKO<em>ITEMTYPES_UI_DEFAULT_PROPERTIES = {<br></br>'1': {'name': </em>('Text Field'), 'value': 'text'},<br></br>'2': {'name': <em>('Text Area'), 'value': 'textarea'},<br></br>'3': {'name': </em>('Check Box'), 'value': 'checkboxes'},<br></br>'4': {'name': <em>('Radio Button'), 'value': 'radios'},<br></br>'5': {'name': </em>('List Box'), 'value': 'select'},<br></br>'6': {'name': _('Date'), 'value': 'datetime'}<br></br>}<br></br>"""Default properties of the item type."""</li>
+<li>パス: <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L47-L55" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L47-L55</a><ul>
+<li>設定キー: WEKO_ITEMTYPES_UI_DEFAULT_PROPERTIES = {<br></br>'1': {'name': _('Text Field'), 'value': 'text'},<br></br>'2': {'name': _('Text Area'), 'value': 'textarea'},<br></br>'3': {'name': _('Check Box'), 'value': 'checkboxes'},<br></br>'4': {'name': _('Radio Button'), 'value': 'radios'},<br></br>'5': {'name': _('List Box'), 'value': 'select'},<br></br>'6': {'name': _('Date'), 'value': 'datetime'}<br></br>}<br></br>"""Default properties of the item type."""</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>課金ファイルをプロパティ画面に表示する・しないかの設定</p>
 <ul>
-<li>パス: <a href="https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L57-L58" target="_blank">https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L57-L58</a><ul>
+<li>パス: <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L57-L58" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L57-L58</a><ul>
 <li>設定キー: WEKO_BILLING_FILE_ACCESS = 1<br></br>"""Show billing file property in list."""<br></br>1: システム管理者のユーザーID。<br></br>1のみ表示する。1以外、プロパティ画面に表示しない。</li>
 </ul>
 </li>
@@ -4544,15 +4544,15 @@
 </li>
 <li><p>アイテムタイプのバージョンアップ機能を有効にする・しない設定</p>
 <ul>
-<li>パス: <a href="https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L66-L67" target="_blank">https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L66-L67</a><ul>
-<li>設定キー: WEKO_ITEMTYPES_UI_UPGRADE_VERSION_ENABLED = True<br></br>"""Enable Upgrade Version."""<br></br>True: バージョンアップを有効にする.<br></br>False: バージョンアップを無効にする</li>
+<li>パス: <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L66-L67" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L66-L67</a><ul>
+<li>設定キー: WEKO_ITEMTYPES_UI_UPGRADE_VERSION_ENABLED = True<br></br>"""Enable Upgrade Version."""<br></br>True: バージョンアップを有効にする.<br></br>False: バージョンアップを無効にする<br></br>※標準の <code>scripts/instance.cfg</code> で <code>WEKO_ITEMTYPES_UI_UPGRADE_VERSION_ENABLED = False</code> に上書きされるため、標準の構成ではバージョンアップは無効</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><p>アイテムタイプの強制インポート機能を有効にする・しない設定</p>
 <ul>
-<li>パス: <a href="https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L69-L70" target="_blank">https://github.com/RCOSDP/weko/blob/hfix/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L69-L70</a><ul>
+<li>パス: <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L69" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-itemtypes-ui/weko_itemtypes_ui/config.py#L69</a><ul>
 <li>設定キー: WEKO_ITEMTYPES_UI_FORCED_IMPORT_ENABLED = False<br></br>"""Enable Forced Import."""<br></br>True: 強制インポートを有効にする.<br></br>False: 強制インポートを無効にする</li>
 </ul>
 </li>
@@ -4637,7 +4637,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-1-1: メタデータ","level":"1.4.1.1","depth":3,"next":{"title":"ADMIN-1-2: マッピング","level":"1.4.1.2","depth":3,"path":"admin/ADMIN_1_2.md","ref":"./admin/ADMIN_1_2.md","articles":[]},"previous":{"title":"アイテムタイプ管理","level":"1.4.1","depth":2,"ref":"","articles":[{"title":"ADMIN-1-1: メタデータ","level":"1.4.1.1","depth":3,"path":"admin/ADMIN_1_1.md","ref":"./admin/ADMIN_1_1.md","articles":[]},{"title":"ADMIN-1-2: マッピング","level":"1.4.1.2","depth":3,"path":"admin/ADMIN_1_2.md","ref":"./admin/ADMIN_1_2.md","articles":[]},{"title":"ADMIN-1-3: OAIスキーマ","level":"1.4.1.3","depth":3,"path":"admin/ADMIN_1_3.md","ref":"./admin/ADMIN_1_3.md","articles":[]},{"title":"ADMIN-1-4: プロパティ","level":"1.4.1.4","depth":3,"path":"admin/ADMIN_1_4.md","ref":"./admin/ADMIN_1_4.md","articles":[]},{"title":"ADMIN-1-5: JSON-LD マッピング","level":"1.4.1.5","depth":3,"path":"admin/ADMIN_1_5.md","ref":"./admin/ADMIN_1_5.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_1_1.md","mtime":"2026-10-05T13:15:03.520Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-1-1: メタデータ","level":"1.4.1.1","depth":3,"next":{"title":"ADMIN-1-2: マッピング","level":"1.4.1.2","depth":3,"path":"admin/ADMIN_1_2.md","ref":"./admin/ADMIN_1_2.md","articles":[]},"previous":{"title":"アイテムタイプ管理","level":"1.4.1","depth":2,"ref":"","articles":[{"title":"ADMIN-1-1: メタデータ","level":"1.4.1.1","depth":3,"path":"admin/ADMIN_1_1.md","ref":"./admin/ADMIN_1_1.md","articles":[]},{"title":"ADMIN-1-2: マッピング","level":"1.4.1.2","depth":3,"path":"admin/ADMIN_1_2.md","ref":"./admin/ADMIN_1_2.md","articles":[]},{"title":"ADMIN-1-3: OAIスキーマ","level":"1.4.1.3","depth":3,"path":"admin/ADMIN_1_3.md","ref":"./admin/ADMIN_1_3.md","articles":[]},{"title":"ADMIN-1-4: プロパティ","level":"1.4.1.4","depth":3,"path":"admin/ADMIN_1_4.md","ref":"./admin/ADMIN_1_4.md","articles":[]},{"title":"ADMIN-1-5: JSON-LD マッピング","level":"1.4.1.5","depth":3,"path":"admin/ADMIN_1_5.md","ref":"./admin/ADMIN_1_5.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_1_1.md","mtime":"2026-10-11T04:51:24.849Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

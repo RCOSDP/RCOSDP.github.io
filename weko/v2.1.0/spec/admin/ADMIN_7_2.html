@@ -6,7 +6,7 @@
         <title>ADMIN-7-2: ワークフロー · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4137,7 +4137,7 @@
 <li>【v2.1.0】表示/非表示（Display/Hide）：db内のacounts_roleのnameカラムから情報を取り出し表示（Display）ボックス内に表示する。初期状態では、すべてのroleが表示側に表示される。なお学認mAPロール（<code>weko_accounts.api.map_role_condition</code> に一致するロール）は選択肢から除外される（<code>WorkFlowSettingView.index</code> / <code>workflow_detail</code>、<code>WorkFlow.get_workflows_by_roles</code> の表示判定も同条件。v2.1.0 #1891 で判定を map conditions に統一）。</li>
 </ul>
 </li>
-<li>既存のワークフローの編集の場合、入力欄の値は指定したworkflow_idを用いてweko_workflow.api.Workflow.get_workflow_detailを使用して情報をdb内のworkflow_workflowテーブルから取り出して表示する。</li>
+<li>既存のワークフローの編集の場合、入力欄の値は指定したworkflow_idを用いてweko_workflow.api.WorkFlow.get_workflow_detailを使用して情報をdb内のworkflow_workflowテーブルから取り出して表示する。</li>
 </ul>
 <p>情報の入力後に[保存（Save）]ボタン押下で、weko_workflow.admin.WorkFlowSettingView.update_workflowが呼び出される。<br></br>ただし、[保存（Save）]ボタンは、ワークフロー名が空欄の時は非活性となる。</p>
 <ul>
@@ -4149,7 +4149,7 @@
 <p>設定値</p>
 <ul>
 <li>WEKO_ADMIN_DISPLAY_RESTRICTED_SETTINGS<ul>
-<li>パス：<a href="https://github.com/RCOSDP/weko/blob/develop_v2.0.0/modules/weko-admin/weko_admin/config.py#L1380" target="_blank">https://github.com/RCOSDP/weko/blob/develop_v2.0.0/modules/weko-admin/weko_admin/config.py#L1380</a></li>
+<li>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/config.py#L1405" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/config.py#L1405</a></li>
 <li>初期値：True</li>
 <li>利用申請フラグの表示非表示を切り替える。</li>
 <li>scripts/instance.cfg で定義されている場合は、そちらの設定を優先する。</li>
@@ -4236,7 +4236,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-7-2: ワークフロー","level":"1.4.7.2","depth":3,"next":{"title":"ADMIN-7-3: ワークスペース設定","level":"1.4.7.3","depth":3,"path":"admin/ADMIN_7_3.md","ref":"./admin/ADMIN_7_3.md","articles":[]},"previous":{"title":"ADMIN-7-1: フロー","level":"1.4.7.1","depth":3,"path":"admin/ADMIN_7_1.md","ref":"./admin/ADMIN_7_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_7_2.md","mtime":"2026-10-05T13:15:03.522Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-7-2: ワークフロー","level":"1.4.7.2","depth":3,"next":{"title":"ADMIN-7-3: ワークスペース設定","level":"1.4.7.3","depth":3,"path":"admin/ADMIN_7_3.md","ref":"./admin/ADMIN_7_3.md","articles":[]},"previous":{"title":"ADMIN-7-1: フロー","level":"1.4.7.1","depth":3,"path":"admin/ADMIN_7_1.md","ref":"./admin/ADMIN_7_1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_7_2.md","mtime":"2026-10-11T06:10:32.598Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

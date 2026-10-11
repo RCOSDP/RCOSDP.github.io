@@ -6,7 +6,7 @@
         <title>USER-4-1: アクティビティ一覧表示 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4015,7 +4015,7 @@
                                 <html><head></head><body><h1 id="アクティビティ一覧表示"><a name="アクティビティ一覧表示" class="plugin-anchor" href="#アクティビティ一覧表示"><i class="fa fa-link" aria-hidden="true"></i></a>アクティビティ一覧表示</h1>
 <h2 id="目的・用途"><a name="目的・用途" class="plugin-anchor" href="#目的・用途"><i class="fa fa-link" aria-hidden="true"></i></a>目的・用途</h2>
 <p>アクティビティとは、ワークフローを用いてアイテムに対する活動を管理するインスタンスである。</p>
-<p><img src="../media/media/image1.png" alt="image1"></img></p>
+<p><img src="../media/media/image1.png" alt=""></img></p>
 <p>アクティビティ一覧はアイテムが登録中／編集中／終了のいずれであるかを一覧化して管理している機能である。</p>
 <h2 id="利用方法"><a name="利用方法" class="plugin-anchor" href="#利用方法"><i class="fa fa-link" aria-hidden="true"></i></a>利用方法</h2>
 <p>WEKO3へログイン後、[WorkFlow]タブを押下することで、アクティビティ一覧が表示される。</p>
@@ -4345,15 +4345,15 @@
 <p>制限公開用のコンテンツファイルプロパティ（以下、コンテンツプロパティ）を利用し、登録したコンテンツファイルのライセンスとアクセス制限のフローを指定できる。</p>
 <p>アクセスには、以下の5つがあり、ラジオボタンで１つのみ選択できる。</p>
 <ol>
-<li><p>オープンアクセス\
+<li><p>オープンアクセス<br></br>
 コンテンツファイルに誰でもアクセスできる。</p>
 </li>
-<li><p>オープンアクセス日を指定する\
-指定された公開日以降かつ指定されたロールのユーザーのみ、コンテンツファイルにアクセスできる。\
+<li><p>オープンアクセス日を指定する<br></br>
+指定された公開日以降かつ指定されたロールのユーザーのみ、コンテンツファイルにアクセスできる。<br></br>
 以下が表示される。</p>
 <ol>
-<li><p>ロール\
-コンテンツファイルにアクセスできるユーザーのロールをプルダウンから指定する。(複数指定可能)\
+<li><p>ロール<br></br>
+コンテンツファイルにアクセスできるユーザーのロールをプルダウンから指定する。(複数指定可能)<br></br>
 accounts_roleテーブルにロールの一覧が定義されている。</p>
 <ol>
 <li><p>Newボタン押下：ロールを1セット追加する。</p>
@@ -4366,12 +4366,12 @@ accounts_roleテーブルにロールの一覧が定義されている。</p>
 </li>
 </ol>
 </li>
-<li><p>ログインユーザーのみ\
-指定されたロールのユーザーのみ、コンテンツファイルにアクセスできる。\
+<li><p>ログインユーザーのみ<br></br>
+指定されたロールのユーザーのみ、コンテンツファイルにアクセスできる。<br></br>
 以下が表示される。</p>
 <ol>
-<li><p>ロール\
-コンテンツファイルにアクセスできるユーザーのロールをプルダウンから指定する。(複数指定可能)\
+<li><p>ロール<br></br>
+コンテンツファイルにアクセスできるユーザーのロールをプルダウンから指定する。(複数指定可能)<br></br>
 accounts_roleテーブルにロールの一覧が定義されている。</p>
 <ol>
 <li><p>Newボタン押下：ロールを1セット追加する。</p>
@@ -4384,20 +4384,20 @@ accounts_roleテーブルにロールの一覧が定義されている。</p>
 </li>
 </ol>
 </li>
-<li><p>公開しない\
+<li><p>公開しない<br></br>
 システム管理者、アイテム登録者以外にはコンテンツファイルを公開しない。</p>
 </li>
-<li><p>制限公開\
+<li><p>制限公開<br></br>
 以下が表示される。※データタイプは削除する。</p>
 <ol>
 <li><p>提供方法</p>
 <ol>
-<li><p>ワークフロー\
-コンテンツファイルを提供するワークフローをプルダウンから指定する。\
+<li><p>ワークフロー<br></br>
+コンテンツファイルを提供するワークフローをプルダウンから指定する。<br></br>
 workflow_workflowテーブルのopen_restrictedがONのワークフローの一覧が定義されている。</p>
 </li>
-<li><p>ロール\
-コンテンツファイルにアクセスできるユーザーのロールをプルダウンから指定する。\
+<li><p>ロール<br></br>
+コンテンツファイルにアクセスできるユーザーのロールをプルダウンから指定する。<br></br>
 accounts_roleテーブルにロールの一覧が定義されている。</p>
 </li>
 <li><p>Newボタン押下：①②を1セット追加する。</p>
@@ -4412,8 +4412,8 @@ accounts_roleテーブルにロールの一覧が定義されている。</p>
 </li>
 </ol>
 </li>
-<li><p>利用規約\
-自由入力または登録済みの利用規約からプルダウンで選択する。\
+<li><p>利用規約<br></br>
+自由入力または登録済みの利用規約からプルダウンで選択する。<br></br>
 自由入力を選択した場合、利用規約入力欄が表示され、任意の利用規約を入力できる。</p>
 </li>
 <li><p>関連モジュール</p>
@@ -4428,7 +4428,7 @@ accounts_roleテーブルにロールの一覧が定義されている。</p>
 </li>
 <li><p>アクティビティの各タブを定義する（開発に使用している）</p>
 <ul>
-<li><p>パス： <a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L278-L182" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L278-L182</a></p>
+<li><p>パス： <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L458-L462" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L458-L462</a></p>
 </li>
 <li><p>設定キー及び設定値：</p>
 </li>
@@ -4489,7 +4489,7 @@ accounts_roleテーブルにロールの一覧が定義されている。</p>
 <li>取得されたデータをUIに以下のテンプレートで表示する</li>
 </ul>
 </li>
-<li><p>テンプレート： <a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/templates/weko_workflow/activity_list.html" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/templates/weko_workflow/activity_list.html</a></p>
+<li><p>テンプレート： <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/templates/weko_workflow/activity_list.html" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/templates/weko_workflow/activity_list.html</a></p>
 </li>
 <li><p>デフォルトの表示数：20  </p>
 </li>
@@ -4673,7 +4673,7 @@ accounts_roleテーブルにロールの一覧が定義されている。</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"USER-4-1: アクティビティ一覧表示","level":"1.3.4.1","depth":3,"next":{"title":"USER-4-2: ワークフロー一覧表示","level":"1.3.4.2","depth":3,"path":"user/USER_4_2.md","ref":"./user/USER_4_2.md","articles":[]},"previous":{"title":"ワークフロー","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"USER-4-1: アクティビティ一覧表示","level":"1.3.4.1","depth":3,"path":"user/USER_4_1.md","ref":"./user/USER_4_1.md","articles":[]},{"title":"USER-4-2: ワークフロー一覧表示","level":"1.3.4.2","depth":3,"path":"user/USER_4_2.md","ref":"./user/USER_4_2.md","articles":[]},{"title":"USER-4-3: ワークフロー","level":"1.3.4.3","depth":3,"path":"user/USER_4_3.md","ref":"./user/USER_4_3.md","articles":[]},{"title":"USER-4-4: Item Registration","level":"1.3.4.4","depth":3,"path":"user/USER_4_4.md","ref":"./user/USER_4_4.md","articles":[]},{"title":"USER-4-5: Item Registration：ファイルアップロード","level":"1.3.4.5","depth":3,"path":"user/USER_4_5.md","ref":"./user/USER_4_5.md","articles":[]},{"title":"USER-4-6: Item Registration：メタデータ入力","level":"1.3.4.6","depth":3,"path":"user/USER_4_6.md","ref":"./user/USER_4_6.md","articles":[]},{"title":"USER-4-7: Item Registration：代理投稿","level":"1.3.4.7","depth":3,"path":"user/USER_4_7.md","ref":"./user/USER_4_7.md","articles":[]},{"title":"USER-4-8: Item Registration：フィードバックメール機能","level":"1.3.4.8","depth":3,"path":"user/USER_4_8.md","ref":"./user/USER_4_8.md","articles":[]},{"title":"USER-4-9: Item Registration：インデックス指定","level":"1.3.4.9","depth":3,"path":"user/USER_4_9.md","ref":"./user/USER_4_9.md","articles":[]},{"title":"USER-4-14: Item Registration：リクエストメール","level":"1.3.4.10","depth":3,"path":"user/USER_4_14.md","ref":"./user/USER_4_14.md","articles":[]},{"title":"USER-4-16: Item Registration：アイテム未登録時の制限公開機能","level":"1.3.4.11","depth":3,"path":"user/USER_4_16.md","ref":"./user/USER_4_16.md","articles":[]},{"title":"USER-4-17: Item Registration：リクエストメール機能","level":"1.3.4.12","depth":3,"path":"user/USER_4_17.md","ref":"./user/USER_4_17.md","articles":[]},{"title":"USER-4-10: Identifier Grant","level":"1.3.4.13","depth":3,"path":"user/USER_4_10.md","ref":"./user/USER_4_10.md","articles":[]},{"title":"USER-4-11: Item Link","level":"1.3.4.14","depth":3,"path":"user/USER_4_11.md","ref":"./user/USER_4_11.md","articles":[]},{"title":"USER-4-12: OA Policy Confirmation（現在非対応）","level":"1.3.4.15","depth":3,"path":"user/USER_4_12.md","ref":"./user/USER_4_12.md","articles":[]},{"title":"USER-4-13: Approval","level":"1.3.4.16","depth":3,"path":"user/USER_4_13.md","ref":"./user/USER_4_13.md","articles":[]},{"title":"USER-4-15: End","level":"1.3.4.17","depth":3,"path":"user/USER_4_15.md","ref":"./user/USER_4_15.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_4_1.md","mtime":"2026-10-06T21:29:06.177Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"USER-4-1: アクティビティ一覧表示","level":"1.3.4.1","depth":3,"next":{"title":"USER-4-2: ワークフロー一覧表示","level":"1.3.4.2","depth":3,"path":"user/USER_4_2.md","ref":"./user/USER_4_2.md","articles":[]},"previous":{"title":"ワークフロー","level":"1.3.4","depth":2,"ref":"","articles":[{"title":"USER-4-1: アクティビティ一覧表示","level":"1.3.4.1","depth":3,"path":"user/USER_4_1.md","ref":"./user/USER_4_1.md","articles":[]},{"title":"USER-4-2: ワークフロー一覧表示","level":"1.3.4.2","depth":3,"path":"user/USER_4_2.md","ref":"./user/USER_4_2.md","articles":[]},{"title":"USER-4-3: ワークフロー","level":"1.3.4.3","depth":3,"path":"user/USER_4_3.md","ref":"./user/USER_4_3.md","articles":[]},{"title":"USER-4-4: Item Registration","level":"1.3.4.4","depth":3,"path":"user/USER_4_4.md","ref":"./user/USER_4_4.md","articles":[]},{"title":"USER-4-5: Item Registration：ファイルアップロード","level":"1.3.4.5","depth":3,"path":"user/USER_4_5.md","ref":"./user/USER_4_5.md","articles":[]},{"title":"USER-4-6: Item Registration：メタデータ入力","level":"1.3.4.6","depth":3,"path":"user/USER_4_6.md","ref":"./user/USER_4_6.md","articles":[]},{"title":"USER-4-7: Item Registration：代理投稿","level":"1.3.4.7","depth":3,"path":"user/USER_4_7.md","ref":"./user/USER_4_7.md","articles":[]},{"title":"USER-4-8: Item Registration：フィードバックメール機能","level":"1.3.4.8","depth":3,"path":"user/USER_4_8.md","ref":"./user/USER_4_8.md","articles":[]},{"title":"USER-4-9: Item Registration：インデックス指定","level":"1.3.4.9","depth":3,"path":"user/USER_4_9.md","ref":"./user/USER_4_9.md","articles":[]},{"title":"USER-4-14: Item Registration：リクエストメール","level":"1.3.4.10","depth":3,"path":"user/USER_4_14.md","ref":"./user/USER_4_14.md","articles":[]},{"title":"USER-4-16: Item Registration：アイテム未登録時の制限公開機能","level":"1.3.4.11","depth":3,"path":"user/USER_4_16.md","ref":"./user/USER_4_16.md","articles":[]},{"title":"USER-4-17: Item Registration：リクエストメール機能","level":"1.3.4.12","depth":3,"path":"user/USER_4_17.md","ref":"./user/USER_4_17.md","articles":[]},{"title":"USER-4-10: Identifier Grant","level":"1.3.4.13","depth":3,"path":"user/USER_4_10.md","ref":"./user/USER_4_10.md","articles":[]},{"title":"USER-4-11: Item Link","level":"1.3.4.14","depth":3,"path":"user/USER_4_11.md","ref":"./user/USER_4_11.md","articles":[]},{"title":"USER-4-12: OA Policy Confirmation（現在非対応）","level":"1.3.4.15","depth":3,"path":"user/USER_4_12.md","ref":"./user/USER_4_12.md","articles":[]},{"title":"USER-4-13: Approval","level":"1.3.4.16","depth":3,"path":"user/USER_4_13.md","ref":"./user/USER_4_13.md","articles":[]},{"title":"USER-4-15: End","level":"1.3.4.17","depth":3,"path":"user/USER_4_15.md","ref":"./user/USER_4_15.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_4_1.md","mtime":"2026-10-11T02:48:21.156Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

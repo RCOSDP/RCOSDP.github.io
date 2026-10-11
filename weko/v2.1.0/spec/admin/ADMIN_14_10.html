@@ -6,7 +6,7 @@
         <title>ADMIN-14-10: ログ解析 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4164,7 +4164,7 @@
 <ul>
 <li><p>loganalysis_restricted_crawler_listテーブルが空だった場合は、以下のコンフィグからデフォルトの共有クローラーリストのURLを取得してテーブルに追加して、再度全件取得する</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/config.py#L120-L122" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/config.py#L120-L122</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/config.py#L141-L143" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/config.py#L141-L143</a></p>
 </li>
 <li><p>設定キー：WEKO_ADMIN_DEFAULT_CRAWLER_LISTS</p>
 </li>
@@ -4182,31 +4182,31 @@
 </li>
 <li><p>行ごとに、hiddenのinput要素を配置して、以下のnameとvalueを設定する</p>
 <ul>
-<li><p>name：ip<em>address</em>行番号_id</p>
+<li><p>name：ip_address_行番号_id</p>
 </li>
 <li><p>value：レコードのid</p>
 </li>
 </ul>
 </li>
-<li><p>行ごとに、入力欄の各input要素に「address<em>list</em>行番号」の形のname属性が設定される</p>
+<li><p>行ごとに、入力欄の各input要素に「address_list_行番号」の形のname属性が設定される</p>
 </li>
 <li><p>情報が0件だった場合は、入力欄を1行だけ表示する</p>
 </li>
 </ul>
 </li>
-<li><p>loganalysis<em>restricted</em> crawler_listテーブルから取得した情報は、共有クローラーリストの入力欄に設定する</p>
+<li><p>loganalysis_restricted_ crawler_listテーブルから取得した情報は、共有クローラーリストの入力欄に設定する</p>
 <ul>
 <li><p>共有クローラーリストの行ごとに、0始まりの行番号を設定する</p>
 </li>
 <li><p>行ごとに、hiddenのinput要素を配置して、以下のnameとvalueを設定する</p>
 <ul>
-<li><p>name：shared<em>crawler</em>行番号_id</p>
+<li><p>name：shared_crawler_行番号_id</p>
 </li>
 <li><p>value：レコードのid</p>
 </li>
 </ul>
 </li>
-<li><p>行ごとに、入力欄の各input要素に「shared<em>crawler</em>行番号」の形のname属性が設定される</p>
+<li><p>行ごとに、入力欄の各input要素に「shared_crawler_行番号」の形のname属性が設定される</p>
 </li>
 <li><p>情報が0件だった場合は、入力欄を2行だけ表示する</p>
 </li>
@@ -4224,13 +4224,13 @@
 <ul>
 <li><p>「id」：自動採番</p>
 </li>
-<li><p>「ip<em>address」：nameが「shared_crawler</em>行番号」であるinputの各入力値を「.」で連結したもの</p>
+<li><p>「ip_address」：nameが「shared_crawler_行番号」であるinputの各入力値を「.」で連結したもの</p>
 </li>
 </ul>
 </li>
 <li><p>loganalysis_restricted_crawler_listテーブルへの保存時には、以下の処理を行う</p>
 <ul>
-<li><p>共有クローラーリストの入力ごとに、レコードから、idが「shared<em>crawler</em>行番号_id」の値と等しいものを取得する</p>
+<li><p>共有クローラーリストの入力ごとに、レコードから、idが「shared_crawler_行番号_id」の値と等しいものを取得する</p>
 <ul>
 <li><p>該当するレコードがあったら、それを入力内容で更新する</p>
 </li>
@@ -4288,7 +4288,7 @@
 <ul>
 <li><p>以下のコンフィグで、共有クローラーリストによるチェックで正規表現を使用するかどうかを制御する</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/config.py#L1278" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-admin/weko_admin/config.py#L1278</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/config.py#L1399" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-admin/weko_admin/config.py#L1399</a></p>
 </li>
 <li><p>設定キー：WEKO_ADMIN_USE_REGEX_IN_CRAWLER_LIST</p>
 </li>
@@ -4296,7 +4296,7 @@
 </li>
 <li><p>以下のコンフィグで定めたRedisデータベースに接続する</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L43" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L43</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L54" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L54</a></p>
 </li>
 <li><p>設定キー：CRAWLER_REDIS_DB</p>
 </li>
@@ -4320,7 +4320,7 @@
 </li>
 <li><p>保存するデータには、以下のコンフィグで定めたTTLを設定する</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L44" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L44</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L56" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L56</a></p>
 </li>
 <li><p>設定キー：CRAWLER_REDIS_TTL</p>
 </li>
@@ -4408,7 +4408,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-14-10: ログ解析","level":"1.4.15.10","depth":3,"next":{"title":"ADMIN-14-11: 検索設定","level":"1.4.15.11","depth":3,"path":"admin/ADMIN_14_11.md","ref":"./admin/ADMIN_14_11.md","articles":[]},"previous":{"title":"ADMIN-14-9: アイテム一括出力","level":"1.4.15.9","depth":3,"path":"admin/ADMIN_14_9.md","ref":"./admin/ADMIN_14_9.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_14_10.md","mtime":"2026-07-15T05:22:59.618Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-14-10: ログ解析","level":"1.4.15.10","depth":3,"next":{"title":"ADMIN-14-11: 検索設定","level":"1.4.15.11","depth":3,"path":"admin/ADMIN_14_11.md","ref":"./admin/ADMIN_14_11.md","articles":[]},"previous":{"title":"ADMIN-14-9: アイテム一括出力","level":"1.4.15.9","depth":3,"path":"admin/ADMIN_14_9.md","ref":"./admin/ADMIN_14_9.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_14_10.md","mtime":"2026-10-11T02:48:20.295Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

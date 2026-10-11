@@ -6,7 +6,7 @@
         <title>ADMIN-12-5: オブジェクトバージョン · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4215,21 +4215,23 @@ True：最終版の場合</li>
 <p>オブジェクトバージョンの情報は以下のようなデータベースに保存する</p>
 <ul>
 <li>テーブル名：「files_object」</li>
-<li>フィールド名：
-・「version_id」
-・「key」
-・「bucket_id」
-・「file_id」
-・「root_file_id」
-・「_mimetype」
-・「is_head」
-・「created_user_id」
-・「updated_user_id」
-・「bucket」
-・「is_show」
-・「is_thumbnail」
-・「created」
-・「updated」</li>
+<li>フィールド名：<ul>
+<li>「version_id」</li>
+<li>「key」</li>
+<li>「bucket_id」</li>
+<li>「file_id」</li>
+<li>「root_file_id」</li>
+<li>「_mimetype」</li>
+<li>「is_head」</li>
+<li>「created_user_id」</li>
+<li>「updated_user_id」</li>
+<li>「bucket」</li>
+<li>「is_show」</li>
+<li>「is_thumbnail」</li>
+<li>「created」</li>
+<li>「updated」</li>
+</ul>
+</li>
 </ul>
 <h2 id="実装補足（v202-実装との突き合わせ）"><a name="実装補足（v202-実装との突き合わせ）" class="plugin-anchor" href="#実装補足（v202-実装との突き合わせ）"><i class="fa fa-link" aria-hidden="true"></i></a>実装補足（v2.0.2 実装との突き合わせ）</h2>
 <ul>
@@ -4291,7 +4293,7 @@ True：最終版の場合</li>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-12-5: オブジェクトバージョン","level":"1.4.13.5","depth":3,"next":{"title":"ユーザ管理","level":"1.4.14","depth":2,"ref":"","articles":[{"title":"ADMIN-13-1: アクセス_ロール","level":"1.4.14.1","depth":3,"path":"admin/ADMIN_13_1.md","ref":"./admin/ADMIN_13_1.md","articles":[]},{"title":"ADMIN-13-2: アクセス_システムロール","level":"1.4.14.2","depth":3,"path":"admin/ADMIN_13_2.md","ref":"./admin/ADMIN_13_2.md","articles":[]},{"title":"ADMIN-13-3: アクセス_ユーザー","level":"1.4.14.3","depth":3,"path":"admin/ADMIN_13_3.md","ref":"./admin/ADMIN_13_3.md","articles":[]},{"title":"ADMIN-13-4: 連結アカウント識別子","level":"1.4.14.4","depth":3,"path":"admin/ADMIN_13_4.md","ref":"./admin/ADMIN_13_4.md","articles":[]},{"title":"ADMIN-13-5: 連結アカウントトークン","level":"1.4.14.5","depth":3,"path":"admin/ADMIN_13_5.md","ref":"./admin/ADMIN_13_5.md","articles":[]},{"title":"ADMIN-13-6: 連結アカウント","level":"1.4.14.6","depth":3,"path":"admin/ADMIN_13_6.md","ref":"./admin/ADMIN_13_6.md","articles":[]},{"title":"ADMIN-13-7: OAuthアプリケーショントークン","level":"1.4.14.7","depth":3,"path":"admin/ADMIN_13_7.md","ref":"./admin/ADMIN_13_7.md","articles":[]},{"title":"ADMIN-13-8: OAuthアプリケーション","level":"1.4.14.8","depth":3,"path":"admin/ADMIN_13_8.md","ref":"./admin/ADMIN_13_8.md","articles":[]},{"title":"ADMIN-13-9: ロール","level":"1.4.14.9","depth":3,"path":"admin/ADMIN_13_9.md","ref":"./admin/ADMIN_13_9.md","articles":[]},{"title":"ADMIN-13-10: セッションアクティビティ","level":"1.4.14.10","depth":3,"path":"admin/ADMIN_13_10.md","ref":"./admin/ADMIN_13_10.md","articles":[]},{"title":"ADMIN-13-11: ユーザー","level":"1.4.14.11","depth":3,"path":"admin/ADMIN_13_11.md","ref":"./admin/ADMIN_13_11.md","articles":[]},{"title":"ADMIN-13-12: ユーザープロファイル","level":"1.4.14.12","depth":3,"path":"admin/ADMIN_13_12.md","ref":"./admin/ADMIN_13_12.md","articles":[]}]},"previous":{"title":"ADMIN-12-4: マルチパートオブジェクト","level":"1.4.13.4","depth":3,"path":"admin/ADMIN_12_4.md","ref":"./admin/ADMIN_12_4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_12_5.md","mtime":"2026-07-16T08:19:11.526Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-12-5: オブジェクトバージョン","level":"1.4.13.5","depth":3,"next":{"title":"ユーザ管理","level":"1.4.14","depth":2,"ref":"","articles":[{"title":"ADMIN-13-1: アクセス_ロール","level":"1.4.14.1","depth":3,"path":"admin/ADMIN_13_1.md","ref":"./admin/ADMIN_13_1.md","articles":[]},{"title":"ADMIN-13-2: アクセス_システムロール","level":"1.4.14.2","depth":3,"path":"admin/ADMIN_13_2.md","ref":"./admin/ADMIN_13_2.md","articles":[]},{"title":"ADMIN-13-3: アクセス_ユーザー","level":"1.4.14.3","depth":3,"path":"admin/ADMIN_13_3.md","ref":"./admin/ADMIN_13_3.md","articles":[]},{"title":"ADMIN-13-4: 連結アカウント識別子","level":"1.4.14.4","depth":3,"path":"admin/ADMIN_13_4.md","ref":"./admin/ADMIN_13_4.md","articles":[]},{"title":"ADMIN-13-5: 連結アカウントトークン","level":"1.4.14.5","depth":3,"path":"admin/ADMIN_13_5.md","ref":"./admin/ADMIN_13_5.md","articles":[]},{"title":"ADMIN-13-6: 連結アカウント","level":"1.4.14.6","depth":3,"path":"admin/ADMIN_13_6.md","ref":"./admin/ADMIN_13_6.md","articles":[]},{"title":"ADMIN-13-7: OAuthアプリケーショントークン","level":"1.4.14.7","depth":3,"path":"admin/ADMIN_13_7.md","ref":"./admin/ADMIN_13_7.md","articles":[]},{"title":"ADMIN-13-8: OAuthアプリケーション","level":"1.4.14.8","depth":3,"path":"admin/ADMIN_13_8.md","ref":"./admin/ADMIN_13_8.md","articles":[]},{"title":"ADMIN-13-9: ロール","level":"1.4.14.9","depth":3,"path":"admin/ADMIN_13_9.md","ref":"./admin/ADMIN_13_9.md","articles":[]},{"title":"ADMIN-13-10: セッションアクティビティ","level":"1.4.14.10","depth":3,"path":"admin/ADMIN_13_10.md","ref":"./admin/ADMIN_13_10.md","articles":[]},{"title":"ADMIN-13-11: ユーザー","level":"1.4.14.11","depth":3,"path":"admin/ADMIN_13_11.md","ref":"./admin/ADMIN_13_11.md","articles":[]},{"title":"ADMIN-13-12: ユーザープロファイル","level":"1.4.14.12","depth":3,"path":"admin/ADMIN_13_12.md","ref":"./admin/ADMIN_13_12.md","articles":[]}]},"previous":{"title":"ADMIN-12-4: マルチパートオブジェクト","level":"1.4.13.4","depth":3,"path":"admin/ADMIN_12_4.md","ref":"./admin/ADMIN_12_4.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_12_5.md","mtime":"2026-10-09T12:00:32.495Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

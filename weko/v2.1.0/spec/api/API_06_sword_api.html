@@ -6,7 +6,7 @@
         <title>API-6: SWORD API · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4064,17 +4064,17 @@
 </tr>
 <tr>
 <td style="text-align:center">3</td>
-<td>GET /sword/deposit/\<recid></recid></td>
+<td>GET /sword/deposit/&lt;recid&gt;</td>
 <td>recidを指定してリポジトリ上に存在するアイテムのステータスドキュメントを取得する。</td>
 </tr>
 <tr>
 <td style="text-align:center">4</td>
-<td>PUT /sword/deposit/\<recid></recid></td>
+<td>PUT /sword/deposit/&lt;recid&gt;</td>
 <td>recidを指定してリポジトリ上に存在するアイテムに対して、メタデータやファイルを置換する。</td>
 </tr>
 <tr>
 <td style="text-align:center">5</td>
-<td>DELETE /sword/deposit/\<recid></recid></td>
+<td>DELETE /sword/deposit/&lt;recid&gt;</td>
 <td>recidを指定してアイテムを削除する。</td>
 </tr>
 </tbody>
@@ -4537,7 +4537,7 @@
 失敗時 : <a href="#エラードキュメント">エラードキュメント</a>を返す。</p>
 <h3 id="アイテム状態取得機能：get-sworddepositrecid"><a name="アイテム状態取得機能：get-sworddepositrecid" class="plugin-anchor" href="#アイテム状態取得機能：get-sworddepositrecid"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム状態取得機能：GET <code>/sword/deposit/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>recid</span><span class="token punctuation">&gt;</span></span></code></h3>
 <h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
-<p>GET /sword/deposit/\<recid\></recid\></p>
+<p>GET /sword/deposit/&lt;recid&gt;</p>
 <h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
 <table>
 <thead>
@@ -4634,7 +4634,7 @@
 失敗時 : <a href="#エラードキュメント">エラードキュメント</a>を返す。</p>
 <h3 id="アイテム更新機能：put-sworddepositrecid"><a name="アイテム更新機能：put-sworddepositrecid" class="plugin-anchor" href="#アイテム更新機能：put-sworddepositrecid"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム更新機能：PUT <code>/sword/deposit/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>recid</span><span class="token punctuation">&gt;</span></span></code></h3>
 <h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
-<p>PUT /sword/deposit/\<recid\></recid\></p>
+<p>PUT /sword/deposit/&lt;recid&gt;</p>
 <h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
 <table>
 <thead>
@@ -4792,7 +4792,7 @@
 </table>
 <h3 id="アイテム削除機能：delete-sworddepositrecid"><a name="アイテム削除機能：delete-sworddepositrecid" class="plugin-anchor" href="#アイテム削除機能：delete-sworddepositrecid"><i class="fa fa-link" aria-hidden="true"></i></a>アイテム削除機能：DELETE <code>/sword/deposit/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>recid</span><span class="token punctuation">&gt;</span></span></code></h3>
 <h4 id="エンドポイント"><a name="エンドポイント" class="plugin-anchor" href="#エンドポイント"><i class="fa fa-link" aria-hidden="true"></i></a>エンドポイント</h4>
-<p>DELETE /sword/deposit/\<recid\></recid\></p>
+<p>DELETE /sword/deposit/&lt;recid&gt;</p>
 <h4 id="リクエストヘッダー"><a name="リクエストヘッダー" class="plugin-anchor" href="#リクエストヘッダー"><i class="fa fa-link" aria-hidden="true"></i></a>リクエストヘッダー</h4>
 <table>
 <thead>
@@ -5478,7 +5478,7 @@ DOI/CNRIハンドルが付与された場合は permalink のリンクが追加�
 <tr>
 <td>version</td>
 <td>string</td>
-<td>サポートしているSWORDバージョン。"<a href="http://purl.org/net/sword/3.0&quot;を出力。[設定値:1](#conf01" target="_blank">http://purl.org/net/sword/3.0"を出力。[設定値:1](#conf01</a>)</td>
+<td>サポートしているSWORDバージョン。<code>"http://purl.org/net/sword/3.0"</code>を出力。<a href="#conf01">設定値:1</a></td>
 </tr>
 </tbody>
 </table>
@@ -6470,7 +6470,7 @@ release_v2.1.0 では <code>scripts/instance.cfg</code> での設定が削除さ
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API-6: SWORD API","level":"1.5.6","depth":2,"next":{"title":"API-7: アイテム検索用API","level":"1.5.7","depth":2,"path":"api/API_07_item_search.md","ref":"./api/API_07_item_search.md","articles":[]},"previous":{"title":"API-5: Index操作API","level":"1.5.5","depth":2,"path":"api/API_05_index_op.md","ref":"./api/API_05_index_op.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"api/API_06_sword_api.md","mtime":"2026-10-06T21:30:07.065Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API-6: SWORD API","level":"1.5.6","depth":2,"next":{"title":"API-7: アイテム検索用API","level":"1.5.7","depth":2,"path":"api/API_07_item_search.md","ref":"./api/API_07_item_search.md","articles":[]},"previous":{"title":"API-5: Index操作API","level":"1.5.5","depth":2,"path":"api/API_05_index_op.md","ref":"./api/API_05_index_op.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"api/API_06_sword_api.md","mtime":"2026-10-10T10:02:25.374Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

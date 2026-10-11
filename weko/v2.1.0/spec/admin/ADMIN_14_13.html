@@ -6,7 +6,7 @@
         <title>ADMIN-14-13: サイト情報 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4085,7 +4085,7 @@
 </li>
 <li><p>「著作権」（CopyRight）</p>
 <ul>
-<li><p>このサイトの著作権を設定する。ここで入力された項目は、htmlの<meta></meta>のname="copyright&gt;属性に出力する。</p>
+<li><p>このサイトの著作権を設定する。ここで入力された項目は、htmlの<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span></code>の<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token punctuation">&gt;</span></span></code>のname="copyright"属性に出力する。</p>
 </li>
 <li><p>デフォルト：空白</p>
 </li>
@@ -4093,7 +4093,7 @@
 </li>
 <li><p>「記述」（Description）</p>
 <ul>
-<li><p>このサイトの概要を設定する。ここで入力された項目は、htmlの<meta></meta>のname="Description"属性に出力する。</p>
+<li><p>このサイトの概要を設定する。ここで入力された項目は、htmlの<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span></code>の<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token punctuation">&gt;</span></span></code>のname="Description"属性に出力する。</p>
 </li>
 <li><p>デフォルト：空白</p>
 </li>
@@ -4101,7 +4101,7 @@
 </li>
 <li><p>「キーワード」（Keyword）</p>
 <ul>
-<li><p>このサイトの概要を設定する。ここで入力された項目は、htmlの<meta></meta>のname="keyword"属性に出力する</p>
+<li><p>このサイトの概要を設定する。ここで入力された項目は、htmlの<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span></code>の<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span><span class="token punctuation">&gt;</span></span></code>のname="keyword"属性に出力する</p>
 </li>
 <li><p>デフォルト：空白</p>
 </li>
@@ -4165,80 +4165,80 @@
 <ul>
 <li><p>サイト名表示</p>
 <ul>
-<li><p>設定されたサイト名は、全ての画面で<title>タグの値に設定する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;title&gt;に設定する値は、システムの言語設定に合わせた言語のサイト名を表示する&lt;br&gt;なお、システム言語にマッチするサイト名が設定されていない場合は、英語、もしくは最上位の言語のサイト名を表示する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;ファビコン表示&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;設定されたアイコンをシステムのfaviconとして設定する。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;OGP対応&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;サイト情報をOGP(Open Graph protocol)で出力する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;meta要素としてog:titleを出力する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;meta要素としてog:urlを出力する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;meta要素としてog:imageを出力する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;meta要素としてog:descriptionを出力する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;meta要素としてog:localeを出力する。。値としてリポジトリサイトのデフォルトロケールを出力すること&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;meta要素としてog:locale:alternateを出力する。値としてリポジトリサイトが対応するデフォルト以外のロケールを出力すること&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Admin/setting/site info の「サイト名」に入力された値をフィードバックメールの件名、本文内に反映する。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;日本語メールには日本語サイト名を、英語メールには英語サイト名をセットする。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;空欄のサイト名の場合は「No Site Name」と表示する。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;関連モジュール&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;weko-admin&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;処理概要&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;登録するサイト情報を入力後に[保存（Save）]ボタン押下すると、weko_admin.views.update_site_infoが呼び出され、その中でweko_admin.utils.validation_site_infoを使用し、入力値のエラーチェックを行う。  &lt;blockquote&gt;
-&lt;p&gt;入力値に問題がなければ、db内のsite_infoテーブルに情報が保存される。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;実装補足（v2.0.2 実装との突き合わせ）&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;画面/ハンドラ：表示 &lt;code&gt;weko_admin.admin.SiteInfoView.index&lt;/code&gt;、保存 &lt;code&gt;weko_admin.views.update_site_info&lt;/code&gt;（&lt;code&gt;utils.validation_site_info&lt;/code&gt; → &lt;code&gt;SiteInfo.update&lt;/code&gt;、テーブル &lt;code&gt;site_info&lt;/code&gt;。&lt;code&gt;roles_required([System, Repository])&lt;/code&gt;）。保存後 &lt;code&gt;overwrite_the_memory_config_with_db&lt;/code&gt; で in-memory config を更新。&lt;/li&gt;
-&lt;li&gt;Google トラッキングIDは &lt;code&gt;site_info&lt;/code&gt; テーブルの列 &lt;code&gt;google_tracking_id_user&lt;/code&gt; に保存（&lt;code&gt;GOOGLE_TRACKING_ID_USER&lt;/code&gt; は config フォールバック）。AddThis（&lt;code&gt;addthis_user_id&lt;/code&gt;）列は非推奨・未使用。OGP 画像は &lt;code&gt;invenio_files_rest.utils.update_ogp_image&lt;/code&gt;（&lt;code&gt;/api/admin/ogp_image&lt;/code&gt;）、ファビコンは &lt;code&gt;favicon&lt;/code&gt;/&lt;code&gt;favicon_name&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;更新履歴&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;日付&lt;/th&gt;
-&lt;th&gt;GitHubコミットID&lt;/th&gt;
-&lt;th&gt;更新内容&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;2023/08/31&lt;/td&gt;
-&lt;td&gt;353ba1deb094af5056a58bb40f07596b8e95a562&lt;/td&gt;
-&lt;td&gt;初版作成&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</title></p></li></ul></li></ul></li></ul></body></html>
+<li><p>設定されたサイト名は、全ての画面で<code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span></code>タグの値に設定する。</p>
+</li>
+<li><p><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span></code>に設定する値は、システムの言語設定に合わせた言語のサイト名を表示する<br></br>なお、システム言語にマッチするサイト名が設定されていない場合は、英語、もしくは最上位の言語のサイト名を表示する。</p>
+</li>
+</ul>
+</li>
+<li><p>ファビコン表示</p>
+<ul>
+<li>設定されたアイコンをシステムのfaviconとして設定する。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>OGP対応</p>
+<ul>
+<li><p>サイト情報をOGP(Open Graph protocol)で出力する。</p>
+</li>
+<li><p>meta要素としてog:titleを出力する。</p>
+</li>
+<li><p>meta要素としてog:urlを出力する。</p>
+</li>
+<li><p>meta要素としてog:imageを出力する。</p>
+</li>
+<li><p>meta要素としてog:descriptionを出力する。</p>
+</li>
+<li><p>meta要素としてog:localeを出力する。値としてリポジトリサイトのデフォルトロケールを出力すること</p>
+</li>
+<li><p>meta要素としてog:locale:alternateを出力する。値としてリポジトリサイトが対応するデフォルト以外のロケールを出力すること</p>
+</li>
+</ul>
+</li>
+<li><p>Admin/setting/site info の「サイト名」に入力された値をフィードバックメールの件名、本文内に反映する。</p>
+<ul>
+<li><p>日本語メールには日本語サイト名を、英語メールには英語サイト名をセットする。</p>
+</li>
+<li><p>空欄のサイト名の場合は「No Site Name」と表示する。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="関連モジュール"><a name="関連モジュール" class="plugin-anchor" href="#関連モジュール"><i class="fa fa-link" aria-hidden="true"></i></a>関連モジュール</h2>
+<ul>
+<li>weko-admin</li>
+</ul>
+<h2 id="処理概要"><a name="処理概要" class="plugin-anchor" href="#処理概要"><i class="fa fa-link" aria-hidden="true"></i></a>処理概要</h2>
+<ul>
+<li>登録するサイト情報を入力後に[保存（Save）]ボタン押下すると、weko_admin.views.update_site_infoが呼び出され、その中でweko_admin.utils.validation_site_infoを使用し、入力値のエラーチェックを行う。  <blockquote>
+<p>入力値に問題がなければ、db内のsite_infoテーブルに情報が保存される。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="実装補足（v202-実装との突き合わせ）"><a name="実装補足（v202-実装との突き合わせ）" class="plugin-anchor" href="#実装補足（v202-実装との突き合わせ）"><i class="fa fa-link" aria-hidden="true"></i></a>実装補足（v2.0.2 実装との突き合わせ）</h2>
+<ul>
+<li>画面/ハンドラ：表示 <code>weko_admin.admin.SiteInfoView.index</code>、保存 <code>weko_admin.views.update_site_info</code>（<code>utils.validation_site_info</code> → <code>SiteInfo.update</code>、テーブル <code>site_info</code>。<code>roles_required([System, Repository])</code>）。保存後 <code>overwrite_the_memory_config_with_db</code> で in-memory config を更新。</li>
+<li>Google トラッキングIDは <code>site_info</code> テーブルの列 <code>google_tracking_id_user</code> に保存（<code>GOOGLE_TRACKING_ID_USER</code> は config フォールバック）。AddThis（<code>addthis_user_id</code>）列は非推奨・未使用。OGP 画像は <code>invenio_files_rest.utils.update_ogp_image</code>（<code>/api/admin/ogp_image</code>）、ファビコンは <code>favicon</code>/<code>favicon_name</code>。</li>
+</ul>
+<h2 id="更新履歴"><a name="更新履歴" class="plugin-anchor" href="#更新履歴"><i class="fa fa-link" aria-hidden="true"></i></a>更新履歴</h2>
+<table>
+<thead>
+<tr>
+<th>日付</th>
+<th>GitHubコミットID</th>
+<th>更新内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023/08/31</td>
+<td>353ba1deb094af5056a58bb40f07596b8e95a562</td>
+<td>初版作成</td>
+</tr>
+</tbody>
+</table>
+</body></html>
                                 
                                 </section>
                             
@@ -4281,7 +4281,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-14-13: サイト情報","level":"1.4.15.13","depth":3,"next":{"title":"ADMIN-14-14: サイトライセンス","level":"1.4.15.14","depth":3,"path":"admin/ADMIN_14_14.md","ref":"./admin/ADMIN_14_14.md","articles":[]},"previous":{"title":"ADMIN-14-12: ファセット検索","level":"1.4.15.12","depth":3,"path":"admin/ADMIN_14_12.md","ref":"./admin/ADMIN_14_12.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_14_13.md","mtime":"2026-07-16T08:19:11.526Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-14-13: サイト情報","level":"1.4.15.13","depth":3,"next":{"title":"ADMIN-14-14: サイトライセンス","level":"1.4.15.14","depth":3,"path":"admin/ADMIN_14_14.md","ref":"./admin/ADMIN_14_14.md","articles":[]},"previous":{"title":"ADMIN-14-12: ファセット検索","level":"1.4.15.12","depth":3,"path":"admin/ADMIN_14_12.md","ref":"./admin/ADMIN_14_12.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_14_13.md","mtime":"2026-10-09T12:00:32.496Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

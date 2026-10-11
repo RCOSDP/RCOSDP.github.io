@@ -6,7 +6,7 @@
         <title>プッシュ通知機能 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4232,12 +4232,12 @@ Body:  Your item "{{ item_title }}" has been registered.
 </code></pre>
 <p><strong>利用可能なプレースホルダ</strong></p>
 <ul>
-<li>``: 通知の発行日時（ISO8601形式）</li>
-<li>``: アイテムのタイトル</li>
-<li>``: アイテム詳細画面のURL</li>
-<li>``: アクティビティ詳細画面のURL</li>
-<li>``: 操作者の表示名</li>
-<li>``: 受信者の表示名</li>
+<li><code>{{ timestamp }}</code>: 通知の発行日時（ISO8601形式）</li>
+<li><code>{{ object_name }}</code>: アイテムのタイトル</li>
+<li><code>{{ object_uri }}</code>: アイテム詳細画面のURL</li>
+<li><code>{{ context_uri }}</code>: アクティビティ詳細画面のURL</li>
+<li><code>{{ actor_name }}</code>: 操作者の表示名</li>
+<li><code>{{ target_name }}</code>: 受信者の表示名</li>
 </ul>
 <h3 id="通知の送信"><a name="通知の送信" class="plugin-anchor" href="#通知の送信"><i class="fa fa-link" aria-hidden="true"></i></a>通知の送信</h3>
 <p>Webpush APIを使用してユーザーの購読情報に基づき生成された通知内容をエンドポイントに送信する。<br></br>エンドポイントが無効になっていることによってエラーとなった場合、購読情報を削除する。</p>
@@ -4249,7 +4249,7 @@ Body:  Your item "{{ item_title }}" has been registered.
 <li>通知に含む時刻は、かならずタイムゾーンを含める。これは、ISO8601(RFC3339)形式で記述する。</li>
 <li><p>外部サービスやユーザーが受信ボックスのURLを知るためには、一度WEKO側のトップページのエンドポイント("/")にアクセスする。<br></br>トップページはHEADリクエストに対して、レスポンスにLinkヘッダで受信ボックスのURIを含めるようにする。</p>
 <pre class="language-"><code>Link: &lt;https://example.repo.nii.ac.jp/inbox&gt;; rel="http://www.w3.org/ns/ldp#inbox"
-</code></pre><p>参考: <a href="https://coar-notify.net/guide/discovery/" target="_blank">Coar Notify: Discovery</a></p>
+</code></pre><p>参考: <a href="https://coar-notify.net/guide/signposting/" target="_blank">COAR Notify: Signposting</a></p>
 </li>
 </ul>
 <h2 id="開発環境の構築"><a name="開発環境の構築" class="plugin-anchor" href="#開発環境の構築"><i class="fa fa-link" aria-hidden="true"></i></a>開発環境の構築</h2>
@@ -4364,7 +4364,7 @@ Body:  Your item "{{ item_title }}" has been registered.
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"プッシュ通知機能","level":"1.7.15","depth":2,"next":{"title":"OAアシスト機能ステータス連携","level":"1.7.16","depth":2,"path":"other/OA-ASSIST_STATUS_LINKING.md","ref":"./other/OA-ASSIST_STATUS_LINKING.md","articles":[]},"previous":{"title":"解析基盤連携","level":"1.7.14","depth":2,"path":"other/KAISEKI_01.md","ref":"./other/KAISEKI_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"other/INBOX_01.md","mtime":"2026-07-15T05:22:59.624Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"プッシュ通知機能","level":"1.7.15","depth":2,"next":{"title":"OAアシスト機能ステータス連携","level":"1.7.16","depth":2,"path":"other/OA-ASSIST_STATUS_LINKING.md","ref":"./other/OA-ASSIST_STATUS_LINKING.md","articles":[]},"previous":{"title":"解析基盤連携","level":"1.7.14","depth":2,"path":"other/KAISEKI_01.md","ref":"./other/KAISEKI_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"other/INBOX_01.md","mtime":"2026-10-11T04:51:01.088Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

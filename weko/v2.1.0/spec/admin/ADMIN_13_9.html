@@ -6,7 +6,7 @@
         <title>ADMIN-13-9: ロール · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4161,10 +4161,12 @@
 　英語：「Record was successfully created.」<ul>
 <li>ロールをデータベースに保存する<ul>
 <li>テーブル名：「accounts_role」</li>
-<li>フィールド名：
-・「id」
-・「name」
-・「description」</li>
+<li>フィールド名：<ul>
+<li>「id」</li>
+<li>「name」</li>
+<li>「description」</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -4187,9 +4189,9 @@
 </li>
 </ul>
 </li>
-<li><p>v0.9.22でのデフォルトロールは以下の通りである</p>
+<li><p>v2.1.0でのデフォルトロールは以下の通りである</p>
 <ul>
-<li>パス： <a href="https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/populate-instance.sh#L228-L231" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/populate-instance.sh#L228-L231</a></li>
+<li>パス： <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/populate-instance.sh#L197-L200" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/populate-instance.sh#L197-L200</a></li>
 <li>ロール：<ul>
 <li>「System Administrator」</li>
 <li>「Repository Administrator」</li>
@@ -4209,7 +4211,7 @@
 <li><p>環境構築時にpopulate-instance.shで初期データを登録することで、デフォルトロールの作成と、各ロールへの権限付与が行われる。</p>
 <ul>
 <li>各デフォルトロールの名前は、作成時に環境変数で設定される<ul>
-<li>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/docker-compose.yml#L57-L60" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/docker-compose.yml#L57-L60</a></li>
+<li>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/docker-compose.yml#L67-L70" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/docker-compose.yml#L67-L70</a></li>
 </ul>
 </li>
 </ul>
@@ -4228,7 +4230,7 @@
 <ul>
 <li>ロールを新規作成したとき、コンフィグのACCOUNTS_WORKFLOW_ROLE_HIDE_FILTERがTrueである場合にのみ、workflow_userroleテーブルにレコードが作成される。<ul>
 <li>コンフィグは以下を参照する。<ul>
-<li>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-accounts/invenio_accounts/config.py#L227" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/invenio-accounts/invenio_accounts/config.py#L227</a></li>
+<li>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/invenio-accounts/invenio_accounts/config.py#L227" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/invenio-accounts/invenio_accounts/config.py#L227</a></li>
 <li>キー：ACCOUNTS_WORKFLOW_ROLE_HIDE_FILTER</li>
 </ul>
 </li>
@@ -4307,7 +4309,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-13-9: ロール","level":"1.4.14.9","depth":3,"next":{"title":"ADMIN-13-10: セッションアクティビティ","level":"1.4.14.10","depth":3,"path":"admin/ADMIN_13_10.md","ref":"./admin/ADMIN_13_10.md","articles":[]},"previous":{"title":"ADMIN-13-8: OAuthアプリケーション","level":"1.4.14.8","depth":3,"path":"admin/ADMIN_13_8.md","ref":"./admin/ADMIN_13_8.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_13_9.md","mtime":"2026-07-16T08:19:11.526Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-13-9: ロール","level":"1.4.14.9","depth":3,"next":{"title":"ADMIN-13-10: セッションアクティビティ","level":"1.4.14.10","depth":3,"path":"admin/ADMIN_13_10.md","ref":"./admin/ADMIN_13_10.md","articles":[]},"previous":{"title":"ADMIN-13-8: OAuthアプリケーション","level":"1.4.14.8","depth":3,"path":"admin/ADMIN_13_8.md","ref":"./admin/ADMIN_13_8.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_13_9.md","mtime":"2026-10-11T02:48:35.619Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

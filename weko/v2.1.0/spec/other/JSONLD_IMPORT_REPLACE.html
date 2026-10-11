@@ -6,7 +6,7 @@
         <title>JSONLDインポート文字列置換 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4019,19 +4019,19 @@
 <p>【v2.1.0】JSONLDファイルのインポート時に、JSON内の指定されたパスに対して文字列の置換を適用する。</p>
 <h2 id="利用方法"><a name="利用方法" class="plugin-anchor" href="#利用方法"><i class="fa fa-link" aria-hidden="true"></i></a>利用方法</h2>
 <p>設定値で置換ルール定義(<code>WEKO_SEARCH_UI_IMPORT_REPLACE_RULES</code>)、適用ルールマップ(<code>WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP</code>)の2つを設定する。<br></br>いずれも weko-search-ui の config（<code>weko_search_ui/config.py</code>）に既定値が定義されており、変更する場合は <code>instance.cfg</code> 等で上書きする。release_v2.1.0 の既定値は以下のとおり（#63281 で <code>scripts/instance.cfg</code> に置いていた同内容の設定を削除し、モジュールの既定値に移した）。既定ルール <code>pipe_full_width</code> は <code>target_path</code> が空のため、既定のままでは置換は行われない。</p>
-<pre class="language-"><code class="lang-Python">WEKO_SEARCH_UI_IMPORT_REPLACE_RULES = {
-    "pipe_full_width": {
-        "from": "|",
-        "to": "｜",
-        "is_regex": False,
-        "target_path": []
-    }
-}
-WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP = {
-    "32001": [
-        "pipe_full_width"
-    ]
-}
+<pre class="language-"><code class="lang-python">WEKO_SEARCH_UI_IMPORT_REPLACE_RULES <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"pipe_full_width"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">"|"</span><span class="token punctuation">,</span>
+        <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">"｜"</span><span class="token punctuation">,</span>
+        <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+        <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"32001"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+        <span class="token string">"pipe_full_width"</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>JSONLD形式のメタデータを取り込む際、自動で以下の文字列置換処理が適用される。</p>
 <ul>
@@ -4046,103 +4046,149 @@ WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP = {
 <p>インポート時に適用する文字列置換ルールの定義を保持する辞書。各ルールはルール名によって識別される。</p>
 <h4 id="置換ルールの定義方法"><a name="置換ルールの定義方法" class="plugin-anchor" href="#置換ルールの定義方法"><i class="fa fa-link" aria-hidden="true"></i></a>置換ルールの定義方法</h4>
 <p>置換ルールは以下のような構成で定義する。</p>
-<pre class="language-"><code class="lang-Python">ルール名: {
-    "from": ...,
-    "to": ...,
-    "is_regex": ...,
-    "target_path": [...]
-}
+<pre class="language-"><code class="lang-python">ルール名<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+    <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+    <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">,</span>
+    <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <ul>
 <li>ルール名<br></br>  ルール定義のキー名。<br></br>  同じキー名を複数用いた場合、同一キー名の最後のルール定義のみ有効になる。(<a href="#注意点">注意点</a>参照)</li>
 <li><p>各要素</p>
-<p>  |   要素名    | 必須  |  型   | 空文字指定 | 複数指定 | 概要                                                                                                        | 備考                                                                                                                                                                                                                                                                                                        |
-  | :---------: | :---: | :---: | :--------: | :------: | :---------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  |    from     |  〇   |  str  |     ×      |    ×     | 置換<strong>前</strong>の文字列を指定する。                                                                              |                                                                                                                                                                                                                                                                                                             |
-  |     to      |  〇   |  str  |     〇     |    ×     | 置換<strong>後</strong>の文字列を指定する。                                                                              | ・ 空文字を指定した場合は置換前の文字列が削除される。<br></br>・指定した文字列にそのまま置換されるため、<strong>正規表現ではなく</strong>、単一の文字列を指定する。                                                                                                                                                           |
-  |  is_regex   |   ×   | bool  |     ×      |    ×     | Trueの場合は正規表現が一致した文字列を置換、Falseの場合は完全一致した文字列を通常置換する。                 | 指定しなかった場合はFalseとなる。                                                                                                                                                                                                                                                                           |
-  | target_path |   ×   | list  |     ×      |    〇    | <code>jsonld_mappings</code>テーブルの<code>mapping</code>カラムで定義されたプロパティ名(JSON-LDマッピングの右側の値)を指定する。 | ・空リストの場合は該当のルール定義の置換処理をスキップする。<br></br>・例：<code>"データ作成者.作成者姓名.姓名": "creator.name.value"</code>を置換対象としたい場合、<br></br>右側の<code>"creator.name.value"</code>を指定する。<br></br>・target_pathにはオブジェクトに対応するパスは指定できない。<br></br>指定した場合、置換は行わずスキップする。 |</p>
+  <table>
+  <thead>
+  <tr>
+  <th>要素名</th>
+  <th>必須</th>
+  <th>型</th>
+  <th>空文字指定</th>
+  <th>複数指定</th>
+  <th>概要</th>
+  <th>備考</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>from</td>
+  <td>〇</td>
+  <td>str</td>
+  <td>×</td>
+  <td>×</td>
+  <td>置換<strong>前</strong>の文字列を指定する。</td>
+  <td></td>
+  </tr>
+  <tr>
+  <td>to</td>
+  <td>〇</td>
+  <td>str</td>
+  <td>〇</td>
+  <td>×</td>
+  <td>置換<strong>後</strong>の文字列を指定する。</td>
+  <td>・ 空文字を指定した場合は置換前の文字列が削除される。<br></br>・指定した文字列にそのまま置換されるため、<strong>正規表現ではなく</strong>、単一の文字列を指定する。</td>
+  </tr>
+  <tr>
+  <td>is_regex</td>
+  <td>×</td>
+  <td>bool</td>
+  <td>×</td>
+  <td>×</td>
+  <td>Trueの場合は正規表現が一致した文字列を置換、Falseの場合は完全一致した文字列を通常置換する。</td>
+  <td>指定しなかった場合はFalseとなる。</td>
+  </tr>
+  <tr>
+  <td>target_path</td>
+  <td>×</td>
+  <td>list</td>
+  <td>×</td>
+  <td>〇</td>
+  <td><code>jsonld_mappings</code>テーブルの<code>mapping</code>カラムで定義されたプロパティ名(JSON-LDマッピングの右側の値)を指定する。</td>
+  <td>・空リストの場合は該当のルール定義の置換処理をスキップする。<br></br>・例：<code>"データ作成者.作成者姓名.姓名": "creator.name.value"</code>を置換対象としたい場合、<br></br>右側の<code>"creator.name.value"</code>を指定する。<br></br>・target_pathにはオブジェクトに対応するパスは指定できない。<br></br>指定した場合、置換は行わずスキップする。</td>
+  </tr>
+  </tbody>
+  </table>
+
 </li>
 </ul>
 <h4 id="記述例"><a name="記述例" class="plugin-anchor" href="#記述例"><i class="fa fa-link" aria-hidden="true"></i></a>記述例</h4>
 <p>is_regexのTrue/Falseでfromの書き方が変わるため、例を記載する。  </p>
-<pre class="language-"><code class="lang-Python">WEKO_SEARCH_UI_IMPORT_REPLACE_RULES = {
-    # is_regexがFalseの場合の定義の書き方例
-    "pipe_full_width": {
-        "from": "|",
-        "to": "｜",
-        "is_regex": False,
-        "target_path": [
-            "ams:industrialUse.value", 
-            "ams:anonymousProcessing.value"
-        ]
-    },
-    # is_regexがTrueの場合の定義の書き方例
-    "space_full_width": {
-        "from": r"(\u3000)|(　)", 
-        "to": " ", # toには正規表現は使えない
-        "is_regex": True,
-        "target_path": [
-            "contributor.name.value"
-        ]
-    }
-}
+<pre class="language-"><code class="lang-python">WEKO_SEARCH_UI_IMPORT_REPLACE_RULES <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token comment"># is_regexがFalseの場合の定義の書き方例</span>
+    <span class="token string">"pipe_full_width"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">"|"</span><span class="token punctuation">,</span>
+        <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">"｜"</span><span class="token punctuation">,</span>
+        <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+        <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"ams:industrialUse.value"</span><span class="token punctuation">,</span> 
+            <span class="token string">"ams:anonymousProcessing.value"</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment"># is_regexがTrueの場合の定義の書き方例</span>
+    <span class="token string">"space_full_width"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">r"(\u3000)|(　)"</span><span class="token punctuation">,</span> 
+        <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">" "</span><span class="token punctuation">,</span> <span class="token comment"># toには正規表現は使えない</span>
+        <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+        <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"contributor.name.value"</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h4 id="注意点"><a name="注意点" class="plugin-anchor" href="#注意点"><i class="fa fa-link" aria-hidden="true"></i></a>注意点</h4>
 <ol>
 <li><p>文字列置換ルールに同一のルール名を複数回用いた場合<br></br> 同一ルール名のうち、最後のルール定義が有効になる。最後以外のルール定義は使用されない。</p>
 <p> 例： 同一ルール名を定義した場合</p>
-<pre class="language-"><code class="lang-Python"> WEKO_SEARCH_UI_IMPORT_REPLACE_RULES = {
-     # 無効
-     "rule_name": {
-         "from": "abc",
-         "to": "あ",
-         "is_regex": False,
-         "target_path": [
-             "abc.value"
-         ]
-     },
-     # 無効
-     "rule_name": {
-         "from": "abc",
-         "to": "い",
-         "is_regex": False,
-         "target_path": [
-             "abc.value"
-         ]
-     },
-     # 有効
-     "rule_name": { 
-         "from": "abc",
-         "to": "う",
-         "is_regex": False,
-         "target_path": [
-             "abc.value"
-         ]
-     }
- }
+<pre class="language-"><code class="lang-python"> WEKO_SEARCH_UI_IMPORT_REPLACE_RULES <span class="token operator">=</span> <span class="token punctuation">{</span>
+     <span class="token comment"># 無効</span>
+     <span class="token string">"rule_name"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">"abc"</span><span class="token punctuation">,</span>
+         <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">"あ"</span><span class="token punctuation">,</span>
+         <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+         <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+             <span class="token string">"abc.value"</span>
+         <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     <span class="token comment"># 無効</span>
+     <span class="token string">"rule_name"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+         <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">"abc"</span><span class="token punctuation">,</span>
+         <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">"い"</span><span class="token punctuation">,</span>
+         <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+         <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+             <span class="token string">"abc.value"</span>
+         <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span><span class="token punctuation">,</span>
+     <span class="token comment"># 有効</span>
+     <span class="token string">"rule_name"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> 
+         <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">"abc"</span><span class="token punctuation">,</span>
+         <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">"う"</span><span class="token punctuation">,</span>
+         <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+         <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+             <span class="token string">"abc.value"</span>
+         <span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+ <span class="token punctuation">}</span>
 </code></pre>
 </li>
 <li><p><code>to</code>に正規表現を用いた場合<br></br> toに指定した文字列は<strong>そのままの文字列</strong>として置換されるため、正規表現を用いると意図した置換にはならない。</p>
-<pre class="language-"><code class="lang-Python"> "rule_name": {
-     "from": r"\|",
-     "to": r"\uFF5C",　# 全角パイプ相当の正規表現
-     "is_regex": True,
-     "target_path": [
-         "abc.value"
-     ]
- }
+<pre class="language-"><code class="lang-python"> <span class="token string">"rule_name"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+     <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">r"\|"</span><span class="token punctuation">,</span>
+     <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">r"\uFF5C"</span><span class="token punctuation">,</span>　<span class="token comment"># 全角パイプ相当の正規表現</span>
+     <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+     <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+         <span class="token string">"abc.value"</span>
+     <span class="token punctuation">]</span>
+ <span class="token punctuation">}</span>
 </code></pre>
 <p> 上記のように指定すると、fromに指定した<code>|</code>(半角パイプ)が<code>\\\\uFF5C</code>(バックスラッシュ4つ+uFF5C)に置換される。  </p>
 <p> 以下のようにUnicodeエスケープであれば指定可能。</p>
-<pre class="language-"><code class="lang-Python"> "rule_name": {
-     "from": r"\|",
-     "to": "\uFF5C",　# 全角パイプ相当のUnicodeエスケープ
-     "is_regex": True,
-     "target_path": [
-         "abc.value"
-     ]
- }
+<pre class="language-"><code class="lang-python"> <span class="token string">"rule_name"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+     <span class="token string">"from"</span><span class="token punctuation">:</span> <span class="token string">r"\|"</span><span class="token punctuation">,</span>
+     <span class="token string">"to"</span><span class="token punctuation">:</span> <span class="token string">"\uFF5C"</span><span class="token punctuation">,</span>　<span class="token comment"># 全角パイプ相当のUnicodeエスケープ</span>
+     <span class="token string">"is_regex"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+     <span class="token string">"target_path"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>
+         <span class="token string">"abc.value"</span>
+     <span class="token punctuation">]</span>
+ <span class="token punctuation">}</span>
 </code></pre>
 <p> 上記の書き方であれば、fromに指定した<code>|</code>(半角パイプ)が<code>｜</code>(全角パイプ)に置換される。</p>
 </li>
@@ -4153,31 +4199,92 @@ WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP = {
 <h4 id="概要"><a name="概要" class="plugin-anchor" href="#概要"><i class="fa fa-link" aria-hidden="true"></i></a>概要</h4>
 <p><code>jsonld_mappings</code>テーブルの<code>id</code>(mapping_id)をキーとし、適用すべき置換ルール(<code>WEKO_SEARCH_UI_IMPORT_REPLACE_RULES</code>のキー)のリストを持つ辞書。<br></br>各mapping_idごとにどの置換ルールを適用するかを制御する。</p>
 <h4 id="記述例"><a name="記述例" class="plugin-anchor" href="#記述例"><i class="fa fa-link" aria-hidden="true"></i></a>記述例</h4>
-<pre class="language-"><code class="lang-Python">WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP = {
-    "32001": [    # jsonld_mappingsテーブルのid(mapping_id)
-        "pipe_full_width"
-    ]
-}
+<pre class="language-"><code class="lang-python">WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">"32001"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>    <span class="token comment"># jsonld_mappingsテーブルのid(mapping_id)</span>
+        <span class="token string">"pipe_full_width"</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="警告"><a name="警告" class="plugin-anchor" href="#警告"><i class="fa fa-link" aria-hidden="true"></i></a>警告</h3>
 <ul>
 <li>処理中にエラーが発生した場合はエラー内容をワーニングリストに格納して処理を続行する。</li>
 <li>警告メッセージがある場合でも、インポート処理上問題がなかった場合はインポート処理は通常通り実行される。</li>
 <li><p>メッセージの言語やワーニングの表示はインポートを行う方法により異なる。</p>
-<p>  | インポート方法                 | メッセージ言語   | ワーニング表示                                                             | 備考                                                                 |
-  | :----------------------------- | :--------------- | :------------------------------------------------------------------------- | :------------------------------------------------------------------- |
-  | RO-Crateインポート画面から実行 | 日本語・英語対応 | ワーニング・エラーどちらも画面に表示。<br></br>エラーがなければインポート可能。 |                                                                      |
-  | API経由でインポート            | 英語のみ         | エラーがない場合（インポート可能な場合）はワーニングは表示されない。       | エラー発生時のみ、<br></br>ワーニングも含めて英語でメッセージを返却する。 |</p>
+  <table>
+  <thead>
+  <tr>
+  <th>インポート方法</th>
+  <th>メッセージ言語</th>
+  <th>ワーニング表示</th>
+  <th>備考</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>RO-Crateインポート画面から実行</td>
+  <td>日本語・英語対応</td>
+  <td>ワーニング・エラーどちらも画面に表示。<br></br>エラーがなければインポート可能。</td>
+  <td></td>
+  </tr>
+  <tr>
+  <td>API経由でインポート</td>
+  <td>英語のみ</td>
+  <td>エラーがない場合（インポート可能な場合）はワーニングは表示されない。</td>
+  <td>エラー発生時のみ、<br></br>ワーニングも含めて英語でメッセージを返却する。</td>
+  </tr>
+  </tbody>
+  </table>
 </li>
 <li><p>言語設定</p>
-<p>  | 内容                                                                 | 英語メッセージ                                                                                  | 日本語メッセージ                                                                     | 備考                    |
-  | :------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------- | :---------------------- |
-  | 置換ルール定義、置換ルールマッピング、<br></br>ルールキーリストの型が不正 | Replacement failed.: The type of the jsonld mapping replacement rule is invalid.                 | 置換処理に失敗しました。: jsonldマッピングの置換ルールの型が不正です。                |                         |
-  | 置換ルールIDが取得できない                                           | Replacement failed.: Required replacement rule: '{rule_id}' is missing.                          | 置換処理に失敗しました。: 必要な置換ルール：'{rule_id}'が見つかりません。             | {rule id}: 置換ルールID |
-  | <code>from</code>、<code>to</code>、<code>target_path</code>の設定が不正                              | Replacement failed.: Replacement rule: '{rule_id}' is invalid.                                   | 置換処理に失敗しました。: 置換ルール： '{rule_id}'の設定が不正です。                  | {rule id}: 置換ルールID |
-  | <code>is_regex</code>の設定が不正                                               | Replacement rule: '{rule_id}' - 'is_regex' is not boolean. Treated as False.                    | 置換ルール: '{rule_id}' - 'is_regex' が真偽値ではありません。Falseとして処理します。 | {rule id}: 置換ルールID |
-  | re.error発生時                                                       | Replacement failed.: Replacement rule: '{rule_id}' - regex error: {エラー原因} | 置換処理に失敗しました。: 置換ルール: '{rule_id}' - 正規表現エラー: {エラー原因}      | {rule id}: 置換ルールID |
-  | それ以外のエラー発生時                                               | Replacement failed.: {起きたエラーのメッセージ}                                                  | 置換処理に失敗しました。: {起きたエラーのメッセージ}                                  |                         |</p>
+  <table>
+  <thead>
+  <tr>
+  <th>内容</th>
+  <th>英語メッセージ</th>
+  <th>日本語メッセージ</th>
+  <th>備考</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>置換ルール定義、置換ルールマッピング、<br></br>ルールキーリストの型が不正</td>
+  <td>Replacement failed.: The type of the jsonld mapping replacement rule is invalid.</td>
+  <td>置換処理に失敗しました。: jsonldマッピングの置換ルールの型が不正です。</td>
+  <td></td>
+  </tr>
+  <tr>
+  <td>置換ルールIDが取得できない</td>
+  <td>Replacement failed.: Required replacement rule: '{rule_id}' is missing.</td>
+  <td>置換処理に失敗しました。: 必要な置換ルール：'{rule_id}'が見つかりません。</td>
+  <td>{rule id}: 置換ルールID</td>
+  </tr>
+  <tr>
+  <td><code>from</code>、<code>to</code>、<code>target_path</code>の設定が不正</td>
+  <td>Replacement failed.: Replacement rule: '{rule_id}' is invalid.</td>
+  <td>置換処理に失敗しました。: 置換ルール： '{rule_id}'の設定が不正です。</td>
+  <td>{rule id}: 置換ルールID</td>
+  </tr>
+  <tr>
+  <td><code>is_regex</code>の設定が不正</td>
+  <td>Replacement rule: '{rule_id}' - 'is_regex' is not boolean. Treated as False.</td>
+  <td>置換ルール: '{rule_id}' - 'is_regex' が真偽値ではありません。Falseとして処理します。</td>
+  <td>{rule id}: 置換ルールID</td>
+  </tr>
+  <tr>
+  <td>re.error発生時</td>
+  <td>Replacement failed.: Replacement rule: '{rule_id}' - regex error: {エラー原因}</td>
+  <td>置換処理に失敗しました。: 置換ルール: '{rule_id}' - 正規表現エラー: {エラー原因}</td>
+  <td>{rule id}: 置換ルールID</td>
+  </tr>
+  <tr>
+  <td>それ以外のエラー発生時</td>
+  <td>Replacement failed.: {起きたエラーのメッセージ}</td>
+  <td>置換処理に失敗しました。: {起きたエラーのメッセージ}</td>
+  <td></td>
+  </tr>
+  </tbody>
+  </table>
+
 </li>
 </ul>
 <h2 id="実装補足（v210）"><a name="実装補足（v210）" class="plugin-anchor" href="#実装補足（v210）"><i class="fa fa-link" aria-hidden="true"></i></a>実装補足（v2.1.0）</h2>
@@ -4253,7 +4360,7 @@ WEKO_SEARCH_UI_IMPORT_REPLACE_RULE_MAP = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JSONLDインポート文字列置換","level":"1.7.18","depth":2,"next":{"title":"API連携によるレコード追加機能（researchmap）","level":"1.7.19","depth":2,"path":"other/RESEARCHMAP_LINKAGE.md","ref":"./other/RESEARCHMAP_LINKAGE.md","articles":[]},"previous":{"title":"Signposting（FAIR Signposting）","level":"1.7.17","depth":2,"path":"other/SIGNPOSTING_01.md","ref":"./other/SIGNPOSTING_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"other/JSONLD_IMPORT_REPLACE.md","mtime":"2026-10-05T13:15:48.213Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JSONLDインポート文字列置換","level":"1.7.18","depth":2,"next":{"title":"API連携によるレコード追加機能（researchmap）","level":"1.7.19","depth":2,"path":"other/RESEARCHMAP_LINKAGE.md","ref":"./other/RESEARCHMAP_LINKAGE.md","articles":[]},"previous":{"title":"Signposting（FAIR Signposting）","level":"1.7.17","depth":2,"path":"other/SIGNPOSTING_01.md","ref":"./other/SIGNPOSTING_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"other/JSONLD_IMPORT_REPLACE.md","mtime":"2026-10-11T09:23:59.517Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

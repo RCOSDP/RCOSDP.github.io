@@ -6,7 +6,7 @@
         <title>USER-4-10: Identifier Grant · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4019,17 +4019,17 @@
 <ul>
 <li><p>DOI未付与、かつDOI取り下げ済みではないアイテムに対してはDOIを付与する事が可能である</p>
 </li>
-<li><p>DOIのURL形式：&lt;ルートURL&gt;/<prefix>/<suffix></suffix></prefix></p>
+<li><p>DOIのURL形式：&lt;ルートURL&gt;/&lt;Prefix&gt;/&lt;suffix&gt;</p>
 <ul>
 <li>&lt;ルートURL&gt;：コンフィグファイルでの設定</li>
-<li><prefix>：アドミン画面に指定されている値</prefix></li>
-<li><suffix>：コンフィグファイルでの設定値によって異なる</suffix></li>
+<li>&lt;Prefix&gt;：アドミン画面に指定されている値</li>
+<li>&lt;suffix&gt;：コンフィグファイルでの設定値によって異なる</li>
 </ul>
 </li>
-<li><p>ハンドルのURL形式：&lt;ハンドルのURL&gt;/<prefix>/&lt;ハンドルローカル名&gt;</prefix></p>
+<li><p>ハンドルのURL形式：&lt;ハンドルのURL&gt;/&lt;Prefix&gt;/&lt;ハンドルローカル名&gt;</p>
 <ul>
 <li>&lt;ハンドルのURL&gt;：コンフィグファイルでの設定</li>
-<li><prefix>：「handle_creds.json 」ファイルに設定値<br></br>キー："prefix"</prefix></li>
+<li>&lt;Prefix&gt;：「handle_creds.json 」ファイルに設定値<br></br>キー："prefix"</li>
 <li>&lt;ハンドルローカル名&gt;：LHS（Local Handle Server）から返却される値で、ユニークの値</li>
 </ul>
 </li>
@@ -4212,7 +4212,7 @@
 </li>
 <li><p>DOI付与済みアイテムを新規登録後、編集時に必須項目の値の削除や必須項目のプロパティの削除はできない。<br></br>削除をした場合、［Identifier Grant］画面から［Item Registration］画面に遷移し、「PID付与の条件を満たしていません。」とエラーメッセージが表示される。</p>
 </li>
-<li><p>編集時の資源タイプ（dc:type）の変更は、同じコンテンツ種類内でのみ許可される。それ以外の資源タイプにを変更した場合、インポートタブのチェック処理で「DOI付与済みアイテムの資源タイプの変更はできません。」とエラーメッセージが表示される。</p>
+<li><p>編集時の資源タイプ（dc:type）の変更は、同じコンテンツ種類内でのみ許可される。それ以外の資源タイプに変更した場合、［Identifier Grant］画面から［Item Registration］画面に遷移し、「DOI付与済みアイテムの資源タイプの変更はできません。」とエラーメッセージが表示される（<code>check_doi_validation_not_pass</code> → <code>item_metadata_validation</code>）。</p>
 </li>
 </ul>
 <p>2.5. 付与済みDOI及びCNRIハンドルを表示</p>
@@ -4312,18 +4312,18 @@ cp ../cnri-handle/certificate_only.pem .
 </code></pre><p>CNRIハンドルのURLをコンフィグファイルに設定</p>
 <ul>
 <li>コンフィグキー：WEKO_SERVER_CNRI_HOST_LINK</li>
-<li>パス： <a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L114" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L114</a></li>
+<li>パス： <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L279" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L279</a></li>
 </ul>
 <p>サフィックスの設定方法をコンフィグファイルに設定</p>
 <ul>
 <li>コンフィグキー：IDENTIFIER_GRANT_SUFFIX_METHOD</li>
-<li>パス： <a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L56" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L56</a></li>
+<li>パス： <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L62" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L62</a></li>
 <li>設定値：0、1、2<br></br>　　0：自動連番<br></br>　　1：半自動入力<br></br>　　2：自由入力</li>
 </ul>
 <p>各DOI発行機関のルートURLをコンフィグファイルに設定</p>
 <ul>
 <li>コンフィグキー：IDENTIFIER_GRANT_LIST</li>
-<li>パス： <a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L48" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/config.py#L48</a></li>
+<li>パス： <a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L54" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/config.py#L54</a></li>
 </ul>
 <p>invenio.cfg のコンフィグに設定しているものでオーバーライドできるように、current_app.configを以下のように設定する</p>
 <p>current_app.config['IDENTIFIER_GRANT_SUFFIX_METHOD']</p>
@@ -4441,27 +4441,27 @@ cp ../cnri-handle/certificate_only.pem .
 <li>例：</li>
 </ul>
 <p>資源タイプが「software」あるいは「dataset」、かつDOIタイプ：JaLCの場合、「いずれか必須」の項目は「位置情報」の以下の３つ項目となっている<br></br>位置情報（点）、位置情報（空間）, 位置情報（自由記述）</p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L338" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L338</a></p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L382" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L382</a></p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L653-L684" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L653-L684</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L362" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L362</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L471" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L471</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L932-L963" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L932-L963</a></p>
 </li>
 <li><p>「いずれか必須」の項目を入力されたかをチェックするために、validattion_item_property_either_required関数を呼び出す</p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L641" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/utils.py#L641</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L920" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/utils.py#L920</a></p>
 <ul>
 <li>「いずれか必須」の項目のいずれかを入力された場合、エラーなしとして結果を返却する</li>
 <li>「いずれか必須」の項目のいずれかも入力されない場合、エラーとして、エラーとなっている項目名の一覧を返却する</li>
 </ul>
 </li>
 <li><p>アイテム登録画面に遷移する</p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/views.py#L1541-L1550" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-workflow/weko_workflow/views.py#L1541-L1550</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/views.py#L1952-L1961" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-workflow/weko_workflow/views.py#L1952-L1961</a></p>
 </li>
 <li><p>アイテム登録画面にて、check_validation_error_msgのAPIを呼び出し、返却された項目名一覧を取得し、赤文字で画面に表示する</p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L2261-L2281" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L2261-L2281</a></p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/views.py#L359-L363" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/views.py#L359-L363</a></p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/utils.py#L691-L697" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/utils.py#L691-L697</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L2529-L2549" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L2529-L2549</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/views.py#L505-L509" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/views.py#L505-L509</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/utils.py#L1755-L1761" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/utils.py#L1755-L1761</a></p>
 </li>
 <li><p>アイテム登録画面にて「いずれか必須」の項目を入力されたかチェックする</p>
-<p><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L3904" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L3904</a></p>
+<p><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L4415" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-items-ui/weko_items_ui/static/js/weko_items_ui/app.js#L4415</a></p>
 <p>入力された場合、次の画面に遷移する</p>
 </li>
 </ol>
@@ -4481,12 +4481,12 @@ cp ../cnri-handle/certificate_only.pem .
 </ul>
 <h2 id="2-doi検証の分岐・エラー"><a name="2-doi検証の分岐・エラー" class="plugin-anchor" href="#2-doi検証の分岐・エラー"><i class="fa fa-link" aria-hidden="true"></i></a>2. DOI検証の分岐・エラー</h2>
 <ul>
-<li>検証入口 <code>check_doi_validation_not_pass(item_id, activity_id, identifier_select[, without_ver_id])</code> → <code>item_metadata_validation</code>。戻り値：文字列＝致命メッセージ（<code>code:-1</code>/500）、True＝検証NG（error<em>list を Redis `updated_json_schema</em>{activity_id}<code>（TTL300秒）に保存し</code>previous_action(req=-1)<code>で差戻し）、False＝OK。差戻し後は</code>weko_items_ui.views.check_validation_error_msg` が Redis を読み該当項目を赤枠表示。</li>
+<li>検証入口 <code>check_doi_validation_not_pass(item_id, activity_id, identifier_select[, without_ver_id])</code> → <code>item_metadata_validation</code>。戻り値：文字列＝致命メッセージ（<code>code:-1</code>/500）、True＝検証NG（error_list を Redis <code>updated_json_schema_{activity_id}</code>（TTL300秒）に保存し <code>previous_action(req=-1)</code> で差戻し）、False＝OK。差戻し後は <code>weko_items_ui.views.check_validation_error_msg</code> が Redis を読み該当項目を赤枠表示。</li>
 <li><code>item_metadata_validation</code> の事前分岐：<code>identifier_type=='0'</code> は検証スキップ／資源タイプ取得不可は <code>error_list['mapping']=['dc:type']</code>／item_type・resource_type 欠落は <code>required</code>／<code>without_ver_id</code> 指定で旧版と資源タイプの分類が異なる場合「You cannot change the resource type of items that have been grant a DOI.」／NDL JaLC は資源タイプ <code>doctoral thesis</code> 限定。</li>
 <li>必須プロパティ（種別×資源タイプ分類）：JaLC=title/type（ジャーナルは pageStart 追加）／Crossref=ジャーナルで title/type/sourceIdentifier/sourceTitle、書籍・学位論文で title/type／DataCite=研究データで title/type／NDL JaLC=title/type。本文URL(<code>fileURI</code>)はアイテムタイプ名 DDI ではスキップ、新規で <code>file_path</code> があれば追加しない、他は必須追加。必須が空なら「Cannot register selected DOI for current Item Type of this item.」。</li>
 <li>プロパティ検証は <code>validation_item_property</code> → <code>validattion_item_property_required</code> ／ <code>...either_required</code>。参照定義は種別で切替：Crossref→<code>DOI_VALIDATION_INFO_CROSSREF</code>、DataCite→<code>DOI_VALIDATION_INFO_DATACITE</code>、他→<code>DOI_VALIDATION_INFO</code>（CROSSREF/DATACITE は publisher/creator 等で <code>xml:lang='en'</code> を要求）。エラー種別：<code>required</code>/<code>required_key</code>/<code>pattern</code>/<code>either</code>/<code>either_key</code>/<code>mapping</code>/<code>other</code>。</li>
 <li>取り下げ（<code>/withdraw</code>、<code>withdraw_confirm</code>）：パスワード欄に固定文字列 <code>DELETE</code> 入力が必要（不一致は500）。成功で <code>action_identifier_select</code> を <code>WEKO_WORKFLOW_IDENTIFIER_GRANT_IS_WITHDRAWING</code>(-2) に更新。差戻し時 -2 を検知すると <code>..._CAN_WITHDRAW</code>(-1) に戻す。</li>
-<li>CNRI/Handle 付与：<code>action_endpoint</code> が <code>item_login</code>/<code>item_login_application</code> かつ <code>record.pid_cnri is None</code> かつ <code>WEKO_HANDLE_ALLOW_REGISTER_CNRI</code>（既定False）が真のとき <code>register_hdl</code> → <code>weko_handle.api.Handle.register_handle</code>。handle を <code>WEKO_SERVER_CNRI_HOST_LINK</code>（<code>http://hdl.handle.net/</code>）で前置し <code>IdentifierHandle.register_pidstore('hdl', handle)</code>。</li>
+<li>CNRI/Handle 付与：<code>action_endpoint</code> が <code>item_login</code>/<code>item_login_application</code> かつ <code>record.pid_cnri is None</code> かつ <code>WEKO_HANDLE_ALLOW_REGISTER_CNRI</code>（config.py の既定は False。標準の instance.cfg では環境変数 <code>WEKO_HANDLE_ALLOW_REGISTER_CRNI</code>（綴りは CRNI）の値になり、docker-compose の既定は False）が真のとき <code>register_hdl</code> → <code>weko_handle.api.Handle.register_handle</code>。handle を <code>WEKO_SERVER_CNRI_HOST_LINK</code>（<code>http://hdl.handle.net/</code>）で前置し <code>IdentifierHandle.register_pidstore('hdl', handle)</code>。</li>
 <li>本登録 <code>saving_doi_pidstore</code>：<code>identifier_val</code>（完全DOI URL）と <code>doi_register_val</code> を切り出し、<code>register_pidstore('doi', ...)</code> ＋メタデータ更新、監査ログ <code>ITEM_ASSIGN_DOI</code>。値が空なら「Identifier datas are empty!」。</li>
 </ul>
 <h2 id="3-データモデル"><a name="3-データモデル" class="plugin-anchor" href="#3-データモデル"><i class="fa fa-link" aria-hidden="true"></i></a>3. データモデル</h2>
@@ -4565,7 +4565,7 @@ cp ../cnri-handle/certificate_only.pem .
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"USER-4-10: Identifier Grant","level":"1.3.4.13","depth":3,"next":{"title":"USER-4-11: Item Link","level":"1.3.4.14","depth":3,"path":"user/USER_4_11.md","ref":"./user/USER_4_11.md","articles":[]},"previous":{"title":"USER-4-17: Item Registration：リクエストメール機能","level":"1.3.4.12","depth":3,"path":"user/USER_4_17.md","ref":"./user/USER_4_17.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_4_10.md","mtime":"2026-07-16T08:19:11.528Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"USER-4-10: Identifier Grant","level":"1.3.4.13","depth":3,"next":{"title":"USER-4-11: Item Link","level":"1.3.4.14","depth":3,"path":"user/USER_4_11.md","ref":"./user/USER_4_11.md","articles":[]},"previous":{"title":"USER-4-17: Item Registration：リクエストメール機能","level":"1.3.4.12","depth":3,"path":"user/USER_4_17.md","ref":"./user/USER_4_17.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"user/USER_4_10.md","mtime":"2026-10-11T04:40:03.582Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

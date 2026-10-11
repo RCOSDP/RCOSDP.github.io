@@ -6,7 +6,7 @@
         <title>ADMIN-5-3: 一括登録 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4173,13 +4173,42 @@
 </table>
 <ul>
 <li><p>画面に読み込んだインポート用ファイルの「サマリー(Summary)」を以下のように表示する</p>
-<p>| # | 項目名            | 概要                      |
-| -- | -------------- | ----------------------- |
-| 1  | 総計(Total)      | 読み込んだファイルの著者の数          |
-| 2  | New Creator    | 読み込んだファイルの内、新規登録となる著者の数 |
-| 3  | Update Creator | 読み込んだファイルの内、更新の著者の数     |
-| 4  | Delete Creator | 読み込んだファイルの内、削除となる著者の数   |
-| 5  | Result Error   | 内容のチェックでエラーとなった著者の数     |</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>項目名</th>
+<th>概要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>総計(Total)</td>
+<td>読み込んだファイルの著者の数</td>
+</tr>
+<tr>
+<td>2</td>
+<td>New Creator</td>
+<td>読み込んだファイルの内、新規登録となる著者の数</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Update Creator</td>
+<td>読み込んだファイルの内、更新の著者の数</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Delete Creator</td>
+<td>読み込んだファイルの内、削除となる著者の数</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Result Error</td>
+<td>内容のチェックでエラーとなった著者の数</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li><p>画面に表示される著者DBの詳細情報は以下の通り</p>
 </li>
@@ -5199,11 +5228,28 @@
 <li><p><strong>インポート対象の判定</strong></p>
 <ul>
 <li><p>TSV ファイルの <strong>1行目</strong> に記載された情報をもとに、インポート対象を判定する。</p>
-<p>  | <strong>1行目の内容</strong> | <strong>インポート対象</strong> |
-  |----------------------|----------------------|
-  | 記載なし | 著者 (<code>authors</code> テーブル) |
-  | <code>authors_prefix_settings</code> | 著者識別子 (<code>authors_prefix_settings</code> テーブル) |
-  | <code>authors_affiliation_settings</code> | 機関識別子 (<code>authors_affiliation_settings</code> テーブル) |</p>
+  <table>
+  <thead>
+  <tr>
+  <th><strong>1行目の内容</strong></th>
+  <th><strong>インポート対象</strong></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td>記載なし</td>
+  <td>著者 (<code>authors</code> テーブル)</td>
+  </tr>
+  <tr>
+  <td><code>authors_prefix_settings</code></td>
+  <td>著者識別子 (<code>authors_prefix_settings</code> テーブル)</td>
+  </tr>
+  <tr>
+  <td><code>authors_affiliation_settings</code></td>
+  <td>機関識別子 (<code>authors_affiliation_settings</code> テーブル)</td>
+  </tr>
+  </tbody>
+  </table>
 </li>
 <li><p>フロントエンドで <strong>「次へ」ボタン</strong> を押せるのは、TSV の形式が Export target の値と一致した場合のみ。</p>
 </li>
@@ -5227,15 +5273,44 @@
   各 TSV ファイルの **各行のデータチェック** を行う。  
   以下では識別子の場合のチェック項目のみとする。
 
-  | **チェック項目** | **エラー条件** |
-  |----------------|----------------|
-  | **TSV フォーマット** | 列の数が不足または過剰 |
-  | **name 列** | 空欄の場合 |
-  | **scheme 列** | 空欄の場合 |
-  | **scheme の重複** | 同一ファイル内に重複がある場合 |
-  | **URL の形式** | `http://` または `https://` で始まっていない場合 |
-  | **削除対象の識別子** | DB内に対象が存在しない場合 |
-  | **コミュニティID列** | DB内に対象が存在しない、またはコミュニティ管理者の管理対象外のコミュニティの場合|
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>チェック項目<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>エラー条件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>TSV フォーマット<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>列の数が不足または過剰<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>name 列<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>空欄の場合<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>scheme 列<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>空欄の場合<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>scheme の重複<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>同一ファイル内に重複がある場合<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>URL の形式<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>http://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> または <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>https://<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span> で始まっていない場合<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>削除対象の識別子<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>DB内に対象が存在しない場合<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>strong</span><span class="token punctuation">&gt;</span></span>コミュニティID列<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>strong</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>DB内に対象が存在しない、またはコミュニティ管理者の管理対象外のコミュニティの場合<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
 
   - schemeの値が対象となるDBに既存で存在する場合、更新とする。
   - schemeの値が対象となるDBに存在しない場合、新規登録となる。
@@ -5245,11 +5320,28 @@
 <li><code>check_import_data</code> メソッドを実行し、Redisのキー <code>author_import_cache</code>（定数WEKO_AUTHORS_IMPORT_CACHE_KEYの値）に取り込み情報（group_task_id / tasks / records）を保存する。</li>
 <li><strong>「インポート」ボタン</strong> を押すと、非同期タスク (<code>Celery</code>) が開始する。</li>
 <li><p><code>import_type</code> に応じて、適切なインポートメソッドを呼び出す。</p>
-<p> | <strong>import_type の値</strong> | <strong>実行する処理</strong> |
- |----------------|----------------|
- | <code>author_db</code> | 著者DB用のインポート (<code>authors</code> テーブル) |
- | <code>id_prefix</code> | 著者識別子用のインポート (<code>authors_prefix_settings</code> テーブル) |
- | <code>affiliation_id</code> | 機関識別子用のインポート (<code>authors_affiliation_settings</code> テーブル) |</p>
+ <table>
+ <thead>
+ <tr>
+ <th><strong>import_type の値</strong></th>
+ <th><strong>実行する処理</strong></th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td><code>author_db</code></td>
+ <td>著者DB用のインポート (<code>authors</code> テーブル)</td>
+ </tr>
+ <tr>
+ <td><code>id_prefix</code></td>
+ <td>著者識別子用のインポート (<code>authors_prefix_settings</code> テーブル)</td>
+ </tr>
+ <tr>
+ <td><code>affiliation_id</code></td>
+ <td>機関識別子用のインポート (<code>authors_affiliation_settings</code> テーブル)</td>
+ </tr>
+ </tbody>
+ </table>
 </li>
 </ol>
 </li>
@@ -5261,13 +5353,36 @@
 </ul>
 </li>
 <li><p><strong>エラーハンドリング</strong></p>
-<p>  | <strong>エラー発生箇所</strong> | <strong>対応</strong> |
-  |----------------|----------------|
-  | <strong>TSV のフォーマット不一致</strong> | エラーメッセージを表示し、次のステップへ進めない |
-  | <strong>Celery ワーカーが停止</strong> | エラーメッセージを表示し、インポートを禁止 |
-  | <strong>Redis キーが既に存在</strong> | 前回の処理が完了していないため、インポートを禁止 |
-  | <strong>DB エラー (SQLAlchemyError)</strong> | リトライ（最大 <code>5回</code>）、失敗した場合はスキップ |
-  | <strong>Redis エラー (RedisError)</strong> | リトライ（最大 <code>5回</code>）、失敗した場合はエラーを表示 |</p>
+  <table>
+  <thead>
+  <tr>
+  <th><strong>エラー発生箇所</strong></th>
+  <th><strong>対応</strong></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td><strong>TSV のフォーマット不一致</strong></td>
+  <td>エラーメッセージを表示し、次のステップへ進めない</td>
+  </tr>
+  <tr>
+  <td><strong>Celery ワーカーが停止</strong></td>
+  <td>エラーメッセージを表示し、インポートを禁止</td>
+  </tr>
+  <tr>
+  <td><strong>Redis キーが既に存在</strong></td>
+  <td>前回の処理が完了していないため、インポートを禁止</td>
+  </tr>
+  <tr>
+  <td><strong>DB エラー (SQLAlchemyError)</strong></td>
+  <td>リトライ（最大 <code>5回</code>）、失敗した場合はスキップ</td>
+  </tr>
+  <tr>
+  <td><strong>Redis エラー (RedisError)</strong></td>
+  <td>リトライ（最大 <code>5回</code>）、失敗した場合はエラーを表示</td>
+  </tr>
+  </tbody>
+  </table>
 </li>
 <li><p><strong>著者DBのインポートについて</strong></p>
 <ul>
@@ -5361,7 +5476,7 @@
                   - ダウンロードする際には分割したファイルを合体させ、ファイル名としては**import_author_check_result_{yyyymmddhhmm}.tsv**とする。
                       インポートチェック結果のtsvで保存する情報としては以下
                       - No.
-                      - WEKOID    
+                      - WEKOID
                       - full_name
                       - Mail Address
                       - チェック結果
@@ -5377,24 +5492,41 @@
 
           - **ファイル削除のタイミング**
 
-              | ファイル | 削除条件 |
-              |-----------------|------------------------------------------------|
-              | `import_author_{yyyymmddhhmm}.tsv` | インポートチェック完了時 / 保存期間24 時間経過時|
-              | `import_author_check_result_{yyyymmddhhmm}.tsv` | 別インポートチェック時 / 保存期間24 時間経過時 |
-              | `import_author_result_{yyyymmddhhmm}.tsv` | 別インポート開始時 / インポート完了後 24 時間経過時（Celery タスクで削除） |
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>table</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>ファイル<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">&gt;</span></span>削除条件<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>import_author_{yyyymmddhhmm}.tsv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>インポートチェック完了時 / 保存期間24 時間経過時<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>import_author_check_result_{yyyymmddhhmm}.tsv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>別インポートチェック時 / 保存期間24 時間経過時<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>code</span><span class="token punctuation">&gt;</span></span>import_author_result_{yyyymmddhhmm}.tsv<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>code</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">&gt;</span></span>別インポート開始時 / インポート完了後 24 時間経過時（Celery タスクで削除）<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">&gt;</span></span>
+              <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>table</span><span class="token punctuation">&gt;</span></span>
 
-          - 保存期間は （デフォルト: 24時間）で管理
+          - 保存期間は `WEKO_AUTHORS_IMPORT_TEMP_FILE_RETENTION_PERIOD`（デフォルト: 24時間）で管理
           - 削除処理は Celery タスクが定期的に実行
 
       - **インポートタブでの表示処理の流れ**
           1. **フロント側**
               - ユーザーがページを選択
-              - `GET /api/import/results?page={page}` のような API リクエストを送信
+              - `GET /admin/authors/import/check_pagination?page_number={page}` のリクエストを送信（`WEKO_AUTHORS_IMPORT_ENTRYPOINTS['check_pagination']`）
 
           2. **サーバ側**
-              - `page` に基づき、該当 TSV ファイルの該当データを取得
-              - 以下のtsvからデータを返却
-                  - **インポートタブ**: `import_author_check_result_{yyyymmddhhmm}_part{}.tsv`
+              - `page_number` に基づき、該当ページのチェック結果の一時ファイルを読み込む
+              - 以下のファイル（JSON）の内容を返却（`weko_authors.admin.ImportView.check_pagination`）
+                  - **インポートタブ**: 一時ディレクトリ（`WEKO_AUTHORS_IMPORT_TMP_DIR`）の `{アップロードしたファイル名（拡張子なし）}-check-part{page_number}`
 
           3. **フロント側**
               - 取得したデータを表に表示
@@ -5517,7 +5649,7 @@
 <li>警告：既存外部著者IDと一致（<code>validate_external_author_identifier</code>）「External author identifier exists in DB.」等（登録は阻止しない）。</li>
 </ul>
 <p>Prefix/所属機関（<code>validate_import_data_for_prefix</code>）：<code>scheme</code>/<code>name</code> 必須、<code>url</code> は http 始まり必須（空可）、id_prefix で <code>scheme=="WEKO"</code> 禁止（「The scheme WEKO cannot be used.」）、scheme 重複・削除時の未存在/使用中チェック。</p>
-<p>結果ファイル：チェック結果 <code>import_author_check_result_YYYYMMDDHHMM.tsv</code>（No./WEKO ID/full<em>name/MailAddress/Check Result。Result は Error:… または Register/Update/Delete）。実行結果 <code>import_author_result_YYYYMMDDHHMM.tsv</code>（No./Start Date/End Date/WEKO ID/full_name/Status）。一時ファイルはキャッシュ（`WEKO_AUTHORS_IMPORT_CACHE</em>*_KEY<code>、TTL=</code>WEKO_AUTHORS_CACHE_TTL<code>＝1日）で受け渡し、</code>check_tmp_file_time_for_author` が定期削除。</p>
+<p>結果ファイル：チェック結果 <code>import_author_check_result_YYYYMMDDHHMM.tsv</code>（No./WEKO ID/full_name/MailAddress/Check Result。Result は Error:… または Register/Update/Delete）。実行結果 <code>import_author_result_YYYYMMDDHHMM.tsv</code>（No./Start Date/End Date/WEKO ID/full_name/Status）。一時ファイルはキャッシュ（<code>WEKO_AUTHORS_IMPORT_CACHE_*_KEY</code>、TTL=<code>WEKO_AUTHORS_CACHE_TTL</code>＝1日）で受け渡し、<code>check_tmp_file_time_for_author</code> が定期削除。</p>
 <h3 id="3-データモデル"><a name="3-データモデル" class="plugin-anchor" href="#3-データモデル"><i class="fa fa-link" aria-hidden="true"></i></a>3. データモデル</h3>
 <ul>
 <li>主テーブル：<code>authors</code>（<code>Authors</code>。<code>id</code> / <code>gather_flg</code> / <code>is_deleted</code> / <code>json</code>(JSONB)。氏名・外部ID・メール・所属は <code>json</code>）／<code>authors_prefix_settings</code>（<code>name</code>/<code>scheme</code>(unique)/<code>url</code>）／<code>authors_affiliation_settings</code>（同）。</li>
@@ -5600,7 +5732,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-5-3: 一括登録","level":"1.4.5.3","depth":3,"next":{"title":"ADMIN-5-4: 外部著者ID Prefix","level":"1.4.5.4","depth":3,"path":"admin/ADMIN_5_4.md","ref":"./admin/ADMIN_5_4.md","articles":[]},"previous":{"title":"ADMIN-5-2: 一括出力","level":"1.4.5.2","depth":3,"path":"admin/ADMIN_5_2.md","ref":"./admin/ADMIN_5_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_5_3.md","mtime":"2026-07-16T08:19:11.527Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-5-3: 一括登録","level":"1.4.5.3","depth":3,"next":{"title":"ADMIN-5-4: 外部著者ID Prefix","level":"1.4.5.4","depth":3,"path":"admin/ADMIN_5_4.md","ref":"./admin/ADMIN_5_4.md","articles":[]},"previous":{"title":"ADMIN-5-2: 一括出力","level":"1.4.5.2","depth":3,"path":"admin/ADMIN_5_2.md","ref":"./admin/ADMIN_5_2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_5_3.md","mtime":"2026-10-11T06:01:44.054Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

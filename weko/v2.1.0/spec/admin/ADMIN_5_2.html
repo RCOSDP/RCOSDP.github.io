@@ -6,7 +6,7 @@
         <title>ADMIN-5-2: 一括出力 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4088,9 +4088,9 @@
 <li>全件エクスポートが完了すると、出力ファイル(tsv形式)をダウンロードできるURLが表示される</li>
 <li>最後に出力されたダウンロードURLが表示される（初期の全件エクスポート実行前は何も表示されない）<br></br>  ダウンロードURLは対象によらず単一のルートを使用し、Export targetの値に応じて送出されるファイル名のみが切り替わる。</li>
 <li>ダウンロードURL(初期値)は対象によらず単一ルート <code>https://{Domain_Name}/admin/authors/export/download/Creator_export_all</code> を使用する（出力ファイル名はConfigで設定できるものとする）。送出されるファイル名の例は以下の通り。<ul>
-<li>著者情報：　Creator<em>export_all</em>{yyyyMMddhhmm}.tsv</li>
-<li>著者識別子：Id<em>prefix_export_all</em>{yyyyMMddhhmm}.tsv</li>
-<li>機関識別子：Affiliation<em>id_export_all</em>{yyyyMMddhhmm}.tsv</li>
+<li>著者情報：　Creator_export_all_{yyyyMMddhhmm}.tsv</li>
+<li>著者識別子：Id_prefix_export_all_{yyyyMMddhhmm}.tsv</li>
+<li>機関識別子：Affiliation_id_export_all_{yyyyMMddhhmm}.tsv</li>
 </ul>
 </li>
 </ul>
@@ -4500,7 +4500,7 @@
 <li>exportが一時停止した際に止まった位置をredisに記録する目的</li>
 </ul>
 </li>
-<li><code>WEKO_AUTHORS_EXPORT_TMP_PREFIX</code> = 'authors<em>export</em>'<ul>
+<li><code>WEKO_AUTHORS_EXPORT_TMP_PREFIX</code> = 'authors_export_'<ul>
 <li>export時の一時ファイルの命名が目的</li>
 </ul>
 </li>
@@ -4772,7 +4772,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ADMIN-5-2: 一括出力","level":"1.4.5.2","depth":3,"next":{"title":"ADMIN-5-3: 一括登録","level":"1.4.5.3","depth":3,"path":"admin/ADMIN_5_3.md","ref":"./admin/ADMIN_5_3.md","articles":[]},"previous":{"title":"Affiliation ID","level":"1.4.5.1.1","depth":4,"path":"admin/ADMIN_5_1_3.md","ref":"./admin/ADMIN_5_1_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_5_2.md","mtime":"2026-07-16T08:19:11.527Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ADMIN-5-2: 一括出力","level":"1.4.5.2","depth":3,"next":{"title":"ADMIN-5-3: 一括登録","level":"1.4.5.3","depth":3,"path":"admin/ADMIN_5_3.md","ref":"./admin/ADMIN_5_3.md","articles":[]},"previous":{"title":"Affiliation ID","level":"1.4.5.1.1","depth":4,"path":"admin/ADMIN_5_1_3.md","ref":"./admin/ADMIN_5_1_3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"admin/ADMIN_5_2.md","mtime":"2026-10-10T10:28:45.118Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

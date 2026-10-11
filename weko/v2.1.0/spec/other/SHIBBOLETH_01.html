@@ -6,7 +6,7 @@
         <title>Shibboleth対応 · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4046,7 +4046,7 @@
 </li>
 <li><p>上記のIdP属性値とロールとの対応は、以下のコンフィグで設定する</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L77-L82" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L77-L82</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L173-L178" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L173-L178</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_SHIB_ROLE_RELATION</p>
 </li>
@@ -4063,11 +4063,11 @@
 <ul>
 <li><p>「jc_roles_sysadm」→ システム管理者ロール'System Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_radm」→ リポジトリ管理者ロール'Repository Administrator'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_radm」→ リポジトリ管理者ロール'Repository Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_cadm」→ コミュニティ管理者ロール'Community Administrator'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_cadm」→ コミュニティ管理者ロール'Community Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_cont」→ 一般利用者ロール'Contributor'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_cont」→ 一般利用者ロール'Contributor'</p>
 </li>
 </ul>
 </li>
@@ -4122,7 +4122,7 @@
 </li>
 <li><p>HTTP_WEKOIDを利用するかどうかは、以下のconfigで指定する</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L97" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L97</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L190" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L190</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_SHIB_ALLOW_USERNAME_INST_EPPN</p>
 </li>
@@ -4135,7 +4135,7 @@
 <ul>
 <li><p>学認mAPグループ情報をWEKO3と連携するか設定する。(Trueの場合、学認mAPグループとWEKO3を連携する。)</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L111" target="_blank">https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L111</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L242" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L242</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_SHIB_BIND_GAKUNIN_MAP_GROUPS</p>
 </li>
@@ -4150,7 +4150,7 @@
 <ul>
 <li><p>GakuNin mAPグループのグループIDのフォーマットおよびWEKO3のロールを紐づけるキーワード</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L114" target="_blank">https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L114</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L248-L258" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L248-L258</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_GAKUNIN_GROUP_PATTERN_DICT</p>
 </li>
@@ -4165,7 +4165,7 @@
      "sysadm_group": "jc_roles_sysadm",          # システム管理者のグループ名
      "role_keyword": "ro",                    # ロールグループを表すキーワード
      "role_mapping": {
-         "radm": "Repository Administrator",  # リポジトリ管理者グループ
+         "radm": "Repository Administrator", # リポジトリ管理者グループ
          "cadm": "Community Administrator",    # コミュニティ管理者グループ
          "cont": "Contributor"            # コントリビュータグループ
      },
@@ -4180,7 +4180,7 @@
 <li>例 {"abc_idp_ac_jp": ["jc_abc_idp_ac_jp_groups_yyy"] }</li>
 </ul>
 </li>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L126" target="_blank">https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L126</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L236" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L236</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_GAKUNIN_DEFAULT_GROUP_MAPPING</p>
 </li>
@@ -4195,7 +4195,7 @@
 <ul>
 <li><p>自機関のIdPを判別するためのIdPのentityID。</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L129" target="_blank">https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L129</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L233" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L233</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_IDP_ENTITY_ID</p>
 </li>
@@ -4210,7 +4210,7 @@
 <ul>
 <li><p>学認mAPのグループ情報を取得するキー値のsuffix</p>
 <ul>
-<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L131" target="_blank">https://github.com/RCOSDP/weko/blob/v1.1.0/modules/weko-accounts/weko_accounts/config.py#L131</a></p>
+<li><p>パス：<a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L245" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L245</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_GAKUNIN_GROUP_SUFFIX</p>
 </li>
@@ -4232,9 +4232,9 @@
 <ul>
 <li><p>Redisの情報を用いて、WEKO3の学認mAPグループリストを更新する</p>
 <ul>
-<li><p>Redisから「<institution_fqdn>とWEKO_ACCOUNTS_GAKUNIN_GROUP_SUFFIXを結合した値」をキーとして対応する機関の学認mAPグループをリストで取得する</institution_fqdn></p>
+<li><p>Redisから「&lt;institution_fqdn&gt;とWEKO_ACCOUNTS_GAKUNIN_GROUP_SUFFIXを結合した値」をキーとして対応する機関の学認mAPグループをリストで取得する</p>
 <ul>
-<li><institution_fqdn>は対象機関のIdPのentityID（変数 WEKO<em>ACCOUNTS_IDP_ENTITY_ID）からFQDNを取得し、"."または"-"を"</em>"に置き換えた値になる</institution_fqdn></li>
+<li>&lt;institution_fqdn&gt;は対象機関のIdPのentityID（変数 WEKO_ACCOUNTS_IDP_ENTITY_ID）からFQDNを取得し、"."または"-"を"_"に置き換えた値になる</li>
 </ul>
 </li>
 <li><p>取得した学認mAPグループリストはロールとして登録されていないかチェックする。ロールとして登録されていない学認mAPグループの場合、新規ロールとしてaccounts_roleテーブルにレコード追加する</p>
@@ -4248,9 +4248,9 @@
 </li>
 <li><p>リクエストにShib-Session-IDが含まれず、以下のコンフィグWEKO_ACCOUNTS_SHIB_LOGIN_ENABLEDがfalseの場合はエラーとしてWEKOのログイン画面に遷移する</p>
 <ul>
-<li><p>パス（instance.cfg）：<br></br><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L436" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L436</a></p>
+<li><p>パス（instance.cfg）：<br></br><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L579" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L579</a></p>
 </li>
-<li><p>パス（config.py）：<br></br><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L29" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L29</a></p>
+<li><p>パス（config.py）：<br></br><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L29" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L29</a></p>
 </li>
 </ul>
 </li>
@@ -4258,9 +4258,9 @@
 <ul>
 <li><p>必須項目は以下のコンフィグで設定する</p>
 <ul>
-<li><p>パス（instance.cfg）：<br></br><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L442-L448" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/scripts/instance.cfg#L442-L448</a></p>
+<li><p>パス（instance.cfg）：<br></br><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L585-L593" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/scripts/instance.cfg#L585-L593</a></p>
 </li>
-<li><p>パス（config.py）：<br></br><a href="https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L64-L74" target="_blank">https://github.com/RCOSDP/weko/blob/v0.9.22/modules/weko-accounts/weko_accounts/config.py#L64-L74</a></p>
+<li><p>パス（config.py）：<br></br><a href="https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L78-L90" target="_blank">https://github.com/RCOSDP/weko/blob/release_v2.1.0/modules/weko-accounts/weko_accounts/config.py#L78-L90</a></p>
 </li>
 <li><p>設定キー：WEKO_ACCOUNTS_SSO_ATTRIBUTE_MAP</p>
 </li>
@@ -4376,11 +4376,11 @@
 <ul>
 <li><p>「jc_roles_sysadm」→ システム管理者ロール'System Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_radm」→ リポジトリ管理者ロール'Repository Administrator'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_radm」→ リポジトリ管理者ロール'Repository Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_cadm」→ コミュニティ管理者ロール'Community Administrator'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_cadm」→ コミュニティ管理者ロール'Community Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_cont」→ 一般利用者ロール'Contributor'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_cont」→ 一般利用者ロール'Contributor'</p>
 </li>
 </ul>
 </li>
@@ -4418,11 +4418,11 @@
 <ul>
 <li><p>「jc_roles_sysadm」→ システム管理者ロール'System Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_radm」→ リポジトリ管理者ロール'Repository Administrator'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_radm」→ リポジトリ管理者ロール'Repository Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_cadm」→ コミュニティ管理者ロール'Community Administrator'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_cadm」→ コミュニティ管理者ロール'Community Administrator'</p>
 </li>
-<li><p>「jc_<fqdn>_ro_cont」→ 一般利用者ロール'Contributor'</fqdn></p>
+<li><p>「jc_&lt;fqdn&gt;_ro_cont」→ 一般利用者ロール'Contributor'</p>
 </li>
 </ul>
 </li>
@@ -4503,7 +4503,7 @@
 <tr>
 <td>2026/10/05</td>
 <td>508030789</td>
-<td>release<em>v2.1.0突合：SP 属性の受け付け元限定（<code>shib_sp_source_required</code>・nginx の <code>$realip_remote_addr</code> 判定）、mAP ロール／グループ判定条件（<code>group_keyword</code>・`is_map</em>*<code>）を追記。属性受け渡しの説明を旧</code>login.php<code>から現行の</code>login.py`（fcgiwrap 実行の CGI）に更新</td>
+<td>release_v2.1.0突合：SP 属性の受け付け元限定（<code>shib_sp_source_required</code>・nginx の <code>$realip_remote_addr</code> 判定）、mAP ロール／グループ判定条件（<code>group_keyword</code>・<code>is_map_*</code>）を追記。属性受け渡しの説明を旧 <code>login.php</code> から現行の <code>login.py</code>（fcgiwrap 実行の CGI）に更新</td>
 </tr>
 </tbody>
 </table>
@@ -4563,7 +4563,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Shibboleth対応","level":"1.7.11","depth":2,"next":{"title":"GakuNinRDM連携","level":"1.7.12","depth":2,"path":"other/WORKFLOW_01.md","ref":"./other/WORKFLOW_01.md","articles":[]},"previous":{"title":"API Endpoint","level":"1.7.10","depth":2,"path":"api/API_ENDPOINT_01.md","ref":"./api/API_ENDPOINT_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"other/SHIBBOLETH_01.md","mtime":"2026-10-05T13:16:23.101Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Shibboleth対応","level":"1.7.11","depth":2,"next":{"title":"GakuNinRDM連携","level":"1.7.12","depth":2,"path":"other/WORKFLOW_01.md","ref":"./other/WORKFLOW_01.md","articles":[]},"previous":{"title":"API Endpoint","level":"1.7.10","depth":2,"path":"api/API_ENDPOINT_01.md","ref":"./api/API_ENDPOINT_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"other/SHIBBOLETH_01.md","mtime":"2026-10-11T02:48:21.155Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

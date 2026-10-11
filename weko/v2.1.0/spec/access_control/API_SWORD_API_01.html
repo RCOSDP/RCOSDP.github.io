@@ -6,7 +6,7 @@
         <title>SWORD API · 機能仕様書</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="HonKit 6.1.7">
+        <meta name="generator" content="HonKit 6.2.2">
         <meta name="author" content="Research Center for Open Science and Data Platform, National Institute of Informatics">
         
         
@@ -4019,10 +4019,10 @@
 <h2 id="目次"><a name="目次" class="plugin-anchor" href="#目次"><i class="fa fa-link" aria-hidden="true"></i></a>目次</h2>
 <ul>
 <li><a href="#get-swordservice-document">GET /sword/service-document</a></li>
-<li><a href="#get-sworddepositrecid">GET /sword/deposit/\<recid\></recid\></a></li>
+<li><a href="#get-sworddepositrecid">GET /sword/deposit/&lt;recid&gt;</a></li>
 <li><a href="#post-swordservice-document">POST /sword/service-document</a> ※</li>
-<li><a href="#put-sworddepositrecid">PUT /sword/deposit/\<recid\></recid\></a> ※</li>
-<li><a href="#delete-sworddepositrecid">DELETE /sword/deposit/\<recid\></recid\></a> ※</li>
+<li><a href="#put-sworddepositrecid">PUT /sword/deposit/&lt;recid&gt;</a> ※</li>
+<li><a href="#delete-sworddepositrecid">DELETE /sword/deposit/&lt;recid&gt;</a> ※</li>
 </ul>
 <p>【v2.1.0】※ <code>weko_swordserver/config.py</code> の <code>WEKO_SWORDSERVER_DEPOSIT_ROLE_ENABLE</code> の値によって使用可能なロールを指定することが出来ます（既定は System Administrator・Repository Administrator・Community Administrator・Contributor。下表は既定値での可否）。v2.1.0 以降、この値はリクエストごとに <code>current_app.config</code> から読み込まれる（デコレータ <code>weko_swordserver.decorators.check_deposit_role</code>）ため、instance.cfg 等のアプリケーション設定で上書きした値が反映されます（v2.0.x まではモジュール定数を import していたため、アプリケーション設定での上書きが効きませんでした）。ロールの判定自体は <code>weko_accounts.utils.roles_required</code> が行います。<br></br>ただし、インデックスの公開状態や投稿権限を無視して投稿可能となります。</p>
 <h2 id="get-swordservice-document"><a name="get-swordservice-document" class="plugin-anchor" href="#get-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>GET /sword/service-document</h2>
@@ -4080,49 +4080,226 @@
 <h2 id="post-swordservice-document"><a name="post-swordservice-document" class="plugin-anchor" href="#post-swordservice-document"><i class="fa fa-link" aria-hidden="true"></i></a>POST /sword/service-document</h2>
 <p>○ に合致すれば、アイテムを登録することが出来ます。</p>
 <ul>
-<li><p>API使用可否(直接登録)
-| 条件/ロール | システム<br></br>管理者 | リポジトリ<br></br>管理者 | コミュニティ<br></br>管理者 | 登録ユーザー | 一般ユーザー | ゲスト<br></br>（未ログイン） |
-| ------------------------------------------------------------------------------ | ------------------ | -------------------- | ---------------------- | ------------ | ------------ | ------------------------ |
-| トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:create が全て存在 | ○ | ○ | ○ | ○ | × | × |
-| 上記以外 | × | × | × | × | × | × |</p>
+<li><p>API使用可否(直接登録)</p>
+<table>
+<thead>
+<tr>
+<th>条件/ロール</th>
+<th>システム<br></br>管理者</th>
+<th>リポジトリ<br></br>管理者</th>
+<th>コミュニティ<br></br>管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト<br></br>（未ログイン）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:create が全て存在</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>上記以外</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><p>API使用可否(ワークフロー経由で登録)
-| 条件/ロール | システム<br></br>管理者 | リポジトリ<br></br>管理者 | コミュニティ<br></br>管理者 | 登録ユーザー | 一般ユーザー | ゲスト<br></br>（未ログイン） |
-| ----------------------------------------------------------------------------------------------- | ------------------ | -------------------- | ---------------------- | ------------ | ------------ | ------------------------ |
-| トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:create<br></br><strong>user:activity</strong> が全て存在 | ○ | ○ | ○ | ○ | × | × |
-| 上記以外 | × | × | × | × | × | × |</p>
+<li><p>API使用可否(ワークフロー経由で登録)</p>
+<table>
+<thead>
+<tr>
+<th>条件/ロール</th>
+<th>システム<br></br>管理者</th>
+<th>リポジトリ<br></br>管理者</th>
+<th>コミュニティ<br></br>管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト<br></br>（未ログイン）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:create<br></br><strong>user:activity</strong> が全て存在</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>上記以外</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+
 </li>
 </ul>
 <h2 id="put-sworddepositrecid"><a name="put-sworddepositrecid" class="plugin-anchor" href="#put-sworddepositrecid"><i class="fa fa-link" aria-hidden="true"></i></a>PUT <code>/sword/deposit/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>recid</span><span class="token punctuation">&gt;</span></span></code></h2>
 <p>○ に合致すれば、レコードIDを指定してメタデータやファイルを置換することが出来ます。</p>
 <ul>
-<li><p>API使用可否(直接更新)
-| 条件/ロール | システム<br></br>管理者 | リポジトリ<br></br>管理者 | コミュニティ<br></br>管理者 | 登録ユーザー | 一般ユーザー | ゲスト<br></br>（未ログイン） |
-| ------------------------------------------------------------------------------ | ------------------ | -------------------- | ---------------------- | ------------ | ------------ | ------------------------ |
-| トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:update が全て存在 | ○ | ○ | ○ | ○ | × | × |
-| 上記以外 | × | × | × | × | × | × |</p>
+<li><p>API使用可否(直接更新)</p>
+<table>
+<thead>
+<tr>
+<th>条件/ロール</th>
+<th>システム<br></br>管理者</th>
+<th>リポジトリ<br></br>管理者</th>
+<th>コミュニティ<br></br>管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト<br></br>（未ログイン）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:update が全て存在</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>上記以外</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><p>API使用可否(ワークフロー経由で更新)
-| 条件/ロール | システム<br></br>管理者 | リポジトリ<br></br>管理者 | コミュニティ<br></br>管理者 | 登録ユーザー | 一般ユーザー | ゲスト<br></br>（未ログイン） |
-| ----------------------------------------------------------------------------------------------- | ------------------ | -------------------- | ---------------------- | ------------ | ------------ | ------------------------ |
-| トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:update<br></br><strong>user:activity</strong> が全て存在 | ○ | ○ | ○ | ○ | × | × |
-| 上記以外 | × | × | × | × | × | × |</p>
+<li><p>API使用可否(ワークフロー経由で更新)</p>
+<table>
+<thead>
+<tr>
+<th>条件/ロール</th>
+<th>システム<br></br>管理者</th>
+<th>リポジトリ<br></br>管理者</th>
+<th>コミュニティ<br></br>管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト<br></br>（未ログイン）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:update<br></br><strong>user:activity</strong> が全て存在</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>上記以外</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+
 </li>
 </ul>
 <h2 id="delete-sworddepositrecid"><a name="delete-sworddepositrecid" class="plugin-anchor" href="#delete-sworddepositrecid"><i class="fa fa-link" aria-hidden="true"></i></a>DELETE <code>/sword/deposit/<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>recid</span><span class="token punctuation">&gt;</span></span></code></h2>
 <p>○ に合致すれば、レコードIDを指定してアイテムを削除することが出来ます。</p>
 <ul>
-<li><p>API使用可否(直接削除)
-| 条件/ロール | システム<br></br>管理者 | リポジトリ<br></br>管理者 | コミュニティ<br></br>管理者 | 登録ユーザー | 一般ユーザー | ゲスト<br></br>（未ログイン） |
-| ------------------------------------------------------------------------------ | ------------------ | -------------------- | ---------------------- | ------------ | ------------ | ------------------------ |
-| トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:delete が全て存在 | ○ | ○ | ○ | ○ | × | × |
-| 上記以外 | × | × | × | × | × | × |</p>
+<li><p>API使用可否(直接削除)</p>
+<table>
+<thead>
+<tr>
+<th>条件/ロール</th>
+<th>システム<br></br>管理者</th>
+<th>リポジトリ<br></br>管理者</th>
+<th>コミュニティ<br></br>管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト<br></br>（未ログイン）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:delete が全て存在</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>上記以外</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
 </li>
-<li><p>API使用可否(ワークフロー経由で削除)
-| 条件/ロール | システム<br></br>管理者 | リポジトリ<br></br>管理者 | コミュニティ<br></br>管理者 | 登録ユーザー | 一般ユーザー | ゲスト<br></br>（未ログイン） |
-| ----------------------------------------------------------------------------------------------- | ------------------ | -------------------- | ---------------------- | ------------ | ------------ | ------------------------ |
-| トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:delete<br></br><strong>user:activity</strong> が全て存在 | ○ | ○ | ○ | ○ | × | × |
-| 上記以外 | × | × | × | × | × | × |</p>
+<li><p>API使用可否(ワークフロー経由で削除)</p>
+<table>
+<thead>
+<tr>
+<th>条件/ロール</th>
+<th>システム<br></br>管理者</th>
+<th>リポジトリ<br></br>管理者</th>
+<th>コミュニティ<br></br>管理者</th>
+<th>登録ユーザー</th>
+<th>一般ユーザー</th>
+<th>ゲスト<br></br>（未ログイン）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>トークンのスコープに<br></br>deposit:write<br></br>deposit:actions<br></br>item:delete<br></br><strong>user:activity</strong> が全て存在</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>○</td>
+<td>×</td>
+<td>×</td>
+</tr>
+<tr>
+<td>上記以外</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+
 </li>
 </ul>
 <h2 id="実装（アクセス制御の担保）"><a name="実装（アクセス制御の担保）" class="plugin-anchor" href="#実装（アクセス制御の担保）"><i class="fa fa-link" aria-hidden="true"></i></a>実装（アクセス制御の担保）</h2>
@@ -4192,7 +4369,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SWORD API","level":"1.10.3.10","depth":3,"next":{"title":"制限公開","level":"1.10.3.11","depth":3,"path":"access_control/API_RESTRICTED_ACCESS_01.md","ref":"./access_control/API_RESTRICTED_ACCESS_01.md","articles":[]},"previous":{"title":"OAステータス","level":"1.10.3.9","depth":3,"path":"access_control/API_OA_STATUS_01.md","ref":"./access_control/API_OA_STATUS_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"access_control/API_SWORD_API_01.md","mtime":"2026-10-06T14:24:54.458Z","type":"markdown"},"gitbook":{"version":"6.1.7","time":"2026-10-07T00:05:17.045Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SWORD API","level":"1.10.3.10","depth":3,"next":{"title":"制限公開","level":"1.10.3.11","depth":3,"path":"access_control/API_RESTRICTED_ACCESS_01.md","ref":"./access_control/API_RESTRICTED_ACCESS_01.md","articles":[]},"previous":{"title":"OAステータス","level":"1.10.3.9","depth":3,"path":"access_control/API_OA_STATUS_01.md","ref":"./access_control/API_OA_STATUS_01.md","articles":[]},"dir":"ltr"},"config":{"plugins":["intopic-toc","back-to-top-button","anchors","collapsible-chapters","hide-published-with","plantuml-cloud","prism","-highlight"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{"maxIndexSize":100000000000000},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"plantuml-cloud":{},"fontsettings":{"theme":"white","family":"sans","size":2},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"Research Center for Open Science and Data Platform, National Institute of Informatics","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"機能仕様書","language":"ja","gitbook":"*","description":""},"file":{"path":"access_control/API_SWORD_API_01.md","mtime":"2026-10-10T10:02:25.367Z","type":"markdown"},"gitbook":{"version":"6.2.2","time":"2026-10-11T09:26:46.930Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
